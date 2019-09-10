@@ -1,0 +1,6 @@
+require "quizGame/version"
+
+module QuizGame
+  class Error < StandardError; end
+  # Your code goes here...
+end
