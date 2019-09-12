@@ -11,9 +11,10 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get quiz" do
-    get "/quiz/quiz_url"
-    assert_response :success
-  end
+  # test "should get quiz" do
+  #   get "/quiz/quiz_url"
+  #   assert_response :success
+  # end
+
 
 end

@@ -24,4 +24,10 @@ class QuizzesControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :redirect
   end
+
+  test "should populate Quiz with 5 sample quizzes" do
+    get "/quiz/sample_populate_url" 
+    assert_response :redirect
+  end
+
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   patch 'quiz/quiz_url'
   delete 'quiz/quiz_url'
   get 'quiz/quiz_url', to: 'quiz#quiz_url'
+  get 'quiz/sample_populate_url', to: 'quiz#sample_populate'
   
  
   post 'quiz/quizzes_url'

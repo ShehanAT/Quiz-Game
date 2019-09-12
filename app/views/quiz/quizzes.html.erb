@@ -1,2 +1,25 @@
-<h1>Quiz#quizzes</h1>
-<p>Find me in app/views/quiz/quizzes.html.erb</p>
+<h1>Listing All Quizzes</h1>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Collection Name</th>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @collection.each do |collection| %>
+        <% collection.quiz.each do |quiz| %>
+          <tr>
+          <td><%= collection.name %></td>
+          <td><%= quiz.question %></td>
+          <td><%= quiz.answer %></td>
+          </tr>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>
+ 
+<br>

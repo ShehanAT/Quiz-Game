@@ -1,6 +1,22 @@
 class QuizController < ApplicationController
   def quizzes
-    render "quizzes"
+    @collection = Collection.all 
+    # <td><%= link_to "Show", book %></td>
+    # <td><%= link_to "Edit", edit_book_path(book) %></td>
+    # <td><%= link_to "Destroy", book, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  end
+
+  def sample_populate  
+    @collection = Collection.create(:collection_id => 1, :name => "Sample Collection")
+    for a in 1..5 do
+      @collection.quiz.create(:question => "This is sample question ##{a}?", :answer => "This is sample answer ##{a}")
+      if @collection.save!
+        puts "Sample quiz ##{a} saved"
+      else 
+        puts "Sample quiz ##{a} not saved"
+      end 
+    end 
+    redirect_to action: "quizzes"
   end
 
   def create_quizzes
