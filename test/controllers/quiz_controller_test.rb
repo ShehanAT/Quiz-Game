@@ -12,7 +12,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get quiz" do
-    get quiz_quiz_url
+    get "/quiz/quiz_url"
     assert_response :success
   end
 

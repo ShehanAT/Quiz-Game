@@ -5,7 +5,7 @@ class QuizzesControllerTest < ActionDispatch::IntegrationTest
     @quiz = quizzes(:one)
   end
 
-  test "should get index" do
+  test "should list all quizzes" do
     get quiz_quizzes_url
     assert_response :success
   end
@@ -16,32 +16,12 @@ class QuizzesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create quiz" do
-    assert_difference('Quiz.count') do
-      post quiz_create_quizzes_url, params: { quiz: {  } }
+    assert_difference('Sample.count') do
+      post quiz_create_quizzes_url, params: { quiz: { 
+        question: "Question for quizzes_controller_test:18 ?",
+        answer: "Answer for quizzes_controller_test:18 ?"
+       } }
     end
-    assert_redirected_to quiz_url(Quiz.last)
+    assert_response :redirect
   end
-
-  # test "should show quiz" do
-  #   get quiz_url(@quiz)
-  #   assert_response :success
-  # end
-
-  # test "should get edit" do
-  #   get edit_quiz_url(@quiz)
-  #   assert_response :success
-  # end
-
-  # test "should update quiz" do
-  #   patch quiz_url(@quiz), params: { quiz: {  } }
-  #   assert_redirected_to quiz_url(@quiz)
-  # end
-
-  # test "should destroy quiz" do
-  #   assert_difference('Quiz.count', -1) do
-  #     delete quiz_url(@quiz)
-  #   end
-
-  #   assert_redirected_to quizzes_url
-  # end
 end

@@ -3,17 +3,27 @@ class QuizController < ApplicationController
     render "quizzes"
   end
 
-  def create_quizzes 
-    @quiz = Quiz.new({
-        question: "Question for quizzes_controller_test:18 ?",
-        answer: "Answer for quizzes_controller_test:18 ?"
-      })
-    puts @quiz.question 
-    if @quiz.save 
+  def create_quizzes
+    @sample = Sample.new()
+    # puts @sample.question
+    if @sample.save 
       puts "Quiz was saved"
     else 
       puts "Quiz was not saved"
-    end 
+    end
+    redirect_to "quiz/quizzes" 
+  end 
+
+  def quiz_quiz_url(quiz_url)
+    redirect_to "#{quiz_url}"
+  end
+
+  def show_quiz(quiz_url)
+    render "#{quiz_url}"
+  end
+
+  def random_redirect 
+    redirect_to "quiz/quizzes"
   end 
 
  
@@ -32,8 +42,8 @@ class QuizController < ApplicationController
     end 
   end
 
-  def quiz_url 
-      "this is a sample url"
+  def quiz_url
+      render "quiz/quiz"
   end  
 
   def new_quiz_url

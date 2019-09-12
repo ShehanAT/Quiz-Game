@@ -1,18 +1,26 @@
 Rails.application.routes.draw do
+
   get 'quiz/new_quiz_url'
-  get 'quiz/quizzes'
-  post 'quiz/create_quizzes'
-  post 'quiz/quizzes_url'
-  post 'quiz/quizzes'
-  get 'quiz/new_quiz'
-  get 'quiz/quiz'
+  get 'quiz/random_redirect'
   get 'quiz/error'
   get 'quiz/new_quiz_url'
   get 'quiz/edit_quiz_url'
-  get 'quiz/quiz_url'
+  get 'quiz/quiz_show_quiz_url', to: 'quiz#show_quiz'
   patch 'quiz/quiz_url'
   delete 'quiz/quiz_url'
-  get 'quizzes/new_quiz_url'
+  get 'quiz/quiz_url', to: 'quiz#quiz_url'
+  
+ 
+  post 'quiz/quizzes_url'
+  
+  get 'quiz/new_quiz'
+
+
+  post 'quiz/quizzes'
+  get 'quiz/quizzes'
+  post 'quiz/create_quizzes'
+  
+ 
   get 'start_quiz/welcome'
   get 'start_quiz/start'
   post 'start_quiz/start'
