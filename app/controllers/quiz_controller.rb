@@ -1,9 +1,6 @@
 class QuizController < ApplicationController
   def quizzes
     @collection = Collection.all 
-    # <td><%= link_to "Show", book %></td>
-    # <td><%= link_to "Edit", edit_book_path(book) %></td>
-    # <td><%= link_to "Destroy", book, method: :delete, data: { confirm: "Are you sure?" } %></td>
   end
 
   def sample_populate  
@@ -19,17 +16,6 @@ class QuizController < ApplicationController
     redirect_to action: "quizzes"
   end
 
-  def create_quizzes
-    @sample = Sample.new()
-    # puts @sample.question
-    if @sample.save 
-      puts "Quiz was saved"
-    else 
-      puts "Quiz was not saved"
-    end
-    redirect_to "quiz/quizzes" 
-  end 
-
   def quiz_quiz_url(quiz_url)
     redirect_to "#{quiz_url}"
   end
@@ -44,7 +30,14 @@ class QuizController < ApplicationController
 
  
   def new_quiz
-    render "new_quiz"
+    @collection = Collection.create
+    @collection.quiz.create(:question => "This quiz is a new question?", :answer => "This is a new answer?")
+    if @collection.save!
+      puts "The new quiz was saved"
+    else 
+      puts "The new quiz was not saved"
+    end 
+    render "quiz/new_quiz"
   end
 
   def quiz

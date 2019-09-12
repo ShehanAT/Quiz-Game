@@ -1,2 +1,32 @@
-<h1>Quiz#new_quiz</h1>
-<p>Find me in app/views/quiz/new_quiz.html.erb</p>
+<h1>Listing Newly Created Quiz</h1>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Quiz Id</th>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <tr>
+    <% @collection.quiz.each do |quiz| %>
+        <tr>
+            <td><%= quiz.id %></td>
+            <td><%= quiz.question %></td>
+            <td><%= quiz.answer %></td>
+        </tr>
+
+        <% if false %>
+            <td><%= quiz.quiz_id %></td>
+            <td><%= quiz.question %></td>
+            <td><%= quiz.answer %></td>
+        <% end %>
+       
+    <% end %>
+ 
+    </tr>
+  </tbody>
+</table>
+<br>
