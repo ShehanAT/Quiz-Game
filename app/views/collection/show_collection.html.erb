@@ -1,0 +1,40 @@
+<h1>Collection Details</h1>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Contained Number of Quizzes</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <tr>
+        <td><%= @collection.name %></td>
+        <td><%= @collection.category %></td>
+        <td><%= @collection.total_quizzes %></td>
+    </tr>
+  </tbody>
+</table>
+<h2>All Contained Quizzes:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Contained Number of Quizzes</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <tr>
+    <% @quizzesInCollection.each do | quiz | %>
+        <td><%= quiz.question %></td>
+        <td><%= quiz.answer %></td>
+        <td><%= quiz.id %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+<br>

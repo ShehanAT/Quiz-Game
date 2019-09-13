@@ -12,6 +12,11 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
     get "/quiz/quizzes"
     assert_response :success
   end
+  
+  test "should show quiz by id " do
+    get "/quiz/show_quiz", params: { id: 298486374}
+    assert_response :success
+  end 
 
   test "should get new_quiz with corresponding collection" do
     get "/quiz/new_quiz_to_collection", params: { collection_id: 2, question: "This is test question 2?", answer: "This is test answer 2" }

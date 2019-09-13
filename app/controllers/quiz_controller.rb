@@ -3,6 +3,11 @@ class QuizController < ApplicationController
     @collections = Collection.all 
   end
 
+  def show_quiz 
+    quizId = params[:id]
+    @quiz = Quiz.find(quizId)
+    render "quiz/show_quiz"
+  end 
   def new_quiz
     collectionId = params[:collection_id]
     @collection = Collection.find(collectionId)
@@ -45,12 +50,13 @@ class QuizController < ApplicationController
     updateValue = params[:newField]
     puts updateField 
     puts updateValue 
-    quiz = Quiz.find(quizId)
-    if quiz[updateField] = updateValue
+    @quiz = Quiz.find(quizId)
+    if @quiz[updateField] = updateValue
       puts "The quiz was updated"
     else 
       puts "The quiz was not updated"
     end 
+    render "quiz/show_quiz"
   end 
 
   def error 
