@@ -23,7 +23,10 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
     assert_response :success 
   end 
 
-
+  test "should update quiz by specifying id" do 
+    put "/quiz/update_quiz_by_id", params: { id: 298486374, update: "question", newField: "whatNewQuestion2?" }
+    assert_response :success 
+  end 
 
 end
 

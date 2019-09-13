@@ -1,11 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  question: MyString
-  answer: MyString
+  question: MyString1Question
+  answer: MyString1Answer
   collection_id: 1
-
 two:
-  question: MyString
-  answer: MyString
+  question: MyString2Question
+  answer: MyString2Answer
   collection_id: 1
+three:
+  question: MyString3Question
+  answer: MyString3Answer 
+  collection_id: 2

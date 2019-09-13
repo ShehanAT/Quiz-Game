@@ -5,7 +5,6 @@ one:
   name: First Sample Collection
   category: Sample
   total_quizzes: 1
-
 two:
   id: 2
   name: Second Sample Collection

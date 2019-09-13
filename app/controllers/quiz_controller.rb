@@ -51,6 +51,20 @@ class QuizController < ApplicationController
     end 
   end 
 
+  def update_quiz_by_id
+    quizId = params[:id]
+    updateField = params[:update]
+    updateValue = params[:newField]
+    puts updateField 
+    puts updateValue 
+    quiz = Quiz.find(quizId)
+    if quiz[updateField] = updateValue
+      puts "The quiz was updated"
+    else 
+      puts "The quiz was not updated"
+    end 
+  end 
+
   def quiz
     @quiz = Quiz.new 
     @quiz.question = "Sample Question?"
