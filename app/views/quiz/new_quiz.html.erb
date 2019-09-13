@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Quiz Id</th>
+      <th>Collection Id</th>
       <th>Question</th>
       <th>Answer</th>
     </tr>
@@ -13,16 +13,10 @@
     <tr>
     <% @collection.quiz.each do |quiz| %>
         <tr>
-            <td><%= quiz.id %></td>
+            <td><%= @collection.id %></td>
             <td><%= quiz.question %></td>
             <td><%= quiz.answer %></td>
         </tr>
-
-        <% if false %>
-            <td><%= quiz.quiz_id %></td>
-            <td><%= quiz.question %></td>
-            <td><%= quiz.answer %></td>
-        <% end %>
        
     <% end %>
  

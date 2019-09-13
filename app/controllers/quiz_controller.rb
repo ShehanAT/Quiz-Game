@@ -1,19 +1,6 @@
 class QuizController < ApplicationController
   def quizzes
-    @collection = Collection.all 
-  end
-
-  def sample_populate  
-    @collection = Collection.create(:collection_id => 1, :name => "Sample Collection")
-    for a in 1..5 do
-      @collection.quiz.create(:question => "This is sample question ##{a}?", :answer => "This is sample answer ##{a}")
-      if @collection.save!
-        puts "Sample quiz ##{a} saved"
-      else 
-        puts "Sample quiz ##{a} not saved"
-      end 
-    end 
-    redirect_to action: "quizzes"
+    @collections = Collection.all 
   end
 
   def quiz_quiz_url(quiz_url)
@@ -39,6 +26,30 @@ class QuizController < ApplicationController
     end 
     render "quiz/new_quiz"
   end
+
+  def new_quiz_to_collection 
+    collection_id = params[:collection_id]
+    question = params[:question]
+    answer = params[:answer]
+    @collection = Collection.find(collection_id)
+    @collection.quiz.create(:question => question, :answer => answer)
+    if @collection.save!
+      puts "The new quiz was saved"
+    else 
+      puts "The new quiz was not saved"
+    end 
+    render "quiz/new_quiz"
+  end 
+
+  def delete_quiz_by_id
+    quizId = params[:id]
+    quiz = Quiz.find(quizId)
+    if quiz.delete
+      puts "The quiz was deleted"
+    else 
+      puts "The quiz was not deleted"
+    end 
+  end 
 
   def quiz
     @quiz = Quiz.new 
