@@ -4,11 +4,28 @@ one:
   question: MyString1Question
   answer: MyString1Answer
   collection_id: 1
+  first_choice: 'Foo'
+  second_choice: 'Bar'
+  third_choice: 'Ham'
+  fourth_choice: 'Test'
+  correct_choice: 'Bar'
+  
 two:
   question: MyString2Question
   answer: MyString2Answer
   collection_id: 1
+  first_choice: 'sports'
+  second_choice: 'beer'
+  third_choice: 'reading'
+  fourth_choice: 'powerlifting'
+  correct_choice: 'Bar'
+
 three:
   question: MyString3Question
   answer: MyString3Answer 
   collection_id: 2
+  first_choice: 'Example1'
+  second_choice: 'Example2'
+  third_choice: 'Example3'
+  fourth_choice: 'Example4'
+  correct_choice: 'Bar'
