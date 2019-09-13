@@ -4,7 +4,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
 
 
   test "should get new_quiz" do
-    get quiz_new_quiz_url
+    get "/quiz/new_quiz", params: { collection_id: 1}
     assert_response :success
   end
 
@@ -26,6 +26,11 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   test "should update quiz by specifying id" do 
     put "/quiz/update_quiz_by_id", params: { id: 298486374, update: "question", newField: "whatNewQuestion2?" }
     assert_response :success 
+  end 
+
+  test "should return 200 for error page" do 
+    get "/quiz/error"
+    assert_response :success
   end 
 
 end
