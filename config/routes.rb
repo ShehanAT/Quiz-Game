@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'start_quiz/start'
   get 'collection/new_collection'
   get 'collection/show_collection_by_id'
-  get 'user/user_registration', to:'user#index'
+  get 'user/current_or_guest_user', to: 'user#current_or_guest_user'
+  get 'user/registration', to: 'user#registration'
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'collection/update_collection_by_id', to: 'collection#update_collection_by_id'
