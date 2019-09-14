@@ -15,15 +15,13 @@ class CollectionController < ApplicationController
     end 
 
     def show_collection_by_id
-        collectionId = params[:id]
-        @collection = Collection.find(collectionId)
+        @collection = Collection.find(params[:id])
         @quizzesInCollection = Quiz.where(collection_id: Collection.pluck(:id))
         render "collection/show_collection"
     end
     
     def delete_collection_by_id
-        collectionId = params[:id]
-        @collection = Collection.find(collectionId)
+        @collection = Collection.find(params[:id])
         if @collection.delete 
             puts "Collection was deleted"
         else 
@@ -32,10 +30,9 @@ class CollectionController < ApplicationController
     end 
 
     def update_collection_by_id  
-        collectionId = params[:id]
         updateField = params[:update]
         updateValue = params[:newValue]
-        @collection = Collection.find(collectionId)
+        @collection = Collection.find(params[:id])
         @quizzesInCollection = Quiz.where(collection_id: Collection.pluck(:id))
         if @collection[updateField] = updateValue
             puts "Collection was updated"
