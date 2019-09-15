@@ -9,3 +9,4 @@ application up and running.
 
 ### Project Logs:
 * 09/11/2019: added basic unit tests for quiz and collection models
+* 09/14/2019: added unit tests for user controller and model
