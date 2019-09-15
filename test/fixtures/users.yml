@@ -1,15 +1,30 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
-  email: MyString
-  fullName: MyString
-  bio: MyText
-  password_digest: MyString
+  id: 3
+  username: MyString1
+  email: MyString1
+  fullName: MyString1
+  bio: MyText1
+  password_hash: MyString1
+  password_salt: MyString1
+  
 
 two:
-  username: MyString
-  email: MyString
-  fullName: MyString
-  bio: MyText
-  password_digest: MyString
+  id: 4
+  username: MyString2
+  email: MyString2
+  fullName: MyString2
+  bio: MyText2
+  password_hash: MyString2
+  password_salt: MyString2
+  
+three:
+  id: 5
+  username: admin
+  email: admin@admin.com
+  fullName: Admin Admin
+  bio: Admin
+  password_hash: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW
+  password_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kO
+

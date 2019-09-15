@@ -1,0 +1,11 @@
+<%= form_with( method: "post") do %>
+
+    <%= label_tag(:q, "Username:") %>
+    <%= text_field_tag(:username) %>
+    
+    <%= label_tag(:q, "Password:") %>
+    <%= text_field_tag(:password) %>
+    
+    <%= submit_tag %>
+    
+<% end %>
