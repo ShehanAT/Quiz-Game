@@ -1,5 +1,10 @@
 require 'digest/sha1'
 class User < ApplicationRecord
+    validates_presence_of :username
+    validates_presence_of :password_hash
+    validates_presence_of :email
+    validates_presence_of :fullName
+    validates_presence_of :bio
 
     def self.authenticate(username, password)
         user = User.find_by_username(username)
@@ -10,15 +15,14 @@ class User < ApplicationRecord
         end 
     end 
 
-    def encrypt_password 
+    def encrypt_password(password) 
         if password.present?
             password_salt = BCrypt::Engine.generate_salt
             password_hash = BCrypt::Engine.hash_secret(password, password_salt)
-            user = User.create(:username => username, :password_hash => password_hash, :password_salt => password_salt, :email => email, :fullName => fullName, :bio => bio)
-            if user.save!
-                puts "User saved successfully"
+            if password_hash
+                password_hash
             else 
-                puts "User not saved"
+                nil
             end 
         end 
     end 

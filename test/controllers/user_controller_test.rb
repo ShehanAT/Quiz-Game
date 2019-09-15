@@ -14,8 +14,8 @@ class UserControllerTest < ActionDispatch::IntegrationTest
     test "should not submit registration form when any field is empty" do 
         Capybara.visit("/user/user_registration")
         Capybara.within("form") do
-            Capybara.find("input[value='Save changes']").click
-            assert_current_path('/user/user_registration', :ignore_query => true)
+            Capybara.find("input[value='Register']").click
+            assert_current_path("/user/register")
         end
     end 
 
@@ -24,10 +24,11 @@ class UserControllerTest < ActionDispatch::IntegrationTest
         Capybara.fill_in 'username', :with => 'admin'
         Capybara.fill_in 'password', :with => 'admin'
         Capybara.within("form") do
-            Capybara.find("input[value='Save changes']").click
+            Capybara.find("input[value='Login']").click
             assert_equal(200, Capybara.page.status_code)
         end
     end
+
 
     test "should set session id for guest user" do 
         get "/user/current_or_guest_user" 

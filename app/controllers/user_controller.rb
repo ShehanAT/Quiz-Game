@@ -8,21 +8,25 @@ class UserController < ApplicationController
     def create 
       @user = User.authenticate(params[:username], params[:password])
       if @user 
+        puts "user authentication successful"
         session[:username] = @user.username
         session[:user_id] = @user.id
-        redirect_to user_profile, :status => :redirect and return 
+        user_profile
       else 
         puts "user authentication failed"
         flash[:notice] = "Invalid login credentials"
-        redirect_to user_login and return 
+        user_login
       end 
 
     end 
 
+    def user_register
+      
+    end 
    
 
     def user_registration 
-      render "user/user_registration"
+      @user = User.new
     end 
 
     def user_profile 

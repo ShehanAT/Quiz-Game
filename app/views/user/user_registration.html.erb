@@ -1,17 +1,23 @@
-<%= form_with( method: "get") do %>
+<%= form_with( url: "register", method: "post") do %>
 
-<%= label_tag(:q, "Username:") %>
-<%= text_field_tag(:username) %>
+    <%= label_tag(:q, "Username:") %>
+    <%= text_field_tag(:username) %>
+    
+    <%= label_tag(:q, "Email:") %>
+    <%= text_field_tag(:email) %>
+    
+    <%= label_tag(:q, "Password:") %>
+    <%= password_field_tag(:password) %>
+    
+    <%= label_tag(:q, "Confirm Password:") %>
+    <%= password_field_tag(:confirm_password) %>
 
-<%= label_tag(:q, "Email:") %>
-<%= text_field_tag(:email) %>
+    <%= label_tag(:q, "Full Name:") %>
+    <%= text_field_tag(:fullName) %>
 
-<%= label_tag(:q, "Password:") %>
-<%= text_field_tag(:password) %>
+    <%= label_tag(:q, "Bio:") %>
+    <%= text_field_tag(:bio) %>
 
-<%= label_tag(:q, "Confirm Password:") %>
-<%= text_field_tag(:confirm_password) %>
-
-<%= submit_tag %>
-
+    <%= submit_tag "Register" %>
+    
 <% end %>
