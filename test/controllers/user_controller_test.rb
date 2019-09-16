@@ -11,14 +11,6 @@ class UserControllerTest < ActionDispatch::IntegrationTest
     end 
 
 
-    # test "should not submit registration form when any field is empty" do 
-    #     Capybara.visit("/user/user_registration")
-    #     Capybara.within("form") do
-    #         Capybara.find("input[value='Register']").click
-    #         assert_response :invalid 
-    #     end
-    # end 
-
     test "should submit registration form, return 200 status code" do 
         Capybara.visit("/user/user_registration")
         Capybara.within("form") do
