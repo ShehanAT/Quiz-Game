@@ -1,4 +1,4 @@
-<%= form_with( url: "register", method: "post") do %>
+<%= form_with( url: "create", method: "post") do %>
 
     <%= label_tag(:q, "Username:") %>
     <%= text_field_tag(:username) %>
@@ -10,7 +10,7 @@
     <%= password_field_tag(:password) %>
     
     <%= label_tag(:q, "Confirm Password:") %>
-    <%= password_field_tag(:confirm_password) %>
+    <%= password_field_tag(:password_confirmation) %>
 
     <%= label_tag(:q, "Full Name:") %>
     <%= text_field_tag(:fullName) %>

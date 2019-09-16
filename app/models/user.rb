@@ -1,10 +1,10 @@
 require 'digest/sha1'
 class User < ApplicationRecord
-    validates_presence_of :username
-    validates_presence_of :password_hash
-    validates_presence_of :email
-    validates_presence_of :fullName
-    validates_presence_of :bio
+    validates_presence_of :username, :email, :password, :fullName, :bio 
+    validates_uniqueness_of :email
+
+    attr_accessor :username, :email, :password, :fullName, :bio 
+
 
     def self.authenticate(username, password)
         user = User.find_by_username(username)

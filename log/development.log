@@ -125,3 +125,213 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 326ms (Views: 2.5ms | ActiveRecord: 4.1ms | Allocations: 8227)
 
 
+Started GET "/user/registration" for ::1 at 2019-09-15 17:50:33 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user/registration"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/user/user_registration" for ::1 at 2019-09-15 17:50:41 -0400
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb
+  Rendered user/user_registration.html.erb (Duration: 1.4ms | Allocations: 781)
+Completed 200 OK in 18ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 8204)
+
+
+Started POST "/user/register" for ::1 at 2019-09-15 17:50:46 -0400
+Processing by UserController#user_register as HTML
+  Parameters: {"authenticity_token"=>"Os/1ZG7TTRM1pTiXSQ49cRd4msaXoCjmiwGOAl4mC0O5QiN2may0SXBU/yR5wuC2pJZiur0y0eBsQeLqNk/bRg==", "username"=>"shehanatuk@gmail.com", "email"=>"", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Can't verify CSRF token authenticity.
+No template found for UserController#user_register, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms | Allocations: 1783)
+
+
+Started POST "/user/register" for ::1 at 2019-09-15 17:50:48 -0400
+Processing by UserController#user_register as HTML
+  Parameters: {"authenticity_token"=>"Os/1ZG7TTRM1pTiXSQ49cRd4msaXoCjmiwGOAl4mC0O5QiN2may0SXBU/yR5wuC2pJZiur0y0eBsQeLqNk/bRg==", "username"=>"shehanatuk@gmail.com", "email"=>"", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Can't verify CSRF token authenticity.
+No template found for UserController#user_register, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 444)
+
+
+Started POST "/user/register" for ::1 at 2019-09-15 17:50:49 -0400
+Processing by UserController#user_register as HTML
+  Parameters: {"authenticity_token"=>"Os/1ZG7TTRM1pTiXSQ49cRd4msaXoCjmiwGOAl4mC0O5QiN2may0SXBU/yR5wuC2pJZiur0y0eBsQeLqNk/bRg==", "username"=>"shehanatuk@gmail.com", "email"=>"", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Can't verify CSRF token authenticity.
+No template found for UserController#user_register, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 442)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-15 17:51:16 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb
+  Rendered user/user_registration.html.erb (Duration: 0.8ms | Allocations: 394)
+Completed 200 OK in 16ms (Views: 1.5ms | ActiveRecord: 1.2ms | Allocations: 7168)
+
+
+Started POST "/user/register" for ::1 at 2019-09-15 17:51:19 -0400
+Processing by UserController#user_register as HTML
+  Parameters: {"authenticity_token"=>"/vhVvqTpIfPsMepuNXKcmwtp623gVBn2SRZpjkIF1U59dYOsU5bYqanALd0FvkFcuIcTEcrG4PCuVgVmKmwFSw==", "username"=>"shehanatuk@gmail.com", "email"=>"", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Can't verify CSRF token authenticity.
+No template found for UserController#user_register, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 445)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-15 17:52:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb
+  Rendered user/user_registration.html.erb (Duration: 0.7ms | Allocations: 394)
+Completed 200 OK in 15ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 7223)
+
+
+Started POST "/user/register" for ::1 at 2019-09-15 17:52:37 -0400
+Processing by UserController#user_register as HTML
+  Parameters: {"authenticity_token"=>"2UTiRbd5L0GihGp22zBrQUAWi00sEYdBpVqipz4yqR5ayTRXQAbWG+d1rcXr/LaG8/hzMQaDfkdCGs5PVlt5Gw==", "username"=>"shehanatuk@gmail.com", "email"=>"", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Can't verify CSRF token authenticity.
+No template found for UserController#user_register, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 451)
+
+
+Started POST "/user/register" for ::1 at 2019-09-15 17:52:39 -0400
+Processing by UserController#user_register as HTML
+  Parameters: {"authenticity_token"=>"2UTiRbd5L0GihGp22zBrQUAWi00sEYdBpVqipz4yqR5ayTRXQAbWG+d1rcXr/LaG8/hzMQaDfkdCGs5PVlt5Gw==", "username"=>"shehanatuk@gmail.com", "email"=>"", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Can't verify CSRF token authenticity.
+No template found for UserController#user_register, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 451)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-15 17:52:50 -0400
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb
+  Rendered user/user_registration.html.erb (Duration: 1.6ms | Allocations: 390)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 823)
+
+
+Started POST "/user/register" for ::1 at 2019-09-15 17:53:21 -0400
+Processing by UserController#user_register as HTML
+  Parameters: {"authenticity_token"=>"cEQqoUWm20HZiXGvxu/XfObPpPwnrE51DbtPCLwwkILzyfyzstkiG5x4thz2Iwq7VSFcgA0+t3Pq+yPg1FlAhw==", "username"=>"shehan", "email"=>"shehanatuk@gmail.com", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+Can't verify CSRF token authenticity.
+No template found for UserController#user_register, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 448)
+
+
+Started GET "/user/current_or_guest_user" for ::1 at 2019-09-15 20:09:54 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#current_or_guest_user as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190964], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:66:in `guest_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "guestEmail@guestEmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+Completed 422 Unprocessable Entity in 64ms (ActiveRecord: 2.9ms | Allocations: 13952)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/user_controller.rb:78:in `create_guest_user'
+app/controllers/user_controller.rb:66:in `guest_user'
+app/controllers/user_controller.rb:70:in `rescue in guest_user'
+app/controllers/user_controller.rb:62:in `guest_user'
+app/controllers/user_controller.rb:54:in `current_or_guest_user'
+Started GET "/user/current_or_guest_user" for ::1 at 2019-09-15 20:12:12 -0400
+Processing by UserController#current_or_guest_user as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190964], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:66:in `guest_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "guestEmail@guestEmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+Completed 422 Unprocessable Entity in 26ms (ActiveRecord: 0.8ms | Allocations: 4635)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/user_controller.rb:78:in `create_guest_user'
+app/controllers/user_controller.rb:66:in `guest_user'
+app/controllers/user_controller.rb:70:in `rescue in guest_user'
+app/controllers/user_controller.rb:62:in `guest_user'
+app/controllers/user_controller.rb:54:in `current_or_guest_user'
+Started GET "/user/current_or_guest_user" for ::1 at 2019-09-15 20:34:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#current_or_guest_user as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190964], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:66:in `guest_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "guestEmail@guestEmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 1.7ms | Allocations: 4581)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/user_controller.rb:78:in `create_guest_user'
+app/controllers/user_controller.rb:66:in `guest_user'
+app/controllers/user_controller.rb:70:in `rescue in guest_user'
+app/controllers/user_controller.rb:62:in `guest_user'
+app/controllers/user_controller.rb:54:in `current_or_guest_user'
+Started GET "/user/current_or_guest_user" for ::1 at 2019-09-15 20:36:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#current_or_guest_user as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190964], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:66:in `guest_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "guestEmail@guestEmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:78:in `create_guest_user'
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 2.8ms | Allocations: 5936)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/user_controller.rb:78:in `create_guest_user'
+app/controllers/user_controller.rb:66:in `guest_user'
+app/controllers/user_controller.rb:70:in `rescue in guest_user'
+app/controllers/user_controller.rb:62:in `guest_user'
+app/controllers/user_controller.rb:54:in `current_or_guest_user'
