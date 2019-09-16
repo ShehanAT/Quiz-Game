@@ -409,3 +409,371 @@ Completed 422 Unprocessable Entity in 10ms (ActiveRecord: 1.8ms | Allocations: 4
 ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
   
 app/controllers/session_controller.rb:4:in `guest_user'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeUsersPasswordHash (20190916140457)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeUsersPasswordHash (20190916140457)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fullName" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "password" varchar DEFAULT NULL, "password_salt" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","fullName","bio","password","password_salt","created_at","updated_at")
+                     SELECT "id","username","email","fullName","bio","password_hash","password_salt","created_at","updated_at" FROM "users"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fullName" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "password" varchar DEFAULT NULL, "password_salt" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","fullName","bio","password","password_salt","created_at","updated_at")
+                     SELECT "id","username","email","fullName","bio","password","password_salt","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190916140457"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/user/user_registration" for ::1 at 2019-09-16 10:36:07 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 3.3ms | Allocations: 906)
+Completed 200 OK in 1527ms (Views: 1489.7ms | ActiveRecord: 0.8ms | Allocations: 1258355)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-16 10:51:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 1.2ms | Allocations: 742)
+Completed 200 OK in 37ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 15134)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-16 10:57:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 1.6ms | Allocations: 739)
+Completed 200 OK in 33ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 15077)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 10:58:02 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"LWFlKL8s28rpL+mdHFkz0ztsoEcOkqVa581yTeHxf9XfcZmPPDm45sMQhDBV660WgHqkkXvYlllekzA2sZ3ErQ==", "username"=>"shehanatuk", "email"=>"shehanatuk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+Completed 422 Unprocessable Entity in 317ms (ActiveRecord: 0.8ms | Allocations: 8211)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email is invalid):
+  
+app/controllers/user_controller.rb:17:in `create'
+Started POST "/user/create" for ::1 at 2019-09-16 10:58:29 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"LWFlKL8s28rpL+mdHFkz0ztsoEcOkqVa581yTeHxf9XfcZmPPDm45sMQhDBV660WgHqkkXvYlllekzA2sZ3ErQ==", "username"=>"shehanatuk", "email"=>"shehanatuk@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "shehanatuk"], ["email", "shehanatuk@gmail.com"], ["fullName", "Shehan Atukorala"], ["bio", "Hello World"], ["password", "$2a$12$vRXWj.nt/Zt6M5GzGanmJO"], ["password_salt", "$2a$12$vRXWj.nt/Zt6M5GzGanmJO"], ["created_at", "2019-09-16 14:58:29.550419"], ["updated_at", "2019-09-16 14:58:29.550419"]]
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "shehanatuk@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+No template found for UserController#create, rendering head :no_content
+Completed 204 No Content in 297ms (ActiveRecord: 3.0ms | Allocations: 7543)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-16 11:03:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 0.8ms | Allocations: 396)
+Completed 200 OK in 24ms (Views: 11.8ms | ActiveRecord: 1.3ms | Allocations: 14461)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 11:03:29 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"2VaoGFbFai7I4M89T9HTkSXP9BX+BGqWHZ7SnFuRlDkrRlS/1dAJAuLfopAGY01Untnww4tOWZWkwJDnC/0vQQ==", "username"=>"shehanatuk@gmail.com", "email"=>"shehanatuk@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"j", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+Completed 422 Unprocessable Entity in 302ms (ActiveRecord: 1.0ms | Allocations: 6686)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/user_controller.rb:17:in `create'
+Started GET "/user/user_registration" for ::1 at 2019-09-16 11:04:14 -0400
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 1.2ms | Allocations: 391)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 7963)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 11:04:26 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"8ZNM8zU+GbaqxmjjxVFSJg6c5JjxC7KAIMOWW4vhgHADg7BUtit6moD5BU6M48zjtYrgToRBgYOZndQg2407CA==", "username"=>"shehanatuk@gmail.com", "email"=>"shehanatuk2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk2@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "shehanatuk@gmail.com"], ["email", "shehanatuk2@gmail.com"], ["fullName", "Shehan Atukorala"], ["bio", "Hello World"], ["password", "$2a$12$c9KASYnLdt4CgI7tawSaBe"], ["password_salt", "$2a$12$c9KASYnLdt4CgI7tawSaBe"], ["created_at", "2019-09-16 15:04:27.101124"], ["updated_at", "2019-09-16 15:04:27.101124"]]
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "shehanatuk2@gmail.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:17:in `create'
+  Rendering user/user_profile.html.erb within layouts/application
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 0.8ms | Allocations: 199)
+Completed 200 OK in 309ms (Views: 11.6ms | ActiveRecord: 2.9ms | Allocations: 13393)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-16 11:06:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 0.8ms | Allocations: 393)
+Completed 200 OK in 23ms (Views: 11.2ms | ActiveRecord: 0.6ms | Allocations: 14480)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 11:06:31 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"yFpCb38SanQB5QzkJswdcjL+cSVGHW4wN7jfW5QjXc46Sr7I/AcJWCvaYUlvfoO3ieh18zNXXTOO5p0gxE/mtg==", "username"=>"shehanatuk@gmail.com", "email"=>"shehanatuk2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:18:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:18:in `create'
+Completed 422 Unprocessable Entity in 299ms (ActiveRecord: 0.9ms | Allocations: 9562)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Fullname can't be blank, Bio can't be blank, Email is invalid, Email can't be blank):
+  
+app/controllers/user_controller.rb:18:in `create'
+Started GET "/user/user_registration" for ::1 at 2019-09-16 12:54:01 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 1.3ms | Allocations: 393)
+Completed 200 OK in 46ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 13998)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 12:54:32 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"AiN9dTddqApRT+K/kXWhPGq89p3MjeZCYkIc0oS5CYnwM4HStEjLJntwjxLYxz/50aryS7nH1UHbHF6p1NWy8Q==", "username"=>"Shehan", "email"=>"shehanatuk3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:19:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 286ms (ActiveRecord: 2.2ms | Allocations: 6908)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation doesn't match Password):
+  
+app/controllers/user_controller.rb:19:in `create'
+Started POST "/user/create" for ::1 at 2019-09-16 12:54:50 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"AiN9dTddqApRT+K/kXWhPGq89p3MjeZCYkIc0oS5CYnwM4HStEjLJntwjxLYxz/50aryS7nH1UHbHF6p1NWy8Q==", "username"=>"Shehan", "email"=>"shehanatuk3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:19:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 295ms (ActiveRecord: 1.0ms | Allocations: 6612)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation doesn't match Password):
+  
+app/controllers/user_controller.rb:19:in `create'
+Started GET "/user/user_registration" for ::1 at 2019-09-16 12:59:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 0.8ms | Allocations: 393)
+Completed 200 OK in 34ms (Views: 21.9ms | ActiveRecord: 0.8ms | Allocations: 14437)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-16 12:59:48 -0400
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 1.1ms | Allocations: 390)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 7955)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 13:00:16 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"6VVXpOS6HsqsGR8JT7d82Tf/7POl4yl7SenOTBHzGZUbRasDZ6995oYmcqQGBeIcjOnoJdCpGnjwt4w3QZ+i7Q==", "username"=>"Shehan", "email"=>"shehanatuk3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Shehan"], ["email", "shehanatuk3@gmail.com"], ["fullName", "Shehan Atukorala"], ["bio", "Hello World"], ["password", "Hello"], ["password_salt", "$2a$12$AcmhgYL6gHT3NqoC3I1RJe"], ["created_at", "2019-09-16 17:00:16.758045"], ["updated_at", "2019-09-16 17:00:16.758045"]]
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "shehanatuk3@gmail.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:19:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:19:in `create'
+  Rendering user/user_profile.html.erb within layouts/application
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 0.2ms | Allocations: 15)
+Completed 200 OK in 311ms (Views: 10.2ms | ActiveRecord: 2.9ms | Allocations: 13205)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-16 13:15:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#user_registration as HTML
+  Rendering user/user_registration.html.erb within layouts/application
+  Rendered user/user_registration.html.erb within layouts/application (Duration: 0.9ms | Allocations: 393)
+Completed 200 OK in 28ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 14006)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 13:16:11 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"+S89KvIcb0qwa+4Eq6j7seznbNjU80nASn4BKxMsV5ULP8GNcQkMZppUg6niGmV0V/FoDqG5esPzIENQQ0Ds7Q==", "username"=>"ShehanAT", "email"=>"shehanat@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanat@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "ShehanAT"], ["email", "shehanat@gmail.com"], ["fullName", "Shehan Atukorala"], ["bio", "Hello World"], ["password", "$2a$12$BrHDFX.wK8MpD7PcAAmuxOLuyuGlf5Onovxzze4KGAUjT6zeMYbJy"], ["password_salt", "$2a$12$BrHDFX.wK8MpD7PcAAmuxO"], ["created_at", "2019-09-16 17:16:11.772935"], ["updated_at", "2019-09-16 17:16:11.772935"]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "shehanat@gmail.com"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  Rendering user/user_profile.html.erb within layouts/application
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 604ms (Views: 12.6ms | ActiveRecord: 3.0ms | Allocations: 13221)
+
+
+Started POST "/user/create" for ::1 at 2019-09-16 13:16:24 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"+S89KvIcb0qwa+4Eq6j7seznbNjU80nASn4BKxMsV5ULP8GNcQkMZppUg6niGmV0V/FoDqG5esPzIENQQ0Ds7Q==", "username"=>"ShehanAT", "email"=>"shehanat@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanat@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanat@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 541ms (ActiveRecord: 0.8ms | Allocations: 7399)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken, Password confirmation doesn't match Password):
+  
+app/controllers/user_controller.rb:20:in `create'
+Started POST "/user/create" for ::1 at 2019-09-16 13:16:49 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"+S89KvIcb0qwa+4Eq6j7seznbNjU80nASn4BKxMsV5ULP8GNcQkMZppUg6niGmV0V/FoDqG5esPzIENQQ0Ds7Q==", "username"=>"ShehanAT", "email"=>"shehanat2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanat2@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanat2@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 546ms (ActiveRecord: 0.8ms | Allocations: 6616)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation doesn't match Password):
+  
+app/controllers/user_controller.rb:20:in `create'
+Started POST "/user/create" for ::1 at 2019-09-16 13:17:14 -0400
+Processing by UserController#create as JS
+  Parameters: {"authenticity_token"=>"+S89KvIcb0qwa+4Eq6j7seznbNjU80nASn4BKxMsV5ULP8GNcQkMZppUg6niGmV0V/FoDqG5esPzIENQQ0Ds7Q==", "username"=>"ShehanAT", "email"=>"shehanat2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Hello World", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanat2@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "ShehanAT"], ["email", "shehanat2@gmail.com"], ["fullName", "Shehan Atukorala"], ["bio", "Hello World"], ["password", "$2a$12$jyy0vlF0.C3krFkw1egzvuRVHpOB0S4D4ARLlxVIpY6iFAxJ9j9MC"], ["password_salt", "$2a$12$jyy0vlF0.C3krFkw1egzvu"], ["created_at", "2019-09-16 17:17:15.514347"], ["updated_at", "2019-09-16 17:17:15.514347"]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "shehanat2@gmail.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  Rendering user/user_profile.html.erb within layouts/application
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 552ms (Views: 10.1ms | ActiveRecord: 2.7ms | Allocations: 13055)
+
+

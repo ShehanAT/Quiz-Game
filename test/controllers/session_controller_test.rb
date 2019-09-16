@@ -12,6 +12,11 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end 
 
+  test "should return 200 status code for session/login" do 
+    get "/session/login"
+    assert_response :success
+  end 
+
 
 
   # test "should submit login form, return 200 status code" do 

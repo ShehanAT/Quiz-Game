@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_13_220110) do
+ActiveRecord::Schema.define(version: 2019_09_16_140457) do
 
   create_table "collections", force: :cascade do |t|
     t.string "name"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_09_13_220110) do
     t.string "email"
     t.string "fullName"
     t.text "bio"
-    t.string "password_hash"
+    t.string "password"
     t.string "password_salt"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

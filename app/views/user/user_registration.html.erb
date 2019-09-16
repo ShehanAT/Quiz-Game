@@ -1,22 +1,22 @@
 <%= form_with( url: "create", method: "post") do %>
 
     <%= label_tag(:q, "Username:") %>
-    <%= text_field_tag(:username) %>
+    <%= text_field_tag :username %>
     
     <%= label_tag(:q, "Email:") %>
-    <%= text_field_tag(:email) %>
+    <%= text_field_tag :email %>
     
     <%= label_tag(:q, "Password:") %>
-    <%= password_field_tag(:password) %>
+    <%= password_field_tag :password %>
     
     <%= label_tag(:q, "Confirm Password:") %>
-    <%= password_field_tag(:password_confirmation) %>
+    <%= password_field_tag :password_confirmation %>
 
     <%= label_tag(:q, "Full Name:") %>
-    <%= text_field_tag(:fullName) %>
+    <%= text_field_tag :fullName %>
 
     <%= label_tag(:q, "Bio:") %>
-    <%= text_field_tag(:bio) %>
+    <%= text_field_tag :bio %>
 
     <%= submit_tag "Register" %>
     

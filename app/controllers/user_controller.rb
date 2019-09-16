@@ -1,32 +1,33 @@
 class UserController < ApplicationController
     protect_from_forgery
 
-    def user_login 
-      render "user/user_login"
-    end 
 
     def create 
-      @user = User.authenticate(params[:username], params[:password])
-      if @user 
-        puts "user authentication successful"
-        session[:username] = @user.username
-        session[:user_id] = @user.id
-        user_profile
+      password_credentials = User.encrypt_password(params[:password])
+      password_salt = password_credentials[0]
+      password_hash = password_credentials[1]
+      password_confirmation_hash = User.encrypt_password(params[:password_confirmation], password_salt)[1]
+      user = User.create(
+        :username => params[:username], 
+        :email => params[:email],
+        :password_salt => password_salt,
+        :password => password_hash,
+        :fullName => params[:fullName],
+        :bio => params[:bio],
+        :password_confirmation => password_confirmation_hash
+        )
+      if user.save! 
+        puts "User saved"
+        @userToRender = user 
+        render "user/user_profile"
       else 
-        puts "user authentication failed"
-        flash[:notice] = "Invalid login credentials"
-        user_login
+        puts "User not saved"
+        
       end 
-
     end 
 
     def user_register
-      puts params[:username]
-      puts params[:email]
-      puts params[:password]
-      puts params[:password_confirmation]
-      puts params[:fullName]
-      puts params[:bio]
+    
     end 
    
 
@@ -48,5 +49,7 @@ class UserController < ApplicationController
     def create_guest_user 
        guest_user = FactoryBot.create(:guest_user)
     end 
+
+   
 
 end 

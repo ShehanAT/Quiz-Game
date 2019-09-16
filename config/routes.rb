@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     fullName: 'guestFullName',
     bio: 'guestBio'
     }}
+  get 'session/login', to: 'session#login'
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'collection/update_collection_by_id', to: 'collection#update_collection_by_id'
