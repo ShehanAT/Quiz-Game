@@ -4,7 +4,12 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
 
   test "should set session id for guest user" do 
     get "/session/guest_user" 
-    assert session[:guest_user_id]
+    assert_response :redirect
+  end 
+
+  test "should redirect from /session/guest_user to /start_quiz/welcome" do 
+    get "/session/guest_user"
+    assert_response :redirect
   end 
 
 

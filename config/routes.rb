@@ -13,7 +13,14 @@ Rails.application.routes.draw do
   get 'user/user_login', to: 'user#user_login'
   get 'user/user_profile', to: 'user#user_profile'
   get 'user/user_registration', to: 'user#user_registration'
-  get 'session/guest_user', to: 'session#guest_user'
+  get 'session/guest_user', to: 'session#guest_user', params: { 
+    guest_user: {
+    username: 'guestUsername',
+    email: 'guestEmail@guestEmail.com',
+    password: 'guestPassword',
+    fullName: 'guestFullName',
+    bio: 'guestBio'
+    }}
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'collection/update_collection_by_id', to: 'collection#update_collection_by_id'
