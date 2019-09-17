@@ -1,8 +1,8 @@
 
 <% if session[:guest_user_id] %>
     <h2>Guest User Profile</h2>
-<% end %>
-<% if session[:guest_user_id] === false%>
+
+<% else %>
     <h2>User Profile</h2>
 <% end %>
 

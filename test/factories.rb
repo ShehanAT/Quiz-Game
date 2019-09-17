@@ -1,5 +1,4 @@
 FactoryBot.define do
-
     factory :guest_user, class: 'User' do 
         id { 1 }
         username  { 'guestUsername' }

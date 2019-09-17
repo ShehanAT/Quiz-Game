@@ -1,27 +1,38 @@
 class SessionController < ApplicationController
 
-    
-    def login  
+    def new
     end 
 
     def guest_user
-        @guest_user = User.create(params[:guest_user])
-        session[:guest_user_id] = @guest_user.id
-        redirect_to "start_quiz/welcome"
+      @userToRender = User.find_by_username("guestUsername")
+      if @userToRender
+        Rails.logger.info "Guest User Found"
+      else 
+        Rails.logger.info "Guest User Not Found"
+      end 
+      session[:guest_user_id] = @userToRender.id
+      user_profile(@userToRender)
+    end 
+
+    def create_guest_user 
+      @userToRender = FactoryBot.create(:guest_user)
     end 
 
     def create 
-        @user = User.authenticate(params[:username], params[:password])
-        if @user 
-          puts "user authentication successful"
-          session[:username] = @user.username
-          session[:user_id] = @user.id
+        @userToRender = User.authenticate(params[:username], params[:password])
+        if @userToRender 
+          session[:username] = @userToRender.username
+          session[:user_id] = @userToRender.id
+          session[:guest_user_id] = false
           user_profile
         else 
-          puts "user authentication failed"
           flash[:notice] = "Invalid login credentials"
           user_login
         end 
+    end 
+
+    def user_profile(user=nil)
+      render "user/user_profile"
     end 
       
  

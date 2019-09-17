@@ -1,18 +1,11 @@
-require 'test_helper'
-require 'capybara/rails'
-require 'capybara/minitest'
-
 class UserControllerTest < ActionDispatch::IntegrationTest
-    include Capybara::DSL
-    include Capybara::Minitest::Assertions
 
     test "the truth" do 
         assert true
     end 
 
-
     test "should submit registration form, return 200 status code" do 
-        Capybara.visit("/user/user_registration")
+        Capybara.visit("/user/register")
         Capybara.within("form") do
             Capybara.fill_in "username", :with => "testing1"
             Capybara.fill_in "email", :with => "testing1@testing1.com"
@@ -25,10 +18,23 @@ class UserControllerTest < ActionDispatch::IntegrationTest
         end 
     end 
 
-  
-
-
-  
-    
-  
+    test "should show error message in view upon empty registration form submission" do
+        begin
+        Capybara.visit("/user/register") 
+        Capybara.within("form") do 
+            user = User.new 
+            Capybara.fill_in "username", :with => ""
+            Capybara.fill_in "email", :with => ""
+            Capybara.fill_in "password", :with => ""
+            Capybara.fill_in "password_confirmation", :with => ""
+            Capybara.fill_in "fullName", :with => ""
+            Capybara.fill_in "bio", :with => ""
+            Capybara.find("input[value='Register']").click
+            assert Capybara.find("div[class='error_messages']")
+        rescue Capybara::RackTest::Errors::StaleElementReferenceError
+            sleep 1 
+            retry
+        end    
+        end 
+    end 
 end

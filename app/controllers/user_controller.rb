@@ -1,13 +1,14 @@
 class UserController < ApplicationController
-    protect_from_forgery
+  protect_from_forgery
 
-
-    def create 
+  def create 
+    begin
+      @userToRender = User.new
       password_credentials = User.encrypt_password(params[:password])
       password_salt = password_credentials[0]
       password_hash = password_credentials[1]
       password_confirmation_hash = User.encrypt_password(params[:password_confirmation], password_salt)[1]
-      user = User.create(
+      @userToRender = User.create(
         :username => params[:username], 
         :email => params[:email],
         :password_salt => password_salt,
@@ -15,41 +16,24 @@ class UserController < ApplicationController
         :fullName => params[:fullName],
         :bio => params[:bio],
         :password_confirmation => password_confirmation_hash
-        )
-      if user.save! 
-        puts "User saved"
-        @userToRender = user 
-        render "user/user_profile"
-      else 
-        puts "User not saved"
-        
-      end 
+        )  
+      if @userToRender.save! 
+        user_profile(@userToRender)
+      end
+    rescue ActiveRecord::RecordInvalid
+      render "new"
     end 
-
-    def user_register
+  end 
     
-    end 
-   
+  def new  
+    @userToRender = User.new
+  end 
 
-    def user_registration 
-      @user = User.new
-    end 
+  def user_profile(user=nil)
+    render "user/user_profile"
+  end 
 
-    def user_profile 
-      guest_user
-      render "user/user_profile"
-    end 
-    
-  
-    
-    def logging_in
-       
-    end
 
-    def create_guest_user 
-       guest_user = FactoryBot.create(:guest_user)
-    end 
 
-   
-
+ 
 end 

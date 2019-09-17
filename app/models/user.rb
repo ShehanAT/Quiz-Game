@@ -1,11 +1,11 @@
-require 'digest/sha1'
+
 class User < ApplicationRecord
-    validates_presence_of :username, :fullName, :bio 
+    validates_presence_of :username, :fullName, :bio
+    validates_uniqueness_of :username 
     validates_uniqueness_of :email
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true
     validates :password, presence: true
     validates :password, confirmation: { case_sensitive: true }
-    # attr_accessor :username, :email, :password, :fullName, :bio 
     
 
     def self.authenticate(username, password)

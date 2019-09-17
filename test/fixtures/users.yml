@@ -1,6 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
+  username: guestUsername
+  email: guestEmail@guestEmail.com
+  fullName: guestFullName guestFullName
+  bio: guestBio
+  password: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ
+  password_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kJ
+two:
+  id: 2
+  username: admin
+  email: admin@admin.com
+  fullName: Admin Admin
+  bio: Admin
+  password: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW
+  password_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kO
+three:
   id: 3
   username: MyString1
   email: MyString1
@@ -8,23 +24,3 @@ one:
   bio: MyText1
   password: MyString1
   password_salt: MyString1
-  
-
-two:
-  id: 4
-  username: MyString2
-  email: MyString2
-  fullName: MyString2
-  bio: MyText2
-  password: MyString2
-  password_salt: MyString2
-  
-three:
-  id: 5
-  username: admin
-  email: admin@admin.com
-  fullName: Admin Admin
-  bio: Admin
-  password: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW
-  password_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kO
-

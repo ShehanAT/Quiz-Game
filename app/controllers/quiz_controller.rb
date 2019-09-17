@@ -11,9 +11,9 @@ class QuizController < ApplicationController
     @collection = Collection.find(params[:collection_id])
     @collection.quiz.create(:question => "This quiz is a new question?", :answer => "This is a new answer?")
     if @collection.save!
-      puts "The new quiz was saved"
+      Rails.logger.info "The new quiz was saved"
     else 
-      puts "The new quiz was not saved"
+      Rails.logger.info "The new quiz was not saved"
     end 
     render "quiz/new_quiz"
   end
@@ -24,9 +24,9 @@ class QuizController < ApplicationController
     @collection = Collection.find(params[:collection_id])
     @collection.quiz.create(:question => question, :answer => answer)
     if @collection.save!
-      puts "The new quiz was saved"
+      Rails.logger.info "The new quiz was saved"
     else 
-      puts "The new quiz was not saved"
+      Rails.logger.info "The new quiz was not saved"
     end 
     render "quiz/new_quiz"
   end 
@@ -34,9 +34,9 @@ class QuizController < ApplicationController
   def delete_quiz_by_id
     quiz = Quiz.find(params[:id])
     if quiz.delete
-      puts "The quiz was deleted"
+      Rails.logger.info "The quiz was deleted"
     else 
-      puts "The quiz was not deleted"
+      Rails.logger.info "The quiz was not deleted"
     end 
   end 
 
@@ -45,9 +45,9 @@ class QuizController < ApplicationController
     updateValue = params[:newField]
     @quiz = Quiz.find(params[:id])
     if @quiz[updateField] = updateValue
-      puts "The quiz was updated"
+      Rails.logger.info "The quiz was updated"
     else 
-      puts "The quiz was not updated"
+      Rails.logger.info "The quiz was not updated"
     end 
     render "quiz/show_quiz"
   end 

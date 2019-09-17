@@ -40,6 +40,17 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(["Email is invalid"], user.errors.full_messages)
   end 
 
+  test "should not save User instance when username is non unique" do 
+    user = User.new 
+    user.username = "admin"
+    user.email = "testing@testing.com"
+    user.password = "testing1"
+    user.password_confirmation = "testing1"
+    user.fullName = "Testing Testing"
+    user.bio = "testingtestingtesting"
+    user.save
+    assert_equal(["Username has already been taken"], user.errors.full_messages)
+  end 
 
 
 end

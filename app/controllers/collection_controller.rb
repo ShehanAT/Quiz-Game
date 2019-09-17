@@ -7,9 +7,9 @@ class CollectionController < ApplicationController
         collectionTotalQuizzes = params[:total_quizzes]
         @collection = Collection.create(:name => collectionName, :category => collectionCategory, :total_quizzes => collectionTotalQuizzes)
         if @collection.save
-            puts "Collection was saved"
+            Rails.logger.info "Collection was saved"
         else 
-            puts "Collection was not saved"
+            Rails.logger.info "Collection was not saved"
         end 
         render "/collection/new_collection"
     end 
@@ -23,9 +23,9 @@ class CollectionController < ApplicationController
     def delete_collection_by_id
         @collection = Collection.find(params[:id])
         if @collection.delete 
-            puts "Collection was deleted"
+            Rails.logger.info "Collection was deleted"
         else 
-            puts "Collection was not deleted"
+            Rails.logger.info "Collection was not deleted"
         end 
     end 
 
@@ -35,9 +35,9 @@ class CollectionController < ApplicationController
         @collection = Collection.find(params[:id])
         @quizzesInCollection = Quiz.where(collection_id: Collection.pluck(:id))
         if @collection[updateField] = updateValue
-            puts "Collection was updated"
+            Rails.logger.info "Collection was updated"
         else 
-            puts "Collection was not updated"
+            Rails.logger.info "Collection was not updated"
         end 
         render "collection/show_collection"
     end 
