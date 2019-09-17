@@ -12,3 +12,4 @@ application up and running.
 * 09/14/2019: added unit tests for user controller and model
 * 09/15/2019: added basic login unit tests
 * 09/16/2019: added login and register functionality
+* 09/17/2019: added validation error rendering for user registration page w/ unit tests
