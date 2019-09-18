@@ -27,7 +27,7 @@ class SessionController < ApplicationController
           user_profile
         else 
           flash[:notice] = "Invalid login credentials"
-          user_login
+          render "new"
         end 
     end 
 

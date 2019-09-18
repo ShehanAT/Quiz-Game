@@ -1,11 +1,11 @@
 <%= form_with( url: "create", method: "post", local: true) do %>
-
+    <%= flash[:notice] %>
     <%= label_tag(:username, "Username:") %>
     <%= text_field_tag(:username) %>
     
     <%= label_tag(:password, "Password:") %>
     <%= text_field_tag(:password) %>
     
-    <%= submit_tag "Login" %>
+    <%= submit_tag "Login", data: { "disable-with": "Loading..." } %>
     
 <% end %>

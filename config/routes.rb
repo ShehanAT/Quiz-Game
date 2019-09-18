@@ -15,14 +15,6 @@ Rails.application.routes.draw do
   get 'user/register', to: 'user#new'
   get 'session/login', to: 'session#new'
   get 'session/guest_user', to: 'session#guest_user'
-  # , params: { 
-  #   guest_user: {
-  #   username: 'guestUsername',
-  #   email: 'guestEmail@guestEmail.com',
-  #   password: 'guestPassword',
-  #   fullName: 'guestFullName',
-  #   bio: 'guestBio'
-  #   }}
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'collection/update_collection_by_id', to: 'collection#update_collection_by_id'

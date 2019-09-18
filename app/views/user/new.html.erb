@@ -29,6 +29,6 @@
     <%= label_tag(:bio, "Bio:") %>
     <%= text_field_tag :bio %>
 
-    <%= submit_tag "Register" %>
+    <%= submit_tag "Register", data: { "disable-with": "Loading..." } %>
     
 <% end %>
