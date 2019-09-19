@@ -1,6 +1,12 @@
 class SessionController < ApplicationController
-
+ 
     def new
+      @userToRender = User.new
+      flash[:alert] = ""
+      respond_to do |format|
+        format.html { render "new" }
+        format.js { render "new" }
+      end 
     end 
 
     def guest_user
@@ -19,23 +25,26 @@ class SessionController < ApplicationController
     end 
 
     def create 
+      
+      @userToRender = User.authenticate(params[:username], params[:password])
       respond_to do |format|
-        @userToRender = User.authenticate(params[:username], params[:password])
-        
-        if @userToRender 
+       
+        if @userToRender
+          flash[:alert] = "" 
           session[:username] = @userToRender.username
           session[:user_id] = @userToRender.id
           session[:guest_user_id] = false
           Rails.logger.info "user authenticated successfully!"
-          format.js { render "start_quiz/welcome" } 
+          format.js { render "start_quiz/welcome" }
           format.html { render "start_quiz/welcome" }
         else 
-          flash[:notice] = "Invalid login credentials"
-          Rails.logger.info "user authenticated failed!"
-          format.html { render "session/new" }
-          format.js { render "session/new" }
+          flash[:alert] = "Invalid login credentials"
+          format.js { render "new" }
+          format.html { render "new" }
+          
         end 
-      end
+     
+      end  
     end 
 
     def user_profile(user=nil)

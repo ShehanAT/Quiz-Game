@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'user/user_login', to: 'user#user_login'
   get 'user_profile', to: 'session#user_profile'
   get 'user/register', to: 'user#new'
-  get 'session/login', to: 'session#new'
+  get 'session/login', to: 'session#new', remote: true
   get 'session/guest_user', to: 'session#guest_user'
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'

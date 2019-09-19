@@ -5,8 +5,6 @@ ruby '2.6.3'
 
 gem 'poltergeist', '~> 1.10'
 
-gem 'jquery-rails'
-
 gem 'pry', '~> 0.12.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
