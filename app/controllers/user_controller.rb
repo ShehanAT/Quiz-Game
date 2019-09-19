@@ -30,7 +30,7 @@ class UserController < ApplicationController
   end 
 
   def user_profile(user=nil)
-    render "user/user_profile"
+    redirect_to "/welcome" 
   end 
 
 

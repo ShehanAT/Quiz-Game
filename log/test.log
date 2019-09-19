@@ -11865,3 +11865,2178 @@ CollectionTest: test_collection_object_should_be_truthy
   Rendered quiz/quizzes.html.erb within layouts/application (Duration: 4.7ms | Allocations: 835)
 Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.5ms | Allocations: 2542)
   [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (8.9ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (8.9ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (1.2ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:47:51.901416', '2019-09-19 14:47:51.901416');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:47:51.901416', '2019-09-19 14:47:51.901416');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:47:51.904850', '2019-09-19 14:47:51.904850', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:47:51.904850', '2019-09-19 14:47:51.904850', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:47:51.904850', '2019-09-19 14:47:51.904850', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:47:51.907481', '2019-09-19 14:47:51.907481');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:47:51.907481', '2019-09-19 14:47:51.907481');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:47:51.907481', '2019-09-19 14:47:51.907481')[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (1.1ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:47:51.901645', '2019-09-19 14:47:51.901645');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:47:51.901645', '2019-09-19 14:47:51.901645');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:47:51.904869', '2019-09-19 14:47:51.904869', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:47:51.904869', '2019-09-19 14:47:51.904869', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:47:51.904869', '2019-09-19 14:47:51.904869', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:47:51.907666', '2019-09-19 14:47:51.907666');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:47:51.907666', '2019-09-19 14:47:51.907666');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:47:51.907666', '2019-09-19 14:47:51.907666')[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+CollectionTest: test_collection_object_should_be_truthy
+-------------------------------------------------------
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+CollectionTest: test_collection_object_should_not_save_without_name/category/total_quizzes
+------------------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------
+CollectionTest: test_the_truth
+------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form_without_changing_the_url_from_/session/login_to_/session/create
+--------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------
+SessionControllerTest: test_should_return_200_status_code_for_session/login
+---------------------------------------------------------------------------
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 1.2ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1478)
+  Rendered session/_new.js.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1475)
+Completed 200 OK in 54ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 8777)
+Completed 200 OK in 55ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 8773)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form,_return_200_status_code
+----------------------------------------------------------------------------
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+  Rendered session/_new.js.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 355)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 842)
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 287ms (ActiveRecord: 0.3ms | Allocations: 708)
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 129)
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 288ms (ActiveRecord: 0.3ms | Allocations: 710)
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by StartQuizController#welcome as HTML
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 1285)
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 132)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1264)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+SessionControllerTest: test_should_set_session_id_for_guest_user
+----------------------------------------------------------------
+Started GET "/session/guest_user" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by SessionController#guest_user as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "guestUsername"], ["LIMIT", 1]]
+Guest User Found
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 303)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CollectionControllerTest: test_the_truth
+----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+CollectionControllerTest: test_should_delete_collection_by_id
+-------------------------------------------------------------
+Started DELETE "/collection/delete_collection_by_id" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+CollectionControllerTest: test_should_make_new_collection_and_show_it
+---------------------------------------------------------------------
+Started GET "/collection/new_collection?name=Test+Sample+Collection&category=Testing&total_quizzes=3" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by CollectionController#delete_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCollection Destroy (0.4ms)[0m  [1m[31mDELETE FROM "collections" WHERE "collections"."id" = ?[0m  [["id", 2]]
+Collection was deleted
+No template found for CollectionController#delete_collection_by_id, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 0.7ms | Allocations: 1882)
+Processing by CollectionController#new_collection as HTML
+  Parameters: {"name"=>"Test Sample Collection", "category"=>"Testing", "total_quizzes"=>"3"}
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+CollectionControllerTest: test_show_update_collection_by_id
+-----------------------------------------------------------
+  [1m[36mCollection Create (0.9ms)[0m  [1m[32mINSERT INTO "collections" ("name", "category", "total_quizzes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test Sample Collection"], ["category", "Testing"], ["total_quizzes", 3], ["created_at", "2019-09-19 14:47:52.721402"], ["updated_at", "2019-09-19 14:47:52.721402"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Collection was saved
+Started PUT "/collection/update_collection_by_id" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+  Rendering collection/new_collection.html.erb within layouts/application
+  Rendered collection/new_collection.html.erb within layouts/application (Duration: 1.7ms | Allocations: 163)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 1.2ms | Allocations: 2041)
+Processing by CollectionController#update_collection_by_id as HTML
+  Parameters: {"id"=>"2", "update"=>"name", "newValue"=>"name2"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+Collection was updated
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+CollectionControllerTest: test_should_show_collection_by_id_
+------------------------------------------------------------
+  Rendering collection/show_collection.html.erb within layouts/application
+Started GET "/collection/show_collection_by_id?id=2" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+Processing by CollectionController#show_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+  Rendering collection/show_collection.html.erb within layouts/application
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 18.2ms | Allocations: 6809)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.5ms | Allocations: 8112)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+QuizTest: test_quiz_object_should_not_save_without_question_and/or_answer
+-------------------------------------------------------------------------
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 17.9ms | Allocations: 6810)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 1.1ms | Allocations: 7798)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+QuizTest: test_the_truth
+------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+QuizTest: test_quiz_object_should_be_truthy
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_email_is_invalid
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_passwords_do_not_match
+------------------------------------------------------------------------
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testingInvalidEmail"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_username_is_non_unique
+------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[35m (3.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_any_field_is_empty,_using_password_empty_as_example
+-----------------------------------------------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+UserTest: test_the_truth
+------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+StaticPagesControllerTest: test_should_get_welcome
+--------------------------------------------------
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------
+UserControllerTest: test_should_submit_registration_form,_return_200_status_code
+--------------------------------------------------------------------------------
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 451)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------
+UserControllerTest: test_should_show_error_message_in_view_upon_empty_registration_form_submission
+--------------------------------------------------------------------------------------------------
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by UserController#new as HTML
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 825)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 2000)
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 825)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 2005)
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:47:52 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"testing1", "email"=>"testing1@testing1.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Testing1 Testing1", "bio"=>"Testing1", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "testing1"], ["email", "testing1@testing1.com"], ["fullName", "Testing1 Testing1"], ["bio", "Testing1"], ["password", "$2a$12$0qgM85x0XJwP1.KjC2gTj.pKp4cz7Vhhi8jQSjJKkJmckTItTfBHi"], ["password_salt", "$2a$12$0qgM85x0XJwP1.KjC2gTj."], ["created_at", "2019-09-19 14:47:53.471930"], ["updated_at", "2019-09-19 14:47:53.471930"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "testing1"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering user/user_profile.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 1.6ms | Allocations: 181)
+  Rendering user/new.html.erb within layouts/application
+Completed 200 OK in 584ms (Views: 3.9ms | ActiveRecord: 1.6ms | Allocations: 2382)
+  Rendered user/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 995)
+Completed 200 OK in 597ms (Views: 5.2ms | ActiveRecord: 0.9ms | Allocations: 6640)
+  [1m[35m (2.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+UserControllerTest: test_the_truth
+----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+UserControllerTest: test_should_not_redirect_user/register_on_form_submit
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_show_quiz_by_id_
+------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+QuizControllerTest: test_should_return_200_for_error_page
+---------------------------------------------------------
+Started GET "/quiz/show_quiz?id=298486374" for 127.0.0.1 at 2019-09-19 10:47:53 -0400
+Started GET "/quiz/error" for 127.0.0.1 at 2019-09-19 10:47:53 -0400
+Processing by QuizController#show_quiz as HTML
+  Parameters: {"id"=>"298486374"}
+Processing by QuizController#error as HTML
+  [1m[36mQuiz Load (0.5ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering quiz/error_quiz.html.erb within layouts/application
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  Rendered quiz/error_quiz.html.erb within layouts/application (Duration: 1.7ms | Allocations: 85)
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 1.5ms | Allocations: 247)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1100)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 1489)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+QuizControllerTest: test_should_get_new_quiz_with_corresponding_collection
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+------------------------------------------------
+QuizControllerTest: test_should_list_all_quizzes
+------------------------------------------------
+Started GET "/quiz/quizzes" for 127.0.0.1 at 2019-09-19 10:47:53 -0400
+Started GET "/quiz/new_quiz_to_collection?collection_id=2&question=This+is+test+question+2%3F&answer=This+is+test+answer+2" for 127.0.0.1 at 2019-09-19 10:47:53 -0400
+Processing by QuizController#quizzes as HTML
+Processing by QuizController#new_quiz_to_collection as HTML
+  Parameters: {"collection_id"=>2, "question"=>"This is test question 2?", "answer"=>"This is test answer 2"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering quiz/quizzes.html.erb within layouts/application
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  [1m[36mQuiz Create (0.4ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This is test question 2?"], ["answer", "This is test answer 2"], ["collection_id", 2], ["created_at", "2019-09-19 14:47:53.568239"], ["updated_at", "2019-09-19 14:47:53.568239"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+  Rendering quiz/new_quiz.html.erb within layouts/application
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  Rendered quiz/quizzes.html.erb within layouts/application (Duration: 28.1ms | Allocations: 4567)
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.5ms | Allocations: 5162)
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 3.4ms | Allocations: 685)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 33ms (Views: 5.3ms | ActiveRecord: 1.1ms | Allocations: 5307)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_delete_quiz_by_specifying_id
+------------------------------------------------------------
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started DELETE "/quiz/delete_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:47:53 -0400
+--------------------------------------------
+QuizControllerTest: test_should_get_new_quiz
+--------------------------------------------
+Started GET "/quiz/new_quiz?collection_id=1" for 127.0.0.1 at 2019-09-19 10:47:53 -0400
+Processing by QuizController#delete_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mQuiz Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quizzes" WHERE "quizzes"."id" = ?[0m  [["id", 298486374]]
+The quiz was deleted
+Processing by QuizController#new_quiz as HTML
+  Parameters: {"collection_id"=>"1"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for QuizController#delete_quiz_by_id, rendering head :no_content
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Completed 204 No Content in 11ms (ActiveRecord: 0.8ms | Allocations: 1734)
+  [1m[36mQuiz Create (0.5ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This quiz is a new question?"], ["answer", "This is a new answer?"], ["collection_id", 1], ["created_at", "2019-09-19 14:47:53.598602"], ["updated_at", "2019-09-19 14:47:53.598602"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+The new quiz was saved
+  Rendering quiz/new_quiz.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_update_quiz_by_specifying_id
+------------------------------------------------------------
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 3.3ms | Allocations: 342)
+Completed 200 OK in 13ms (Views: 4.2ms | ActiveRecord: 1.1ms | Allocations: 1600)
+Started PUT "/quiz/update_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:47:53 -0400
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+Processing by QuizController#update_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374", "update"=>"question", "newField"=>"whatNewQuestion2?"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+The quiz was updated
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 562)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (6.5ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (6.7ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:48:21.668857', '2019-09-19 14:48:21.668857');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:48:21.668857', '2019-09-19 14:48:21.668857');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:48:21.670937', '2019-09-19 14:48:21.670937', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:48:21.670937', '2019-09-19 14:48:21.670937', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:48:21.670937', '2019-09-19 14:48:21.670937', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:48:21.672193', '2019-09-19 14:48:21.672193');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:48:21.672193', '2019-09-19 14:48:21.672193');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:48:21.672193', '2019-09-19 14:48:21.672193')[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:48:21.668856', '2019-09-19 14:48:21.668856');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:48:21.668856', '2019-09-19 14:48:21.668856');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:48:21.670944', '2019-09-19 14:48:21.670944', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:48:21.670944', '2019-09-19 14:48:21.670944', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:48:21.670944', '2019-09-19 14:48:21.670944', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:48:21.672200', '2019-09-19 14:48:21.672200');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:48:21.672200', '2019-09-19 14:48:21.672200');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:48:21.672200', '2019-09-19 14:48:21.672200')[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+CollectionTest: test_collection_object_should_not_save_without_name/category/total_quizzes
+------------------------------
+------------------------------------------------------------------------------------------
+CollectionTest: test_the_truth
+------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+CollectionTest: test_collection_object_should_be_truthy
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+--------------------------------------------------------------------------
+QuizControllerTest: test_should_get_new_quiz_with_corresponding_collection
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_update_quiz_by_specifying_id
+------------------------------------------------------------
+Started GET "/quiz/new_quiz_to_collection?collection_id=2&question=This+is+test+question+2%3F&answer=This+is+test+answer+2" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+Started PUT "/quiz/update_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+Processing by QuizController#new_quiz_to_collection as HTML
+  Parameters: {"collection_id"=>2, "question"=>"This is test question 2?", "answer"=>"This is test answer 2"}
+Processing by QuizController#update_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374", "update"=>"question", "newField"=>"whatNewQuestion2?"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+The quiz was updated
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mQuiz Create (0.5ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This is test question 2?"], ["answer", "This is test answer 2"], ["collection_id", 2], ["created_at", "2019-09-19 14:48:21.811964"], ["updated_at", "2019-09-19 14:48:21.811964"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 1.1ms | Allocations: 370)
+Completed 200 OK in 40ms (Views: 11.5ms | ActiveRecord: 0.4ms | Allocations: 9094)
+  Rendering quiz/new_quiz.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 5.8ms | Allocations: 815)
+---------------------------------------------------------
+QuizControllerTest: test_should_return_200_for_error_page
+---------------------------------------------------------
+Completed 200 OK in 57ms (Views: 16.1ms | ActiveRecord: 1.2ms | Allocations: 12507)
+Started GET "/quiz/error" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+Processing by QuizController#error as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_list_all_quizzes
+------------------------------------------------
+  Rendering quiz/error_quiz.html.erb within layouts/application
+  Rendered quiz/error_quiz.html.erb within layouts/application (Duration: 0.6ms | Allocations: 85)
+Started GET "/quiz/quizzes" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 659)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_delete_quiz_by_specifying_id
+------------------------------------------------------------
+Processing by QuizController#quizzes as HTML
+Started DELETE "/quiz/delete_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+  Rendering quiz/quizzes.html.erb within layouts/application
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+Processing by QuizController#delete_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  Rendered quiz/quizzes.html.erb within layouts/application (Duration: 6.5ms | Allocations: 832)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.7ms | Allocations: 1431)
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mQuiz Destroy (0.7ms)[0m  [1m[31mDELETE FROM "quizzes" WHERE "quizzes"."id" = ?[0m  [["id", 298486374]]
+The quiz was deleted
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+QuizControllerTest: test_should_get_new_quiz
+--------------------------------------------
+Started GET "/quiz/new_quiz?collection_id=1" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+No template found for QuizController#delete_quiz_by_id, rendering head :no_content
+Completed 204 No Content in 14ms (ActiveRecord: 1.1ms | Allocations: 1743)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_show_quiz_by_id_
+------------------------------------------------
+Processing by QuizController#new_quiz as HTML
+  Parameters: {"collection_id"=>"1"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/quiz/show_quiz?id=298486374" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mQuiz Create (0.6ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This quiz is a new question?"], ["answer", "This is a new answer?"], ["collection_id", 1], ["created_at", "2019-09-19 14:48:21.894035"], ["updated_at", "2019-09-19 14:48:21.894035"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+  Rendering quiz/new_quiz.html.erb within layouts/application
+Processing by QuizController#show_quiz as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 2.1ms | Allocations: 342)
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 1.2ms | Allocations: 1601)
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 559)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CollectionControllerTest: test_the_truth
+----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+CollectionControllerTest: test_should_make_new_collection_and_show_it
+---------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+CollectionControllerTest: test_show_update_collection_by_id
+-----------------------------------------------------------
+Started GET "/collection/new_collection?name=Test+Sample+Collection&category=Testing&total_quizzes=3" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+Started PUT "/collection/update_collection_by_id" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+Processing by CollectionController#new_collection as HTML
+  Parameters: {"name"=>"Test Sample Collection", "category"=>"Testing", "total_quizzes"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCollection Create (0.5ms)[0m  [1m[32mINSERT INTO "collections" ("name", "category", "total_quizzes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test Sample Collection"], ["category", "Testing"], ["total_quizzes", 3], ["created_at", "2019-09-19 14:48:21.928281"], ["updated_at", "2019-09-19 14:48:21.928281"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Collection was saved
+Processing by CollectionController#update_collection_by_id as HTML
+  Parameters: {"id"=>"2", "update"=>"name", "newValue"=>"name2"}
+  Rendering collection/new_collection.html.erb within layouts/application
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection/new_collection.html.erb within layouts/application (Duration: 1.8ms | Allocations: 157)
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 0.7ms | Allocations: 1880)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+Collection was updated
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+CollectionControllerTest: test_should_delete_collection_by_id
+-------------------------------------------------------------
+  Rendering collection/show_collection.html.erb within layouts/application
+Started DELETE "/collection/delete_collection_by_id" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 4.4ms | Allocations: 496)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 0.8ms | Allocations: 1772)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Processing by CollectionController#delete_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+CollectionControllerTest: test_should_show_collection_by_id_
+------------------------------------------------------------
+  [1m[36mCollection Load (0.4ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/collection/show_collection_by_id?id=2" for 127.0.0.1 at 2019-09-19 10:48:21 -0400
+  [1m[36mCollection Destroy (1.1ms)[0m  [1m[31mDELETE FROM "collections" WHERE "collections"."id" = ?[0m  [["id", 2]]
+Collection was deleted
+Processing by CollectionController#show_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+  Rendering collection/show_collection.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 0.9ms | Allocations: 233)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 910)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+No template found for CollectionController#delete_collection_by_id, rendering head :no_content
+Completed 204 No Content in 37ms (ActiveRecord: 1.5ms | Allocations: 1827)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+QuizTest: test_quiz_object_should_be_truthy
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+QuizTest: test_quiz_object_should_not_save_without_question_and/or_answer
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+QuizTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_any_field_is_empty,_using_password_empty_as_example
+-----------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_email_is_invalid
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testingInvalidEmail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_username_is_non_unique
+------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_passwords_do_not_match
+------------------------------------------------------------------------
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+UserTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------
+UserControllerTest: test_should_show_error_message_in_view_upon_empty_registration_form_submission
+--------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------
+UserControllerTest: test_should_submit_registration_form,_return_200_status_code
+--------------------------------------------------------------------------------
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+Processing by UserController#new as HTML
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 862)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1951)
+  Rendered user/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 862)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 1951)
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"testing1", "email"=>"testing1@testing1.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Testing1 Testing1", "bio"=>"Testing1", "commit"=>"Register"}
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "testing1"], ["email", "testing1@testing1.com"], ["fullName", "Testing1 Testing1"], ["bio", "Testing1"], ["password", "$2a$12$y3cTPvYgM2bdpnewTHzWluwcERmrU8D62HGg5LuWqKIacfGwxRDr2"], ["password_salt", "$2a$12$y3cTPvYgM2bdpnewTHzWlu"], ["created_at", "2019-09-19 14:48:22.641418"], ["updated_at", "2019-09-19 14:48:22.641418"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "testing1"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  Rendering user/user_profile.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 0.5ms | Allocations: 183)
+Completed 200 OK in 566ms (Views: 1.7ms | ActiveRecord: 1.2ms | Allocations: 2219)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+UserControllerTest: test_the_truth
+----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+UserControllerTest: test_should_not_redirect_user/register_on_form_submit
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering user/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+SessionControllerTest: test_should_set_session_id_for_guest_user
+----------------------------------------------------------------
+  Rendered user/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 995)
+Completed 200 OK in 576ms (Views: 4.2ms | ActiveRecord: 1.1ms | Allocations: 6602)
+Started GET "/session/guest_user" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------
+SessionControllerTest: test_should_return_200_status_code_for_session/login
+---------------------------------------------------------------------------
+Processing by SessionController#guest_user as HTML
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "guestUsername"], ["LIMIT", 1]]
+Guest User Found
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 515)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form,_return_200_status_code
+----------------------------------------------------------------------------
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+  Rendering session/new.html.erb within layouts/application
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1319)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 2391)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendered session/_new.js.erb (Duration: 0.5ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1311)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 2382)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form_without_changing_the_url_from_/session/login_to_/session/create
+--------------------------------------------------------------------------------------------------------------------
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 355)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 842)
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:48:22 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 286ms (ActiveRecord: 0.2ms | Allocations: 453)
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:48:23 -0400
+Processing by StartQuizController#welcome as HTML
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 288ms (ActiveRecord: 0.2ms | Allocations: 657)
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 129)
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:48:23 -0400
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 1251)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+StaticPagesControllerTest: test_should_get_welcome
+--------------------------------------------------
+Processing by StartQuizController#welcome as HTML
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:48:23 -0400
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 129)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 1253)
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 449)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (6.3ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (6.6ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:48:48.844603', '2019-09-19 14:48:48.844603');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:48:48.844603', '2019-09-19 14:48:48.844603');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:48:48.847165', '2019-09-19 14:48:48.847165', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:48:48.847165', '2019-09-19 14:48:48.847165', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:48:48.847165', '2019-09-19 14:48:48.847165', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:48:48.848711', '2019-09-19 14:48:48.848711');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:48:48.848711', '2019-09-19 14:48:48.848711');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:48:48.848711', '2019-09-19 14:48:48.848711')[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:48:48.844596', '2019-09-19 14:48:48.844596');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:48:48.844596', '2019-09-19 14:48:48.844596');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:48:48.847139', '2019-09-19 14:48:48.847139', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:48:48.847139', '2019-09-19 14:48:48.847139', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:48:48.847139', '2019-09-19 14:48:48.847139', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:48:48.848712', '2019-09-19 14:48:48.848712');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:48:48.848712', '2019-09-19 14:48:48.848712');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:48:48.848712', '2019-09-19 14:48:48.848712')[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_show_quiz_by_id_
+------------------------------------------------------------
+------------------------------------------------
+QuizControllerTest: test_should_delete_quiz_by_specifying_id
+------------------------------------------------------------
+Started GET "/quiz/show_quiz?id=298486374" for 127.0.0.1 at 2019-09-19 10:48:48 -0400
+Started DELETE "/quiz/delete_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:48:48 -0400
+Processing by QuizController#show_quiz as HTML
+  Parameters: {"id"=>"298486374"}
+Processing by QuizController#delete_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  [1m[36mQuiz Destroy (0.9ms)[0m  [1m[31mDELETE FROM "quizzes" WHERE "quizzes"."id" = ?[0m  [["id", 298486374]]
+The quiz was deleted
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 3.8ms | Allocations: 374)
+Completed 200 OK in 49ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 9266)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+No template found for QuizController#delete_quiz_by_id, rendering head :no_content
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+QuizControllerTest: test_should_get_new_quiz_with_corresponding_collection
+--------------------------------------------------------------------------
+Completed 204 No Content in 52ms (ActiveRecord: 1.2ms | Allocations: 8484)
+Started GET "/quiz/new_quiz_to_collection?collection_id=2&question=This+is+test+question+2%3F&answer=This+is+test+answer+2" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+QuizControllerTest: test_should_get_new_quiz
+--------------------------------------------
+Started GET "/quiz/new_quiz?collection_id=1" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+Processing by QuizController#new_quiz_to_collection as HTML
+  Parameters: {"collection_id"=>2, "question"=>"This is test question 2?", "answer"=>"This is test answer 2"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Processing by QuizController#new_quiz as HTML
+  Parameters: {"collection_id"=>"1"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mQuiz Create (0.7ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This is test question 2?"], ["answer", "This is test answer 2"], ["collection_id", 2], ["created_at", "2019-09-19 14:48:49.075952"], ["updated_at", "2019-09-19 14:48:49.075952"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  Rendering quiz/new_quiz.html.erb within layouts/application
+  [1m[36mQuiz Create (0.7ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This quiz is a new question?"], ["answer", "This is a new answer?"], ["collection_id", 1], ["created_at", "2019-09-19 14:48:49.082672"], ["updated_at", "2019-09-19 14:48:49.082672"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 7.3ms | Allocations: 686)
+Completed 200 OK in 63ms (Views: 10.5ms | ActiveRecord: 1.6ms | Allocations: 7764)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Rendering quiz/new_quiz.html.erb within layouts/application
+---------------------------------------------------------
+QuizControllerTest: test_should_return_200_for_error_page
+---------------------------------------------------------
+Started GET "/quiz/error" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[36mQuiz Load (2.0ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 10.5ms | Allocations: 838)
+Completed 200 OK in 78ms (Views: 25.7ms | ActiveRecord: 3.6ms | Allocations: 9390)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+Processing by QuizController#error as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+  Rendering quiz/error_quiz.html.erb within layouts/application
+QuizControllerTest: test_should_update_quiz_by_specifying_id
+------------------------------------------------------------
+  Rendered quiz/error_quiz.html.erb within layouts/application (Duration: 2.6ms | Allocations: 85)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 658)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started PUT "/quiz/update_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_list_all_quizzes
+------------------------------------------------
+Processing by QuizController#update_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374", "update"=>"question", "newField"=>"whatNewQuestion2?"}
+Started GET "/quiz/quizzes" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+The quiz was updated
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 2.2ms | Allocations: 247)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 926)
+Processing by QuizController#quizzes as HTML
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering quiz/quizzes.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+StaticPagesControllerTest: test_should_get_welcome
+--------------------------------------------------
+  [1m[36mCollection Load (1.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  Rendered quiz/quizzes.html.erb within layouts/application (Duration: 6.2ms | Allocations: 832)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 1.9ms | Allocations: 1431)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------
+UserControllerTest: test_should_submit_registration_form,_return_200_status_code
+--------------------------------------------------------------------------------
+Processing by StartQuizController#welcome as HTML
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 130)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 1160)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------
+UserControllerTest: test_should_show_error_message_in_view_upon_empty_registration_form_submission
+--------------------------------------------------------------------------------------------------
+Processing by UserController#new as HTML
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 862)
+Completed 200 OK in 70ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 7069)
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 862)
+Completed 200 OK in 14ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 7045)
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"testing1", "email"=>"testing1@testing1.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Testing1 Testing1", "bio"=>"Testing1", "commit"=>"Register"}
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "testing1"], ["email", "testing1@testing1.com"], ["fullName", "Testing1 Testing1"], ["bio", "Testing1"], ["password", "$2a$12$UxZj/Fn.lBXbbxBwt6BOJOw3zY2lDF9rnt63RBhOsDZ31ADY5/RiC"], ["password_salt", "$2a$12$UxZj/Fn.lBXbbxBwt6BOJO"], ["created_at", "2019-09-19 14:48:49.888973"], ["updated_at", "2019-09-19 14:48:49.888973"]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "testing1"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering user/user_profile.html.erb within layouts/application
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 0.4ms | Allocations: 183)
+Completed 200 OK in 598ms (Views: 1.5ms | ActiveRecord: 1.4ms | Allocations: 2444)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+UserControllerTest: test_should_not_redirect_user/register_on_form_submit
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering user/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+UserControllerTest: test_the_truth
+----------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendered user/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 995)
+Completed 200 OK in 602ms (Views: 5.5ms | ActiveRecord: 1.0ms | Allocations: 7915)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+CollectionControllerTest: test_should_delete_collection_by_id
+-------------------------------------------------------------
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Started DELETE "/collection/delete_collection_by_id" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+CollectionControllerTest: test_should_make_new_collection_and_show_it
+---------------------------------------------------------------------
+Started GET "/collection/new_collection?name=Test+Sample+Collection&category=Testing&total_quizzes=3" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+Processing by CollectionController#delete_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCollection Destroy (0.3ms)[0m  [1m[31mDELETE FROM "collections" WHERE "collections"."id" = ?[0m  [["id", 2]]
+Collection was deleted
+Processing by CollectionController#new_collection as HTML
+  Parameters: {"name"=>"Test Sample Collection", "category"=>"Testing", "total_quizzes"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCollection Create (0.8ms)[0m  [1m[32mINSERT INTO "collections" ("name", "category", "total_quizzes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test Sample Collection"], ["category", "Testing"], ["total_quizzes", 3], ["created_at", "2019-09-19 14:48:49.921170"], ["updated_at", "2019-09-19 14:48:49.921170"]]
+No template found for CollectionController#delete_collection_by_id, rendering head :no_content
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (ActiveRecord: 0.5ms | Allocations: 1724)
+Collection was saved
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering collection/new_collection.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+CollectionControllerTest: test_should_show_collection_by_id_
+------------------------------------------------------------
+  Rendered collection/new_collection.html.erb within layouts/application (Duration: 0.9ms | Allocations: 157)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 1742)
+Started GET "/collection/show_collection_by_id?id=2" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+CollectionControllerTest: test_show_update_collection_by_id
+-----------------------------------------------------------
+Processing by CollectionController#show_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started PUT "/collection/update_collection_by_id" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+  Rendering collection/show_collection.html.erb within layouts/application
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 2.4ms | Allocations: 496)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.9ms | Allocations: 1765)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Processing by CollectionController#update_collection_by_id as HTML
+  Parameters: {"id"=>"2", "update"=>"name", "newValue"=>"name2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CollectionControllerTest: test_the_truth
+----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+Collection was updated
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form,_return_200_status_code
+----------------------------------------------------------------------------
+  Rendering collection/show_collection.html.erb within layouts/application
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  [1m[36mQuiz Load (2.9ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 6.0ms | Allocations: 495)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 3.3ms | Allocations: 1329)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by SessionController#new as HTML
+---------------------------------------------------------------------------
+  Parameters: {"remote"=>true}
+SessionControllerTest: test_should_return_200_status_code_for_session/login
+---------------------------------------------------------------------------
+  Rendering session/new.html.erb within layouts/application
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:48:49 -0400
+  Rendered session/_new.js.erb (Duration: 1.1ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1320)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 2394)
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.4ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1319)
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:48:50 -0400
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 2391)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+SessionControllerTest: test_should_set_session_id_for_guest_user
+----------------------------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Started GET "/session/guest_user" for 127.0.0.1 at 2019-09-19 10:48:50 -0400
+Processing by SessionController#guest_user as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "guestUsername"], ["LIMIT", 1]]
+Guest User Found
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 502)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form_without_changing_the_url_from_/session/login_to_/session/create
+--------------------------------------------------------------------------------------------------------------------
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:48:50 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 355)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 842)
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:48:50 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 287ms (ActiveRecord: 0.3ms | Allocations: 653)
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:48:50 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 129)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 1257)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+CollectionTest: test_collection_object_should_be_truthy
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+CollectionTest: test_collection_object_should_not_save_without_name/category/total_quizzes
+------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------
+CollectionTest: test_the_truth
+------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+QuizTest: test_quiz_object_should_not_save_without_question_and/or_answer
+-------------------------------------------------------------------------
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 286ms (ActiveRecord: 0.1ms | Allocations: 455)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:48:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+QuizTest: test_quiz_object_should_be_truthy
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+QuizTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Processing by StartQuizController#welcome as HTML
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_email_is_invalid
+------------------------------------------------------------------
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testingInvalidEmail"], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 554)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_username_is_non_unique
+------------------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_any_field_is_empty,_using_password_empty_as_example
+-----------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_passwords_do_not_match
+------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+UserTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (5.3ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (4.4ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (1.0ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:50:46.886815', '2019-09-19 14:50:46.886815');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:50:46.886815', '2019-09-19 14:50:46.886815');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:50:46.890211', '2019-09-19 14:50:46.890211', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:50:46.890211', '2019-09-19 14:50:46.890211', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:50:46.890211', '2019-09-19 14:50:46.890211', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:50:46.892929', '2019-09-19 14:50:46.892929');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:50:46.892929', '2019-09-19 14:50:46.892929');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:50:46.892929', '2019-09-19 14:50:46.892929')[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:50:46.888460', '2019-09-19 14:50:46.888460');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:50:46.888460', '2019-09-19 14:50:46.888460');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:50:46.891622', '2019-09-19 14:50:46.891622', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:50:46.891622', '2019-09-19 14:50:46.891622', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:50:46.891622', '2019-09-19 14:50:46.891622', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:50:46.893631', '2019-09-19 14:50:46.893631');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:50:46.893631', '2019-09-19 14:50:46.893631');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:50:46.893631', '2019-09-19 14:50:46.893631')[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+UserControllerTest: test_the_truth
+----------------------------------
+--------------------------------------------------------------------------------------------------
+UserControllerTest: test_should_show_error_message_in_view_upon_empty_registration_form_submission
+--------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------
+UserControllerTest: test_should_submit_registration_form,_return_200_status_code
+--------------------------------------------------------------------------------
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:50:46 -0400
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+Processing by UserController#new as HTML
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 984)
+  Rendered user/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 984)
+Completed 200 OK in 66ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 8430)
+Completed 200 OK in 49ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 8430)
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"testing1", "email"=>"testing1@testing1.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Testing1 Testing1", "bio"=>"Testing1", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "testing1"], ["email", "testing1@testing1.com"], ["fullName", "Testing1 Testing1"], ["bio", "Testing1"], ["password", "$2a$12$qJTY.Dch.wiPBZvP92OexeDwMN2N7p.FCJnZ0rI4daxT4dpnbnJLS"], ["password_salt", "$2a$12$qJTY.Dch.wiPBZvP92Oexe"], ["created_at", "2019-09-19 14:50:47.757139"], ["updated_at", "2019-09-19 14:50:47.757139"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "testing1"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering user/user_profile.html.erb within layouts/application
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 1.0ms | Allocations: 183)
+Completed 200 OK in 605ms (Views: 3.5ms | ActiveRecord: 2.0ms | Allocations: 2612)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+UserControllerTest: test_should_not_redirect_user/register_on_form_submit
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+SessionControllerTest: test_should_set_session_id_for_guest_user
+----------------------------------------------------------------
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Started GET "/session/guest_user" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+  [1m[35m (3.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Processing by SessionController#guest_user as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "guestUsername"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Guest User Found
+  Rendering user/new.html.erb within layouts/application
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 571)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendered user/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 996)
+Completed 200 OK in 650ms (Views: 6.3ms | ActiveRecord: 4.6ms | Allocations: 8025)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------
+SessionControllerTest: test_should_return_200_status_code_for_session/login
+---------------------------------------------------------------------------
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form,_return_200_status_code
+----------------------------------------------------------------------------
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendered session/_new.js.erb (Duration: 1.0ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1310)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 2379)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form_without_changing_the_url_from_/session/login_to_/session/create
+--------------------------------------------------------------------------------------------------------------------
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1325)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.0ms | Allocations: 2465)
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered session/_new.js.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 355)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 846)
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:50:47 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 297ms (ActiveRecord: 0.3ms | Allocations: 671)
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://www.example.com/start_quiz/welcome
+Completed 302 Found in 296ms (ActiveRecord: 0.2ms | Allocations: 460)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+QuizTest: test_quiz_object_should_not_save_without_question_and/or_answer
+-------------------------------------------------------------------------
+Started GET "/start_quiz/welcome" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+QuizTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+QuizTest: test_quiz_object_should_be_truthy
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+CollectionTest: test_collection_object_should_not_save_without_name/category/total_quizzes
+------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+CollectionTest: test_collection_object_should_be_truthy
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------
+CollectionTest: test_the_truth
+------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+StaticPagesControllerTest: test_should_get_welcome
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+CollectionControllerTest: test_should_show_collection_by_id_
+------------------------------------------------------------
+Started GET "/collection/show_collection_by_id?id=2" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+Processing by CollectionController#show_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+  Rendering collection/show_collection.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 2.4ms | Allocations: 508)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.8ms | Allocations: 1957)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CollectionControllerTest: test_the_truth
+----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+CollectionControllerTest: test_should_delete_collection_by_id
+-------------------------------------------------------------
+Started DELETE "/collection/delete_collection_by_id" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+Processing by CollectionController#delete_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCollection Destroy (0.7ms)[0m  [1m[31mDELETE FROM "collections" WHERE "collections"."id" = ?[0m  [["id", 2]]
+Collection was deleted
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+CollectionControllerTest: test_should_make_new_collection_and_show_it
+---------------------------------------------------------------------
+No template found for CollectionController#delete_collection_by_id, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 1.4ms | Allocations: 1727)
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/collection/new_collection?name=Test+Sample+Collection&category=Testing&total_quizzes=3" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+CollectionControllerTest: test_show_update_collection_by_id
+-----------------------------------------------------------
+Started PUT "/collection/update_collection_by_id" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+Processing by CollectionController#new_collection as HTML
+  Parameters: {"name"=>"Test Sample Collection", "category"=>"Testing", "total_quizzes"=>"3"}
+Processing by CollectionController#update_collection_by_id as HTML
+  Parameters: {"id"=>"2", "update"=>"name", "newValue"=>"name2"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Collection was updated
+  Rendering collection/show_collection.html.erb within layouts/application
+  [1m[36mCollection Create (2.6ms)[0m  [1m[32mINSERT INTO "collections" ("name", "category", "total_quizzes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test Sample Collection"], ["category", "Testing"], ["total_quizzes", 3], ["created_at", "2019-09-19 14:50:48.355798"], ["updated_at", "2019-09-19 14:50:48.355798"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+Collection was saved
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 1.4ms | Allocations: 231)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.8ms | Allocations: 914)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering collection/new_collection.html.erb within layouts/application
+  Rendered collection/new_collection.html.erb within layouts/application (Duration: 1.8ms | Allocations: 161)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+QuizControllerTest: test_should_get_new_quiz_with_corresponding_collection
+--------------------------------------------------------------------------
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 3.0ms | Allocations: 1892)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/quiz/new_quiz_to_collection?collection_id=2&question=This+is+test+question+2%3F&answer=This+is+test+answer+2" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_show_quiz_by_id_
+------------------------------------------------
+Started GET "/quiz/show_quiz?id=298486374" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+Processing by QuizController#show_quiz as HTML
+  Parameters: {"id"=>"298486374"}
+Processing by QuizController#new_quiz_to_collection as HTML
+  Parameters: {"collection_id"=>2, "question"=>"This is test question 2?", "answer"=>"This is test answer 2"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 1.9ms | Allocations: 249)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 1527)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_list_all_quizzes
+------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mQuiz Create (0.7ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This is test question 2?"], ["answer", "This is test answer 2"], ["collection_id", 2], ["created_at", "2019-09-19 14:50:48.412368"], ["updated_at", "2019-09-19 14:50:48.412368"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+Started GET "/quiz/quizzes" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+  Rendering quiz/new_quiz.html.erb within layouts/application
+Processing by QuizController#quizzes as HTML
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 5.7ms | Allocations: 685)
+Completed 200 OK in 36ms (Views: 12.1ms | ActiveRecord: 1.7ms | Allocations: 3796)
+  Rendering quiz/quizzes.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_delete_quiz_by_specifying_id
+------------------------------------------------------------
+Started DELETE "/quiz/delete_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+Processing by QuizController#delete_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  [1m[36mQuiz Load (1.6ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mQuiz Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quizzes" WHERE "quizzes"."id" = ?[0m  [["id", 298486374]]
+The quiz was deleted
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  Rendered quiz/quizzes.html.erb within layouts/application (Duration: 27.3ms | Allocations: 2878)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.7ms | Allocations: 3479)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+QuizControllerTest: test_should_return_200_for_error_page
+---------------------------------------------------------
+No template found for QuizController#delete_quiz_by_id, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 2.2ms | Allocations: 1818)
+  [1m[35m (2.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/quiz/error" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_update_quiz_by_specifying_id
+------------------------------------------------------------
+Started PUT "/quiz/update_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+Processing by QuizController#error as HTML
+  Rendering quiz/error_quiz.html.erb within layouts/application
+  Rendered quiz/error_quiz.html.erb within layouts/application (Duration: 1.5ms | Allocations: 85)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 658)
+Processing by QuizController#update_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374", "update"=>"question", "newField"=>"whatNewQuestion2?"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+The quiz was updated
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 0.6ms | Allocations: 246)
+--------------------------------------------
+QuizControllerTest: test_should_get_new_quiz
+--------------------------------------------
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 925)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/quiz/new_quiz?collection_id=1" for 127.0.0.1 at 2019-09-19 10:50:48 -0400
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_username_is_non_unique
+------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Processing by QuizController#new_quiz as HTML
+  Parameters: {"collection_id"=>"1"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_email_is_invalid
+------------------------------------------------------------------
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mQuiz Create (0.9ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This quiz is a new question?"], ["answer", "This is a new answer?"], ["collection_id", 1], ["created_at", "2019-09-19 14:50:48.520288"], ["updated_at", "2019-09-19 14:50:48.520288"]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testingInvalidEmail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+The new quiz was saved
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering quiz/new_quiz.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+UserTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_any_field_is_empty,_using_password_empty_as_example
+-----------------------------------------------------------------------------------------------------
+  [1m[36mQuiz Load (7.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  [1m[35m (2.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 17.4ms | Allocations: 545)
+Completed 200 OK in 52ms (Views: 23.8ms | ActiveRecord: 9.0ms | Allocations: 2144)
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_passwords_do_not_match
+------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (6.7ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (6.0ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:52:40.526613', '2019-09-19 14:52:40.526613');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:52:40.526613', '2019-09-19 14:52:40.526613');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:52:40.528881', '2019-09-19 14:52:40.528881', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:52:40.528881', '2019-09-19 14:52:40.528881', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:52:40.528881', '2019-09-19 14:52:40.528881', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:52:40.530960', '2019-09-19 14:52:40.530960');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:52:40.530960', '2019-09-19 14:52:40.530960');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:52:40.530960', '2019-09-19 14:52:40.530960')[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 14:52:40.526610', '2019-09-19 14:52:40.526610');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 14:52:40.526610', '2019-09-19 14:52:40.526610');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 14:52:40.528981', '2019-09-19 14:52:40.528981', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 14:52:40.528981', '2019-09-19 14:52:40.528981', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 14:52:40.528981', '2019-09-19 14:52:40.528981', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 14:52:40.530931', '2019-09-19 14:52:40.530931');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 14:52:40.530931', '2019-09-19 14:52:40.530931');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 14:52:40.530931', '2019-09-19 14:52:40.530931')[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+QuizTest: test_quiz_object_should_be_truthy
+-------------------------------------------
+------------------------
+QuizTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+QuizTest: test_quiz_object_should_not_save_without_question_and/or_answer
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_any_field_is_empty,_using_password_empty_as_example
+-----------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_passwords_do_not_match
+------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_email_is_invalid
+------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testingInvalidEmail"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------
+UserTest: test_the_truth
+------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+UserTest: test_should_not_save_User_instance_when_username_is_non_unique
+------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+StaticPagesControllerTest: test_should_get_start_view
+-----------------------------------------------------
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+StaticPagesControllerTest: test_should_get_welcome_view
+-------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2019-09-19 10:52:40 -0400
+Started GET "/welcome" for 127.0.0.1 at 2019-09-19 10:52:40 -0400
+Processing by StartQuizController#start as HTML
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendering start_quiz/start.html.erb within layouts/application
+  Rendered start_quiz/start.html.erb within layouts/application (Duration: 3.8ms | Allocations: 206)
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 3.9ms | Allocations: 250)
+Completed 200 OK in 26ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 2396)
+Completed 200 OK in 23ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 2442)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------
+UserControllerTest: test_should_show_error_message_in_view_upon_empty_registration_form_submission
+--------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------
+UserControllerTest: test_should_submit_registration_form,_return_200_status_code
+--------------------------------------------------------------------------------
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:52:40 -0400
+Started GET "/user/register" for 127.0.0.1 at 2019-09-19 10:52:40 -0400
+Processing by UserController#new as HTML
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 857)
+  Rendered user/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 857)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 1945)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 1945)
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:52:40 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"testing1", "email"=>"testing1@testing1.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Testing1 Testing1", "bio"=>"Testing1", "commit"=>"Register"}
+Started POST "/user/create" for 127.0.0.1 at 2019-09-19 10:52:40 -0400
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"", "bio"=>"", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (20.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "testing1"], ["email", "testing1@testing1.com"], ["fullName", "Testing1 Testing1"], ["bio", "Testing1"], ["password", "$2a$12$ivRXOFf1hDF9pY3Y1RB5G.xIzdug6GuDwQA98nKjJdjN3AqqigT.q"], ["password_salt", "$2a$12$ivRXOFf1hDF9pY3Y1RB5G."], ["created_at", "2019-09-19 14:52:41.406126"], ["updated_at", "2019-09-19 14:52:41.406126"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "testing1"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "testing1@testing1.com"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Redirected to http://www.example.com/welcome
+Completed 302 Found in 592ms (ActiveRecord: 21.8ms | Allocations: 1775)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering user/new.html.erb within layouts/application
+Started GET "/welcome" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+  Rendered user/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 995)
+Completed 200 OK in 576ms (Views: 2.0ms | ActiveRecord: 0.9ms | Allocations: 6617)
+Processing by StartQuizController#welcome as HTML
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+UserControllerTest: test_the_truth
+----------------------------------
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 135)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 726)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+UserControllerTest: test_should_not_redirect_user/register_on_form_submit
+-------------------------------------------------------------------------
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+CollectionTest: test_collection_object_should_be_truthy
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+CollectionTest: test_collection_object_should_not_save_without_name/category/total_quizzes
+------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------
+CollectionTest: test_the_truth
+------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+----------------------------------------
+CollectionControllerTest: test_should_show_collection_by_id_
+CollectionControllerTest: test_the_truth
+------------------------------------------------------------
+----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+CollectionControllerTest: test_show_update_collection_by_id
+-----------------------------------------------------------
+Started GET "/collection/show_collection_by_id?id=2" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Started PUT "/collection/update_collection_by_id" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by CollectionController#show_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+Processing by CollectionController#update_collection_by_id as HTML
+  Parameters: {"id"=>"2", "update"=>"name", "newValue"=>"name2"}
+  [1m[36mCollection Load (0.9ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCollection Load (0.5ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collections"."id" FROM "collections"[0m
+Collection was updated
+  Rendering collection/show_collection.html.erb within layouts/application
+  Rendering collection/show_collection.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" IN (?, ?)[0m  [["collection_id", 1], ["collection_id", 2]]
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 2.6ms | Allocations: 514)
+  Rendered collection/show_collection.html.erb within layouts/application (Duration: 2.8ms | Allocations: 510)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.9ms | Allocations: 1983)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 1.3ms | Allocations: 1973)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+CollectionControllerTest: test_should_make_new_collection_and_show_it
+-------------------------------------------------------------
+---------------------------------------------------------------------
+CollectionControllerTest: test_should_delete_collection_by_id
+-------------------------------------------------------------
+Started GET "/collection/new_collection?name=Test+Sample+Collection&category=Testing&total_quizzes=3" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Started DELETE "/collection/delete_collection_by_id" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by CollectionController#new_collection as HTML
+  Parameters: {"name"=>"Test Sample Collection", "category"=>"Testing", "total_quizzes"=>"3"}
+Processing by CollectionController#delete_collection_by_id as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCollection Destroy (0.5ms)[0m  [1m[31mDELETE FROM "collections" WHERE "collections"."id" = ?[0m  [["id", 2]]
+Collection was deleted
+  [1m[36mCollection Create (0.8ms)[0m  [1m[32mINSERT INTO "collections" ("name", "category", "total_quizzes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test Sample Collection"], ["category", "Testing"], ["total_quizzes", 3], ["created_at", "2019-09-19 14:52:41.478471"], ["updated_at", "2019-09-19 14:52:41.478471"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Collection was saved
+  Rendering collection/new_collection.html.erb within layouts/application
+  Rendered collection/new_collection.html.erb within layouts/application (Duration: 1.5ms | Allocations: 157)
+No template found for CollectionController#delete_collection_by_id, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 0.8ms | Allocations: 1722)
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 1.1ms | Allocations: 1479)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+SessionControllerTest: test_should_set_session_id_for_guest_user
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------
+SessionControllerTest: test_should_return_200_status_code_for_session/login
+---------------------------------------------------------------------------
+Started GET "/session/guest_user" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by SessionController#guest_user as HTML
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "guestUsername"], ["LIMIT", 1]]
+Guest User Found
+Redirected to http://www.example.com/welcome
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 491)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering session/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form_without_changing_the_url_from_/session/login_to_/session/create
+--------------------------------------------------------------------------------------------------------------------
+  Rendered session/_new.js.erb (Duration: 0.4ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1319)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 2391)
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+SessionControllerTest: test_should_submit_login_form,_return_200_status_code
+----------------------------------------------------------------------------
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+Started GET "/session/login" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered session/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1311)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 2383)
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 355)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 842)
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Started POST "/session/login" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://www.example.com/welcome
+Completed 302 Found in 290ms (ActiveRecord: 0.2ms | Allocations: 458)
+Started GET "/welcome" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 552)
+Redirected to http://www.example.com/welcome
+Completed 302 Found in 294ms (ActiveRecord: 0.3ms | Allocations: 655)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_delete_quiz_by_specifying_id
+------------------------------------------------------------
+Started GET "/welcome" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Started DELETE "/quiz/delete_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 548)
+Processing by QuizController#delete_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mQuiz Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quizzes" WHERE "quizzes"."id" = ?[0m  [["id", 298486374]]
+The quiz was deleted
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+QuizControllerTest: test_should_update_quiz_by_specifying_id
+------------------------------------------------------------
+Started PUT "/quiz/update_quiz_by_id" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+No template found for QuizController#delete_quiz_by_id, rendering head :no_content
+Completed 204 No Content in 16ms (ActiveRecord: 0.7ms | Allocations: 1821)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+QuizControllerTest: test_should_get_new_quiz_with_corresponding_collection
+--------------------------------------------------------------------------
+Processing by QuizController#update_quiz_by_id as HTML
+  Parameters: {"id"=>"298486374", "update"=>"question", "newField"=>"whatNewQuestion2?"}
+Started GET "/quiz/new_quiz_to_collection?collection_id=2&question=This+is+test+question+2%3F&answer=This+is+test+answer+2" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+  [1m[36mQuiz Load (0.5ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+The quiz was updated
+  Rendering quiz/show_quiz.html.erb within layouts/application
+Processing by QuizController#new_quiz_to_collection as HTML
+  Parameters: {"collection_id"=>2, "question"=>"This is test question 2?", "answer"=>"This is test answer 2"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 2.1ms | Allocations: 246)
+Completed 200 OK in 17ms (Views: 9.0ms | ActiveRecord: 0.5ms | Allocations: 1492)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_list_all_quizzes
+------------------------------------------------
+Started GET "/quiz/quizzes" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by QuizController#quizzes as HTML
+  Rendering quiz/quizzes.html.erb within layouts/application
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mQuiz Create (0.7ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This is test question 2?"], ["answer", "This is test answer 2"], ["collection_id", 2], ["created_at", "2019-09-19 14:52:41.953184"], ["updated_at", "2019-09-19 14:52:41.953184"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  Rendering quiz/new_quiz.html.erb within layouts/application
+  [1m[36mQuiz Load (1.8ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  Rendered quiz/quizzes.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2125)
+Completed 200 OK in 17ms (Views: 12.1ms | ActiveRecord: 2.2ms | Allocations: 2720)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+QuizControllerTest: test_should_return_200_for_error_page
+---------------------------------------------------------
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 7.4ms | Allocations: 685)
+Completed 200 OK in 48ms (Views: 13.1ms | ActiveRecord: 1.5ms | Allocations: 4528)
+Started GET "/quiz/error" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+QuizControllerTest: test_should_show_quiz_by_id_
+------------------------------------------------
+Started GET "/quiz/show_quiz?id=298486374" for 127.0.0.1 at 2019-09-19 10:52:41 -0400
+Processing by QuizController#error as HTML
+  Rendering quiz/error_quiz.html.erb within layouts/application
+  Rendered quiz/error_quiz.html.erb within layouts/application (Duration: 1.6ms | Allocations: 85)
+Processing by QuizController#show_quiz as HTML
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 658)
+  Parameters: {"id"=>"298486374"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering quiz/show_quiz.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+QuizControllerTest: test_should_get_new_quiz
+--------------------------------------------
+  Rendered quiz/show_quiz.html.erb within layouts/application (Duration: 2.2ms | Allocations: 247)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.4ms | Allocations: 922)
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/quiz/new_quiz?collection_id=1" for 127.0.0.1 at 2019-09-19 10:52:42 -0400
+Processing by QuizController#new_quiz as HTML
+  Parameters: {"collection_id"=>"1"}
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mQuiz Create (0.5ms)[0m  [1m[32mINSERT INTO "quizzes" ("question", "answer", "collection_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question", "This quiz is a new question?"], ["answer", "This is a new answer?"], ["collection_id", 1], ["created_at", "2019-09-19 14:52:42.026021"], ["updated_at", "2019-09-19 14:52:42.026021"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+The new quiz was saved
+  Rendering quiz/new_quiz.html.erb within layouts/application
+  [1m[36mQuiz Load (2.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  Rendered quiz/new_quiz.html.erb within layouts/application (Duration: 4.6ms | Allocations: 545)
+Completed 200 OK in 18ms (Views: 4.8ms | ActiveRecord: 3.5ms | Allocations: 1984)
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m

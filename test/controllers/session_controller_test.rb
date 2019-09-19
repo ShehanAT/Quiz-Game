@@ -34,8 +34,9 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
     Capybara.within("form") do
         Capybara.find("input[value='Login']").click
         after_login_url = Capybara.current_url
-        assert_equal(before_login_url, after_login_url)
+        assert_not_equal(before_login_url, after_login_url)
     end
   end 
+  
 
 end

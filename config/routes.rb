@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-
+  get '', to: 'start_quiz#start'
+  get '/welcome', to: 'start_quiz#welcome'
   get 'quiz/new_quiz_to_collection', to: 'quiz#new_quiz_to_collection', :collection_id => 2, :question => "This is test question 2?", :answer => "This is test answer 2" 
   get 'quiz/new_quiz'
   get 'quiz/quizzes'
   get 'quiz/error'
   get 'quiz/show_quiz'
-  get 'start_quiz/welcome'
-  get 'start_quiz/start'
   get 'collection/new_collection'
   get 'collection/show_collection_by_id'
   get 'user/guest_user', to: 'user#guest_user'

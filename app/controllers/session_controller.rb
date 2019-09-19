@@ -17,7 +17,7 @@ class SessionController < ApplicationController
         Rails.logger.info "Guest User Not Found"
       end 
       session[:guest_user_id] = @userToRender.id
-      render "start_quiz/welcome" 
+      redirect_to "/welcome" 
     end 
 
     def create_guest_user 
@@ -34,9 +34,8 @@ class SessionController < ApplicationController
           session[:username] = @userToRender.username
           session[:user_id] = @userToRender.id
           session[:guest_user_id] = false
-          Rails.logger.info "user authenticated successfully!"
           format.js { render "start_quiz/welcome" }
-          format.html { render "start_quiz/welcome" }
+          format.html { redirect_to "/welcome" }
         else 
           flash[:alert] = "Invalid login credentials"
           format.js { render "new" }

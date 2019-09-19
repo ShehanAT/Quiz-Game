@@ -2,8 +2,13 @@ require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     
-    test "should get welcome" do 
-        get start_quiz_welcome_url
+    test "should get welcome view" do 
+        get "/welcome"
+        assert_response :success
+    end
+
+    test "should get start view" do 
+        get "/"
         assert_response :success
     end
     
