@@ -26,12 +26,14 @@ class SessionController < ApplicationController
           session[:username] = @userToRender.username
           session[:user_id] = @userToRender.id
           session[:guest_user_id] = false
+          Rails.logger.info "user authenticated successfully!"
           format.js { render "start_quiz/welcome" } 
           format.html { render "start_quiz/welcome" }
         else 
           flash[:notice] = "Invalid login credentials"
-          format.html { render "new" }
-          format.js { render "new" }
+          Rails.logger.info "user authenticated failed!"
+          format.html { render "session/new" }
+          format.js { render "session/new" }
         end 
       end
     end 

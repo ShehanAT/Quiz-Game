@@ -1,1 +1,11 @@
-$("#error_messages").html("<h2>Invalid Credentials! Please Try Again.</h2>");
+$('#login_form')
+    .bind("ajax:success", function(data, status, xhr) {
+        console.log("login success");
+        $('#alert_messages').text('Login Successful.');
+    });
+$('#login_form')
+    .bind("ajax:error", function(xhr, status, error) {
+        console.log("login failed");
+        alert("Invalid Credentials!");
+        $('#alert_messages').text('Invalid Credentials! Please Try Again.');
+    });

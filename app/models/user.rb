@@ -6,7 +6,7 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true
     validates :password, presence: true
     validates :password, confirmation: { case_sensitive: true }
-    
+    # skip_before_action :verify_authenticity_token
 
     def self.authenticate(username, password)
         user = User.find_by_username(username)

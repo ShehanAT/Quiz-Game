@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   post 'user/create', to: 'user#create'  
   post 'user/user_login', to: 'user#user_login'
-  post 'session/create', to: 'session#create'
+  post 'session/login', to: 'session#create'
 
 
   delete 'quiz/delete_quiz_by_id', to: 'quiz#delete_quiz_by_id'
