@@ -1,7 +1,9 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
-
+# require 'capybara'
+# require 'culerity'
+# require 'capybara-culerity'
 require 'capybara/rails'
 
 

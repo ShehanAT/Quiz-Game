@@ -1,5 +1,7 @@
-<%= form_with( url: "create", method: "post", local: true) do %>
-    <%= flash[:notice] %>
+<%= form_with( url: "create", method: "post", id: "login_form", data: { type: :js } ) do %>
+    <div id="error_messages"> 
+
+    </div>
     <%= label_tag(:username, "Username:") %>
     <%= text_field_tag(:username) %>
     

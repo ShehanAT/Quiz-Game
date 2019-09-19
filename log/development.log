@@ -5394,3 +5394,284 @@ Processing by SessionController#create as HTML
 Completed 200 OK in 19ms (Views: 13.5ms | ActiveRecord: 0.5ms | Allocations: 8364)
 
 
+Started GET "/user/register" for ::1 at 2019-09-18 12:16:26 -0400
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1043)
+Completed 200 OK in 1430ms (Views: 1409.2ms | ActiveRecord: 0.7ms | Allocations: 1250592)
+
+
+Started POST "/user/create" for ::1 at 2019-09-18 12:17:27 -0400
+Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"LjX1VjqrZUP7ow3W9YnCgLtrJ45R4SIjRqmfsOteCeXcJQnxub4Gb9GcYHu8O1xFAH0jWCSrESD/993LuzKynQ==", "username"=>"shehanatuk", "email"=>"shehanatuk10@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukrorala", "bio"=>"Hello World ", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shehanatuk"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk10@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shehanatuk"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk10@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 536)
+Completed 200 OK in 616ms (Views: 18.2ms | ActiveRecord: 2.7ms | Allocations: 17862)
+
+
+Started POST "/user/create" for ::1 at 2019-09-18 12:18:03 -0400
+Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"fHkDiATkKvFdWlLd67dLq+sa37oksJc87v0hpN7jQAiOaf8vh/FJ3XdlP3CiBdVuUAzbbFH6pD9Xo2Pfjo/7cA==", "username"=>"Shehan1", "email"=>"shehanatuk10@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fullName"=>"Shehan Atukorala", "bio"=>"Shehan Atukorala", "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Shehan1"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shehanatuk10@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Shehan1"], ["email", "shehanatuk10@gmail.com"], ["fullName", "Shehan Atukorala"], ["bio", "Shehan Atukorala"], ["password", "$2a$12$fKFn5WWI8RXorxKmAE8M5.Bc7s8eozqq.ot38IEgY1fTqBOHx5wMy"], ["password_salt", "$2a$12$fKFn5WWI8RXorxKmAE8M5."], ["created_at", "2019-09-18 16:18:03.798525"], ["updated_at", "2019-09-18 16:18:03.798525"]]
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Shehan1"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "shehanatuk10@gmail.com"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:20:in `create'
+  Rendering user/user_profile.html.erb within layouts/application
+  Rendered user/user_profile.html.erb within layouts/application (Duration: 1.8ms | Allocations: 190)
+Completed 200 OK in 600ms (Views: 17.7ms | ActiveRecord: 4.5ms | Allocations: 15381)
+
+
+Started GET "/user/register" for ::1 at 2019-09-18 12:36:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 412)
+Completed 200 OK in 34ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 14138)
+
+
+Started GET "/" for ::1 at 2019-09-18 14:25:15 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/var/rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.9ms | Allocations: 317)
+Completed 200 OK in 25ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 1907)
+
+
+Started GET "//session/login" for ::1 at 2019-09-18 14:25:18 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 641)
+Completed 200 OK in 1340ms (Views: 1338.8ms | ActiveRecord: 0.0ms | Allocations: 1243822)
+
+
+Started GET "/session/login" for ::1 at 2019-09-18 14:25:21 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 246)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.0ms | Allocations: 7844)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 14:45:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"3XOhrV/RoQkqzHZ0zs4Qgp3bp5BH6UGv6vU0E29OnVYvY10K3MTCJQDzG9mHfI5HJs2jRjKjcqxTq3ZoPyImLg==", "username"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 235)
+Completed 200 OK in 32ms (Views: 22.6ms | ActiveRecord: 1.2ms | Allocations: 10219)
+
+
+Started GET "/session/login" for ::1 at 2019-09-18 14:53:58 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 495)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 9036)
+
+
+Started GET "/session/login" for ::1 at 2019-09-18 14:55:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 483)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 8975)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 14:55:07 -0400
+Processing by SessionController#create as JS
+  Parameters: {"authenticity_token"=>"hj2wZYZYB7yiiJMDlIqmvbvhdkcUyB2/Fup/4V44aTF0LUzCBU1kkIi3/q7dODh4APdykWGCLryvtD2aDlTSSQ==", "username"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 249)
+Completed 200 OK in 18ms (Views: 10.3ms | ActiveRecord: 1.4ms | Allocations: 9989)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 14:55:19 -0400
+Processing by SessionController#create as JS
+  Parameters: {"authenticity_token"=>"hj2wZYZYB7yiiJMDlIqmvbvhdkcUyB2/Fup/4V44aTF0LUzCBU1kkIi3/q7dODh4APdykWGCLryvtD2aDlTSSQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 248)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.2ms | Allocations: 8387)
+
+
+Started GET "/user/user_registration" for ::1 at 2019-09-18 21:59:05 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user/user_registration"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/login" for ::1 at 2019-09-18 21:59:07 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 513)
+Completed 200 OK in 1077ms (Views: 1076.2ms | ActiveRecord: 0.0ms | Allocations: 1242751)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 21:59:13 -0400
+Processing by SessionController#create as */*
+  Parameters: {"authenticity_token"=>"x0g3LY30r6uHEun69NHzCFierYyLc2px00mTrWIpkFU1WMuKDuHMh60thFe9Y23N44ipWv45WXJqF9HWMkUrLQ==", "username"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 256)
+Completed 200 OK in 29ms (Views: 17.9ms | ActiveRecord: 1.2ms | Allocations: 10252)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 21:59:18 -0400
+Processing by SessionController#create as */*
+  Parameters: {"authenticity_token"=>"x0g3LY30r6uHEun69NHzCFierYyLc2px00mTrWIpkFU1WMuKDuHMh60thFe9Y23N44ipWv45WXJqF9HWMkUrLQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 255)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.1ms | Allocations: 8433)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 21:59:27 -0400
+Processing by SessionController#create as */*
+  Parameters: {"authenticity_token"=>"x0g3LY30r6uHEun69NHzCFierYyLc2px00mTrWIpkFU1WMuKDuHMh60thFe9Y23N44ipWv45WXJqF9HWMkUrLQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 255)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.1ms | Allocations: 8434)
+
+
+Started GET "/session/login" for ::1 at 2019-09-18 22:01:53 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 254)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 7856)
+
+
+Started GET "/session/login" for ::1 at 2019-09-18 22:01:55 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 254)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 7853)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 22:01:59 -0400
+Processing by SessionController#create as */*
+  Parameters: {"authenticity_token"=>"YGkQ6D7DjEoj9nIpArEX7K88NvchjuLSsuLPBnqUWQWSeexPvdbvZgnJH4RLA4kpFCoyIVTE0dELvI19KvjifQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 254)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.1ms | Allocations: 8427)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-19 02:03:20.146446', '2019-09-19 02:03:20.146446');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-19 02:03:20.146446', '2019-09-19 02:03:20.146446');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (980190962, 'MyString1Question', 'MyString1Answer', 1, '2019-09-19 02:03:20.148568', '2019-09-19 02:03:20.148568', 'Foo', 'Bar', 'Ham', 'Test', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (298486374, 'MyString2Question', 'MyString2Answer', 1, '2019-09-19 02:03:20.148568', '2019-09-19 02:03:20.148568', 'sports', 'beer', 'reading', 'powerlifting', 'Bar');
+INSERT INTO "quizzes" ("id", "question", "answer", "collection_id", "created_at", "updated_at", "first_choice", "second_choice", "third_choice", "fourth_choice", "correct_choice") VALUES (113629430, 'MyString3Question', 'MyString3Answer', 2, '2019-09-19 02:03:20.148568', '2019-09-19 02:03:20.148568', 'Example1', 'Example2', 'Example3', 'Example4', 'Bar');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-19 02:03:20.149572', '2019-09-19 02:03:20.149572');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-19 02:03:20.149572', '2019-09-19 02:03:20.149572');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-19 02:03:20.149572', '2019-09-19 02:03:20.149572')[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/session/login" for ::1 at 2019-09-18 22:03:24 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 254)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 7862)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 22:03:29 -0400
+Processing by SessionController#create as */*
+  Parameters: {"authenticity_token"=>"xtUrivjOpa+RbCxj2wOzmuxJoW6Qjy9puKuIv1NEEuo0xdcte9vGg7tTQc6SsS1fV1+luOXFHGoB9crEAyipkg==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering start_quiz/welcome.js.erb
+  Rendered start_quiz/welcome.js.erb (Duration: 0.3ms | Allocations: 93)
+Completed 200 OK in 292ms (Views: 3.8ms | ActiveRecord: 0.8ms | Allocations: 7733)
+
+
+Started POST "/session/create" for ::1 at 2019-09-18 22:03:31 -0400
+Processing by SessionController#create as */*
+  Parameters: {"authenticity_token"=>"xtUrivjOpa+RbCxj2wOzmuxJoW6Qjy9puKuIv1NEEuo0xdcte9vGg7tTQc6SsS1fV1+luOXFHGoB9crEAyipkg==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  Rendering start_quiz/welcome.js.erb
+  Rendered start_quiz/welcome.js.erb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 269ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1139)
+
+

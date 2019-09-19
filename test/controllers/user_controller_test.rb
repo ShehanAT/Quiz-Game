@@ -37,4 +37,8 @@ class UserControllerTest < ActionDispatch::IntegrationTest
         end    
         end 
     end 
+
+    test "should not redirect user/register on form submit" do 
+        
+    end 
 end
