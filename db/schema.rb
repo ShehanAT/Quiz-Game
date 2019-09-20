@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_152541) do
+ActiveRecord::Schema.define(version: 2019_09_20_223059) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "quizId"
+    t.string "answer"
+    t.integer "answerId"
+    t.integer "created_at", null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "collections", force: :cascade do |t|
     t.string "name"
@@ -20,19 +28,12 @@ ActiveRecord::Schema.define(version: 2019_09_19_152541) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.integer "quizId"
-    t.string "question"
-    t.integer "answerId"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "quizzes", force: :cascade do |t|
     t.integer "collection_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "answerId"
+    t.string "question"
   end
 
   create_table "users", force: :cascade do |t|

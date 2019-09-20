@@ -18,7 +18,7 @@ RSpec.describe Question do
     Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
-    expect(Capybara.page.first("#choice1").text).to eq("Choice #1")
+    expect(Capybara.page.first("#choice1").text).to eq("#{question.question}")
   end 
 
 end 

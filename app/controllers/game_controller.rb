@@ -13,7 +13,10 @@ class GameController < ApplicationController
         
         @quizzes = Quiz.where(collection_id: params[:collection_select])
         @quiz = @quizzes[0]
-        @questions = Question.where(quizId: @quiz.id)
+        @questions = Answer.where(quizId: @quiz.id)
+        @questions.each do |answer| 
+            Rails.logger.info "The question is #{answer.answer}"
+        end 
         render "game/stage"
     end 
 
