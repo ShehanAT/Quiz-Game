@@ -21,4 +21,6 @@ class QuizTest < ActiveSupport::TestCase
     quiz.answerId ="ThisIsAString"
     assert_not quiz.save, "quiz object is saving with non-numerical answerId"
   end 
+
+  
 end

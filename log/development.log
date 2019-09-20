@@ -12230,3 +12230,2261 @@ Processing by GameController#start as HTML
 Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 7167)
 
 
+Started POST "/start" for ::1 at 2019-09-20 13:33:18 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"n3Nkr0PGUNtIN7/PxbgrWZwO5RjItiyBbUbRHr5RYRw5Kdv5BxluEuOF2aSdP6CG3LYo8tZ6bLgwy2aApEI9Sw==", "button"=>""}
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 6488)
+
+
+Started GET "/start" for ::1 at 2019-09-20 13:36:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/start"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/start" for ::1 at 2019-09-20 13:45:09 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/start"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/start" for ::1 at 2019-09-20 13:53:53 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/start"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/start" for ::1 at 2019-09-20 13:53:57 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"n3Nkr0PGUNtIN7/PxbgrWZwO5RjItiyBbUbRHr5RYRw5Kdv5BxluEuOF2aSdP6CG3LYo8tZ6bLgwy2aApEI9Sw==", "button"=>""}
+Completed 404 Not Found in 7ms (ActiveRecord: 0.6ms | Allocations: 2912)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Collection without an ID):
+  
+app/controllers/game_controller.rb:11:in `start'
+Started POST "/start" for ::1 at 2019-09-20 13:54:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"n3Nkr0PGUNtIN7/PxbgrWZwO5RjItiyBbUbRHr5RYRw5Kdv5BxluEuOF2aSdP6CG3LYo8tZ6bLgwy2aApEI9Sw==", "button"=>""}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2062)
+
+
+  
+NoMethodError (undefined method `collection_id' for :params:Symbol):
+  
+app/controllers/game_controller.rb:11:in `start'
+Started POST "/start" for ::1 at 2019-09-20 13:54:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"n3Nkr0PGUNtIN7/PxbgrWZwO5RjItiyBbUbRHr5RYRw5Kdv5BxluEuOF2aSdP6CG3LYo8tZ6bLgwy2aApEI9Sw==", "button"=>""}
+The param collection_id is 
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2030)
+
+
+  
+NoMethodError (undefined method `collection_id' for :params:Symbol):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started POST "/start" for ::1 at 2019-09-20 13:55:19 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"n3Nkr0PGUNtIN7/PxbgrWZwO5RjItiyBbUbRHr5RYRw5Kdv5BxluEuOF2aSdP6CG3LYo8tZ6bLgwy2aApEI9Sw==", "button"=>""}
+The param collection_id is 
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2031)
+
+
+  
+NoMethodError (undefined method `collection_id' for :params:Symbol):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started GET "/welcome" for ::1 at 2019-09-20 14:00:01 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.1ms | Allocations: 260)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 7645)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:01:11 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 273)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 7638)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 14:03:27 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1454)
+Completed 200 OK in 22ms (Views: 8.9ms | ActiveRecord: 0.9ms | Allocations: 15242)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 14:03:33 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"pkwySrkjnid3n0DwaqVzxnlYG8yAO4/k8F/zQXJiydLr3aE7Xmq/KFSZ6AYddgGi+m3xqRGAIXpL6uBwBxj6EA==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 285ms (ActiveRecord: 1.6ms | Allocations: 1282)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:03:33 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 115)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 6551)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:04:31 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 112)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 6552)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 14:07:18 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 425)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 6918)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 14:07:23 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"Lvgfh5dbwYaSypBqquZu3fpUwxOG3yjA9lrsOYUb73ljaYz2cBLgibHMOJzdNRy5eWEpdhdkhl5N7/8I8GHcuw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 277ms (ActiveRecord: 0.3ms | Allocations: 978)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:07:23 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.3ms | Allocations: 112)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 6546)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 14:08:42 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 418)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 6891)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 14:14:18 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.2ms | Allocations: 74)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 927)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 8343)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 14:14:26 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"un/pnFtPHcZScXO2dBF3lCsrkxdXI5AlaWYVt2lhscX37nrtvAY8yXF320ADwgXwqB55csaYPrvS0waGHBuCBw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 281ms (ActiveRecord: 0.5ms | Allocations: 1007)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:14:27 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1103)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2150)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <% if false %>
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+    <% end %>
+    <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <% if false %>
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:        <% end %>
+14:        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:        <%= button_tag "Start Quiz", :type => :submit%>
+16:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:15:35 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1098)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2314)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <% if false %>
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+    
+    <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    <%= button_tag "Start Quiz", :type => :submit%>
+    <% end %>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <% if false %>
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:        
+14:        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:        <%= button_tag "Start Quiz", :type => :submit%>
+16:        <% end %>
+17:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:15:52 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1098)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2314)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <% if false %>
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+        <%= button_tag "Start Quiz", :type => :submit%>
+    <% end %>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <% if false %>
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:            <%= button_tag "Start Quiz", :type => :submit%>
+16:        <% end %>
+17:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:16:41 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1105)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2321)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <% if false %>
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+        
+    <% end %>
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <% if false %>
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:            
+16:        <% end %>
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:16:53 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1088)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2316)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <% if false %>
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+        
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <% if false %>
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:            
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:17:26 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 28.1ms | Allocations: 1103)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 2321)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <% if false %>
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    <% end %>   
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <% if false %>
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:        <% end %>   
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:19:11 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1089)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1554)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <% if false %>
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    <% end %>   
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <% if false %>
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:        <% end %>   
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:19:52 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1104)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2320)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+    <select id="startQuiz_select"><label>Select Category</label>
+    <option value="invalid">Select A Test</option>
+    <option value="sampleQuiz1">Sample Collection 1</option>
+    <option value="sampleQuiz2">Sample Collection 2</option>
+    <option value="sampleQuiz3">Sample Collection 3</option>
+    <option value="sampleQuiz4">Sample Collection 4</option>
+</select>
+    <% if false %>
+  
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    <% end %>   
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:        <select id="startQuiz_select"><label>Select Category</label>
+6:        <option value="invalid">Select A Test</option>
+7:        <option value="sampleQuiz1">Sample Collection 1</option>
+8:        <option value="sampleQuiz2">Sample Collection 2</option>
+9:        <option value="sampleQuiz3">Sample Collection 3</option>
+10:        <option value="sampleQuiz4">Sample Collection 4</option>
+11:    </select>
+12:        <% if false %>
+13:      
+14:            
+15:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+16:        <% end %>   
+17:        
+18:        <%= button_tag "Start Quiz", :type => :submit%>
+19:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:20:17 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1098)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2314)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<% if false %>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+   
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+<% end %>  ß
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <% if false %>
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:       
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:        
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %>
+19:    <% end %>  ß
+  
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:21:06 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 14.6ms | Allocations: 3823)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 6092)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:21:25 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1086)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1553)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<% if false %>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+   
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %>
+<% end %> 
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <% if false %>
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:       
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:        
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %>
+19:    <% end %> 
+  
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:21:42 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1085)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2301)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<% if false %>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+   
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %> 
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <% if false %>
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:       
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+15:        
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %> 
+  
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:20: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:22:23 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1109)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2328)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<% if false %>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+   
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        
+    
+    
+    <%= button_tag "Start Quiz", :type => :submit%>
+<% end %> 
+
+<% if false %>
+<%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <% if false %>
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:       
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            
+15:        
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit%>
+18:    <% end %> 
+19:    
+20:    <% if false %>
+21:    <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+22:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:22:40 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1107)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2326)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<% if false %>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+   
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+        
+        
+    
+    
+    <%= button_tag "Start Quiz", :type => :submit %>
+<% end %> 
+
+<% if false %>
+<%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <% if false %>
+3:    <%= form_tag "/start" do %>
+4:        <h2>Hello <%= session[:username] %></h2>
+5:       
+6:            <select id="startQuiz_select"><label>Select Category</label>
+7:                <option value="invalid">Select A Test</option>
+8:                <option value="sampleQuiz1">Sample Collection 1</option>
+9:                <option value="sampleQuiz2">Sample Collection 2</option>
+10:                <option value="sampleQuiz3">Sample Collection 3</option>
+11:                <option value="sampleQuiz4">Sample Collection 4</option>
+12:            </select>
+13:            
+14:            
+15:        
+16:        
+17:        <%= button_tag "Start Quiz", :type => :submit %>
+18:    <% end %> 
+19:    
+20:    <% if false %>
+21:    <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+22:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:22: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:24: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:23:40 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1102)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2318)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+
+
+
+<% if false %>
+
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+   
+        <select id="startQuiz_select"><label>Select Category</label>
+            <option value="invalid">Select A Test</option>
+            <option value="sampleQuiz1">Sample Collection 1</option>
+            <option value="sampleQuiz2">Sample Collection 2</option>
+            <option value="sampleQuiz3">Sample Collection 3</option>
+            <option value="sampleQuiz4">Sample Collection 4</option>
+        </select>
+    <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+    <%= button_tag "Start Quiz", :type => :submit %>
+<% end %> 
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    
+3:    
+4:    
+5:    <% if false %>
+6:    
+7:    <%= form_tag "/start" do %>
+8:        <h2>Hello <%= session[:username] %></h2>
+9:       
+10:            <select id="startQuiz_select"><label>Select Category</label>
+11:                <option value="invalid">Select A Test</option>
+12:                <option value="sampleQuiz1">Sample Collection 1</option>
+13:                <option value="sampleQuiz2">Sample Collection 2</option>
+14:                <option value="sampleQuiz3">Sample Collection 3</option>
+15:                <option value="sampleQuiz4">Sample Collection 4</option>
+16:            </select>
+17:        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+18:        <%= button_tag "Start Quiz", :type => :submit %>
+19:    <% end %> 
+20:    
+21:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:19: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:23: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:24:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 121)
+Completed 200 OK in 1191ms (Views: 1190.2ms | ActiveRecord: 0.0ms | Allocations: 1241342)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:24:24 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 92)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 7472)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:24:38 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.2ms | Allocations: 225)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 7603)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:24:50 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 228)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 7600)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:25:24 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1043)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2261)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:25:41 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1062)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2285)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+
+    <% end %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag(id, options_for_select([["A",1],["B",2]]) %>
+6:    
+7:        <% end %>
+8:    
+9:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:11: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:11: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:11: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:11: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:11: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:11: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:28:15 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1053)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2276)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <% select_tag "name",
+    options_for_select(list.collect{ [ text, value] },
+                'value to check if exist in the list', 
+                {:include_blank => true} %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <% select_tag "name",
+6:        options_for_select(list.collect{ [ text, value] },
+7:                    'value to check if exist in the list', 
+8:                    {:include_blank => true} %>
+9:    
+10:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:28:23 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 231)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 7610)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:28:56 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1053)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2273)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+   <% select_tag “people”, raw(“<option>David</option>”) %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:       <% select_tag “people”, raw(“<option>David</option>”) %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) 
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) 
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) 
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) 
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) 
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) 
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:29:15 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 231)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 7612)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:29:22 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 232)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 7607)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:29:36 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1043)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2258)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag “people”, raw(“<option>David</option>” %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag “people”, raw(“<option>David</option>” %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:29:39 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1033)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1502)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag “people”, raw(“<option>David</option>” %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag “people”, raw(“<option>David</option>” %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:29:41 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1033)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1502)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag “people”, raw(“<option>David</option>” %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag “people”, raw(“<option>David</option>” %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:29:54 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1047)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2267)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag “people”, raw(“<option>David</option>”) %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag “people”, raw(“<option>David</option>”) %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:30:50 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1033)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1502)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag “people”, raw(“<option>David</option>”) %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag “people”, raw(“<option>David</option>”) %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: unterminated regexp meets end of file
+app/views/start_quiz/welcome.html.erb:9: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/start_quiz/welcome.html.erb:9: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /option>\u201D) );@output_buffer.safe_append='
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:31:10 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 401.8ms | Allocations: 147642)
+Completed 500 Internal Server Error in 406ms (ActiveRecord: 0.0ms | Allocations: 148866)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 14:31:15 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered session/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1479)
+Completed 200 OK in 54ms (Views: 32.0ms | ActiveRecord: 1.0ms | Allocations: 15534)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 14:31:21 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"goNP+nNGE8mwjizdN18q7IXALnexDryffeIOxvYSJSLPEtyLlA8yxpOIhCtAjFiIBvXEEiC1EgHGVx33g2gW4A==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 283ms (ActiveRecord: 0.4ms | Allocations: 1551)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:31:22 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 441.4ms | Allocations: 147501)
+Completed 500 Internal Server Error in 443ms (ActiveRecord: 0.0ms | Allocations: 147971)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:33:15 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1463)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2684)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    2: <%= form_tag "/start" do %>
+    3:     <h2>Hello <%= session[:username] %></h2>
+    4: 
+    5:     <%= select_tag "users[]", options_for_select(@users.collect{|x| [x.name,x.id]}), {:multiple => :multiple, :size => 10} %>
+    6: 
+    7: <% end %>
+  
+app/views/start_quiz/welcome.html.erb:5
+app/views/start_quiz/welcome.html.erb:2
+Started GET "/welcome" for ::1 at 2019-09-20 14:33:27 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.1ms | Allocations: 228)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.0ms | Allocations: 7607)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:34:28 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1036)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2258)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag, options_for_select("<option>Option 1</option>")
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag, options_for_select("<option>Option 1</option>")
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting end
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting end
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting end
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting end
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting end
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end-of-input, expecting end
+Started GET "/welcome" for ::1 at 2019-09-20 14:34:41 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1041)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2263)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag, options_for_select("<option>Option 1</option>") %>
+
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag, options_for_select("<option>Option 1</option>") %>
+6:    
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/start_quiz/welcome.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/start_quiz/welcome.html.erb:9: syntax error, unexpected end, expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:37:11 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 266)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 7644)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:37:35 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 264)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 7638)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:38:02 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.5ms | Allocations: 359)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 7730)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:39:01 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.8ms | Allocations: 393)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 7770)
+
+
+Started POST "/start" for ::1 at 2019-09-20 14:39:05 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"cxPA9W/mfSGhU4uj07wNy1srTt9j5/quIGeasTgHMA7VSX+jKzlD6Arh7ciLO4YUG5ODNX0rupd96i0vIhRsWQ==", "option"=>"2", "button"=>""}
+The param collection_id is 
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2184)
+
+
+  
+NoMethodError (undefined method `collection_id' for :params:Symbol):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started GET "/welcome" for ::1 at 2019-09-20 14:39:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 390)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 7776)
+
+
+Started POST "/start" for ::1 at 2019-09-20 14:40:02 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"L+qPRJNyNT6HiAHm9EzqG8MEnjhhGiNt+sUqUJUCizOJsDAS160L9yw6Z42sy2HEg7xT0n/WY1SnSJ3OjxHXZA==", "option"=>"2", "button"=>""}
+The param collection_id is 
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2061)
+
+
+  
+NoMethodError (undefined method `collection_id' for :params:Symbol):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started GET "/welcome" for ::1 at 2019-09-20 14:41:19 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1066)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2282)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to Quiz Game</h1>
+<%= form_tag "/start" do %>
+    <h2>Hello <%= session[:username] %></h2>
+
+    <%= select_tag(:option, options_for_select([["Sample Collection 1",1],["Sample Collection 2",2],["Sample Collection 3",3]], params[:collectionId])), include_blank: "Pick a Collection" %>
+    <%= button_tag "Start Quiz", :type => :submit %>
+<% end %>
+):
+1:    <h1>Welcome to Quiz Game</h1>
+2:    <%= form_tag "/start" do %>
+3:        <h2>Hello <%= session[:username] %></h2>
+4:    
+5:        <%= select_tag(:option, options_for_select([["Sample Collection 1",1],["Sample Collection 2",2],["Sample Collection 3",3]], params[:collectionId])), include_blank: "Pick a Collection" %>
+6:        <%= button_tag "Start Quiz", :type => :submit %>
+7:    <% end %>
+  
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ',', expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ',', expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ',', expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ',', expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ',', expecting ')'
+app/views/start_quiz/welcome.html.erb:5: syntax error, unexpected ',', expecting ')'
+Started GET "/welcome" for ::1 at 2019-09-20 14:41:36 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.2ms | Allocations: 406)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 7778)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:42:45 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 405)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.0ms | Allocations: 7781)
+
+
+Started POST "/start" for ::1 at 2019-09-20 14:42:49 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"F7reUN8TKMKoWaTC2Vi34aWG5ntu7PgdOrKc7a6ty0Ox4GEGm8wWCwPrwqmB3zw+5T4rkXAguCRnPytztL6XFA==", "option"=>"2", "button"=>""}
+The param collection_id is 
+Completed 404 Not Found in 7ms (ActiveRecord: 0.8ms | Allocations: 2346)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Collection without an ID):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started GET "/welcome" for ::1 at 2019-09-20 14:44:07 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 405)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 7779)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:46:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 234)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 6834)
+
+
+Started POST "/start" for ::1 at 2019-09-20 14:46:45 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"vuLkU9/LvzONl8aiPTwizerqg5qHiNOoAVX3/JLhfCEYuFsFmxSB+iYloMllu6kSqlJOcJlEk5Fc2EBiiPIgdg==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+Completed 404 Not Found in 7ms (ActiveRecord: 0.8ms | Allocations: 2327)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Collection without an ID):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started POST "/start" for ::1 at 2019-09-20 14:47:09 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"vuLkU9/LvzONl8aiPTwizerqg5qHiNOoAVX3/JLhfCEYuFsFmxSB+iYloMllu6kSqlJOcJlEk5Fc2EBiiPIgdg==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms | Allocations: 732)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Collection without an ID):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started POST "/start" for ::1 at 2019-09-20 14:47:18 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"vuLkU9/LvzONl8aiPTwizerqg5qHiNOoAVX3/JLhfCEYuFsFmxSB+iYloMllu6kSqlJOcJlEk5Fc2EBiiPIgdg==", "collection_select"=>"3", "button"=>""}
+The param collection_id is 3
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 738)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Collection without an ID):
+  
+app/controllers/game_controller.rb:12:in `start'
+Started POST "/start" for ::1 at 2019-09-20 14:47:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"vuLkU9/LvzONl8aiPTwizerqg5qHiNOoAVX3/JLhfCEYuFsFmxSB+iYloMllu6kSqlJOcJlEk5Fc2EBiiPIgdg==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (1.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (1.5ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ? LIMIT ?[0m  [["collection_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:14:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+Completed 200 OK in 32ms (Views: 8.9ms | ActiveRecord: 4.1ms | Allocations: 17706)
+
+
+Started POST "/start" for ::1 at 2019-09-20 14:48:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/shehan/Public/quizGame/app/controllers/game_controller.rb:17: syntax error, unexpected '\n', expecting '.' or &. or :: or '['):
+  
+app/controllers/game_controller.rb:17: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/controllers/game_controller.rb:17: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/controllers/game_controller.rb:17: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+Started POST "/start" for ::1 at 2019-09-20 14:49:54 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"vuLkU9/LvzONl8aiPTwizerqg5qHiNOoAVX3/JLhfCEYuFsFmxSB+iYloMllu6kSqlJOcJlEk5Fc2EBiiPIgdg==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ? LIMIT ?[0m  [["collection_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:14:in `start'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.0ms | Allocations: 12698)
+
+
+  
+NoMethodError (undefined method `each' for #<Quiz:0x00007fa2833934d8>):
+  
+app/controllers/game_controller.rb:15:in `start'
+Started POST "/start" for ::1 at 2019-09-20 14:50:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"vuLkU9/LvzONl8aiPTwizerqg5qHiNOoAVX3/JLhfCEYuFsFmxSB+iYloMllu6kSqlJOcJlEk5Fc2EBiiPIgdg==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ? LIMIT ?[0m  [["collection_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:14:in `start'
+The quizzes object is #<Quiz:0x00007fa28348b5c0>
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.6ms | Allocations: 12680)
+
+
+  
+NoMethodError (undefined method `each' for #<Quiz:0x00007fa28348b5c0>):
+  
+app/controllers/game_controller.rb:16:in `start'
+Started GET "/welcome" for ::1 at 2019-09-20 14:52:05 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 392)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 7419)
+
+
+Started POST "/start" for ::1 at 2019-09-20 14:52:09 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"1EdIBIZl0kz9SHNXdTlrou5X1CXyjc774vTtACxGPVxyHfdSwrrshVb6FTwtvuB9ru8Zz+xBjsK/eVqeNlVhCw==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+The quizzes object is #<Quiz::ActiveRecord_Relation:0x00007fa27ece3c90>
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:16:in `start'
+#<Quiz:0x00007fa27ecf1480>
+#<Quiz:0x00007fa27ed328e0>
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 28ms (Views: 6.8ms | ActiveRecord: 2.6ms | Allocations: 16318)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 14:55:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 6826)
+
+
+Started POST "/start" for ::1 at 2019-09-20 14:56:00 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"nI6q8IkJx4WQB1TDlkx7bdMoEH06RIgRSzz0fm1VmBw61BWmzdb5TDu1MqjOy/Cyk5DdlySIyCgWsUPgd0bESw==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+The first object is #<Quiz:0x00007fa27f8869a8>
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 51ms (Views: 6.3ms | ActiveRecord: 1.7ms | Allocations: 16298)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTables (20190911142243)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "collections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "category" varchar, "total_quizzes" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "question" varchar, "answer" varchar, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190911142243"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddChoiceAndAnswerFieldsToQuiz (20190913213836)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "quizzes" ADD "first_choice" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "quizzes" ADD "second_choice" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "quizzes" ADD "third_choice" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "quizzes" ADD "fourth_choice" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "quizzes" ADD "correct_choice" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190913213836"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserTable (20190913220110)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "fullName" varchar, "bio" text, "password_hash" varchar, "password_salt" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190913220110"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeUsersPasswordHash (20190916140457)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fullName" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "password" varchar DEFAULT NULL, "password_salt" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","fullName","bio","password","password_salt","created_at","updated_at")
+                     SELECT "id","username","email","fullName","bio","password_hash","password_salt","created_at","updated_at" FROM "users"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fullName" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "password" varchar DEFAULT NULL, "password_salt" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","fullName","bio","password","password_salt","created_at","updated_at")
+                     SELECT "id","username","email","fullName","bio","password","password_salt","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190916140457"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateQuestions (20190919151620)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quizId" integer, "question" varchar, "answerId" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190919151620"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeQuizTable (20190919152541)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "question" varchar DEFAULT NULL, "answer" varchar DEFAULT NULL, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","question","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","question","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "answer" varchar DEFAULT NULL, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "answer" varchar DEFAULT NULL, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at")
+                     SELECT "id","collection_id","created_at","updated_at" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "quizzes" ADD "answerId" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190919152541"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-20 19:11:49.209977"], ["updated_at", "2019-09-20 19:11:49.209977"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+DELETE FROM "questions";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-20 19:12:22.034493', '2019-09-20 19:12:22.034493');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-20 19:12:22.034493', '2019-09-20 19:12:22.034493');
+INSERT INTO "quizzes" ("id", "collection_id", "created_at", "updated_at", "answerId") VALUES (1, 1, '2019-09-20 19:12:22.036603', '2019-09-20 19:12:22.036603', 1);
+INSERT INTO "quizzes" ("id", "collection_id", "created_at", "updated_at", "answerId") VALUES (2, 1, '2019-09-20 19:12:22.036603', '2019-09-20 19:12:22.036603', 1);
+INSERT INTO "quizzes" ("id", "collection_id", "created_at", "updated_at", "answerId") VALUES (3, 2, '2019-09-20 19:12:22.036603', '2019-09-20 19:12:22.036603', 2);
+INSERT INTO "quizzes" ("id", "collection_id", "created_at", "updated_at", "answerId") VALUES (4, 2, '2019-09-20 19:12:22.036603', '2019-09-20 19:12:22.036603', 2);
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-20 19:12:22.037395', '2019-09-20 19:12:22.037395');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-20 19:12:22.037395', '2019-09-20 19:12:22.037395');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-20 19:12:22.037395', '2019-09-20 19:12:22.037395');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (1, 1, 'MyString1?', 1, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (2, 1, 'MyString1?', 2, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (3, 1, 'MyString1?', 3, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (4, 1, 'MyString1?', 4, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (5, 2, 'MyString2?', 1, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (6, 2, 'MyString2?', 2, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (7, 2, 'MyString2?', 3, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (8, 2, 'MyString2?', 4, '2019-09-20 19:12:22.038363', '2019-09-20 19:12:22.038363')[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started POST "/start" for ::1 at 2019-09-20 15:16:40 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"nI6q8IkJx4WQB1TDlkx7bdMoEH06RIgRSzz0fm1VmBw61BWmzdb5TDu1MqjOy/Cyk5DdlySIyCgWsUPgd0bESw==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.9ms | Allocations: 371)
+Completed 200 OK in 33ms (Views: 11.0ms | ActiveRecord: 1.0ms | Allocations: 17483)
+
+
+Started POST "/start" for ::1 at 2019-09-20 15:17:17 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"nI6q8IkJx4WQB1TDlkx7bdMoEH06RIgRSzz0fm1VmBw61BWmzdb5TDu1MqjOy/Cyk5DdlySIyCgWsUPgd0bESw==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 1.7ms | Allocations: 368)
+Completed 200 OK in 22ms (Views: 15.2ms | ActiveRecord: 0.7ms | Allocations: 8954)
+
+
+Started POST "/start" for ::1 at 2019-09-20 15:18:04 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"nI6q8IkJx4WQB1TDlkx7bdMoEH06RIgRSzz0fm1VmBw61BWmzdb5TDu1MqjOy/Cyk5DdlySIyCgWsUPgd0bESw==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 1.1ms | Allocations: 390)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 8958)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 15:18:57 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 2.0ms | Allocations: 397)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 7424)
+
+
+Started POST "/start" for ::1 at 2019-09-20 15:19:00 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"HVR1u8yA34WUZirxe+SX4Rbj/SByZh8shjO106CjtI27DsrtiF/hTD/UTJojYxw+VlswymyqXxXbvgJNurDo2g==", "collection_select"=>"2", "button"=>""}
+The param collection_id is 2
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 2]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 1.1ms | Allocations: 198)
+Completed 200 OK in 15ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 7838)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 15:19:13 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 218)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 6651)
+
+
+Started POST "/start" for ::1 at 2019-09-20 15:19:17 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"RrI9kBLI5HLsnKjcA5QunrLFGNd9jcRlvhUKhmj1Kcng6ILGVhfau0cuzrdbE6VB8n3VPWNBhFzjmL0YcuZ1ng==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.6ms | Allocations: 195)
+Completed 200 OK in 17ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 7822)
+
+

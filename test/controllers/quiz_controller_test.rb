@@ -14,7 +14,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "should show quiz by id " do
-    get "/quiz/show_quiz", params: { id: 298486374}
+    get "/quiz/show_quiz", params: { id: 1}
     assert_response :success
   end 
 
@@ -24,12 +24,12 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end 
 
   test "should delete quiz by specifying id" do 
-    delete "/quiz/delete_quiz_by_id", params: {id: 298486374}
+    delete "/quiz/delete_quiz_by_id", params: {id: 1}
     assert_response :success 
   end 
 
   test "should update quiz by specifying id" do 
-    put "/quiz/update_quiz_by_id", params: { id: 298486374, update: "answerId", newField: "whatNewQuestion2" }
+    put "/quiz/update_quiz_by_id", params: { id: 1, update: "answerId", newField: "whatNewQuestion2" }
     assert_response :success 
   end 
 
