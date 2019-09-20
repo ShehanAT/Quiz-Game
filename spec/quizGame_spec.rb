@@ -1,14 +1,14 @@
-RSpec.describe QuizGame do
-  it "has a version number" do
-    expect(QuizGame::VERSION).not_to be nil
-  end
 
+
+RSpec.describe Quiz do
+  quiz = Quiz.new 
   it "does something useful" do
     expect(false).to eq(false)
   end
 end
-RSpec.describe QuizGame do 
 
+RSpec.describe Question do 
+  question = Question.find(1)
   it "four clickable pieces should contain Question.question value for text field" do 
     Capybara.visit("/session/login")
     Capybara.fill_in 'username', :with => 'admin'
@@ -20,5 +20,6 @@ RSpec.describe QuizGame do
     sleep 0.5
     expect(Capybara.page.first("#choice1").text).to eq("Choice #1")
   end 
-  
-end
+
+end 
+
