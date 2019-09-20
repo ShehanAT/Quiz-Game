@@ -3,5 +3,6 @@ require "quizGame/version"
 module QuizGame
   class Error < StandardError; end
   # Your code goes here...
-  class Game
+  class Game; end
+  class Quiz; end 
 end

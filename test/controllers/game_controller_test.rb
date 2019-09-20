@@ -26,4 +26,8 @@ class GameControllerTest < ActionDispatch::IntegrationTest
     Capybara.find("button[id='choice1']").click
     assert true
   end 
+
+  test "four clickable pieces should contain Question.question value for text field" do 
+    
+  end 
 end

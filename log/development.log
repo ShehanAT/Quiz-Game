@@ -14488,3 +14488,295 @@ The param collection_id is 1
 Completed 200 OK in 17ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 7822)
 
 
+Started POST "/start" for ::1 at 2019-09-20 15:27:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"RrI9kBLI5HLsnKjcA5QunrLFGNd9jcRlvhUKhmj1Kcng6ILGVhfau0cuzrdbE6VB8n3VPWNBhFzjmL0YcuZ1ng==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1034)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.4ms | Allocations: 11834)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>This is the stage for the Quiz Game</h1>
+
+<%= form_tag "/levelUp" do %>
+
+<%= button_tag "Choice #1", :id => :choice1, :value => :choice1 :type => :submit %>
+<%= button_tag "Choice #2", :id => :choice2, :type => :submit %>
+<%= button_tag "Choice #3", :id => :choice3, :type => :submit %>
+<%= button_tag "Choice #4", :id => :choice4, :type => :submit %>
+
+<% end %>
+):
+1:    <h1>This is the stage for the Quiz Game</h1>
+2:    
+3:    <%= form_tag "/levelUp" do %>
+4:    
+5:    <%= button_tag "Choice #1", :id => :choice1, :value => :choice1 :type => :submit %>
+6:    <%= button_tag "Choice #2", :id => :choice2, :type => :submit %>
+7:    <%= button_tag "Choice #3", :id => :choice3, :type => :submit %>
+8:    <%= button_tag "Choice #4", :id => :choice4, :type => :submit %>
+9:    
+10:    <% end %>
+  
+app/views/game/stage.html.erb:5: syntax error, unexpected ':', expecting ')'
+app/views/game/stage.html.erb:5: syntax error, unexpected ':', expecting ')'
+app/views/game/stage.html.erb:5: syntax error, unexpected ':', expecting ')'
+app/views/game/stage.html.erb:5: syntax error, unexpected ':', expecting ')'
+app/views/game/stage.html.erb:5: syntax error, unexpected ':', expecting ')'
+app/views/game/stage.html.erb:5: syntax error, unexpected ':', expecting ')'
+app/controllers/game_controller.rb:17:in `start'
+Started POST "/start" for ::1 at 2019-09-20 15:27:40 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"RrI9kBLI5HLsnKjcA5QunrLFGNd9jcRlvhUKhmj1Kcng6ILGVhfau0cuzrdbE6VB8n3VPWNBhFzjmL0YcuZ1ng==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.5ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 1.6ms | Allocations: 390)
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 0.7ms | Allocations: 8961)
+
+
+Started POST "/start" for ::1 at 2019-09-20 15:28:05 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"RrI9kBLI5HLsnKjcA5QunrLFGNd9jcRlvhUKhmj1Kcng6ILGVhfau0cuzrdbE6VB8n3VPWNBhFzjmL0YcuZ1ng==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 1.4ms | Allocations: 408)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 8972)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 16:40:15 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.3ms | Allocations: 74)
+  Rendered session/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1443)
+Completed 200 OK in 51ms (Views: 33.3ms | ActiveRecord: 2.6ms | Allocations: 14522)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:50:33 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 2.4ms | Allocations: 410)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 7279)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:50:47 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 224)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 6649)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:51:08 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 3.2ms | Allocations: 234)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 6523)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 16:52:15 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 439)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 6769)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 16:52:16 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"57+IpI1gzSxPw/xW/w/BlwXWf0JkaHgvbEJ4CYOT4IEpGWEKcUhTsW//5M0r0HtqUCtQ4LQa2SKaJ2KK02eZWg==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 338ms (ActiveRecord: 1.6ms | Allocations: 1136)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:52:16 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.6ms | Allocations: 224)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 6621)
+
+
+Started POST "/start" for ::1 at 2019-09-20 16:52:17 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"F9Db3pw8Iryj3W9+L+rSm46d3h6zD2XdQVdTHCHKfhsc26XJNErUiPHkCGiAPFGjSHpz219G2ves05KcRS9Dzg==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (1.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (1.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.6ms | Allocations: 222)
+Completed 200 OK in 18ms (Views: 9.6ms | ActiveRecord: 2.5ms | Allocations: 7831)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 16:54:32 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 430)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 6761)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 16:54:33 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"8BFnuMq1PX58hu3VnBzc1KwIopvdd4BIRChI0JXyehOOwiYB13zy/Oj4H2SuSTwckAOumEFaQORFDwuNKgLVNQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 270ms (ActiveRecord: 0.3ms | Allocations: 942)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:54:33 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 224)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 6627)
+
+
+Started POST "/start" for ::1 at 2019-09-20 16:54:34 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"RIT+LKiD6ay/wYPPef8ZXTwnqucE7YtpBLJdf9eTbAlk9yE+cziKhafKhiNRA0C4U3l6a0zEaDp6PtySv66kQw==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.5ms | Allocations: 219)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 7830)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 16:56:50 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 430)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 6759)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 16:56:50 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"ziA8HVVgsn1SMQ9oacjKNsWv64TOzzhQFFOMbGZT4Izuzb3QIpTbsP2qXm2yXc1RsDMb18YBw1h219x/XFd6tw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 271ms (ActiveRecord: 0.3ms | Allocations: 939)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:56:50 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 224)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 6619)
+
+
+Started POST "/start" for ::1 at 2019-09-20 16:56:51 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"305aJ7wUsmiAWC4sFCAkoG5S2py014+jb0To4uXKypf74yaVy4eRfhu0dG/GClHP3MlPSTWSlaZ2+9yDhAkJJA==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.6ms | Allocations: 219)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.5ms | Allocations: 7827)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 16:57:27 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 429)
+Completed 200 OK in 91ms (Views: 89.6ms | ActiveRecord: 0.0ms | Allocations: 6761)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 16:57:27 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"1iq6FrKd/7wB584QqZJmnsIyVaHZilUrBvpm1p8QyhVkfgzhoFc6YKbr/Q3vByAXFhhRfaC1P1yeF/o2wihHlQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 283ms (ActiveRecord: 0.3ms | Allocations: 949)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:57:27 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 224)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 6617)
+
+
+Started POST "/start" for ::1 at 2019-09-20 16:57:28 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"KLei5YiE16SSjOvZx55I/gDG0jqGYLY/MKLSHJfFVUFngkhQHQ0vPI5kMT4FPXIkNO3TPd9Uv27cVaLZP1BtrQ==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.6ms | Allocations: 219)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.6ms | Allocations: 7837)
+
+
+Started GET "/session/login" for ::1 at 2019-09-20 16:57:51 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 429)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 6758)
+
+
+Started POST "/session/login" for ::1 at 2019-09-20 16:57:52 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"C1MVOsulAv6uFSd5XvXUJ1kdg/PF8KksyyySjkN7aBEHxBXI1rx1ZlpJBCfe6klrK3c1DWIrmAWWpC85KWUigQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 288ms (ActiveRecord: 0.3ms | Allocations: 911)
+
+
+Started GET "/welcome" for ::1 at 2019-09-20 16:57:52 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 0.6ms | Allocations: 224)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 6617)
+
+
+Started POST "/start" for ::1 at 2019-09-20 16:57:53 -0400
+Processing by GameController#start as HTML
+  Parameters: {"authenticity_token"=>"Uo1UGsv3ykSvegchs+5pz+aY2zL8sYvLdmE9lT1BnhahD2MnPXmc+8FuK2wxB+iHnG+B8WQhHukd0KkK/5R9fQ==", "collection_select"=>"1", "button"=>""}
+The param collection_id is 1
+  [1m[36mCollection Load (0.2ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:12:in `start'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."collection_id" = ?[0m  [["collection_id", 1]]
+  ↳ app/controllers/game_controller.rb:15:in `start'
+  Rendering game/stage.html.erb within layouts/application
+  Rendered game/stage.html.erb within layouts/application (Duration: 0.6ms | Allocations: 219)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 7799)
+
+
