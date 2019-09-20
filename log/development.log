@@ -11209,3 +11209,28 @@ Migrating to ChangeQuizTable (20190919152541)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "collections";
+DELETE FROM "quizzes";
+DELETE FROM "users";
+DELETE FROM "questions";
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (1, 'First Sample Collection', 'Sample', 1, '2019-09-20 01:12:45.349937', '2019-09-20 01:12:45.349937');
+INSERT INTO "collections" ("id", "name", "category", "total_quizzes", "created_at", "updated_at") VALUES (2, 'Second Sample Collection', 'Sample', 1, '2019-09-20 01:12:45.349937', '2019-09-20 01:12:45.349937');
+INSERT INTO "quizzes" ("id", "collection_id", "created_at", "updated_at", "answerId") VALUES (980190962, 1, '2019-09-20 01:12:45.352763', '2019-09-20 01:12:45.352763', 1);
+INSERT INTO "quizzes" ("id", "collection_id", "created_at", "updated_at", "answerId") VALUES (298486374, 1, '2019-09-20 01:12:45.352763', '2019-09-20 01:12:45.352763', 2);
+INSERT INTO "quizzes" ("id", "collection_id", "created_at", "updated_at", "answerId") VALUES (113629430, 2, '2019-09-20 01:12:45.352763', '2019-09-20 01:12:45.352763', 3);
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-20 01:12:45.353968', '2019-09-20 01:12:45.353968');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-20 01:12:45.353968', '2019-09-20 01:12:45.353968');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-20 01:12:45.353968', '2019-09-20 01:12:45.353968');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (980190962, 1, 'MyString1', 1, '2019-09-20 01:12:45.355377', '2019-09-20 01:12:45.355377');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (298486374, 2, 'MyString2', 2, '2019-09-20 01:12:45.355377', '2019-09-20 01:12:45.355377');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (113629430, 3, 'MyString3', 3, '2019-09-20 01:12:45.355377', '2019-09-20 01:12:45.355377');
+INSERT INTO "questions" ("id", "quizId", "question", "answerId", "created_at", "updated_at") VALUES (281110143, 4, 'MyString4', 4, '2019-09-20 01:12:45.355377', '2019-09-20 01:12:45.355377')[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m

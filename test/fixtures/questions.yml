@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  quizId: 
+  quizId: 1
   question: MyString1
   answerId: 1
 
 two:
-  quizId: 
+  quizId: 2
   question: MyString2
   answerId: 2
 
 three:
-  quizId: 
+  quizId: 3
   question: MyString3
   answerId: 3
 
 four:
-  quizId: 
+  quizId: 4
   question: MyString4
   answerId: 4
