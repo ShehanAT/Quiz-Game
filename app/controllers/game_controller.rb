@@ -6,4 +6,8 @@ class GameController < ApplicationController
     def next_quiz 
 
     end 
+
+    def start 
+        render "game/stage"
+    end 
 end

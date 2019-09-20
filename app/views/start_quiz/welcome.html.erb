@@ -1,9 +1,12 @@
 <h1>Welcome to Quiz Game</h1>
-<select><label>Select Category</label>
+<select id="startQuiz_select"><label>Select Category</label>
     <h2>Hello @guest_user.username</h2>
-    <option value="invalid">Select A Quiz</option>
-    <option value="sampleQuiz">Sample Quiz</option>
+    <option value="invalid">Select A Test</option>
+    <option value="sampleQuiz1">Sample Collection 1</option>
+    <option value="sampleQuiz2">Sample Collection 2</option>
+    <option value="sampleQuiz3">Sample Collection 3</option>
+    <option value="sampleQuiz4">Sample Collection 4</option>
 </select>
-<% if false %>
-<%= button_to 'startButton', action: 'start', method: :post %>
+<%= form_tag "/start" do %>
+    <%= button_tag "Start Quiz", :type => :submit%>
 <% end %>
