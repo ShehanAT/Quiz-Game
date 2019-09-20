@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>Collection Name</th>
-      <th>Question</th>
-      <th>Answer</th>
+      <th>Question ID</th>
     </tr>
   </thead>
  
@@ -14,8 +13,7 @@
         <% collection.quiz.each do |quiz| %>
           <tr>
           <td><%= collection.name %></td>
-          <td><%= quiz.question %></td>
-          <td><%= quiz.answer %></td>
+          <td><%= quiz.id %></td>
           </tr>
         <% end %>
     <% end %>

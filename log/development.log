@@ -11089,3 +11089,123 @@ Processing by StartQuizController#welcome as HTML
 Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5523)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateQuestions (20190919151620)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quizId" integer, "question" varchar, "answerId" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190919151620"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeQuizTable (20190919152541)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "question" varchar DEFAULT NULL, "answer" varchar DEFAULT NULL, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","question","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","question","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "answer" varchar DEFAULT NULL, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "answer" varchar DEFAULT NULL, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","answer","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "first_choice" varchar DEFAULT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","first_choice","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "second_choice" varchar DEFAULT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","second_choice","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "third_choice" varchar DEFAULT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","third_choice","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","fourth_choice","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "fourth_choice" varchar DEFAULT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","fourth_choice","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","fourth_choice","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","correct_choice" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "correct_choice" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aquizzes" ("id","collection_id","created_at","updated_at","correct_choice")
+                     SELECT "id","collection_id","created_at","updated_at","correct_choice" FROM "quizzes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "quizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" integer NOT NULL PRIMARY KEY, "collection_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "quizzes" ("id","collection_id","created_at","updated_at")
+                     SELECT "id","collection_id","created_at","updated_at" FROM "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquizzes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "quizzes" ADD "answerId" integer[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190919152541"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

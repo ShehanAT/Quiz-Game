@@ -4,7 +4,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
 
 
   test "should get new_quiz" do
-    get "/quiz/new_quiz", params: { collection_id: 1}
+    get "/quiz/new_quiz", params: { collection_id: 1, answerId: 2}
     assert_response :success
   end
 
@@ -19,7 +19,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end 
 
   test "should get new_quiz with corresponding collection" do
-    get "/quiz/new_quiz_to_collection", params: { collection_id: 2, question: "This is test question 2?", answer: "This is test answer 2" }
+    get "/quiz/new_quiz_to_collection", params: { collection_id: 2, answerId: 2 }
     assert_response :success
   end 
 
@@ -29,7 +29,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end 
 
   test "should update quiz by specifying id" do 
-    put "/quiz/update_quiz_by_id", params: { id: 298486374, update: "question", newField: "whatNewQuestion2?" }
+    put "/quiz/update_quiz_by_id", params: { id: 298486374, update: "answerId", newField: "whatNewQuestion2" }
     assert_response :success 
   end 
 

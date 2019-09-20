@@ -4,8 +4,8 @@
   <thead>
     <tr>
       <th>Collection Id</th>
-      <th>Question</th>
-      <th>Answer</th>
+      <th>Quiz Collection Id</th>
+      <th>Quiz Answer Id</th>
     </tr>
   </thead>
  
@@ -14,8 +14,8 @@
     <% @collection.quiz.each do |quiz| %>
         <tr>
             <td><%= @collection.id %></td>
-            <td><%= quiz.question %></td>
-            <td><%= quiz.answer %></td>
+            <td><%= quiz.collection_id %></td>
+            <td><%= quiz.answerId %></td>
         </tr>
        
     <% end %>

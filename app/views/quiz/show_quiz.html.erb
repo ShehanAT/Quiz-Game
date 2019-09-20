@@ -12,28 +12,12 @@
   <tbody>
   
     <tr>
-        <td><%= @quiz.question %></td>
-        <td><%= @quiz.answer %></td>
+        <td><%= @quiz.collection_id %></td>
+        <td><%= @quiz.answerId %></td>
         <td><%= @quiz.id %></td>
     </tr>
   
   </tbody>
 </table>
-<h2>Answer Choices</h2>
-<table>
-  <thead>
-      <th>First Choice</th>
-      <th>Second Choice</th>
-      <th>Third Choice</th>
-      <th>Fourth Choice</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @quiz.first_choice %></td>
-      <td><%= @quiz.second_choice %></td>
-      <td><%= @quiz.third_choice %></td>
-      <td><%= @quiz.fourth_choice %></td>
-    </tr>
-  </tbody>
-</table>
+
  

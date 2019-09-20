@@ -1,5 +1,5 @@
 class Quiz < ApplicationRecord
-    validates :question, presence: true
-    validates :answer, presence: true
+    validates :answerId, presence: true
+    validates :collection_id, presence: true
     belongs_to :collection
 end

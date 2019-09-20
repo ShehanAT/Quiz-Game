@@ -9,7 +9,7 @@ class QuizController < ApplicationController
   end 
   def new_quiz
     @collection = Collection.find(params[:collection_id])
-    @collection.quiz.create(:question => "This quiz is a new question?", :answer => "This is a new answer?")
+    @collection.quiz.create(:collection_id => params[:collection_id], :answerId => params[:answerId])
     if @collection.save!
       Rails.logger.info "The new quiz was saved"
     else 
@@ -19,10 +19,10 @@ class QuizController < ApplicationController
   end
 
   def new_quiz_to_collection 
-    question = params[:question]
-    answer = params[:answer]
+    collection_id = params[:collection_id]
+    answerId = params[:answerId]
     @collection = Collection.find(params[:collection_id])
-    @collection.quiz.create(:question => question, :answer => answer)
+    @collection.quiz.create(:collection_id => collection_id, :answerId => answerId)
     if @collection.save!
       Rails.logger.info "The new quiz was saved"
     else 
