@@ -1,10 +1,8 @@
 <h1>This is the stage for the Quiz Game</h1>
 
-<%= form_tag "/levelUp" do %>
-
-<%= button_tag "Choice #1", :id => :choice1, :value => :choice1, :type => :submit %>
-<%= button_tag "Choice #2", :id => :choice2, :value => :choice2, :type => :submit %>
-<%= button_tag "Choice #3", :id => :choice3, :value => :choice3, :type => :submit %>
-<%= button_tag "Choice #4", :id => :choice4, :value => :choice4, :type => :submit %>
-
+<%= form_tag( "/level", { :method => :post, :remote => true }) do %>
+    <h1>Question: <%= @quiz.question %></h1>
+    <% @questions.each do |answer| %>
+        <%= button_tag "#{answer.answer}", :id => "choice#{answer.id}", :type => :submit, :"button" => "#{answer.id}" %>
+    <% end %>
 <% end %>

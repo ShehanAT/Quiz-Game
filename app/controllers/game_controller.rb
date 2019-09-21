@@ -7,20 +7,16 @@ class GameController < ApplicationController
 
     end 
 
-    def start
-        Rails.logger.info "The param collection_id is #{params[:collection_select]}"
+    def level
+   
         @collection = Collection.find(params[:collection_select])
         
         @quizzes = Quiz.where(collection_id: params[:collection_select])
         @quiz = @quizzes[0]
         @questions = Answer.where(quizId: @quiz.id)
-        @questions.each do |answer| 
-            Rails.logger.info "The question is #{answer.answer}"
+        respond_to do | format |
+            format.html { render "game/stage" }
+            format.js { render "game/stage" }
         end 
-        render "game/stage"
-    end 
-
-    def levelUp
-        render "game/stage"
     end 
 end
