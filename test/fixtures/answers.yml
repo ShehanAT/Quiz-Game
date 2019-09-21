@@ -1,47 +1,48 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-Quiz1Question1:
+Quiz1Answer1:
   id: 1 
   quizId: 1
   answer: ThisIsAnswer1OfQuiz1
   answerId: 1
 
-
-Quiz1Question2:
+Quiz1Answer2:
   id: 2
   quizId: 1
   answer: ThisIsAnswer2OfQuiz1
   answerId: 2
-Quiz1Question3:
+
+Quiz1Answer3:
   id: 3
   quizId: 1
   answer: ThisIsAnswer3OfQuiz1
   answerId: 3
-Quiz1Question4:
+
+Quiz1Answer4:
   id: 4
   quizId: 1
   answer: ThisIsAnswer4OfQuiz1
   answerId: 4
 
-Quiz2Question1:
+Quiz2Answer1:
   id: 5
   quizId: 2
   answer: ThisIsAnswer1OfQuiz2
   answerId: 1
 
-Quiz2Question2:
+Quiz2Answer2:
   id: 6
   quizId: 2
   answer: ThisIsAnswer2OfQuiz2
   answerId: 2
 
-Quiz2Question3:
+Quiz2Answer3:
   id: 7
   quizId: 2
   answer: ThisIsAnswer3OfQuiz2
   answerId: 3
 
-Quiz2Question4:
+Quiz2Answer4:
   id: 8
   quizId: 2
   answer: ThisIsAnswer4OfQuiz2

@@ -1,3 +1,4 @@
-$("button").click(function(){
-    console.log($(this).text());
-});
+console.log("passing");
+$("form").on("ajax:success", function(e){
+    console.log(e.detail);
+})
