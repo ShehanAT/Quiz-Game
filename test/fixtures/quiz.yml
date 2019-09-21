@@ -1,25 +1,51 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+# for collection 1 
 one:
   id: 1
   collection_id: 1
   answerId: 1
-  question: "This Is Sample Question 1?"
+  question: "This Is Sample Question 1 Collection 1?"
   
 two:
   id: 2
   collection_id: 1
-  answerId: 1
-  question: "This Is Sample Question 2?"
+  answerId: 2
+  question: "This Is Sample Question 2 Collection 1?"
 
 three:
   id: 3
-  collection_id: 2
-  answerId: 2
-  question: "This Is Sample Question 3?"
+  collection_id: 1
+  answerId: 3
+  question: "This Is Sample Question 3 Collection 1?"
 
 four:
   id: 4
+  collection_id: 1
+  answerId: 4
+  question: "This Is Sample Question 4 Collection 1?"
+
+# for collection 2 
+five:
+  id: 5
+  collection_id: 2
+  answerId: 1
+  question: "This Is Sample Question 1 Collection 2?"
+  
+six:
+  id: 6
   collection_id: 2
   answerId: 2
-  question: "This Is Sample Question 4?"
+  question: "This Is Sample Question 2 Collection 2?"
+
+seven:
+  id: 7
+  collection_id: 2
+  answerId: 3
+  question: "This Is Sample Question 3 Collection 2?"
+
+eight:
+  id: 8
+  collection_id: 2
+  answerId: 4
+  question: "This Is Sample Question 4 Collection 2?"

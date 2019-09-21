@@ -3,10 +3,10 @@
 one:
   id: 1
   name: First Sample Collection
-  category: Sample
-  total_quizzes: 1
+  category: Sample1
+  total_quizzes: 4
 two:
   id: 2
   name: Second Sample Collection
-  category: Sample
-  total_quizzes: 1
+  category: Sample2
+  total_quizzes: 4

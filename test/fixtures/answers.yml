@@ -1,5 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+# for quiz 1 
 Quiz1Answer1:
   id: 1 
   quizId: 1
@@ -24,6 +25,7 @@ Quiz1Answer4:
   answer: ThisIsAnswer4OfQuiz1
   answerId: 4
 
+# for quiz 2
 Quiz2Answer1:
   id: 5
   quizId: 2
@@ -46,4 +48,154 @@ Quiz2Answer4:
   id: 8
   quizId: 2
   answer: ThisIsAnswer4OfQuiz2
+  answerId: 4
+
+# for quiz 3
+Quiz3Answer1:
+  id: 9
+  quizId: 3
+  answer: ThisIsAnswer1OfQuiz3
+  answerId: 1
+
+Quiz3Answer2:
+  id: 10
+  quizId: 3
+  answer: ThisIsAnswer2OfQuiz3
+  answerId: 2
+
+Quiz3Answer3:
+  id: 11
+  quizId: 3
+  answer: ThisIsAnswer3OfQuiz3
+  answerId: 3
+
+Quiz3Answer4:
+  id: 12
+  quizId: 3
+  answer: ThisIsAnswer4OfQuiz3
+  answerId: 4
+
+# for quiz 4
+Quiz4Answer1:
+  id: 13
+  quizId: 4
+  answer: ThisIsAnswer1OfQuiz4
+  answerId: 1
+
+Quiz4Answer2:
+  id: 14
+  quizId: 4
+  answer: ThisIsAnswer2OfQuiz4
+  answerId: 2
+
+Quiz4Answer3:
+  id: 15
+  quizId: 4
+  answer: ThisIsAnswer3OfQuiz4
+  answerId: 3
+
+Quiz4Answer4:
+  id: 16
+  quizId: 4
+  answer: ThisIsAnswer4OfQuiz4
+  answerId: 4
+
+# for quiz 5
+Quiz5Answer1:
+  id: 17
+  quizId: 5
+  answer: ThisIsAnswer1OfQuiz5
+  answerId: 1
+
+Quiz5Answer2:
+  id: 18
+  quizId: 5
+  answer: ThisIsAnswer2OfQuiz5
+  answerId: 2
+
+Quiz5Answer3:
+  id: 19
+  quizId: 5
+  answer: ThisIsAnswer3OfQuiz5
+  answerId: 3
+
+Quiz5Answer4:
+  id: 20
+  quizId: 5
+  answer: ThisIsAnswer4OfQuiz5
+  answerId: 4
+
+# for quiz 6
+Quiz6Answer1:
+  id: 21
+  quizId: 6
+  answer: ThisIsAnswer1OfQuiz6
+  answerId: 1
+
+Quiz6Answer2:
+  id: 22
+  quizId: 6
+  answer: ThisIsAnswer2OfQuiz6
+  answerId: 2
+
+Quiz6Answer3:
+  id: 23
+  quizId: 6
+  answer: ThisIsAnswer3OfQuiz6
+  answerId: 3
+
+Quiz6Answer4:
+  id: 24
+  quizId: 6
+  answer: ThisIsAnswer4OfQuiz6
+  answerId: 4
+
+# for quiz 7
+Quiz7Answer1:
+  id: 25
+  quizId: 7
+  answer: ThisIsAnswer1OfQuiz7
+  answerId: 1
+
+Quiz7Answer2:
+  id: 26
+  quizId: 7
+  answer: ThisIsAnswer2OfQuiz7
+  answerId: 2
+
+Quiz7Answer3:
+  id: 27
+  quizId: 7
+  answer: ThisIsAnswer3OfQuiz7
+  answerId: 3
+
+Quiz7Answer4:
+  id: 28
+  quizId: 7
+  answer: ThisIsAnswer4OfQuiz7
+  answerId: 4
+
+# for quiz 8
+Quiz8Answer1:
+  id: 29
+  quizId: 8
+  answer: ThisIsAnswer1OfQuiz8
+  answerId: 1
+
+Quiz8Answer2:
+  id: 30
+  quizId: 8
+  answer: ThisIsAnswer2OfQuiz8
+  answerId: 2
+
+Quiz8Answer3:
+  id: 31
+  quizId: 8
+  answer: ThisIsAnswer3OfQuiz8
+  answerId: 3
+
+Quiz8Answer4:
+  id: 32
+  quizId: 8
+  answer: ThisIsAnswer4OfQuiz8
   answerId: 4
