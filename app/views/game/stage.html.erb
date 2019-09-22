@@ -2,11 +2,12 @@
 
 <h1>This is the stage for the Quiz Game</h1>
 
-<h2 id="quiz_question">Question: <%= @quiz.question %></h2>
-<% @answers.each do |answer| %>
-    <%= button_to "#{answer.answer}", games_path(quizId: @quiz.id, answerId: "#{answer.answerId}"), remote: true, method: :post, id: "answer#{answer.answerId}" %> 
+<%= render_quiz_question(@quiz) %>
+
+<% if @answers %>
+    <% @answers.each do |answer| %>
+        <%= button_to "#{answer.answer}", games_path(quizId: @quiz.id, answerId: "#{answer.answerId}"), remote: true, method: :post, id: "answer#{answer.answerId}" %> 
+    <% end %>
 <% end %>
 
-<% if false %>
-<%= javascript_include_tag("stage") %>
-<% end %>
+

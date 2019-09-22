@@ -24,8 +24,6 @@ Rails.application.routes.draw do
   post 'user/create', to: 'user#create'  
   post 'user/user_login', to: 'user#user_login'
   post 'session/login', to: 'session#create'
-  post 'level', to: 'games#level'
-  post 'next_level', to: 'games#next_level'
 
   delete 'quiz/delete_quiz_by_id', to: 'quiz#delete_quiz_by_id'
   delete 'collection/delete_collection_by_id', to: 'collection#delete_collection_by_id'
