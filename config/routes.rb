@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'session/login', to: 'session#new', remote: true
   get 'session/guest_user', to: 'session#guest_user'
   get 'quizGame', to:'games#start_game'
-
+  get 'endGame', to:'games#end_game'
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'collection/update_collection_by_id', to: 'collection#update_collection_by_id'
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   post 'session/login', to: 'session#create'
   post 'level', to: 'games#level'
   post 'next_level', to: 'games#next_level'
-  
+
   delete 'quiz/delete_quiz_by_id', to: 'quiz#delete_quiz_by_id'
   delete 'collection/delete_collection_by_id', to: 'collection#delete_collection_by_id'
 end

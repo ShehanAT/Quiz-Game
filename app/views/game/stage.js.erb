@@ -7,8 +7,11 @@ $.ajax({
 
     },
     success: function(data){
-        console.log(data);
-        $("#quiz_question").text(data.quiz.question);
+        if(data.quizzesLeft === 0){
+            $("body").html("<%= j render 'game/end' %>")
+            return;
+        }
+        $("#quiz_question").text(`Question: ${data.quiz.question}`);
         $("#answer1").val(data.answers[0].answer);
         $("#answer1").parent().attr("action", `games?answerId=${data.answers[0].answerId}&quizId=${data.quiz.id}`);
         $("#answer2").val(data.answers[1].answer);

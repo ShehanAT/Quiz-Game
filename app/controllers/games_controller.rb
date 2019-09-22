@@ -22,8 +22,9 @@ class GamesController < ApplicationController
    
 
     def create
+        
         if request.format === "application/json"
-            pop_array 
+            pop_array
         end
         checkData 
         getData
@@ -39,8 +40,10 @@ class GamesController < ApplicationController
             quiz = Quiz.find(quizId)
             answer = Answer.find(answerId)
             if quiz.answerId === answer.answerId
+                flash[:notice] = "Correct Answer!"
                 # Rails.logger.info "Correct Answer Selected"
             else 
+                
                 # Rails.logger.info "Wrong Answer Selected"
                 nil
             end
@@ -52,6 +55,9 @@ class GamesController < ApplicationController
     def pop_array 
         if session[:quiz_order].length != 0
             @current_quiz_id = session[:quiz_order].pop
+            @current_quiz_id 
+        else 
+            nil 
         end 
     end 
 
@@ -60,10 +66,6 @@ class GamesController < ApplicationController
     end 
 
     def getData
-        session[:quiz_order].each do |id|
-            Rails.logger.info "#{id}"
-        end 
-        Rails.logger.info "THE CURRENT QUIZ ID IS #{@current_quiz_id}"
         quizzes = Quiz.where(collection_id: session[:collection_select])
         if @current_quiz_id 
             @quiz = quizzes[@current_quiz_id]
@@ -75,10 +77,15 @@ class GamesController < ApplicationController
 
     def render_quiz 
         respond_to do |format|
-            format.json { render json: { quiz: @quiz, answers: @answers }}
-            format.html { render "game/stage" }
-            format.js { render "game/stage", :locals => { :quiz => @quiz, :answers => @answers }}
-            
+            format.json { render json: { quiz: @quiz, answers: @answers, :quizzesLeft => session[:quiz_order].length  }}
+            format.html { 
+                if session[:quiz_order].length === 0
+                    render "game/end"
+                else 
+                    render "game/stage"
+                end 
+         }
+            format.js { render "game/stage" }
         end 
     end 
 
