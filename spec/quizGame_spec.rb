@@ -64,4 +64,21 @@ RSpec.describe Answer do
     expect(old_question).not_to eq(new_question)
   end 
 
+  # it "random number generator should not give same number consecutively" do 
+  #   Capybara.visit("/session/login")
+  #   Capybara.fill_in 'username', :with => 'admin'
+  #   Capybara.fill_in 'password', :with => 'admin'
+  #   Capybara.find("input[value='Login']").click 
+  #   sleep 0.5
+  #   Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+  #   Capybara.find("#startQuizButton").click 
+  #   sleep 0.5
+  #   (1..10).each do |i|
+  #     current_answer = Capybara.page.first("input[type='submit']").value
+  #     Capybara.page.first("input[type='submit']").click
+  #     new_answer = Capybara.page.first("input[type='submit']").value 
+  #     expect(current_answer).not_to eq(new_answer)
+  #   end 
+  
+
 end 

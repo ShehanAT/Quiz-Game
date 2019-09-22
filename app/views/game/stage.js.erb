@@ -1,4 +1,3 @@
-console.log("passing");
 
 $.ajax({
     url: "/games",
@@ -20,4 +19,11 @@ $.ajax({
         $("#answer4").parent().attr("action", `games?answerId=${data.answers[3].answerId}&quizId=${data.quiz.id}`);
     }
 });
+<% if false %>
+$("form").on("ajax:success", function(e){
+    console.log(e);
+})
+<% end %>
+
+
 
