@@ -1,6 +1,6 @@
 <h1>This is the stage for the Quiz Game</h1>
 
-<h2>Question: <%= @quiz.question %></h2>
+<h2 id="quiz_question">Question: <%= @quiz.question %></h2>
 <% @answers.each do |answer| %>
-    <%= button_to "#{answer.answer}", games_path(quizId: @quiz.id, answerId: "#{answer.answerId}"), remote: true, method: :post %> 
+    <%= button_to "#{answer.answer}", games_path(quizId: @quiz.id, answerId: "#{answer.answerId}"), remote: true, method: :post, id: "answer#{answer.answerId}" %> 
 <% end %>

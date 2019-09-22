@@ -1,30 +1,30 @@
 class GamesController < ApplicationController
     def new 
-
     end 
 
     def next_quiz 
-
     end 
 
     def create
         if !session[:collection_select]
             session[:collection_select] = params[:collection_select]
         end 
-        getData
+        session[:currentQuizId] = params[:quizId]
+        session[:currentAnswerId] = params[:answerId]
         checkData
-        render "game/stage"
+        getData
     end 
 
     def checkData 
-        quizId = params[:quizId]
-        answerId = params[:answerId]
+        quizId = session[:currentQuizId]
+        answerId = session[:currentAnswerId]
         if quizId && answerId
             quiz = Quiz.find(quizId)
             answer = Answer.find(answerId)
             if quiz.answerId === answer.answerId
                 Rails.logger.info "Correct Answer Selected"
             else 
+                Rails.logger.info "Wrong Answer Selected"
                 nil
             end
         else 
@@ -40,10 +40,13 @@ class GamesController < ApplicationController
         while random_quiz_id === params[:quizId]
             random_quiz_id = rand(1..total_quizzes)
         end 
-        Rails.logger.info "The random quiz id is #{random_quiz_id}"
         @quiz = @quizzes[random_quiz_id - 1]
-        Rails.logger.info "The random quiz is #{@quiz}"
         @answers = Answer.where(quizId: @quiz.id)
+        respond_to do |format|
+            format.html { render "game/stage" }
+            format.js { render "game/stage" }
+            format.json { render json: { quiz: @quiz, answers: @answers }}
+        end 
     end 
 
 end
