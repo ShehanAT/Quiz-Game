@@ -39,9 +39,17 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
   end 
 
   test "when logged in as guest user /welcome should display acknowledgement message" do 
-    Capybara.visit("session/guest_user")
+    Capybara.visit("/session/guest_user")
     sleep 0.1 
     assert_equal(Capybara.page.first("h2[id='welcome_user']").text, "Hello Guest User")
+  end 
+
+  test "/welcome logout button should redirect to /session/login " do 
+    Capybara.visit("/session/login")
+    Capybara.fill_in 'username', :with => 'admin'
+    Capybara.fill_in 'password', :with => 'admin'
+    Capybara.find("input[value='Login']").click 
+    assert Capybara.find("a[id='logout']").click
   end 
   
 

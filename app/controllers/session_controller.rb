@@ -53,6 +53,11 @@ class SessionController < ApplicationController
     def user_profile(user=nil)
      
     end 
+
+    def logout 
+      session[:user_id] = false 
+      session[:guest_user_id] = false 
+      redirect_to "/session/login"
+    end 
       
- 
 end

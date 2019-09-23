@@ -52542,3 +52542,84 @@ Processing by StartQuizController#welcome as HTML
 Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.2ms | Allocations: 16825)
 
 
+Started GET "/welcome" for ::1 at 2019-09-23 15:44:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:11
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 10.0ms | Allocations: 5380)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.2ms | Allocations: 23220)
+
+
+Started GET "/session/logout" for ::1 at 2019-09-23 15:44:51 -0400
+Processing by SessionController#logout as HTML
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/session/login" for ::1 at 2019-09-23 15:44:51 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.4ms | Allocations: 78)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 930)
+Completed 200 OK in 35ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 23092)
+
+
+Started POST "/session/login" for ::1 at 2019-09-23 15:44:56 -0400
+Processing by SessionController#create as JS
+  Parameters: {"authenticity_token"=>"vI23jK44COAL5A3Q3GObZeipBA4WgQUad89QZ/QHe+jxHCT9SXEp7yjipSarsOkBa5zua4c6q4TMekNWgX1IKg==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:38:in `block in create'
+Redirected to http://localhost:3000/welcome
+Completed 200 OK in 272ms (ActiveRecord: 0.7ms | Allocations: 5531)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 15:44:56 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:11
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1010)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.2ms | Allocations: 16940)
+
+
+Started GET "/session/logout" for ::1 at 2019-09-23 15:44:58 -0400
+Processing by SessionController#logout as HTML
+Redirected to http://localhost:3000/session/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 351)
+
+
+Started GET "/session/login" for ::1 at 2019-09-23 15:44:58 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 0.2ms | Allocations: 6)
+  Rendered session/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 425)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 16399)
+
+
+Started POST "/session/login" for ::1 at 2019-09-23 15:45:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionController#create as JS
+  Parameters: {"authenticity_token"=>"xoFFULoMghgltlxKyGnIg9sQpJ4ep3CUZajXd35mo1mLENYhXUWjFwaw9Ly/urrnWCVO+48c3greHcRGCxyQmw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:38:in `block in create'
+Redirected to http://localhost:3000/welcome
+Completed 200 OK in 309ms (ActiveRecord: 2.0ms | Allocations: 12215)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 15:46:00 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:11
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 19.9ms | Allocations: 5232)
+Completed 200 OK in 58ms (Views: 49.0ms | ActiveRecord: 2.2ms | Allocations: 22139)
+
+

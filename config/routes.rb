@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   get 'user/register', to: 'user#new'
   get 'session/login', to: 'session#new', remote: true
   get 'session/guest_user', to: 'session#guest_user'
+  get 'session/logout', to: 'session#logout'
   get 'quiz_list', to: 'start_quiz#quiz_list'
+  
+
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'question/update_question_by_id', to: 'question#update_question_by_id'
 

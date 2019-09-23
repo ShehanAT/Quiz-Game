@@ -10,4 +10,6 @@
     <% end %>
     <%= select_tag("quiz_select", options_from_collection_for_select(@quizzes.collect, 'id', 'name', params[:quiz_select])) %>
     <%= button_tag "Start Quiz", :type => :submit, :id => :startQuizButton %>
+
+    <%= link_to "Logout", {controller: "session", action: "logout"} , id: "logout" %>
 <% end %>
