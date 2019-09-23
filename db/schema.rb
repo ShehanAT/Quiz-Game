@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_005239) do
+ActiveRecord::Schema.define(version: 2019_09_23_144300) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "quizId"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2019_09_23_005239) do
     t.integer "total_questions"
     t.integer "created_at", default: 1569201293, null: false
     t.integer "updated_at", default: 1569201293, null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.integer "quizId"
+    t.integer "highScore"
+    t.integer "userId"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
