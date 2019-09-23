@@ -51962,3 +51962,583 @@ No template found for GamesController#save_score, rendering head :no_content
 Completed 204 No Content in 14ms (ActiveRecord: 3.1ms | Allocations: 3968)
 
 
+Started GET "/quiz_list" for ::1 at 2019-09-23 15:21:40 -0400
+Processing by StartQuizController#quiz_list as HTML
+  Rendering start_quiz/quiz_list.html.erb within layouts/application
+  [1m[36mQuiz Load (0.5ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/quiz_list.html.erb:2
+  Rendered start_quiz/quiz_list.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1347)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.5ms | Allocations: 17273)
+
+
+Started POST "/quizGame?quiz_select=1" for ::1 at 2019-09-23 15:21:42 -0400
+Processing by GamesController#start_game as HTML
+  Parameters: {"authenticity_token"=>"O23HkxxlBibi+MTuTTw43gLNKV7ktGi1c18xqxXEMy1kMOqGrWb6CTIcTeYr50jZessfquw7n0/GYZrmYeENTQ==", "quiz_select"=>"1"}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:11:in `start_game'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mSession Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:15:in `start_game'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  Rendering game/stage.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 4]]
+  ↳ app/views/game/stage.html.erb:8
+  Rendered game/stage.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1288)
+Completed 200 OK in 39ms (Views: 25.2ms | ActiveRecord: 1.4ms | Allocations: 21274)
+
+
+Started POST "/games?answerId=1&questionId=4" for ::1 at 2019-09-23 15:21:43 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"V6qKl2kfE6QORagcj57w70kNrXygZWC12M0yW2pFgQbbkS/wviCRk72O9N+AJyR/iRT5I1mX//cheDEidmm2mQ==", "answerId"=>"1", "questionId"=>"4"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered game/stage.js.erb (Duration: 1.4ms | Allocations: 878)
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 3031)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:43 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 2427)
+
+
+Started POST "/games?answerId=1&questionId=1" for ::1 at 2019-09-23 15:21:44 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"V6qKl2kfE6QORagcj57w70kNrXygZWC12M0yW2pFgQbbkS/wviCRk72O9N+AJyR/iRT5I1mX//cheDEidmm2mQ==", "answerId"=>"1", "questionId"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.7ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 1.6ms | Allocations: 877)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 3034)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:44 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 3]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 2446)
+
+
+Started POST "/games?answerId=1&questionId=3" for ::1 at 2019-09-23 15:21:44 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"V6qKl2kfE6QORagcj57w70kNrXygZWC12M0yW2pFgQbbkS/wviCRk72O9N+AJyR/iRT5I1mX//cheDEidmm2mQ==", "answerId"=>"1", "questionId"=>"3"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 3.7ms | Allocations: 877)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 3041)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:44 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 2]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 2423)
+
+
+Started POST "/games?answerId=1&questionId=2" for ::1 at 2019-09-23 15:21:45 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"V6qKl2kfE6QORagcj57w70kNrXygZWC12M0yW2pFgQbbkS/wviCRk72O9N+AJyR/iRT5I1mX//cheDEidmm2mQ==", "answerId"=>"1", "questionId"=>"2"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 1.6ms | Allocations: 877)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 3046)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:45 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 2340)
+
+
+Started POST "/save_score" for ::1 at 2019-09-23 15:21:45 -0400
+Processing by GamesController#save_score as JSON
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `save_score'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+No template found for GamesController#save_score, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 0.8ms | Allocations: 3223)
+
+
+Started GET "/quiz_list" for ::1 at 2019-09-23 15:21:46 -0400
+Processing by StartQuizController#quiz_list as HTML
+  Rendering start_quiz/quiz_list.html.erb within layouts/application
+  [1m[36mQuiz Load (1.7ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/quiz_list.html.erb:2
+  Rendered start_quiz/quiz_list.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1340)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 1.7ms | Allocations: 17260)
+
+
+Started POST "/quizGame?quiz_select=3" for ::1 at 2019-09-23 15:21:47 -0400
+Processing by GamesController#start_game as HTML
+  Parameters: {"authenticity_token"=>"2BEiBKvJgQrXDQA/mZYVc+EzN+BBoKLXKtBvM/7tYxaHTA8RGsp9JQfpiTf/TWV0mTUBFEkvVS2f7sR+ishddg==", "quiz_select"=>"3"}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:11:in `start_game'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mSession Update (0.6ms)[0m  [1m[33mUPDATE "sessions" SET "quizId" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["quizId", 3], ["updated_at", "2019-09-23 19:21:47.591737"], ["id", 980190962]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:15:in `start_game'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.html.erb within layouts/application
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/views/game/stage.html.erb:8
+  Rendered game/stage.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1288)
+Completed 200 OK in 43ms (Views: 23.6ms | ActiveRecord: 4.1ms | Allocations: 21921)
+
+
+Started POST "/games?answerId=1&questionId=1" for ::1 at 2019-09-23 15:21:48 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"rzP8YNbKSug+YabtMoBFp7ZT82o29I0sMsH14ytTwF4jCFkHAfXI342q+i49OZE3dkqnNc8GEm7LdPaaN3/3wQ==", "answerId"=>"1", "questionId"=>"1"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.8ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 2.7ms | Allocations: 877)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 3036)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:48 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 2342)
+
+
+Started POST "/save_score" for ::1 at 2019-09-23 15:21:48 -0400
+Processing by GamesController#save_score as JSON
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `save_score'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+No template found for GamesController#save_score, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 0.7ms | Allocations: 3236)
+
+
+Started GET "/quiz_list" for ::1 at 2019-09-23 15:21:49 -0400
+Processing by StartQuizController#quiz_list as HTML
+  Rendering start_quiz/quiz_list.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/quiz_list.html.erb:2
+  Rendered start_quiz/quiz_list.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1340)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.2ms | Allocations: 17262)
+
+
+Started POST "/quizGame?quiz_select=1" for ::1 at 2019-09-23 15:21:51 -0400
+Processing by GamesController#start_game as HTML
+  Parameters: {"authenticity_token"=>"4MwT3Zpz7LOlwH46henFl6MEJ2flSmqON3hiWn8i6fW/kT7IK3AQnHUk9zLjMrWQ2wIRk+3FnXSCRskXCwfXlQ==", "quiz_select"=>"1"}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:11:in `start_game'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mSession Update (0.4ms)[0m  [1m[33mUPDATE "sessions" SET "quizId" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["quizId", 1], ["updated_at", "2019-09-23 19:21:51.061889"], ["id", 980190962]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:15:in `start_game'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  Rendering game/stage.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 4]]
+  ↳ app/views/game/stage.html.erb:8
+  Rendered game/stage.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1288)
+Completed 200 OK in 36ms (Views: 22.0ms | ActiveRecord: 3.2ms | Allocations: 22005)
+
+
+Started POST "/games?answerId=1&questionId=4" for ::1 at 2019-09-23 15:21:53 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"T5KkQupp5oZDmQ3lNv7bczLc+qqAh7NBPN3agSvapzLDqQElPVZksfBSUSY5Rw/j8sWu9Xl1LAPFaNn4N/aQrQ==", "answerId"=>"1", "questionId"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered game/stage.js.erb (Duration: 1.5ms | Allocations: 878)
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 3026)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:53 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 2]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 2441)
+
+
+Started POST "/games?answerId=1&questionId=2" for ::1 at 2019-09-23 15:21:53 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"T5KkQupp5oZDmQ3lNv7bczLc+qqAh7NBPN3agSvapzLDqQElPVZksfBSUSY5Rw/j8sWu9Xl1LAPFaNn4N/aQrQ==", "answerId"=>"1", "questionId"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered game/stage.js.erb (Duration: 2.1ms | Allocations: 878)
+Completed 200 OK in 12ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 3034)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:53 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 2433)
+
+
+Started POST "/games?answerId=1&questionId=1" for ::1 at 2019-09-23 15:21:54 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"T5KkQupp5oZDmQ3lNv7bczLc+qqAh7NBPN3agSvapzLDqQElPVZksfBSUSY5Rw/j8sWu9Xl1LAPFaNn4N/aQrQ==", "answerId"=>"1", "questionId"=>"1"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 1.5ms | Allocations: 877)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 3033)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:54 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 3]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 2422)
+
+
+Started POST "/games?answerId=1&questionId=3" for ::1 at 2019-09-23 15:21:55 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"T5KkQupp5oZDmQ3lNv7bczLc+qqAh7NBPN3agSvapzLDqQElPVZksfBSUSY5Rw/j8sWu9Xl1LAPFaNn4N/aQrQ==", "answerId"=>"1", "questionId"=>"3"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 1.2ms | Allocations: 877)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 3033)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:21:55 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 2341)
+
+
+Started POST "/save_score" for ::1 at 2019-09-23 15:21:55 -0400
+Processing by GamesController#save_score as JSON
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `save_score'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+No template found for GamesController#save_score, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 1.0ms | Allocations: 3233)
+
+
+Started GET "/quiz_list" for ::1 at 2019-09-23 15:21:58 -0400
+Processing by StartQuizController#quiz_list as HTML
+  Rendering start_quiz/quiz_list.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/quiz_list.html.erb:2
+  Rendered start_quiz/quiz_list.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1340)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.2ms | Allocations: 17265)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 15:22:58 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:7
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 4.0ms | Allocations: 893)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.4ms | Allocations: 16811)
+
+
+Started GET "/session/guest_user" for ::1 at 2019-09-23 15:23:21 -0400
+Processing by SessionController#guest_user as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "guestUsername"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:13:in `guest_user'
+Guest User Found
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 870)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 15:23:21 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:7
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 3.5ms | Allocations: 893)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.2ms | Allocations: 16814)
+
+
+Started GET "/session/guest_user" for ::1 at 2019-09-23 15:30:07 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionController#guest_user as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "guestUsername"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:13:in `guest_user'
+Guest User Found
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 7009)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 15:30:08 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:11
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4496)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.2ms | Allocations: 22177)
+
+
+Started GET "/session/login" for ::1 at 2019-09-23 15:30:14 -0400
+Processing by SessionController#new as HTML
+  Parameters: {"remote"=>true}
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/_new.js.erb (Duration: 1.2ms | Allocations: 78)
+  Rendered session/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1506)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms | Allocations: 18044)
+
+
+Started POST "/session/login" for ::1 at 2019-09-23 15:30:20 -0400
+Processing by SessionController#create as JS
+  Parameters: {"authenticity_token"=>"ry+NphcBRD6nU8gusVXHrEn4wSecg0jSjoAuYfx9Cz0jFCjBwD7GCRSYlO2+7BM8ieGVeGVx15B3NS0Y4FE8og==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `authenticate'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:38:in `block in create'
+Redirected to http://localhost:3000/welcome
+Completed 200 OK in 271ms (ActiveRecord: 0.5ms | Allocations: 5309)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 15:30:20 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:11
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 3.1ms | Allocations: 899)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.2ms | Allocations: 16822)
+
+
+Started POST "/quizGame" for ::1 at 2019-09-23 15:30:23 -0400
+Processing by GamesController#start_game as HTML
+  Parameters: {"authenticity_token"=>"LSetiaN7o1H7dSpG1GG3vkHfR2ap/vb3i0XSBfcrdg9yeoCcEnhffiuRo06yuse5OdlxkqFxAQ0+e3lIgw5Ibw==", "quiz_select"=>"1", "button"=>""}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:11:in `start_game'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:15:in `start_game'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  Rendering game/stage.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/views/game/stage.html.erb:8
+  Rendered game/stage.html.erb within layouts/application (Duration: 10.1ms | Allocations: 4706)
+Completed 200 OK in 66ms (Views: 25.0ms | ActiveRecord: 1.5ms | Allocations: 29824)
+
+
+Started POST "/games?answerId=1&questionId=1" for ::1 at 2019-09-23 15:30:24 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"VgZnvIKFT8GNG+bsJgy4Nu7p02EADHmLNGriIQd19FjaPcLbVbrN9j7Qui8ptWymLvCHPvn+5snN3+FYG1nDxw==", "answerId"=>"1", "questionId"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 1.5ms | Allocations: 383)
+  Rendered game/stage.js.erb (Duration: 3.7ms | Allocations: 1341)
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.7ms | Allocations: 4764)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:30:24 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 3]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 2438)
+
+
+Started POST "/games?answerId=1&questionId=3" for ::1 at 2019-09-23 15:30:25 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"VgZnvIKFT8GNG+bsJgy4Nu7p02EADHmLNGriIQd19FjaPcLbVbrN9j7Qui8ptWymLvCHPvn+5snN3+FYG1nDxw==", "answerId"=>"1", "questionId"=>"3"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.7ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 2.8ms | Allocations: 877)
+Completed 200 OK in 13ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 3031)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:30:25 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 2]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 2419)
+
+
+Started POST "/games?answerId=1&questionId=2" for ::1 at 2019-09-23 15:30:25 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"VgZnvIKFT8GNG+bsJgy4Nu7p02EADHmLNGriIQd19FjaPcLbVbrN9j7Qui8ptWymLvCHPvn+5snN3+FYG1nDxw==", "answerId"=>"1", "questionId"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 1.6ms | Allocations: 877)
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 3035)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:30:25 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:65:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 4]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 2423)
+
+
+Started POST "/games?answerId=1&questionId=4" for ::1 at 2019-09-23 15:30:26 -0400
+Processing by GamesController#create as JS
+  Parameters: {"authenticity_token"=>"VgZnvIKFT8GNG+bsJgy4Nu7p02EADHmLNGriIQd19FjaPcLbVbrN9j7Qui8ptWymLvCHPvn+5snN3+FYG1nDxw==", "answerId"=>"1", "questionId"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:40:in `checkData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41:in `checkData'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  Rendering game/stage.js.erb
+  Rendered game/_end.html.erb (Duration: 0.6ms | Allocations: 199)
+  Rendered game/stage.js.erb (Duration: 2.3ms | Allocations: 877)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 3031)
+
+
+Started POST "/games" for ::1 at 2019-09-23 15:30:26 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:67:in `getData'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/controllers/games_controller.rb:74:in `block (2 levels) in render_quiz'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 2340)
+
+
+Started POST "/save_score" for ::1 at 2019-09-23 15:30:26 -0400
+Processing by GamesController#save_score as JSON
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."userId" = ? LIMIT ?[0m  [["userId", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `save_score'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" WHERE "sessions"."userId" = ? AND "sessions"."id" != ? LIMIT ?[0m  [["userId", 2], ["id", 980190962], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:86:in `save_score'
+No template found for GamesController#save_score, rendering head :no_content
+Completed 204 No Content in 49ms (ActiveRecord: 1.0ms | Allocations: 4772)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 15:30:27 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:11
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 2.6ms | Allocations: 899)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.2ms | Allocations: 16825)
+
+

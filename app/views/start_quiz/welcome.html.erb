@@ -1,6 +1,10 @@
 <h1>Welcome to Quiz Game</h1>
 <%= form_tag "/quizGame" do %>
-    <h2>Hello <%= session[:username] %></h2>
+    <% if session[:guest_user_id] %>
+        <h2 id="welcome_user">Hello Guest User</h2>
+    <% else %>
+        <h2>Hello <%= session[:username] %></h2>
+    <% end %>
     <% if false %>
     <%= select_tag(:quiz_select, options_for_select([["Sample Quiz 1",1],["Sample Quiz 2",2],["Sample Quiz 3",3]]), include_blank: "Pick a Quiz") %>
     <% end %>

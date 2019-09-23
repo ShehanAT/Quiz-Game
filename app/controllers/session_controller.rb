@@ -17,6 +17,7 @@ class SessionController < ApplicationController
         Rails.logger.info "Guest User Not Found"
       end 
       session[:guest_user_id] = @userToRender.id
+      session[:user_id] = false 
       redirect_to "/welcome" 
     end 
 

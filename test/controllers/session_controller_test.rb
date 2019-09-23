@@ -37,6 +37,12 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
         assert_not_equal(before_login_url, after_login_url)
     end
   end 
+
+  test "when logged in as guest user /welcome should display acknowledgement message" do 
+    Capybara.visit("session/guest_user")
+    sleep 0.1 
+    assert_equal(Capybara.page.first("h2[id='welcome_user']").text, "Hello Guest User")
+  end 
   
 
 end
