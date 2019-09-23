@@ -7,7 +7,12 @@ class GamesController < ApplicationController
 
     def start_game 
         session[:quiz_select] = params[:quiz_select]
-        quiz = Quiz.find(session[:quiz_select])
+        if !session[:guest_user_id] && session[:user_id]
+            game_session = Session.find_by_userId(session[:user_id])
+            game_session.quizId = params[:quiz_select]
+            game_session.save!
+        end     
+        quiz = Quiz.find(params[:quiz_select])
         total_questions = quiz.total_questions - 1
         question_order = (0..total_questions).to_a.shuffle
         session[:question_order] = question_order
@@ -74,10 +79,12 @@ class GamesController < ApplicationController
 
     def save_score
         userId = session[:user_id]
-        quizId = session[:quiz_select]
         highScore = session[:score]
-        session = Session.create(:quizId => quizId, :highScore => highScore, :userId => userId)
-        session.save!
+        game_session = Session.find_by_userId(userId)
+        if game_session 
+            game_session.highScore = highScore
+            game_session.save!
+        end 
         return 
     end 
 end

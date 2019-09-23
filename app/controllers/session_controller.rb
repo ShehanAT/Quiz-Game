@@ -34,12 +34,16 @@ class SessionController < ApplicationController
           session[:username] = @userToRender.username
           session[:user_id] = @userToRender.id
           session[:guest_user_id] = false
+          session = Session.find_by_userId(@userToRender.id)
+          if !session
+            session = Session.create(:userId => @userToRender.id)
+            session.save!
+          end
           format.html { redirect_to "/welcome" }
         else 
           flash[:alert] = "Invalid login credentials"
           format.js { render "new" }
           format.html { render "new" }
-          
         end 
      
       end  

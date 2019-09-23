@@ -124,9 +124,9 @@ RSpec.describe Answer do
       Capybara.page.first("input[type='submit']").click
       sleep 0.1
     end 
-    sleep 0.1
     expect(Capybara.page.first("h3[id='save_score']").text).to eq("Your high score has been saved")
   end 
+
 
 
 end 

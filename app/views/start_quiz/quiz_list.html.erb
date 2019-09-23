@@ -1,0 +1,5 @@
+
+<% @quizzes.each do |quiz| %>
+    <%= button_to "#{quiz.name}", {controller: "games", action: "start_game", :quiz_select => "#{quiz.id}"} , id: "quiz#{quiz.id}" %>
+    <br />
+<% end %>

@@ -22,7 +22,7 @@ class QuizController < ApplicationController
     
     def delete_quiz_by_id
         @quiz = Quiz.find(params[:id])
-        if @quiz.delete 
+        if @quiz.delete
             Rails.logger.info "Quiz was deleted"
         else 
             Rails.logger.info "Quiz was not deleted"

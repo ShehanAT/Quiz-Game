@@ -1,5 +1,5 @@
 <h1>Welcome to Quiz Game</h1>
-<%= form_tag "/quizGame", method:"get" do %>
+<%= form_tag "/quizGame" do %>
     <h2>Hello <%= session[:username] %></h2>
     <% if false %>
     <%= select_tag(:quiz_select, options_for_select([["Sample Quiz 1",1],["Sample Quiz 2",2],["Sample Quiz 3",3]]), include_blank: "Pick a Quiz") %>

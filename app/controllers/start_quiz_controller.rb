@@ -7,5 +7,6 @@ class StartQuizController < ApplicationController
   end
 
   def quiz_list
+    @quizzes = Quiz.all 
   end 
 end
