@@ -10,6 +10,7 @@ success: function(data){
     console.log(data);
     if(data.gameOver){
         $("body").html("<%= j render 'game/end' %>")
+        
         return;
     }
     $("#score").text(`Your Score: ${data.score}`);

@@ -48687,3 +48687,117 @@ The answer Id is
 Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 2359)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (4.1ms)[0m  [1m[31mDELETE FROM "quizzes";
+DELETE FROM "answers";
+DELETE FROM "users";
+DELETE FROM "questions";
+INSERT INTO "quizzes" ("id", "name", "category", "total_questions", "created_at", "updated_at") VALUES (1, 'First Sample Quiz', 'Sample1', 4, 1569248344, 1569248344);
+INSERT INTO "quizzes" ("id", "name", "category", "total_questions", "created_at", "updated_at") VALUES (2, 'Second Sample Quiz', 'Sample2', 4, 1569248344, 1569248344);
+INSERT INTO "quizzes" ("id", "name", "category", "total_questions", "created_at", "updated_at") VALUES (3, 'Third Sample Quiz', 'Sample3', 0, 1569248344, 1569248344);
+INSERT INTO "quizzes" ("id", "name", "category", "total_questions", "created_at", "updated_at") VALUES (4, 'Fourth Sample Quiz', 'Sample4', 0, 1569248344, 1569248344);
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (1, 1, 'ThisIsAnswer1OfQuiz1', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (2, 1, 'ThisIsAnswer2OfQuiz1', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (3, 1, 'ThisIsAnswer3OfQuiz1', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (4, 1, 'ThisIsAnswer4OfQuiz1', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (5, 2, 'ThisIsAnswer1OfQuiz2', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (6, 2, 'ThisIsAnswer2OfQuiz2', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (7, 2, 'ThisIsAnswer3OfQuiz2', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (8, 2, 'ThisIsAnswer4OfQuiz2', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (9, 3, 'ThisIsAnswer1OfQuiz3', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (10, 3, 'ThisIsAnswer2OfQuiz3', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (11, 3, 'ThisIsAnswer3OfQuiz3', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (12, 3, 'ThisIsAnswer4OfQuiz3', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (13, 4, 'ThisIsAnswer1OfQuiz4', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (14, 4, 'ThisIsAnswer2OfQuiz4', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (15, 4, 'ThisIsAnswer3OfQuiz4', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (16, 4, 'ThisIsAnswer4OfQuiz4', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (17, 5, 'ThisIsAnswer1OfQuiz5', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (18, 5, 'ThisIsAnswer2OfQuiz5', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (19, 5, 'ThisIsAnswer3OfQuiz5', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (20, 5, 'ThisIsAnswer4OfQuiz5', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (21, 6, 'ThisIsAnswer1OfQuiz6', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (22, 6, 'ThisIsAnswer2OfQuiz6', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (23, 6, 'ThisIsAnswer3OfQuiz6', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (24, 6, 'ThisIsAnswer4OfQuiz6', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (25, 7, 'ThisIsAnswer1OfQuiz7', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (26, 7, 'ThisIsAnswer2OfQuiz7', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (27, 7, 'ThisIsAnswer3OfQuiz7', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (28, 7, 'ThisIsAnswer4OfQuiz7', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (29, 8, 'ThisIsAnswer1OfQuiz8', 1, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (30, 8, 'ThisIsAnswer2OfQuiz8', 2, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (31, 8, 'ThisIsAnswer3OfQuiz8', 3, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "answers" ("id", "quizId", "answer", "answerId", "created_at", "updated_at") VALUES (32, 8, 'ThisIsAnswer4OfQuiz8', 4, 1569248344, '2019-09-23 14:19:04.387974');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (1, 'guestUsername', 'guestEmail@guestEmail.com', 'guestFullName guestFullName', 'guestBio', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ', '$2a$12$lrEjlgT3U53bI5Ug1.b8kJ', '2019-09-23 14:19:04.389069', '2019-09-23 14:19:04.389069');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (2, 'admin', 'admin@admin.com', 'Admin Admin', 'Admin', '$2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW', '$2a$12$lrEjlgT3U53bI5Ug1.b8kO', '2019-09-23 14:19:04.389069', '2019-09-23 14:19:04.389069');
+INSERT INTO "users" ("id", "username", "email", "fullName", "bio", "password", "password_salt", "created_at", "updated_at") VALUES (3, 'MyString1', 'MyString1', 'MyString1', 'MyText1', 'MyString1', 'MyString1', '2019-09-23 14:19:04.389069', '2019-09-23 14:19:04.389069');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (1, 1, 1569248344, 1569248344, 1, 'This Is Sample Question 1 quiz 1?');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (2, 1, 1569248344, 1569248344, 2, 'This Is Sample Question 2 quiz 1?');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (3, 1, 1569248344, 1569248344, 3, 'This Is Sample Question 3 quiz 1?');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (4, 1, 1569248344, 1569248344, 4, 'This Is Sample Question 4 quiz 1?');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (5, 2, 1569248344, 1569248344, 1, 'This Is Sample Question 1 quiz 2?');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (6, 2, 1569248344, 1569248344, 2, 'This Is Sample Question 2 quiz 2?');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (7, 2, 1569248344, 1569248344, 3, 'This Is Sample Question 3 quiz 2?');
+INSERT INTO "questions" ("id", "quiz_id", "created_at", "updated_at", "answerId", "question") VALUES (8, 2, 1569248344, 1569248344, 4, 'This Is Sample Question 4 quiz 2?')[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/welcome" for ::1 at 2019-09-23 10:24:05 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:7
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4615)
+Completed 200 OK in 67ms (Views: 62.8ms | ActiveRecord: 0.2ms | Allocations: 22446)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 10:29:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:7
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1096)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.2ms | Allocations: 17937)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 10:30:18 -0400
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:7
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1069)
+Completed 200 OK in 73ms (Views: 70.0ms | ActiveRecord: 0.2ms | Allocations: 17926)
+
+
+Started GET "/welcome" for ::1 at 2019-09-23 10:33:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StartQuizController#welcome as HTML
+  Rendering start_quiz/welcome.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  ↳ app/views/start_quiz/welcome.html.erb:7
+  Rendered start_quiz/welcome.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4686)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 1.0ms | Allocations: 21753)
+
+
+Started GET "/quizGame?quiz_select=1&button=" for ::1 at 2019-09-23 10:33:54 -0400
+Processing by GamesController#start_game as HTML
+  Parameters: {"quiz_select"=>"1", "button"=>""}
+THE SELECTED QUIZ IS 1
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:11:in `start_game'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 1]]
+  ↳ app/controllers/games_controller.rb:61:in `getData'
+  Rendering game/stage.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."quizId" = ?[0m  [["quizId", 1]]
+  ↳ app/views/game/stage.html.erb:8
+  Rendered game/stage.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4842)
+Completed 200 OK in 38ms (Views: 23.0ms | ActiveRecord: 2.8ms | Allocations: 27543)
+
+

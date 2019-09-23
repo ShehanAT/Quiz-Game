@@ -10,3 +10,17 @@ two:
   name: Second Sample Quiz
   category: Sample2
   total_questions: 4
+
+three:
+  id: 3
+  name: Third Sample Quiz
+  category: Sample3
+  total_questions: 0
+
+four:
+  id: 4
+  name: Fourth Sample Quiz
+  category: Sample4
+  total_questions: 0
+
+  

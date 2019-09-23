@@ -101,4 +101,13 @@ RSpec.describe Answer do
     expect(Capybara.page.current_path).to eq("/quiz_list")
   end 
 
+  it "/welcome should have minimum of 4 options and should be dynamically rendered" do 
+    Capybara.visit("/session/login")
+    Capybara.fill_in 'username', :with => 'admin'
+    Capybara.fill_in 'password', :with => 'admin'
+    Capybara.find("input[value='Login']").click 
+    sleep 0.5
+    expect(Capybara.find("#quiz_select").find(:xpath, "option[4]").select_option)
+  end 
+
 end 

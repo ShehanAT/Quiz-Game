@@ -1,5 +1,6 @@
 class StartQuizController < ApplicationController
   def welcome
+    @quizzes = Quiz.all
   end
 
   def start

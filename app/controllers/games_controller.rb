@@ -29,8 +29,6 @@ class GamesController < ApplicationController
     def checkData 
         session[:currentQuestionId] = params[:questionId]
         session[:currentAnswerId] = params[:answerId]
-        Rails.logger.info "The question Id is #{params[:questionId]}"
-        Rails.logger.info "The answer Id is #{params[:answerId]}"
         questionId = session[:currentQuestionId]
         answerId = session[:currentAnswerId]
         if questionId && answerId
