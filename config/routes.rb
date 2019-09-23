@@ -17,15 +17,14 @@ Rails.application.routes.draw do
   get 'session/login', to: 'session#new', remote: true
   get 'session/guest_user', to: 'session#guest_user'
   get 'quizGame', to:'games#start_game'
-  get 'endGame', to:'games#end_game'
   get 'quiz_list', to: 'start_quiz#quiz_list'
-
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'question/update_question_by_id', to: 'question#update_question_by_id'
 
   post 'user/create', to: 'user#create'  
   post 'user/user_login', to: 'user#user_login'
   post 'session/login', to: 'session#create'
+  post '/save_score', to: 'games#save_score'
 
   delete 'quiz/delete_quiz_by_id', to: 'quiz#delete_quiz_by_id'
   delete 'question/delete_question_by_id', to: 'question#delete_question_by_id'

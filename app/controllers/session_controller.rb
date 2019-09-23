@@ -34,7 +34,6 @@ class SessionController < ApplicationController
           session[:username] = @userToRender.username
           session[:user_id] = @userToRender.id
           session[:guest_user_id] = false
-        
           format.html { redirect_to "/welcome" }
         else 
           flash[:alert] = "Invalid login credentials"

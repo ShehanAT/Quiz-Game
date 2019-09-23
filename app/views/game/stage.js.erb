@@ -9,8 +9,17 @@ data: {
 success: function(data){
     console.log(data);
     if(data.gameOver){
-        $("body").html("<%= j render 'game/end' %>")
-        
+        // 
+        $.ajax({
+            url: "/save_score",
+            dataType: "json",
+            method: "post",
+            data: {
+            },
+            success: function(data){
+                $("body").html("<%= j render 'game/end' %>")
+            }
+        })
         return;
     }
     $("#score").text(`Your Score: ${data.score}`);

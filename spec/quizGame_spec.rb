@@ -110,5 +110,23 @@ RSpec.describe Answer do
     expect(Capybara.find("#quiz_select").find(:xpath, "option[4]").select_option)
   end 
 
+  it "/_end.html should display confirmation message after saving highScore" do 
+    Capybara.current_driver = Capybara.javascript_driver
+    Capybara.visit("/session/login")
+    Capybara.fill_in 'username', :with => 'admin'
+    Capybara.fill_in 'password', :with => 'admin'
+    Capybara.find("input[value='Login']").click 
+    sleep 0.5
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#startQuizButton").click 
+    sleep 0.5
+    for i in 0..3
+      Capybara.page.first("input[type='submit']").click
+      sleep 0.1
+    end 
+    sleep 0.1
+    expect(Capybara.page.first("h3[id='save_score']").text).to eq("Your high score has been saved")
+  end 
+
 
 end 

@@ -72,6 +72,12 @@ class GamesController < ApplicationController
         end 
     end 
 
-
-
+    def save_score
+        userId = session[:user_id]
+        quizId = session[:quiz_select]
+        highScore = session[:score]
+        session = Session.create(:quizId => quizId, :highScore => highScore, :userId => userId)
+        session.save!
+        return 
+    end 
 end
