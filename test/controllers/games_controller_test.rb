@@ -24,11 +24,13 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
     Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
-    for i in 0..2
+    for i in 0..3
       Capybara.page.first("input[type='submit']").click
       sleep 0.1
     end 
     assert_equal("Game Over", Capybara.page.first("h1").text)
   end 
+
+
 
 end

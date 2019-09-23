@@ -1,1 +1,6 @@
 <h1>Game Over</h1>
+
+<h2 id="final_score">Your Score: <%= session[:score] %></h2>
+
+
+<%= link_to "Home Page", {controller: "start_quiz", action: "welcome"} , id: "homePage" %>

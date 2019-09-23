@@ -62,4 +62,43 @@ RSpec.describe Answer do
     new_question = Capybara.page.first("h2").text 
     expect(old_question).not_to eq(new_question)
   end 
+
+  it " /endGame should contain 'Home Page' link that redirects to /start_quiz/welcome" do 
+    Capybara.current_driver = Capybara.javascript_driver
+    Capybara.visit("/session/login")
+    Capybara.fill_in 'username', :with => 'admin'
+    Capybara.fill_in 'password', :with => 'admin'
+    Capybara.find("input[value='Login']").click 
+    sleep 0.5
+    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#startQuizButton").click 
+    sleep 0.5
+    for i in 0..3
+      Capybara.page.first("input[type='submit']").click
+      sleep 0.1
+    end 
+    Capybara.page.first("a[id='homePage']").click 
+    sleep 0.1 
+    expect(Capybara.page.current_path).to eq("/welcome")
+  end 
+
+  it "/endGame should contain 'Take different quiz' link that redirects to /start_quiz/show_collections" do 
+    Capybara.current_driver = Capybara.javascript_driver
+    Capybara.visit("/session/login")
+    Capybara.fill_in 'username', :with => 'admin'
+    Capybara.fill_in 'password', :with => 'admin'
+    Capybara.find("input[value='Login']").click 
+    sleep 0.5
+    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#startQuizButton").click 
+    sleep 0.5
+    for i in 0..3
+      Capybara.page.first("input[type='submit']").click
+      sleep 0.1
+    end 
+    Capybara.page.first("a[id='collectionList']").click 
+    sleep 0.1 
+    expect(Capybara.page.current_path).to eq("/collections")
+  end 
+
 end 

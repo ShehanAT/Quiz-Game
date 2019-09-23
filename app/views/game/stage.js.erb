@@ -7,11 +7,11 @@ data: {
 
 },
 success: function(data){
-    console.log(data);
-    if(data.quizzesLeft === 0){
+    if(data.gameOver){
         $("body").html("<%= j render 'game/end' %>")
         return;
     }
+    $("#score").text(`Your Score: ${data.score}`);
     $("#quiz_question").text(`Question: ${data.quiz.question}`);
     $("#answer1").val(data.answers[0].answer);
     $("#answer1").parent().attr("action", `games?answerId=${data.answers[0].answerId}&quizId=${data.quiz.id}`);

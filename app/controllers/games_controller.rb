@@ -11,12 +11,14 @@ class GamesController < ApplicationController
         total_quizzes = collection.total_quizzes - 1
         quiz_order = (0..total_quizzes).to_a.shuffle
         session[:quiz_order] = quiz_order
+        session[:score] = 0
         @current_quiz_id = session[:quiz_order].pop
         getData
         render_quiz
     end 
 
     def create
+        
         if request.format === "application/json"
             pop_array
         end
@@ -34,11 +36,8 @@ class GamesController < ApplicationController
             quiz = Quiz.find(quizId)
             answer = Answer.find(answerId)
             if quiz.answerId === answer.answerId
-                flash[:notice] = "Correct Answer!"
-                # Rails.logger.info "Correct Answer Selected"
+                session[:score] += 10
             else 
-                
-                # Rails.logger.info "Wrong Answer Selected"
                 nil
             end
         else 
@@ -50,8 +49,9 @@ class GamesController < ApplicationController
         if session[:quiz_order].length != 0
             @current_quiz_id = session[:quiz_order].pop
             @current_quiz_id 
+            
         else 
-            nil 
+            @gameOver = true
         end 
     end 
 
@@ -67,10 +67,12 @@ class GamesController < ApplicationController
 
     def render_quiz 
         respond_to do |format|
-            format.json { render json: { quiz: @quiz, answers: @answers, :quizzesLeft => session[:quiz_order].length } }
+            format.json { render json: { quiz: @quiz, answers: @answers, gameOver: @gameOver, score: session[:score]} }
             format.html { render "game/stage" }
             format.js { render "game/stage" }
         end 
     end 
+
+
 
 end
