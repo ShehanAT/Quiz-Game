@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_223059) do
+ActiveRecord::Schema.define(version: 2019_09_23_005239) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "quizId"
@@ -20,20 +20,20 @@ ActiveRecord::Schema.define(version: 2019_09_20_223059) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "collections", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
-    t.integer "total_quizzes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "questions", force: :cascade do |t|
+    t.integer "quiz_id", null: false
+    t.integer "created_at", default: 1569201292, null: false
+    t.integer "updated_at", default: 1569201293, null: false
+    t.integer "answerId"
+    t.string "question"
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.integer "collection_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "answerId"
-    t.string "question"
+    t.string "name"
+    t.string "category"
+    t.integer "total_questions"
+    t.integer "created_at", default: 1569201293, null: false
+    t.integer "updated_at", default: 1569201293, null: false
   end
 
   create_table "users", force: :cascade do |t|

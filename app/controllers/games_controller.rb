@@ -6,19 +6,18 @@ class GamesController < ApplicationController
     end 
 
     def start_game 
-        session[:collection_select] = params[:collection_select]
-        collection = Collection.find(session[:collection_select])
-        total_quizzes = collection.total_quizzes - 1
-        quiz_order = (0..total_quizzes).to_a.shuffle
-        session[:quiz_order] = quiz_order
+        session[:quiz_select] = params[:quiz_select]
+        quiz = Quiz.find(session[:quiz_select])
+        total_questions = quiz.total_questions - 1
+        question_order = (0..total_questions).to_a.shuffle
+        session[:question_order] = question_order
         session[:score] = 0
-        @current_quiz_id = session[:quiz_order].pop
+        @current_question_id = session[:question_order].pop
         getData
         render_quiz
     end 
 
     def create
-        
         if request.format === "application/json"
             pop_array
         end
@@ -28,15 +27,18 @@ class GamesController < ApplicationController
     end 
 
     def checkData 
-        session[:currentQuizId] = params[:quizId]
+        session[:currentQuestionId] = params[:questionId]
         session[:currentAnswerId] = params[:answerId]
-        quizId = session[:currentQuizId]
+        Rails.logger.info "The question Id is #{params[:questionId]}"
+        Rails.logger.info "The answer Id is #{params[:answerId]}"
+        questionId = session[:currentQuestionId]
         answerId = session[:currentAnswerId]
-        if quizId && answerId
-            quiz = Quiz.find(quizId)
+        if questionId && answerId
+            question = Question.find(questionId)
             answer = Answer.find(answerId)
-            if quiz.answerId === answer.answerId
+            if question.answerId === answer.answerId
                 session[:score] += 10
+               
             else 
                 nil
             end
@@ -46,28 +48,27 @@ class GamesController < ApplicationController
     end 
 
     def pop_array 
-        if session[:quiz_order].length != 0
-            @current_quiz_id = session[:quiz_order].pop
-            @current_quiz_id 
-            
+        if session[:question_order].length != 0
+            @current_question_id = session[:question_order].pop
+            @current_question_id 
         else 
             @gameOver = true
         end 
     end 
 
     def getData
-        quizzes = Quiz.where(collection_id: session[:collection_select])
-        if @current_quiz_id 
-            @quiz = quizzes[@current_quiz_id]
+        quizzes = Question.where(quiz_id: session[:quiz_select])
+        if @current_question_id 
+            @question = quizzes[@current_question_id]
         else 
-            @quiz = Quiz.find(1)
+            @question = Question.find(1)
         end 
-        @answers = Answer.where(quizId: @quiz.id)
+        @answers = Answer.where(quizId: @question.id)
     end 
 
     def render_quiz 
         respond_to do |format|
-            format.json { render json: { quiz: @quiz, answers: @answers, gameOver: @gameOver, score: session[:score]} }
+            format.json { render json: { question: @question, answers: @answers, gameOver: @gameOver, score: session[:score] } }
             format.html { render "game/stage" }
             format.js { render "game/stage" }
         end 

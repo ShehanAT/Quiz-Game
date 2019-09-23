@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# for quiz 1 
+one:
+  id: 1
+  quiz_id: 1
+  answerId: 1
+  question: "This Is Sample Question 1 quiz 1?"
+  
+two:
+  id: 2
+  quiz_id: 1
+  answerId: 2
+  question: "This Is Sample Question 2 quiz 1?"
+
+three:
+  id: 3
+  quiz_id: 1
+  answerId: 3
+  question: "This Is Sample Question 3 quiz 1?"
+
+four:
+  id: 4
+  quiz_id: 1
+  answerId: 4
+  question: "This Is Sample Question 4 quiz 1?"
+
+# for quiz 2 
+five:
+  id: 5
+  quiz_id: 2
+  answerId: 1
+  question: "This Is Sample Question 1 quiz 2?"
+  
+six:
+  id: 6
+  quiz_id: 2
+  answerId: 2
+  question: "This Is Sample Question 2 quiz 2?"
+
+seven:
+  id: 7
+  quiz_id: 2
+  answerId: 3
+  question: "This Is Sample Question 3 quiz 2?"
+
+eight:
+  id: 8
+  quiz_id: 2
+  answerId: 4
+  question: "This Is Sample Question 4 quiz 2?"

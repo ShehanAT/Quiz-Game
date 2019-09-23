@@ -4,4 +4,7 @@ class StartQuizController < ApplicationController
 
   def start
   end
+
+  def quiz_list
+  end 
 end

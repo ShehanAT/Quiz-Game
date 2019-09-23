@@ -8,7 +8,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
   test "should render the first quiz view on start_quiz/welcome button click" do 
     Capybara.visit("/welcome")
     before_url = Capybara.current_url
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("button[type='submit']").click
     after_url = Capybara.current_url
     assert_not_equal(before_url, after_url)
@@ -21,7 +21,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
     for i in 0..3

@@ -1,26 +1,21 @@
-<h1>Listing Newly Created Quiz</h1>
+<h1>Quiz List</h1>
  
 <table>
   <thead>
     <tr>
-      <th>Collection Id</th>
-      <th>Quiz Collection Id</th>
-      <th>Quiz Answer Id</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Contained Number of questions</th>
     </tr>
   </thead>
  
   <tbody>
     <tr>
-    <% @collection.quiz.each do |quiz| %>
-        <tr>
-            <td><%= @collection.id %></td>
-            <td><%= quiz.collection_id %></td>
-            <td><%= quiz.answerId %></td>
-        </tr>
-       
-    <% end %>
- 
+        <td><%= @quiz.name %></td>
+        <td><%= @quiz.category %></td>
+        <td><%= @quiz.total_questions %></td>
     </tr>
   </tbody>
 </table>
+<h2>This quiz contains no questions yet. Click <a href="/question/new_question">here</a> to add questions</h2>
 <br>

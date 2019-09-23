@@ -1,23 +1,38 @@
-<h1>Quiz Details</h1>
+<h1>Quiz Detail Page</h1>
  
 <table>
   <thead>
     <tr>
-      <th>Question</th>
-      <th>Answer</th>
-      <th>Quiz Id</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Contained Number of Questions</th>
     </tr>
   </thead>
  
   <tbody>
-  
     <tr>
-        <td><%= @quiz.collection_id %></td>
-        <td><%= @quiz.answerId %></td>
-        <td><%= @quiz.id %></td>
+        <td><%= @quiz.name %></td>
+        <td><%= @quiz.category %></td>
+        <td><%= @quiz.total_questions %></td>
     </tr>
-  
   </tbody>
 </table>
-
+<h2>All Contained Questions:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Contained Number of Questions</th>
+    </tr>
+  </thead>
  
+  <tbody>
+    <tr>
+    <% @questionsInQuiz.each do | question | %>
+        <td><%= question.id %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+<br>

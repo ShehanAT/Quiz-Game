@@ -14,7 +14,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
     expect(Capybara.page.first("input[type='submit']").value).not_to eq("")
@@ -26,7 +26,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
     Capybara.page.first("input[type='submit']").click
@@ -40,7 +40,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
     expect(Capybara.page.first("h2").text).not_to eq("")
@@ -53,7 +53,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
     old_question = Capybara.page.first("h2").text
@@ -70,7 +70,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
     for i in 0..3
@@ -82,23 +82,23 @@ RSpec.describe Answer do
     expect(Capybara.page.current_path).to eq("/welcome")
   end 
 
-  it "/endGame should contain 'Take different quiz' link that redirects to /start_quiz/show_collections" do 
+  it "/endGame should contain 'Take different quiz' link that redirects to /start_quiz/show_quizs" do 
     Capybara.current_driver = Capybara.javascript_driver
     Capybara.visit("/session/login")
     Capybara.fill_in 'username', :with => 'admin'
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#collection_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
     Capybara.find("#startQuizButton").click 
     sleep 0.5
     for i in 0..3
       Capybara.page.first("input[type='submit']").click
       sleep 0.1
     end 
-    Capybara.page.first("a[id='collectionList']").click 
+    Capybara.page.first("a[id='quizList']").click 
     sleep 0.1 
-    expect(Capybara.page.current_path).to eq("/collections")
+    expect(Capybara.page.current_path).to eq("/quiz_list")
   end 
 
 end 

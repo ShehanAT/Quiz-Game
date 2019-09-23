@@ -2,6 +2,6 @@
 <%= form_tag "/quizGame", method:"get" do %>
     <h2>Hello <%= session[:username] %></h2>
 
-    <%= select_tag(:collection_select, options_for_select([["Sample Collection 1",1],["Sample Collection 2",2],["Sample Collection 3",3]]), include_blank: "Pick a Collection") %>
+    <%= select_tag(:quiz_select, options_for_select([["Sample Quiz 1",1],["Sample Quiz 2",2],["Sample Quiz 3",3]]), include_blank: "Pick a Quiz") %>
     <%= button_tag "Start Quiz", :type => :submit, :id => :startQuizButton %>
 <% end %>
