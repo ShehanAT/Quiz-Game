@@ -9,12 +9,15 @@ RSpec.describe StartQuizController do
         Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
         Capybara.find("#startQuizButton").click 
         sleep 0.5
+        Capybara.page.first("button[id='start_quiz']").click
+        sleep 0.1
         for i in 0..3
           Capybara.page.first("input[type='submit']").click
           sleep 0.1
         end 
         Capybara.page.first("a[id='quizList']").click 
         sleep 0.1 
+        Rails.logger.info "THE INPUT ELEMENTS ARE #{Capybara.page.all("input[type='submit']")}"
         expect(Capybara.page.all("input[type='submit']")[3]).to be_an_instance_of(Capybara::Node::Element) 
 
     end 

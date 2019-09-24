@@ -1,13 +1,43 @@
 
 
-<h1>Question Time!</h1>
+<h2 id="quiz_title">Question Time!</h2>
+
+<h2 id="quiz_name"><%= @start_quiz.name %></h2>
+<ul id="quiz_stats">
+    <li>Description: Sample Description</li>
+    <li>Total Questions: <%= @start_quiz.total_questions %></li>
+</ul>
+<button id="start_quiz">Play</button>
 
 <%= render_quiz_question(@question) %>
 <h2 id="score"> Your Score: 0</h2>
+
 <% if @answers %>
     <% @answers.each do |answer| %>
-        <%= button_to "#{answer.answer}", games_path(questionId: @question.id, answerId: "#{answer.answerId}"), remote: true, method: :post, id: "answer#{answer.answerId}" %> 
+        <%= button_to "#{answer.answer}", games_path(questionId: @question.id, answerId: "#{answer.answerId}"), remote: true, method: :post, id: "answer#{answer.answerId}", class: "answerChoice" %> 
     <% end %>
 <% end %>
 
+<script>
+$(document).ready(function(){
+    $("#score").show();
+    $("#quiz_name").show();
+    $("#quiz_stats").show();
+    $("#start_quiz").show();
+    $("input[type='submit']").hide();
+    $("#quiz_title").hide();
+    $("#quiz_question").hide();
+    $("#score").hide();
+});
 
+$("#start_quiz").on("click", function(){
+    $("#score").hide();
+    $("#quiz_name").hide();
+    $("#quiz_stats").hide();
+    $("#start_quiz").hide();
+    $("input[type='submit']").show();
+    $("#quiz_title").show();
+    $("#quiz_question").show();
+    $("#score").show();
+});
+</script>

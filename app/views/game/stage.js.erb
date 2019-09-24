@@ -1,4 +1,14 @@
 
+
+function sleep(ms)
+{
+    return(
+        new Promise(function(resolve, reject)
+        {
+            setTimeout(function() { resolve(); }, ms);
+        })
+    );
+}
 $.ajax({
 url: "/games",
 dataType: "json",
@@ -7,32 +17,32 @@ data: {
 
 },
 success: function(data){
-    console.log(data);
-    if(data.gameOver){
-        // 
-        $.ajax({
-            url: "/save_score",
-            dataType: "json",
-            method: "post",
-            data: {
-            },
-            success: function(data){
-                $("body").html("<%= j render 'game/end' %>")
-            }
-        })
-        return;
-    }
-    $("#score").text(`Your Score: ${data.score}`);
-    $("#quiz_question").text(`Question: ${data.question.question}`);
-    $("#answer1").val(data.answers[0].answer);
-    $("#answer1").parent().attr("action", `games?answerId=${data.answers[0].answerId}&questionId=${data.question.id}`);
-    $("#answer2").val(data.answers[1].answer);
-    $("#answer2").parent().attr("action", `games?answerId=${data.answers[1].answerId}&questionId=${data.question.id}`);
-    $("#answer3").val(data.answers[2].answer);
-    $("#answer3").parent().attr("action", `games?answerId=${data.answers[2].answerId}&questionId=${data.question.id}`);
-    $("#answer4").val(data.answers[3].answer);
-    $("#answer4").parent().attr("action", `games?answerId=${data.answers[3].answerId}&questionId=${data.question.id}`);
-}
+    sleep(250).then(function(){
+        if(data.gameOver){
+            $.ajax({
+                url: "/save_score",
+                dataType: "json",
+                method: "post",
+                data: {
+                },
+                success: function(data){
+                    $("body").html("<%= j render 'game/end' %>")
+                }
+            })
+            return;
+        }
+        $("#score").text(`Your Score: ${data.score}`);
+        $("#quiz_question").text(`Question: ${data.question.question}`);
+        $("#answer1").val(data.answers[0].answer);
+        $("#answer1").parent().attr("action", `games?answerId=${data.answers[0].answerId}&questionId=${data.question.id}`);
+        $("#answer2").val(data.answers[1].answer);
+        $("#answer2").parent().attr("action", `games?answerId=${data.answers[1].answerId}&questionId=${data.question.id}`);
+        $("#answer3").val(data.answers[2].answer);
+        $("#answer3").parent().attr("action", `games?answerId=${data.answers[2].answerId}&questionId=${data.question.id}`);
+        $("#answer4").val(data.answers[3].answer);
+        $("#answer4").parent().attr("action", `games?answerId=${data.answers[3].answerId}&questionId=${data.question.id}`);
+    });
+  }
 });
 
 

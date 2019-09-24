@@ -49,7 +49,9 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
     Capybara.fill_in 'username', :with => 'admin'
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
-    assert Capybara.find("a[id='logout']").click
+    Capybara.find("a[id='logout']").click
+    sleep 0.1 
+    assert_equal(Capybara.page.current_path, "/session/login")
   end 
   
 

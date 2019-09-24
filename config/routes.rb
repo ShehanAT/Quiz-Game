@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'session/guest_user', to: 'session#guest_user'
   get 'session/logout', to: 'session#logout'
   get 'quiz_list', to: 'start_quiz#quiz_list'
+  get 'quizGame', to: 'games#start_game'
   
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'

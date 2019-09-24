@@ -12,8 +12,8 @@ class GamesController < ApplicationController
             game_session.quizId = params[:quiz_select]
             game_session.save!
         end     
-        quiz = Quiz.find(params[:quiz_select])
-        total_questions = quiz.total_questions - 1
+        @start_quiz = Quiz.find(params[:quiz_select])
+        total_questions = @start_quiz.total_questions - 1
         question_order = (0..total_questions).to_a.shuffle
         session[:question_order] = question_order
         session[:score] = 0
@@ -60,9 +60,9 @@ class GamesController < ApplicationController
     end 
 
     def getData
-        quizzes = Question.where(quiz_id: session[:quiz_select])
+        questions = Question.where(quiz_id: session[:quiz_select])
         if @current_question_id 
-            @question = quizzes[@current_question_id]
+            @question = questions[@current_question_id]
         else 
             @question = Question.find(1)
         end 
