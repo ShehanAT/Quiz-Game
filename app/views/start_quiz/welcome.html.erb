@@ -1,5 +1,5 @@
 <h1>Welcome to Quiz Game</h1>
-<%= form_tag "/quizGame" do %>
+<%= form_tag({:action => 'setup_quiz'}, {:id => 'quiz_collection_form',  :method => "get"}) do %>
     <% if session[:guest_user_id] %>
         <h2 id="welcome_user">Hello Guest User</h2>
     <% else %>

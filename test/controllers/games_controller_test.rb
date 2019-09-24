@@ -38,4 +38,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
     assert_equal("Game Over", Capybara.page.first("h1").text)
   end 
 
+  
+ 
+
 end

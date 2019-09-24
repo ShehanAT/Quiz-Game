@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   get 'session/guest_user', to: 'session#guest_user'
   get 'session/logout', to: 'session#logout'
   get 'quiz_list', to: 'start_quiz#quiz_list'
+  get 'quiz_error', to: 'games#quiz_error'
   get 'quizGame', to: 'games#start_game'
-  
+  get 'setup_quiz', to: 'start_quiz#setup_quiz'
+
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'question/update_question_by_id', to: 'question#update_question_by_id'
@@ -28,7 +30,8 @@ Rails.application.routes.draw do
   post 'user/user_login', to: 'user#user_login'
   post 'session/login', to: 'session#create'
   post 'save_score', to: 'games#save_score'
-  post 'quizGame', to: 'games#start_game'
+  
+  
 
   delete 'quiz/delete_quiz_by_id', to: 'quiz#delete_quiz_by_id'
   delete 'question/delete_question_by_id', to: 'question#delete_question_by_id'

@@ -153,4 +153,17 @@ RSpec.describe Answer do
     expect(Capybara.page.first("button[id='start_quiz']").text).to eq("Play")
   end 
 
+  it "GET request to /quizGame should not throw errors" do 
+    Capybara.current_driver = Capybara.javascript_driver
+    Capybara.visit("/session/login")
+    Capybara.fill_in 'username', :with => 'admin'
+    Capybara.fill_in 'password', :with => 'admin'
+    Capybara.find("input[value='Login']").click 
+    sleep 0.5
+    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
+    Capybara.find("#startQuizButton").click
+    sleep 0.5
+    expect(Capybara.page.current_path).not_to eq("/quiz_error")
+  end
+
 end 

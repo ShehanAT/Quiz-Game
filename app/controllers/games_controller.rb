@@ -6,13 +6,13 @@ class GamesController < ApplicationController
     end 
 
     def start_game 
-        session[:quiz_select] = params[:quiz_select]
-        if !session[:guest_user_id] && session[:user_id]
-            game_session = Session.find_by_userId(session[:user_id])
-            game_session.quizId = params[:quiz_select]
-            game_session.save!
-        end     
-        @start_quiz = Quiz.find(params[:quiz_select])
+        if session[:quiz_select]
+            if !session[:guest_user_id] && session[:user_id]
+                game_session = Session.find_by_userId(session[:user_id])
+                game_session.quizId = session[:quiz_select]
+                game_session.save!
+            end     
+        @start_quiz = Quiz.find(session[:quiz_select])
         total_questions = @start_quiz.total_questions - 1
         question_order = (0..total_questions).to_a.shuffle
         session[:question_order] = question_order
@@ -20,6 +20,14 @@ class GamesController < ApplicationController
         @current_question_id = session[:question_order].pop
         getData
         render_quiz
+        else 
+            redirect_to "/quiz_error"
+        end 
+
+    end 
+
+    def quiz_error 
+        render "game/error"
     end 
 
     def create
