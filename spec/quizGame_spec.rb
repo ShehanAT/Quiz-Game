@@ -14,8 +14,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     expect(Capybara.page.first("input[type='submit']").value).not_to eq("")
   end 
@@ -27,8 +26,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     Capybara.page.first("button[id='start_quiz']").click
     sleep 0.1
@@ -43,8 +41,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     Capybara.page.first("button[id='start_quiz']").click
     sleep 0.1
@@ -58,8 +55,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     Capybara.page.first("button[id='start_quiz']").click
     sleep 0.1
@@ -77,8 +73,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     Capybara.page.first("button[id='start_quiz']").click
     sleep 0.1
@@ -98,8 +93,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     Capybara.page.first("button[id='start_quiz']").click
     sleep 0.1
@@ -118,7 +112,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    expect(Capybara.find("#quiz_select").find(:xpath, "option[4]").select_option)
+    expect(Capybara.page.first("a[class='quiz_link']").click)
   end 
 
   it "/_end.html should display confirmation message after saving highScore" do 
@@ -128,8 +122,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     Capybara.page.first("button[id='start_quiz']").click
     sleep 0.1
@@ -147,8 +140,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.1
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click 
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.1
     expect(Capybara.page.first("button[id='start_quiz']").text).to eq("Play")
   end 
@@ -160,8 +152,7 @@ RSpec.describe Answer do
     Capybara.fill_in 'password', :with => 'admin'
     Capybara.find("input[value='Login']").click 
     sleep 0.5
-    Capybara.find("#quiz_select").find(:xpath, "option[2]").select_option
-    Capybara.find("#startQuizButton").click
+    Capybara.page.first("a[class='quiz_link']").click
     sleep 0.5
     expect(Capybara.page.current_path).not_to eq("/quiz_error")
   end
