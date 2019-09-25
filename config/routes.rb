@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resource :games
+  resource :games 
+  # as: 'quiz', controller: 'games'
   get '', to: 'start_quiz#start'
   get '/welcome', to: 'start_quiz#welcome'
   get 'quiz/new_question_to_quiz', to: 'quiz#new_question_to_quiz', :quiz_id => 2, :question => "This is test question 2?", :answer => "This is test answer 2" 
@@ -19,9 +20,8 @@ Rails.application.routes.draw do
   get 'session/logout', to: 'session#logout'
   get 'quiz_list', to: 'start_quiz#quiz_list'
   get 'quiz_error', to: 'games#quiz_error'
-  get 'quizGame', to: 'games#start_game'
+  get 'quiz', to: 'games#start_game'
   get 'setup_quiz', to: 'start_quiz#setup_quiz'
-
 
   put 'quiz/update_quiz_by_id', to: 'quiz#update_quiz_by_id'
   put 'question/update_question_by_id', to: 'question#update_question_by_id'
@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   post 'user/user_login', to: 'user#user_login'
   post 'session/login', to: 'session#create'
   post 'save_score', to: 'games#save_score'
-  
+  post 'next_question', to: 'games#next_quiz'
+  post 'games', to: 'games#create'
   
 
   delete 'quiz/delete_quiz_by_id', to: 'quiz#delete_quiz_by_id'

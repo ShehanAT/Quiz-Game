@@ -12,6 +12,6 @@ class StartQuizController < ApplicationController
 
   def setup_quiz
     session[:quiz_select] = params[:quiz_select]
-    redirect_to "/quizGame"
+    redirect_to "/quiz"
   end
 end
