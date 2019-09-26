@@ -15,4 +15,9 @@ RSpec.describe Session do
         capybara_login 
         expect(Capybara.page.current_path).to eq("/")
     end
+
+    it "login => logout, should redirect to root_url" do 
+        capybara_logout
+        expect(Capybara.page.current_path).to eq("/")
+    end 
 end 

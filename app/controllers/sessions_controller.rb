@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
     def create 
         user = User.authenticate(params[:username], params[:password])
         if user
+            session[:user_id] = params[:username]
+            session[:username] = user.username
             redirect_to root_url
         else 
             respond_to do |format|
@@ -18,5 +20,13 @@ class SessionsController < ApplicationController
             end 
         end 
     end 
+
+    def destroy
+        session[:user_id] = false 
+        session[:username] = false 
+        redirect_to root_url
+    end 
+
+
       
 end
