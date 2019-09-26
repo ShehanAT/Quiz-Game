@@ -1,5 +1,0 @@
-
-<% @quizzes.each do |quiz| %>
-    <%= link_to "#{quiz.name}", {controller: "start_quiz", action: "setup_quiz", :quiz_select => "#{quiz.id}"} , id: "quiz#{quiz.id}", class: "quiz_link" %>
-    <br />
-<% end %>

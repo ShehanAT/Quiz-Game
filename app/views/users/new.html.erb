@@ -1,0 +1,26 @@
+
+<%= form_with model: @user do |form| %>
+    <div id="user_errors">
+    </div>
+
+    <%= form.label(:username, "Username:") %>
+    <%= form.text_field :username %>
+
+    <%= form.label(:email, "Email:") %>
+    <%= form.text_field :email %>
+
+    <%= form.label(:password, "Password:") %>
+    <%= form.password_field :password %>
+
+    <%= form.label(:password_confirmation, "Confirm Password:") %>
+    <%= form.password_field :password_confirmation %>
+
+    <%= form.label(:fullName, "Full Name:") %>
+    <%= form.text_field :fullName %>
+
+    <%= form.label(:bio, "Bio:") %>
+    <%= form.text_field :bio %>
+    
+    <%= form.submit %>
+    
+<% end %>

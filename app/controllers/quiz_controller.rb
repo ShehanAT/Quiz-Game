@@ -1,4 +1,4 @@
-class QuizController < ApplicationController
+class QuizzesController < ApplicationController
 
 
     def new_quiz 

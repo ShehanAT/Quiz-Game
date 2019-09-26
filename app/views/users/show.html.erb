@@ -1,0 +1,16 @@
+
+<% if session[:guest_user_id] %>
+    <h2>Guest User Profile</h2>
+
+<% else %>
+    <h2>User Profile</h2>
+<% end %>
+
+<ul>
+    <% @users.each do |user| %>
+        <li><%= user.username %></li>
+        <li><%= user.email %></li>
+        <li><%= user.fullName %></li>
+        <li><%= user.bio %></li>
+    <% end %> 
+</ul>

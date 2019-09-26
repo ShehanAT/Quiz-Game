@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QuizGame</title>
+  </head>
+
+  <body>
+    <% if session[:username] %>
+      <h1>Welcome <%= session[:username] %></h1>
+    <% end %>
+    <h3>Choose an action:</h3>
+        <ul>
+            <li><%= link_to "Register", new_users_path, id: "register_link" %></li>
+            <li><%= link_to "Login", new_sessions_path, id: "login_link" %></li>
+            <li><%= link_to "Quizzes", quizzes_path, id: "quizzes_link" %></li>
+            <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
+            <li><%= link_to "Answers", answers_path, id: "answers_link" %></li>
+        </ul>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

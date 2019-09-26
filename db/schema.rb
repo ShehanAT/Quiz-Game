@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_144300) do
+ActiveRecord::Schema.define(version: 2019_09_25_200614) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "quizId"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2019_09_23_144300) do
 
   create_table "questions", force: :cascade do |t|
     t.integer "quiz_id", null: false
-    t.integer "created_at", default: 1569201292, null: false
-    t.integer "updated_at", default: 1569201293, null: false
+    t.integer "created_at", default: 1569442574, null: false
+    t.integer "updated_at", default: 1569442574, null: false
     t.integer "answerId"
     t.string "question"
   end
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2019_09_23_144300) do
     t.string "name"
     t.string "category"
     t.integer "total_questions"
-    t.integer "created_at", default: 1569201293, null: false
-    t.integer "updated_at", default: 1569201293, null: false
+    t.integer "created_at", default: 1569442574, null: false
+    t.integer "updated_at", default: 1569442574, null: false
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -45,12 +45,12 @@ ActiveRecord::Schema.define(version: 2019_09_23_144300) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
+    t.string "username", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "password", default: "", null: false
     t.string "fullName"
+    t.string "password_salt", default: "", null: false
     t.text "bio"
-    t.string "password"
-    t.string "password_salt"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
