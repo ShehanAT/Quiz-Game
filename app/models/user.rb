@@ -7,9 +7,10 @@ class User < ApplicationRecord
     validates :password, presence: true
     validates :password, confirmation: { case_sensitive: true }
     before_save :encrypt_password
-    # skip_before_action :verify_authenticity_token
+
     def self.authenticate(username, password)
         user = User.find_by_username(username)
+        
         if user && user.password === BCrypt::Engine.hash_secret(password, user.password_salt)
             user
         else 
@@ -19,8 +20,8 @@ class User < ApplicationRecord
 
     def encrypt_password 
         password_salt = BCrypt::Engine.generate_salt
-        if password = BCrypt::Engine.hash_secret(password, password_salt)
-            self.password = password 
+        if hashed_password = BCrypt::Engine.hash_secret(password, password_salt)
+            self.password = hashed_password 
             self.password_salt = password_salt
         else 
             nil

@@ -2,25 +2,25 @@
 <%= form_with model: @user do |form| %>
     <div id="user_errors">
     </div>
-
+    <br />
     <%= form.label(:username, "Username:") %>
     <%= form.text_field :username %>
-
+    <br />
     <%= form.label(:email, "Email:") %>
     <%= form.text_field :email %>
-
+    <br />
     <%= form.label(:password, "Password:") %>
     <%= form.password_field :password %>
-
+    <br />
     <%= form.label(:password_confirmation, "Confirm Password:") %>
     <%= form.password_field :password_confirmation %>
-
+    <br />
     <%= form.label(:fullName, "Full Name:") %>
     <%= form.text_field :fullName %>
-
+    <br />
     <%= form.label(:bio, "Bio:") %>
     <%= form.text_field :bio %>
-    
+    <br />
     <%= form.submit %>
     
 <% end %>
