@@ -22,8 +22,15 @@ RSpec.describe QuizzesHelper do
         Capybara.page.first("a[class='quiz_link']").click
         sleep 0.1
         expect(Capybara.page.current_path).to eq("/quizzes/1")
-
     end 
+
+    it "/quiz/:id should display quiz info" do 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link']").click 
+        sleep 0.1
+        expect(Capybara.page.first("h3").text).to eq("Title:")
+    end     
+
 end
 
 # <% if false %>

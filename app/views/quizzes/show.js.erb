@@ -1,0 +1,10 @@
+var quizIdParms = window.location.pathname
+$.ajax({
+    url: quizIdParms,
+    dataType: "json",
+    method: "GET",
+    data: {},
+    success: function(data){
+        console.log(data);
+    }   
+})
