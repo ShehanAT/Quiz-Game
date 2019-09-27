@@ -1,0 +1,4 @@
+class Attempt < ApplicationRecord
+
+
+end 

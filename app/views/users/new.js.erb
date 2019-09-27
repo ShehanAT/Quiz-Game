@@ -1,0 +1,20 @@
+
+$.ajax({
+    url: "/users/new",
+    method: "get",
+    dataType: "json",
+    data: {},
+    success: function(data){
+        console.log(data);
+        $("#user_errors").html(`
+            <% if @user.errors.any? %>
+                <ul>
+                    <%= @user.errors.full_messages.each do |error| %>
+                        <li><%= error %></li>
+                    <% end %>
+                </ul>
+            <% end %>
+        `);
+    }
+});
+

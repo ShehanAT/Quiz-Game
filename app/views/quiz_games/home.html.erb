@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QuizGame</title>
+  </head>
+
+  <body>
+    <%= render_welcome_message %>
+        <ul>
+            <%= render_register_link %>
+            <%= render_login_link %>
+            <li><%= link_to "Quizzes", quizzes_path, id: "quizzes_link" %></li>
+            <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
+            <li><%= link_to "Answers", answers_path, id: "answers_link" %></li>
+            <%= render_logout_link %>
+        </ul>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

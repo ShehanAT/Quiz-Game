@@ -6,10 +6,11 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true
     validates :password, presence: true
     validates :password, confirmation: { case_sensitive: true }
-    # skip_before_action :verify_authenticity_token
+    before_save :encrypt_password
 
     def self.authenticate(username, password)
         user = User.find_by_username(username)
+        
         if user && user.password === BCrypt::Engine.hash_secret(password, user.password_salt)
             user
         else 
@@ -17,15 +18,11 @@ class User < ApplicationRecord
         end 
     end 
 
-    def self.encrypt_password(password, confirm_password_salt = nil) 
+    def encrypt_password 
         password_salt = BCrypt::Engine.generate_salt
-        if confirm_password_salt
-            password_hash = BCrypt::Engine.hash_secret(password, confirm_password_salt)
-        else 
-            password_hash = BCrypt::Engine.hash_secret(password, password_salt)
-        end 
-        if password_credentials = [password_salt, password_hash]
-            password_credentials
+        if hashed_password = BCrypt::Engine.hash_secret(password, password_salt)
+            self.password = hashed_password 
+            self.password_salt = password_salt
         else 
             nil
         end 

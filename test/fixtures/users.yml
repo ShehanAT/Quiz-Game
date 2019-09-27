@@ -2,12 +2,15 @@
 
 one:
   id: 1
-  username: guestUsername
-  email: guestEmail@guestEmail.com
-  fullName: guestFullName guestFullName
-  bio: guestBio
-  password: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGpSS4MQ
-  password_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kJ
+  username: testing1
+  email: testing1@gmail.com
+  fullName: Shehan Atukorala
+  bio: Shehan Atukorala
+  password: $2a$12$lPHwY8edCo1nrPDS18hJ/OmzkB7uc64h14VKhpq9V.Kx6mOH5KxPG
+  password_salt: $2a$12$lPHwY8edCo1nrPDS18hJ/O
+  created_at: 2019-09-26 17:18:33.120900
+  updated_at: 2019-09-26 17:18:33.120900
+
 two:
   id: 2
   username: admin
@@ -16,11 +19,3 @@ two:
   bio: Admin
   password: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW
   password_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kO
-three:
-  id: 3
-  username: MyString1
-  email: MyString1
-  fullName: MyString1
-  bio: MyText1
-  password: MyString1
-  password_salt: MyString1
