@@ -1,3 +1,11 @@
+$(document).ready(function(){
+    $("#answer1").show();
+    $("#answer2").show();
+    $("#answer3").show();
+    $("#answer4").show();
+
+    $("#quiz_info_section").hide();
+
 var quizIdParms = window.location.pathname
 $.ajax({
     url: quizIdParms,
@@ -8,3 +16,5 @@ $.ajax({
         console.log(data);
     }   
 })
+
+});

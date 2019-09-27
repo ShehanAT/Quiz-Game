@@ -37,9 +37,20 @@ RSpec.describe QuizzesHelper do
         sleep 0.1
         Capybara.page.first("a[id='take_quiz_link']").click 
         sleep 0.1
-        expect(Capybara.page.first("a[id='answer1']")).not_to eq("")
+        expect(Capybara.page.first("a[id='answer4']")).to be_an_instance_of(Capybara::Node::Element)
     end 
 
+
+    it "/quiz/:id should hide quiz info on a[id='take_quiz_link'] click" do 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link'").click 
+        sleep 0.1
+        Capybara.page.first("a[id='take_quiz_link']").click 
+        sleep 0.1
+        expect(Capybara.page.first("h3", :visible => false )).to be_an_instance_of(Capybara::Node::Element)
+    end 
+
+    
 end
 
 # <% if false %>
