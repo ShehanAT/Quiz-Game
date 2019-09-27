@@ -12,8 +12,7 @@ class UserTest < ActiveSupport::TestCase
     user.password = ""
     user.fullName = "Testing Testing"
     user.bio = "testingtestingtesting"
-    user.save
-    assert_equal(["Password can't be blank"], user.errors.full_messages)
+    assert_not user.save
   end 
 
   test "should not save User instance when passwords do not match" do 
@@ -24,8 +23,7 @@ class UserTest < ActiveSupport::TestCase
     user.password_confirmation = "testing2"
     user.fullName = "Testing Testing"
     user.bio = "testingtestingtesting"
-    user.save
-    assert_equal(["Password confirmation doesn't match Password"], user.errors.full_messages)
+    assert_not user.save
   end 
 
   test "should not save User instance when email is invalid" do 
@@ -36,8 +34,7 @@ class UserTest < ActiveSupport::TestCase
     user.password_confirmation = "testing1"
     user.fullName = "Testing Testing"
     user.bio = "testingtestingtesting"
-    user.save
-    assert_equal(["Email is invalid"], user.errors.full_messages)
+    assert_not user.save
   end 
 
   test "should not save User instance when username is non unique" do 
@@ -48,8 +45,7 @@ class UserTest < ActiveSupport::TestCase
     user.password_confirmation = "testing1"
     user.fullName = "Testing Testing"
     user.bio = "testingtestingtesting"
-    user.save
-    assert_equal(["Username has already been taken"], user.errors.full_messages)
+    assert_not user.save 
   end 
 
 
