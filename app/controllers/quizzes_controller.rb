@@ -1,5 +1,8 @@
 class QuizzesController < ApplicationController
 
+    def index 
+        @quizzes = Quiz.all    
+    end 
 
     def new 
     end 
@@ -8,6 +11,7 @@ class QuizzesController < ApplicationController
     end 
 
     def show 
+     
     end 
 
 end

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'quizzes#home'
-  resource :attempts
+  resources :attempts
   resource :sessions
   resource :users
-  resource :quizzes
+  resources :quizzes
   resource :questions
   resource :answers
 end

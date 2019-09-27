@@ -1,3 +1,4 @@
+require 'rails_helper'
 require "helpers"
 
 RSpec.configure do |c|
@@ -13,5 +14,7 @@ RSpec.describe UsersController, type: :controller do
         new_path = Capybara.page.current_path
         expect(old_path).not_to eq(new_path)
     end 
+
+
 
 end 
