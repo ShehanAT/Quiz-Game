@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'quiz_games#home'
+  root 'quizzes#home'
   resource :attempts
   resource :sessions
   resource :users
