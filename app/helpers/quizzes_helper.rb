@@ -35,5 +35,15 @@ module QuizzesHelper
             end 
         end 
     end 
+
+    def render_answer_links
+        content_tag :div do 
+            @content = content_tag(:a, "answer1", :id => "answer1", :href => "")
+            @content << content_tag(:a, "answer2", :id => "answer2", :href => "")
+            @content << content_tag(:a, "answer3", :id => "answer3", :href => "")
+            @content << content_tag(:a, "answer4", :id => "answer4", :href => "")
+        end 
+
+    end 
     
 end

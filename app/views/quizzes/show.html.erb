@@ -5,4 +5,6 @@
 <h3>Category: </h3><strong><%= @quiz.category %></strong>
 <h3>Description: </h3><strong><%= @quiz.description %></strong>
 <h3>Total Number Of Questions: </h3><strong><%= @quiz.description %></strong>
-<%= link_to "Take this Quiz!", :remote => true %>
+<%= link_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :id => "take_quiz_link" %>
+
+<%= render_answer_links %>

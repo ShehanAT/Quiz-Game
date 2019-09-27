@@ -31,6 +31,15 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.first("h3").text).to eq("Title:")
     end     
 
+    it "/quiz/:id should display 4 answer buttons after a[id='take_quiz_link'] click " do 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link'").click 
+        sleep 0.1
+        Capybara.page.first("a[id='take_quiz_link']").click 
+        sleep 0.1
+        expect(Capybara.page.first("a[id='answer1']")).not_to eq("")
+    end 
+
 end
 
 # <% if false %>
