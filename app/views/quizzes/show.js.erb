@@ -1,11 +1,16 @@
 $(document).ready(function(){
-    $("#answer1").show();
-    $("#answer2").show();
-    $("#answer3").show();
-    $("#answer4").show();
-
-    $("#quiz_info_section").hide();
-
+$("#quiz_gameplay_section").show().children().show();
+$("#quiz_info_section").hide();
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
 var quizIdParms = window.location.pathname
 $.ajax({
     url: quizIdParms,
@@ -13,8 +18,53 @@ $.ajax({
     method: "GET",
     data: {},
     success: function(data){
+        var randomArr = shuffle(data.questions);
+
+        function changeScene(e){
+            var nextQuestion;
+            if(nextQuestion = randomArr.pop()){
+                setupQuiz(data, nextQuestion)
+            }else{
+                console.log("quiz finished");
+                //end scene 
+            }
+        }
+
+        $("button").on("click ", function(e){
+            changeScene(e);
+        });
+           
+     /*
+        $("#answer2").on("click ", function(e){
+            changeScene(e);
+        });
+        $("#answer3").on("click ", function(e){
+            changeScene(e);
+        });
+        $("#answer4").on("click ", function(e){
+            changeScene(e);
+        });
+    */
+        setupQuiz(data, randomArr.pop());
+
+     
+
+        function setupQuiz(data, nextQuestion){
+            $("#current_question").text(nextQuestion.question);
+            var currentChoices = []
+            for(var i = 0; i < data.answers.length; i++){
+                if(data.answers[i].question_id === nextQuestion.question_id){
+                    currentChoices.push(data.answers[i]);
+                }
+            }
+            for(var i = 1; i = currentChoices.length; i++){
+                $("#answer"+i).text(currentChoices.pop().answer);
+            }
+        }
         console.log(data);
     }   
 })
+
+
 
 });

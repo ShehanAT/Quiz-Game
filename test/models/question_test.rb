@@ -18,7 +18,7 @@ class QuestionTest < ActiveSupport::TestCase
   test "question object should not save if answerId attribute is not numerical" do 
     question = Question.new 
     question.quiz_id = 1
-    question.answerId ="ThisIsAString"
+    question.answer_id ="ThisIsAString"
     assert_not question.save, "question object is saving with non-numerical answerId"
   end 
 

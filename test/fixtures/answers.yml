@@ -1,201 +1,204 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# for quiz 1 
-Quiz1Answer1:
+#GIVE RANDOM NAMES BEFORE DB:FIXTURES:LOAD
+#Quiz 1 Question 1
+chaos:
   id: 1 
-  quizId: 1
-  answer: ThisIsAnswer1OfQuiz1
-  answerId: 1
-
-Quiz1Answer2:
+  quiz_id: 1
+  question_id: 1
+  answer: chaos
+  answer_id: 1
+establish:
   id: 2
-  quizId: 1
-  answer: ThisIsAnswer2OfQuiz1
-  answerId: 2
-
-Quiz1Answer3:
-  id: 3
-  quizId: 1
-  answer: ThisIsAnswer3OfQuiz1
-  answerId: 3
-
-Quiz1Answer4:
+  quiz_id: 1
+  question_id: 1
+  answer: establish
+  answer_id: 2
+bush:
+  id: 3 
+  quiz_id: 1
+  question_id: 1
+  answer: bush
+  answer_id: 3
+fraud:
   id: 4
-  quizId: 1
-  answer: ThisIsAnswer4OfQuiz1
-  answerId: 4
-
-# for quiz 2
-Quiz2Answer1:
+  quiz_id: 1
+  question_id: 1
+  answer: fraud
+  answer_id: 4
+#Quiz 1 Question 2
+chest:
   id: 5
-  quizId: 2
-  answer: ThisIsAnswer1OfQuiz2
-  answerId: 1
-
-Quiz2Answer2:
+  quiz_id: 1
+  question_id: 2
+  answer: chest
+  answer_id: 1
+undress:
   id: 6
-  quizId: 2
-  answer: ThisIsAnswer2OfQuiz2
-  answerId: 2
-
-Quiz2Answer3:
+  quiz_id: 1
+  question_id: 2
+  answer: undress
+  answer_id: 2
+entitlement:
   id: 7
-  quizId: 2
-  answer: ThisIsAnswer3OfQuiz2
-  answerId: 3
-
-Quiz2Answer4:
+  quiz_id: 1
+  question_id: 2
+  answer: entitlement
+  answer_id: 3
+rocket:
   id: 8
-  quizId: 2
-  answer: ThisIsAnswer4OfQuiz2
-  answerId: 4
-
-# for quiz 3
-Quiz3Answer1:
+  quiz_id: 1
+  question_id: 2
+  answer: rocket
+  answer_id: 4
+#Quiz 1 Question 3
+lump:
   id: 9
-  quizId: 3
-  answer: ThisIsAnswer1OfQuiz3
-  answerId: 1
-
-Quiz3Answer2:
+  quiz_id: 1
+  question_id: 3
+  answer: lump
+  answer_id: 1
+hunting:
   id: 10
-  quizId: 3
-  answer: ThisIsAnswer2OfQuiz3
-  answerId: 2
-
-Quiz3Answer3:
+  quiz_id: 1
+  question_id: 3
+  answer: hunting
+  answer_id: 2
+refuse:
   id: 11
-  quizId: 3
-  answer: ThisIsAnswer3OfQuiz3
-  answerId: 3
-
-Quiz3Answer4:
+  quiz_id: 1
+  question_id: 3
+  answer: refuse
+  answer_id: 3
+tribute:
   id: 12
-  quizId: 3
-  answer: ThisIsAnswer4OfQuiz3
-  answerId: 4
-
-# for quiz 4
-Quiz4Answer1:
+  quiz_id: 1
+  question_id: 3
+  answer: tribute
+  answer_id: 4
+#Quiz 1 Question 4
+satisfied:
   id: 13
-  quizId: 4
-  answer: ThisIsAnswer1OfQuiz4
-  answerId: 1
-
-Quiz4Answer2:
+  quiz_id: 1
+  question_id: 4
+  answer: satisfied
+  answer_id: 1
+executive:
   id: 14
-  quizId: 4
-  answer: ThisIsAnswer2OfQuiz4
-  answerId: 2
-
-Quiz4Answer3:
+  quiz_id: 1
+  question_id: 4
+  answer: executive
+  answer_id: 2
+dance:
   id: 15
-  quizId: 4
-  answer: ThisIsAnswer3OfQuiz4
-  answerId: 3
-
-Quiz4Answer4:
+  quiz_id: 1
+  question_id: 4
+  answer: dance
+  answer_id: 3
+adopt:
   id: 16
-  quizId: 4
-  answer: ThisIsAnswer4OfQuiz4
-  answerId: 4
+  quiz_id: 1
+  question_id: 4
+  answer: adopt
+  answer_id: 4
 
-# for quiz 5
-Quiz5Answer1:
-  id: 17
-  quizId: 5
-  answer: ThisIsAnswer1OfQuiz5
-  answerId: 1
-
-Quiz5Answer2:
+#Quiz 2 Question 1
+suffering:
+  id: 17 
+  quiz_id: 2
+  question_id: 1
+  answer: suffering
+  answer_id: 1
+chauvinist:
   id: 18
-  quizId: 5
-  answer: ThisIsAnswer2OfQuiz5
-  answerId: 2
-
-Quiz5Answer3:
-  id: 19
-  quizId: 5
-  answer: ThisIsAnswer3OfQuiz5
-  answerId: 3
-
-Quiz5Answer4:
+  quiz_id: 2
+  question_id: 1
+  answer: chauvinist
+  answer_id: 2
+arrogant:
+  id: 19 
+  quiz_id: 2
+  question_id: 1
+  answer: arrogant
+  answer_id: 3
+seal:
   id: 20
-  quizId: 5
-  answer: ThisIsAnswer4OfQuiz5
-  answerId: 4
-
-# for quiz 6
-Quiz6Answer1:
+  quiz_id: 2
+  question_id: 1
+  answer: seal
+  answer_id: 4
+#Quiz 2 Question 2
+paradox:
   id: 21
-  quizId: 6
-  answer: ThisIsAnswer1OfQuiz6
-  answerId: 1
-
-Quiz6Answer2:
+  quiz_id: 2
+  question_id: 2
+  answer: paradox
+  answer_id: 1
+step:
   id: 22
-  quizId: 6
-  answer: ThisIsAnswer2OfQuiz6
-  answerId: 2
-
-Quiz6Answer3:
+  quiz_id: 2
+  question_id: 2
+  answer: step
+  answer_id: 2
+sympathetic:
   id: 23
-  quizId: 6
-  answer: ThisIsAnswer3OfQuiz6
-  answerId: 3
-
-Quiz6Answer4:
+  quiz_id: 2
+  question_id: 2
+  answer: sympathetic
+  answer_id: 3
+strange:
   id: 24
-  quizId: 6
-  answer: ThisIsAnswer4OfQuiz6
-  answerId: 4
-
-# for quiz 7
-Quiz7Answer1:
+  quiz_id: 2
+  question_id: 2
+  answer: strange
+  answer_id: 4
+#Quiz 2 Question 3
+redeem:
   id: 25
-  quizId: 7
-  answer: ThisIsAnswer1OfQuiz7
-  answerId: 1
-
-Quiz7Answer2:
+  quiz_id: 2
+  question_id: 3
+  answer: redeem
+  answer_id: 1
+workOut:
   id: 26
-  quizId: 7
-  answer: ThisIsAnswer2OfQuiz7
-  answerId: 2
-
-Quiz7Answer3:
+  quiz_id: 2
+  question_id: 3
+  answer: workOut
+  answer_id: 2
+enhance:
   id: 27
-  quizId: 7
-  answer: ThisIsAnswer3OfQuiz7
-  answerId: 3
-
-Quiz7Answer4:
+  quiz_id: 2
+  question_id: 3
+  answer: enhance
+  answer_id: 3
+low:
   id: 28
-  quizId: 7
-  answer: ThisIsAnswer4OfQuiz7
-  answerId: 4
-
-# for quiz 8
-Quiz8Answer1:
+  quiz_id: 2
+  question_id: 3
+  answer: low
+  answer_id: 4
+#Quiz 2 Question 4
+transparent:
   id: 29
-  quizId: 8
-  answer: ThisIsAnswer1OfQuiz8
-  answerId: 1
-
-Quiz8Answer2:
+  quiz_id: 2
+  question_id: 4
+  answer: transparent
+  answer_id: 1
+writer:
   id: 30
-  quizId: 8
-  answer: ThisIsAnswer2OfQuiz8
-  answerId: 2
-
-Quiz8Answer3:
+  quiz_id: 2
+  question_id: 4
+  answer: writer
+  answer_id: 2
+item:
   id: 31
-  quizId: 8
-  answer: ThisIsAnswer3OfQuiz8
-  answerId: 3
-
-Quiz8Answer4:
+  quiz_id: 2
+  question_id: 4
+  answer: item
+  answer_id: 3
+overeat:
   id: 32
-  quizId: 8
-  answer: ThisIsAnswer4OfQuiz8
-  answerId: 4
+  quiz_id: 2
+  question_id: 4
+  answer: overeat
+  answer_id: 4

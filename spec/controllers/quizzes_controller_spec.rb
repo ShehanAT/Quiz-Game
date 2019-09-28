@@ -37,9 +37,9 @@ RSpec.describe QuizzesHelper do
         sleep 0.1
         Capybara.page.first("a[id='take_quiz_link']").click 
         sleep 0.1
-        expect(Capybara.page.first("a[id='answer4']")).to be_an_instance_of(Capybara::Node::Element)
+        expect(Capybara.page.first("button[id='answer4']")).to be_an_instance_of(Capybara::Node::Element)
     end 
-
+    
 
     it "/quiz/:id should hide quiz info on a[id='take_quiz_link'] click" do 
         capybara_quizzes_index
@@ -50,11 +50,17 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.first("h3", :visible => false )).to be_an_instance_of(Capybara::Node::Element)
     end 
 
+    it "/quiz/:id should show next question on a[class='answer_link'] click" do 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link'").click 
+        sleep 0.1
+        Capybara.page.first("a[id='take_quiz_link']").click 
+        sleep 0.1
+        old_question = Capybara.page.first("h3[id='current_question']").text 
+        Capybara.page.first("button[class='answer_link'").click 
+        new_question = Capybara.page.first("h3[id='current_question']").text 
+        expect(old_question).not_to eq(new_question)
+    end 
+
     
 end
-
-# <% if false %>
-# <%= link_to "#{quiz.name}", quizzes_path, :id => quiz.id, :class => "quiz_link %>
-# <br />
-# <%= link_to "Quizzes", quizzes_path %>
-# <% end %> 

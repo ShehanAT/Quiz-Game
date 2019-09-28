@@ -37,11 +37,16 @@ module QuizzesHelper
     end 
 
     def render_answer_links
-        content_tag :div do 
-            @content = content_tag(:a, "answer1", :id => "answer1", :href => "", :style => "display:none")
-            @content << content_tag(:a, "answer2", :id => "answer2", :href => "", :style => "display:none")
-            @content << content_tag(:a, "answer3", :id => "answer3", :href => "", :style => "display:none")
-            @content << content_tag(:a, "answer4", :id => "answer4", :href => "", :style => "display:none")
+        content_tag(:div, :id => "quiz_gameplay_section") do 
+            @content = content_tag(:h3, "current_question", :id => "current_question", :style => "display:none")
+            # @content << content_tag(:br, "")
+            @content << content_tag(:button, "answer1", :id => "answer1", :href => "", :style => "display:none", :class => "answer_link" )
+            @content << content_tag(:br)
+            @content << content_tag(:button, "answer2", :id => "answer2", :href => "", :style => "display:none", :class => "answer_link" )
+            @content << content_tag(:br)
+            @content << content_tag(:button, "answer3", :id => "answer3", :href => "", :style => "display:none", :class => "answer_link" )
+            @content << content_tag(:br)
+            @content << content_tag(:button, "answer4", :id => "answer4", :href => "", :style => "display:none", :class => "answer_link" )
         end 
 
     end 
