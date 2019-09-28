@@ -4,5 +4,7 @@
     <%= link_to quiz.name, quiz_path(quiz.id), :class => "quiz_link", :id => "quiz#{quiz.id}" %>
 <% end %>
 
+<%= render_quizzes_restfull_routes %>
+
 
 

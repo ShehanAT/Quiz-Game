@@ -60,5 +60,11 @@ module QuizzesHelper
             @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none" )
         end 
     end 
+
+    def render_quizzes_restfull_routes
+        content_tag(:div, :id => "quizzes_restfull_section") do 
+            button_to("Add New Quiz", new_quiz_url, :id => "new_quiz_link", method: :get )
+        end 
+    end 
     
 end

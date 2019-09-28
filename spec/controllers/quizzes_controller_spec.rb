@@ -89,3 +89,15 @@ RSpec.describe QuizzesHelper do
     end
     
 end
+
+RSpec.describe "quizzes/new" do 
+    
+    it "/quizzes/new should display new quiz form" do 
+        capybara_quizzes_index 
+        old_path = Capybara.page.current_path
+        Capybara.page.first("input[id='new_quiz_link']").click 
+        sleep 0.1
+        new_path = Capybara.page.current_path
+        expect(new_path).not_to eq(old_path)
+    end 
+end 

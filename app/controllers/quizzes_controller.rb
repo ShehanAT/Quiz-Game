@@ -1,7 +1,11 @@
 class QuizzesController < ApplicationController
 
     def index 
-        @quizzes = Quiz.all    
+        @quizzes = Quiz.all   
+        respond_to do |format|
+            format.js { render "index" }
+            format.html { render "index" }
+        end 
     end 
 
     def new 
