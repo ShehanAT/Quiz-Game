@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_004746) do
+ActiveRecord::Schema.define(version: 2019_09_28_120942) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "quiz_id"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2019_09_28_004746) do
 
   create_table "questions", force: :cascade do |t|
     t.integer "quiz_id", null: false
-    t.integer "created_at", default: 1569442574, null: false
-    t.integer "updated_at", default: 1569442574, null: false
+    t.integer "created_at", default: 1569682240, null: false
+    t.integer "updated_at", default: 1569682240, null: false
     t.integer "answer_id"
     t.string "question"
     t.string "question_id", default: "f"
@@ -34,15 +34,15 @@ ActiveRecord::Schema.define(version: 2019_09_28_004746) do
     t.string "name"
     t.string "category"
     t.integer "total_questions"
-    t.integer "created_at", default: 1569442574, null: false
-    t.integer "updated_at", default: 1569442574, null: false
+    t.integer "created_at", default: 1569682240, null: false
+    t.integer "updated_at", default: 1569682240, null: false
     t.string "description"
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.integer "quizId"
+    t.integer "quiz_id"
     t.integer "highScore"
-    t.integer "userId"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2019_09_28_004746) do
     t.string "username", default: "", null: false
     t.string "email", default: "", null: false
     t.string "password", default: "", null: false
+    t.string "p_salt"
     t.string "fullName"
-    t.string "password_salt", default: "", null: false
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

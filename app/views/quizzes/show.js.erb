@@ -27,39 +27,52 @@ $.ajax({
     method: "GET",
     data: {},
     success: function(data){
+        var quizId = data.quiz.id;
+        var questionsLeft = data.questions.length;
         var randomArr = shuffle(data.questions);
-
+        var currentQuestion;
+        var score = 0;
         function changeScene(e){
-            var nextQuestion;
-            if(nextQuestion = randomArr.pop()){
-                setupQuiz(data, nextQuestion)
+            if(currentQuestion = randomArr.pop()){
+                setupQuiz(data, currentQuestion)
             }else{
+                $.ajax({
+                    url: "/save_score",
+                    method: "GET",
+                    data: {
+                        score: score,
+                        quiz_id: quizId
+                    },
+                    dataType: "json",
+                    success: function(data){
+                        console.log(data);
+                        $("#save_score_status").text(data.status);
+                    }
+                });
                 $("#quiz_gameplay_section").hide().children().hide();
                 $("#quiz_end_game_section").show().children().show();
-                $("#save_score_message").text("Your Score: 0");
-                console.log("quiz finished");
-                //end scene 
+                $("#end_score_message").text("Your Score: " + score); 
+            }
+        }
+        
+        function checkAnswer(e){
+            console.log(questionsLeft);
+            if(questionsLeft){
+                questionsLeft -= 1;
+                console.log("The selected answer is " + e.target.value);
+                console.log("The actual answer is " + currentQuestion.answer_id)
+                if(e.target.value == currentQuestion.answer_id){
+                    updateScore();
+                } 
             }
         }
 
-        $("button").on("click ", function(e){
-            changeScene(e);
-        });
-           
-     /*
-        $("#answer2").on("click ", function(e){
-            changeScene(e);
-        });
-        $("#answer3").on("click ", function(e){
-            changeScene(e);
-        });
-        $("#answer4").on("click ", function(e){
-            changeScene(e);
-        });
-    */
-        setupQuiz(data, randomArr.pop());
+        function updateScore(){
+            score += 10;
+            $(".save_score_message").text("Your Score: " + score);
+        }
 
-     
+        
 
         function setupQuiz(data, nextQuestion){
             $("#current_question").text(nextQuestion.question);
@@ -70,10 +83,32 @@ $.ajax({
                 }
             }
             for(var i = 1; i = currentChoices.length; i++){
-                $("#answer"+i).text(currentChoices.pop().answer);
+                var answer = currentChoices.pop()
+                $("#answer"+i).text(answer.answer);
+                $("#answer"+i).val(answer.answer_id);
             }
         }
-        console.log(data);
+
+        (function setFirstQuestion(){
+            currentQuestion = randomArr.pop();
+            setupQuiz(data, currentQuestion);
+        }());
+
+        (function setupInterface(){
+            $("button").on("click ", function(e){
+                checkAnswer(e);
+                changeScene(e);
+                
+            });
+            $(".save_score_message").text("Your Score: " + score);
+        }());
+
+        
+     
+           
+        
+
+    
     }   
 })
 

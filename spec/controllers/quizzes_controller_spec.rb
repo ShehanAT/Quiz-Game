@@ -72,8 +72,20 @@ RSpec.describe QuizzesHelper do
             Capybara.page.first("button[class='answer_link']").click 
         end 
         expect(Capybara.page.first("h3[id='end_quiz_message']", :visible => true).text).to eq("Quiz Finished!")
-
     end 
+
+    it "xhr request to quizzes#save_score should be successful" do 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link'").click 
+        sleep 0.1
+        Capybara.page.first("a[id='take_quiz_link']").click 
+        sleep 0.1
+        for i in (0..3)
+            Capybara.page.first("button[class='answer_link']").click 
+        end 
+        sleep 0.1
+        expect(Capybara.page.first("h4[id='save_score_status']").text).not_to eq("")
+    end
 
     
 end

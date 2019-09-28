@@ -38,8 +38,8 @@ module QuizzesHelper
 
     def render_answer_links
         content_tag(:div, :id => "quiz_gameplay_section") do 
-            @content = content_tag(:h3, "current_question", :id => "current_question", :style => "display:none")
-            # @content << content_tag(:br, "")
+            @content = content_tag(:h3, "Your score: ", :class => "save_score_message", :style => "display:none" )
+            @content << content_tag(:h3, "current_question", :id => "current_question", :style => "display:none")
             @content << content_tag(:button, "answer1", :id => "answer1", :href => "", :style => "display:none", :class => "answer_link" )
             @content << content_tag(:br)
             @content << content_tag(:button, "answer2", :id => "answer2", :href => "", :style => "display:none", :class => "answer_link" )
@@ -53,7 +53,8 @@ module QuizzesHelper
     def render_end_game_message
         content_tag(:div, :id => "quiz_end_game_section") do 
             @content = content_tag(:h3, "Quiz Finished!", :id => "end_quiz_message", :style => "display:none")
-            @content << content_tag(:h4, "Your score: ", :id => "save_score_message", :style => "display:none" )
+            @content << content_tag(:h4, "Your score: ", :id => "end_score_message", :style => "display:none" )
+            @content << content_tag(:h4, " ", :id => "save_score_status", :style => "display:none" )
             @content << content_tag(:button, "Take Another Quiz", :onclick => "goToQuizzes()", :id => "another_quiz_button", :style => "display:none" )
             @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none" )
         end 

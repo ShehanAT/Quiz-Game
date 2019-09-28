@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :quizzes
   resource :questions
   resource :answers
+  get "save_score", to: "quizzes#save_score"
 end

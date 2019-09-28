@@ -7,7 +7,7 @@ one:
   fullName: Shehan Atukorala
   bio: Shehan Atukorala
   password: $2a$12$lPHwY8edCo1nrPDS18hJ/OmzkB7uc64h14VKhpq9V.Kx6mOH5KxPG
-  password_salt: $2a$12$lPHwY8edCo1nrPDS18hJ/O
+  p_salt: $2a$12$lPHwY8edCo1nrPDS18hJ/O
   created_at: 2019-09-26 17:18:33.120900
   updated_at: 2019-09-26 17:18:33.120900
 
@@ -18,4 +18,4 @@ two:
   fullName: Admin Admin
   bio: Admin
   password: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW
-  password_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kO
+  p_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kO

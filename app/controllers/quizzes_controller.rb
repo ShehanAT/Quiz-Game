@@ -21,4 +21,21 @@ class QuizzesController < ApplicationController
         end 
     end 
 
+    def save_score 
+        user_id = session[:user_id]
+        quiz_id = params[:quiz_id]
+        score = params[:score]
+        old_session = Session.where(user_id: user_id).take
+        if old_session
+            update_status = old_session.eval_highest_score(score)
+            respond_to do |format|
+                format.json { render json: { status: update_status}}
+            end 
+        else 
+            new_session = Session.create(:user_id => user_id, :quiz_id => quiz_id, :highScore => score)
+            respond_to do |format|
+                format.json { render json: { status: "High Score Saved" } }
+            end
+        end
+    end 
 end

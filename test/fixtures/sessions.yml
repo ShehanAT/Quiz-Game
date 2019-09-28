@@ -1,2 +1,4 @@
 one:
-  userId: 2 
+  user_id: 2 
+  quiz_id: 1
+  highScore: 10
