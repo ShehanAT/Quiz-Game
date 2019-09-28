@@ -74,7 +74,7 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.first("h3[id='end_quiz_message']", :visible => true).text).to eq("Quiz Finished!")
     end 
 
-    it "xhr request to quizzes#save_score should be successful" do 
+    it "ajax request to quizzes#save_score should be successful" do 
         capybara_quizzes_index
         Capybara.page.first("a[class='quiz_link'").click 
         sleep 0.1
@@ -85,7 +85,7 @@ RSpec.describe QuizzesHelper do
         end 
         sleep 0.1
         expect(Capybara.page.first("h4[id='save_score_status']").text).not_to eq("")
+        expect(Capybara.page.first("button[id='replay_quiz_button']").text).not_to eq("")
     end
-
     
 end

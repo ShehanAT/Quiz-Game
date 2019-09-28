@@ -55,6 +55,7 @@ module QuizzesHelper
             @content = content_tag(:h3, "Quiz Finished!", :id => "end_quiz_message", :style => "display:none")
             @content << content_tag(:h4, "Your score: ", :id => "end_score_message", :style => "display:none" )
             @content << content_tag(:h4, " ", :id => "save_score_status", :style => "display:none" )
+            @content << content_tag(:button, "Replay Quiz", :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none" )
             @content << content_tag(:button, "Take Another Quiz", :onclick => "goToQuizzes()", :id => "another_quiz_button", :style => "display:none" )
             @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none" )
         end 
