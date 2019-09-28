@@ -62,5 +62,18 @@ RSpec.describe QuizzesHelper do
         expect(old_question).not_to eq(new_question)
     end 
 
+    it "/quiz/:id should show end scene after finishing all questions " do 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link'").click 
+        sleep 0.1
+        Capybara.page.first("a[id='take_quiz_link']").click 
+        sleep 0.1
+        for i in (0..3)
+            Capybara.page.first("button[class='answer_link']").click 
+        end 
+        expect(Capybara.page.first("h3[id='end_quiz_message']", :visible => true).text).to eq("Quiz Finished!")
+
+    end 
+
     
 end

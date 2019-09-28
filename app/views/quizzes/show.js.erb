@@ -1,6 +1,13 @@
+function goToHomePage(){
+    window.location.href = "/";
+}
+function goToQuizzes(){
+    window.location.href = "/quizzes";
+}
+
 $(document).ready(function(){
 $("#quiz_gameplay_section").show().children().show();
-$("#quiz_info_section").hide();
+$("#quiz_info_section").hide().children().hide();
 function shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
@@ -11,6 +18,8 @@ function shuffle(a) {
     }
     return a;
 }
+
+
 var quizIdParms = window.location.pathname
 $.ajax({
     url: quizIdParms,
@@ -25,6 +34,9 @@ $.ajax({
             if(nextQuestion = randomArr.pop()){
                 setupQuiz(data, nextQuestion)
             }else{
+                $("#quiz_gameplay_section").hide().children().hide();
+                $("#quiz_end_game_section").show().children().show();
+                $("#save_score_message").text("Your Score: 0");
                 console.log("quiz finished");
                 //end scene 
             }

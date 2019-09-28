@@ -48,7 +48,15 @@ module QuizzesHelper
             @content << content_tag(:br)
             @content << content_tag(:button, "answer4", :id => "answer4", :href => "", :style => "display:none", :class => "answer_link" )
         end 
+    end 
 
+    def render_end_game_message
+        content_tag(:div, :id => "quiz_end_game_section") do 
+            @content = content_tag(:h3, "Quiz Finished!", :id => "end_quiz_message", :style => "display:none")
+            @content << content_tag(:h4, "Your score: ", :id => "save_score_message", :style => "display:none" )
+            @content << content_tag(:button, "Take Another Quiz", :onclick => "goToQuizzes()", :id => "another_quiz_button", :style => "display:none" )
+            @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none" )
+        end 
     end 
     
 end
