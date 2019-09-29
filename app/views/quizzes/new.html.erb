@@ -1,23 +1,6 @@
 
-
-
-<%= form_with model: @quiz do |form| %>
-    <h3>Fill In These Details: </h3>
-    <div id="user_errors">
-    </div>
-    <br />
-    <%= form.label(:name, "New Quiz Name:") %>
-    <%= form.text_field :name %>
-    <br />
-    <%= form.label(:category, "New Quiz Category:") %>
-    <%= form.text_field :category %>
-    <br />
-    <%= form.label(:description, "New Quiz Description:") %>
-    <%= form.password_field :description %>
-    <br />
-    <%= form.label(:total_questions, "Total Number of Questions New Quiz Will Contain:") %>
-    <%= form.password_field :total_questions %>
-    <br />
-    <%= form.submit "Next: Add Questions", :type => "submit" %>
-    
-<% end %>
+<div id="new_quiz_section">
+  <div id="new_quiz_errors">
+  </div>
+<%= render :partial => "new_quiz_form" %>
+</div>

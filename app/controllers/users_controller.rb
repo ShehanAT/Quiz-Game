@@ -20,7 +20,6 @@ class UsersController < ApplicationController
             respond_to do |format|
                 format.html { render "new" }
                 format.js { render "new" }
-                format.json { render :json => @user }
             end 
         end 
     end
@@ -30,7 +29,6 @@ class UsersController < ApplicationController
     end 
 
     private 
-
     def user_params
         params.require(:user).permit(:username, :email, :password, :password_confirmation, :fullName, :bio, :p_salt)
     end

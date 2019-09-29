@@ -5,11 +5,10 @@ $.ajax({
     dataType: "json",
     data: {},
     success: function(data){
-        console.log(data);
         $("#user_errors").html(`
             <% if @user.errors.any? %>
                 <ul>
-                    <%= @user.errors.full_messages.each do |error| %>
+                    <% @user.errors.full_messages.each do |error| %>
                         <li><%= error %></li>
                     <% end %>
                 </ul>

@@ -100,4 +100,27 @@ RSpec.describe "quizzes/new" do
         new_path = Capybara.page.current_path
         expect(new_path).not_to eq(old_path)
     end 
+
+    it "new quiz info section => add questions section" do
+        capybara_quizzes_index 
+        Capybara.page.first("input[id='new_quiz_link']").click 
+        sleep 0.1
+        old_path = Capybara.page.current_path 
+        Capybara.fill_in("quiz_name", with: "testing1")
+        Capybara.fill_in("quiz_category", with: "testing1")
+        Capybara.fill_in("quiz_description", with: "testing1")
+        Capybara.fill_in("quiz_total_questions", with: "10")
+        Capybara.page.first("input[id='submit_new_quiz_link']").click
+        new_path = Capybara.page.current_path
+        expect(old_path).not_to eq(new_path)
+    end
+
+    it "from: /, 'Register' link should take to: /new " do 
+        Capybara.visit("/")
+        old_path = Capybara.page.current_path
+        Capybara.page.all("a")[0].click
+        new_path = Capybara.page.current_path
+        expect(new_path).not_to eq(old_path)
+    end 
+
 end 
