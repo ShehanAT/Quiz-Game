@@ -31,21 +31,21 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.first("h3").text).to eq("Title:")
     end     
 
-    it "/quiz/:id should display 4 answer buttons after a[id='take_quiz_link'] click " do 
+    it "/quiz/:id should display 4 answer buttons after input[id='take_quiz_link'] click " do 
         capybara_quizzes_index
         Capybara.page.first("a[class='quiz_link'").click 
         sleep 0.1
-        Capybara.page.first("a[id='take_quiz_link']").click 
+        Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         expect(Capybara.page.first("button[id='answer4']")).to be_an_instance_of(Capybara::Node::Element)
     end 
     
 
-    it "/quiz/:id should hide quiz info on a[id='take_quiz_link'] click" do 
+    it "/quiz/:id should hide quiz info on input[id='take_quiz_link'] click" do 
         capybara_quizzes_index
         Capybara.page.first("a[class='quiz_link'").click 
         sleep 0.1
-        Capybara.page.first("a[id='take_quiz_link']").click 
+        Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         expect(Capybara.page.first("h3", :visible => false )).to be_an_instance_of(Capybara::Node::Element)
     end 
@@ -54,7 +54,7 @@ RSpec.describe QuizzesHelper do
         capybara_quizzes_index
         Capybara.page.first("a[class='quiz_link'").click 
         sleep 0.1
-        Capybara.page.first("a[id='take_quiz_link']").click 
+        Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         old_question = Capybara.page.first("h3[id='current_question']").text 
         Capybara.page.first("button[class='answer_link'").click 
@@ -66,7 +66,7 @@ RSpec.describe QuizzesHelper do
         capybara_quizzes_index
         Capybara.page.first("a[class='quiz_link'").click 
         sleep 0.1
-        Capybara.page.first("a[id='take_quiz_link']").click 
+        Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         for i in (0..3)
             Capybara.page.first("button[class='answer_link']").click 
@@ -78,7 +78,7 @@ RSpec.describe QuizzesHelper do
         capybara_quizzes_index
         Capybara.page.first("a[class='quiz_link'").click 
         sleep 0.1
-        Capybara.page.first("a[id='take_quiz_link']").click 
+        Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         for i in (0..3)
             Capybara.page.first("button[class='answer_link']").click 
@@ -119,6 +119,15 @@ RSpec.describe "quizzes/new" do
         Capybara.visit("/")
         old_path = Capybara.page.current_path
         Capybara.page.all("a")[0].click
+        new_path = Capybara.page.current_path
+        expect(new_path).not_to eq(old_path)
+    end 
+
+    it "add new questions button should redirect to new_question_path" do 
+        capybara_new_quiz
+        old_path = Capybara.page.current_path
+        Capybara.page.first("input[id='add_questions_link']").click 
+        sleep 0.1
         new_path = Capybara.page.current_path
         expect(new_path).not_to eq(old_path)
     end 

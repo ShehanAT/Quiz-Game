@@ -14,9 +14,9 @@ $.ajax({
     success: function(data){
         console.log(data);
         $("#new_quiz_errors").html(`
-        <% if @new_quiz.errors.any? %>
+        <% if @quiz.errors.any? %>
             <ul>
-                <% @new_quiz.errors.full_messages.each do |error| %>
+                <% @quiz.errors.full_messages.each do |error| %>
                     <li><%= error %></li>
                 <% end %>
             </ul>

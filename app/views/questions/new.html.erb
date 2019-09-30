@@ -1,0 +1,29 @@
+
+<%= form_with url:"/questions", model: @question do |form| %>
+  <h3 id="add_questions_message">Now Some Questions To Quiz: </h3>
+  <ul>  
+    <li>Name: <%= @quiz.name %></li>
+    <li>Category: <%= @quiz.category %></li>
+    <li>Description: <%= @quiz.description %></li>
+    <li>Total Questions: <%= @quiz.total_questions %></li>
+  </ul>
+  <%= form.label(:question, "New Question:") %>
+  <%= form.text_field :question %>
+  <br />
+  <%= form.label(:answer1, "Answer Choice #1:") %>
+  <%= form.text_field :answer1 %>
+  <br />
+  <%= form.label(:answer2, "Answer Choice #2:") %>
+  <%= form.text_field :answer2 %>
+  <br />
+  <%= form.label(:answer3, "Answer Choice #3:") %>
+  <%= form.text_field :answer3 %>
+  <br />
+  <%= form.label(:answer4, "Answer Choice #4:") %>
+  <%= form.text_field :answer4 %>
+  <br />
+  <%= form.label(:correct_answer, "Choose The Correct Answer: ") %>
+  <%= form.select :correct_answer, options_for_select(["First Choice", "Second Choice", "Third Choice", "Fourth Choice"]) %>
+  <br />
+  <button onclick="addAnotherQuestion()" id="add_another_question_link" >Add Another Question</button>
+<% end %> 

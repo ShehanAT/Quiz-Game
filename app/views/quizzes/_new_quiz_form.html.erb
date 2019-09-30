@@ -1,4 +1,4 @@
-<%= form_with url:"/quizzes", model: @new_quiz do |form| %>
+<%= form_with url:"/quizzes", model: @quiz do |form| %>
     <h3>Fill In These Details: </h3>
     <div id="user_errors">
     </div>
@@ -16,35 +16,4 @@
     <%= form.text_field :total_questions %>
     <br />
     <%= form.submit "Save and Submit", :type => "submit", :id => "submit_new_quiz_link" %>  
-<% end %>
-
-<% if false %>
-    <div id="new_quiz_questions_section" class="tab">
-    <h3>Add Some Questions To Your New Quiz: </h3>
-    <%= form.label(:question, "New Question:") %>
-    <%= form.text_field :question %>
-    <br />
-    <%= form.label(:answer1, "Answer Choice #1:") %>
-    <%= form.text_field :answer1 %>
-    <br />
-    <%= form.label(:answer2, "Answer Choice #2:") %>
-    <%= form.text_field :answer2 %>
-    <br />
-    <%= form.label(:answer3, "Answer Choice #3:") %>
-    <%= form.text_field :answer3 %>
-    <br />
-    <%= form.label(:answer4, "Answer Choice #4:") %>
-    <%= form.text_field :answer4 %>
-    <br />
-    <%= form.label(:correct_answer, "Choose The Correct Answer: ") %>
-    <%= form.select :correct_answer, options_for_select(["First Choice", "Second Choice", "Third Choice", "Fourth Choice"]) %>
-    <br />
-    </div>
-
-    <button onclick="addAnotherQuestion()" id="add_another_question_link" >Add Another Question</button>
-<% end %>
-
-<% if false %>
-, :id => "new_quiz_details_form"
-
 <% end %>

@@ -5,18 +5,18 @@ class QuizzesController < ApplicationController
     end 
 
     def new 
-        @new_quiz = Quiz.new
+        @quiz = Quiz.new
         respond_to do |format|
             format.html { render "new" }
             format.js { render "new" }
-            format.json { render :json =>  @new_quiz }
+            format.json { render :json =>  @quiz }
         end 
     end 
 
     def create
-        @new_quiz = Quiz.new(quiz_params)
-        if @new_quiz.save
-            redirect_to quiz_path(@new_quiz.id) 
+        @quiz = Quiz.new(quiz_params)
+        if @quiz.save
+            redirect_to quiz_path(@quiz.id) 
         else 
             respond_to do |format|
                 format.html { render "new" }
@@ -29,6 +29,7 @@ class QuizzesController < ApplicationController
         @quiz = Quiz.find(params[:id])
         @questions = Question.where(quiz_id: params[:id])
         @answers = Answer.where(quiz_id: params[:id])
+        session[:quiz_id] = @quiz.id 
         respond_to do |format|
             format.html { render "show" }
             format.js { render "show" }
@@ -49,7 +50,7 @@ class QuizzesController < ApplicationController
                 format.json { render json: { status: "High Score Saved" } }
             end
         end
-    end 
+    end     
 
     private 
     def quiz_params

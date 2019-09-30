@@ -40,6 +40,25 @@ module Helpers
         sleep 0.1
     end 
 
+    def capybara_new_quiz
+        Capybara.visit("/sessions/new")
+        Capybara.fill_in("username", with: "testing1")
+        Capybara.fill_in("password", with: "testing1") 
+        Capybara.page.first("input[type='submit']").click
+        sleep 0.1
+        Capybara.page.first("a[id='quizzes_link']").click
+        sleep 0.1
+        Capybara.page.first("input[id='new_quiz_link']").click 
+        sleep 0.1
+        old_path = Capybara.page.current_path 
+        Capybara.fill_in("quiz_name", with: "testing1")
+        Capybara.fill_in("quiz_category", with: "testing1")
+        Capybara.fill_in("quiz_description", with: "testing1")
+        Capybara.fill_in("quiz_total_questions", with: "10")
+        Capybara.page.first("input[id='submit_new_quiz_link']").click
+        sleep 0.1
+    end 
+
     def help 
         :available 
     end 

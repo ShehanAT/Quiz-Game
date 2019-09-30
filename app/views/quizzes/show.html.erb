@@ -6,7 +6,9 @@
 <h3>Description: </h3><strong><%= @quiz.description %></strong>
 <h3>Total Number Of Questions: </h3><strong><%= @quiz.total_questions %></strong>
 <br />
-<%= link_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :id => "take_quiz_link" %>
+
+<%= render_add_questions_form %>
+<%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :id => "take_quiz_link", method: :get %>
 </div>
 
 <%= render_answer_links %>

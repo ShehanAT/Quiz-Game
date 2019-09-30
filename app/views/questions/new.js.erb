@@ -1,0 +1,11 @@
+console.log("passing123");
+$.ajax({
+    url: "/questions/new",
+    method: "get",
+    dataType: "json",
+    data: {},
+    success: function(data){
+        console.log(data);
+        //window.location.pathname = `${data.path}`;
+    }
+});

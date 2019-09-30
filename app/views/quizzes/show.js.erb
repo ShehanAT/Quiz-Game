@@ -4,7 +4,9 @@ function goToHomePage(){
 function goToQuizzes(){
     window.location.href = "/quizzes";
 }
-
+function replayQuiz(){
+    location.reload();
+}
 $(document).ready(function(){
 $("#quiz_gameplay_section").show().children().show();
 $("#quiz_info_section").hide().children().hide();
@@ -102,16 +104,6 @@ $.ajax({
             });
             $(".save_score_message").text("Your Score: " + score);
         }());
-
-        
-     
-           
-        
-
-    
     }   
 })
-
-
-
 });
