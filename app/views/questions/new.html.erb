@@ -1,29 +1,49 @@
+<h3>You are currently adding questions to quiz:"<%= @quiz.name %>"</h3>
+<ul>  
+<li>Name: <%= @quiz.name %></li>
+<li>Category: <%= @quiz.category %></li>
+<li>Description: <%= @quiz.description %></li>
+<li>Total Questions: <%= @quiz.total_questions %></li>
+</ul>
 
-<%= form_with url:"/questions", model: @question do |form| %>
-  <h3 id="add_questions_message">Now Some Questions To Quiz: </h3>
-  <ul>  
-    <li>Name: <%= @quiz.name %></li>
-    <li>Category: <%= @quiz.category %></li>
-    <li>Description: <%= @quiz.description %></li>
-    <li>Total Questions: <%= @quiz.total_questions %></li>
-  </ul>
-  <%= form.label(:question, "New Question:") %>
-  <%= form.text_field :question %>
+<div class="add_question_section" value="1">
+  <div id="question_errors">
+  </div>
+  <h3 id="add_questions_message">Add New Question To Quiz: </h3>
+ 
+  <%= label_tag(:question, "New Question:") %>
+  <%= text_field_tag :question %>
   <br />
-  <%= form.label(:answer1, "Answer Choice #1:") %>
-  <%= form.text_field :answer1 %>
+  <%= label_tag(:answer1, "Answer Choice #1:") %>
+  <%= text_field_tag :answer1 %>
   <br />
-  <%= form.label(:answer2, "Answer Choice #2:") %>
-  <%= form.text_field :answer2 %>
+  <%= label_tag(:answer2, "Answer Choice #2:") %>
+  <%= text_field_tag :answer2 %>
   <br />
-  <%= form.label(:answer3, "Answer Choice #3:") %>
-  <%= form.text_field :answer3 %>
+  <%= label_tag(:answer3, "Answer Choice #3:") %>
+  <%= text_field_tag :answer3 %>
   <br />
-  <%= form.label(:answer4, "Answer Choice #4:") %>
-  <%= form.text_field :answer4 %>
+  <%= label_tag(:answer4, "Answer Choice #4:") %>
+  <%= text_field_tag :answer4 %>
   <br />
-  <%= form.label(:correct_answer, "Choose The Correct Answer: ") %>
-  <%= form.select :correct_answer, options_for_select(["First Choice", "Second Choice", "Third Choice", "Fourth Choice"]) %>
+  <%= label_tag(:correct_answer, "Choose The Correct Answer: ") %>
+  <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Answer #1</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Answer #2</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Answer #3</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Answer #4</label>
   <br />
-  <button onclick="addAnotherQuestion()" id="add_another_question_link" >Add Another Question</button>
-<% end %> 
+  <button onclick="addAnotherQuestion()" id="add_question_link">Add Another Question</button>
+  <button onclick="saveQuestion()">Save And Exit</button>
+</div>
+<script>
+$('input[type="checkbox"]').on('change', function() {
+   $('input[type="checkbox"]').not(this).prop('checked', false);
+});
+
+function addAnotherQuestion(){
+  console.log("passing");
+}
+</script>

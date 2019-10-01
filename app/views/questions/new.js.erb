@@ -1,11 +1,30 @@
-console.log("passing123");
+
+
 $.ajax({
     url: "/questions/new",
     method: "get",
     dataType: "json",
     data: {},
     success: function(data){
-        console.log(data);
-        //window.location.pathname = `${data.path}`;
+        success: function(data){
+            console.log(data);
+            $("#question_errors").html(`
+            <% if @question.errors.any? %>
+                <ul>
+                    <% @question.errors.full_messages.each do |error| %>
+                        <li><%= error %></li>
+                    <% end %>
+                </ul>
+            <% end %>
+        `);
+        }
     }
 });
+
+function addAnotherQuestion(){
+
+}
+
+function saveQuestion(){
+    console.log("passing123");
+  }
