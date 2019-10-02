@@ -72,5 +72,11 @@ module QuizzesHelper
         button_to("Add More Questions", new_questions_path, :id => "add_questions_link", method: :get )
         
     end 
+
+    def render_quizzes_link 
+        content_tag(:div, :class => 'questions_section') do 
+            content_tag(:a, "Quizzes", :id => 'questions_link', :href => '/questions')
+        end 
+    end 
     
 end
