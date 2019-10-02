@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  protect_from_forgery unless: -> { request.format.json? }
   def new 
     @question = Question.new
     @quiz = Quiz.find(session[:quiz_id])  
@@ -10,14 +11,14 @@ class QuestionsController < ApplicationController
   end 
 
   def create 
-    @question = Question.new(params[:question])
-    if @question.save!
-      redirect_to quiz_path()
-    else 
-      respond_to do |format|
-        format.html { render "new" }
-        format.js { render "new" }
-      end 
-    end 
+    Content.addQuizContent(params[:questionArr])
+    # if @question.save!
+    #   redirect_to quiz_path()
+    # else 
+    #   respond_to do |format|
+    #     format.html { render "new" }
+    #     format.js { render "new" }
+    #   end 
+    # end 
   end 
 end

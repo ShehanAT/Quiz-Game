@@ -39,7 +39,7 @@
     </div>
     <div class="col-md-6">
       <button onclick="addAnotherQuestion()" id="add_question_link" class="btn btn-secondary">Add Another Question</button>
-      <button onclick="saveAndSubmit()" class="btn btn-primary">Save And Exit</button>
+      <button onclick="saveAndSubmit()" id="submit_link" class="btn btn-primary">Save And Exit</button>
       <div class="gallery_container">
 
       </div>
@@ -95,7 +95,6 @@ function updateGalleryView(){
 }
 
 function updateQuestionArr(e){
-  console.log(`Question Array length: ${questionArr.length}`);
   if ($(".add_question_section").attr("value") > questionArr.length){
     var newQuestion = {
       question: $("#question").val(),
@@ -109,7 +108,6 @@ function updateQuestionArr(e){
   }else{
     questionArr[$(".add_question_section").attr("value")  - 1][`${e.id}`] = $(e).val();
   }
-  console.log(questionArr);
 }
 
 
@@ -136,7 +134,16 @@ function emptyTextField(){
 }
 
 function saveAndSubmit(){
-  console.log(questionArr);
+  $.ajax({
+    url: "/questions",
+    method: "POST",
+    dataType: "json",
+    data: {questionArr},
+    success: function(data){
+      console.log(data);
+    }
+
+  })
 }
 </script>
 
