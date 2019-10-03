@@ -1,0 +1,15 @@
+<table>
+    <thead>
+   
+        <td>Question Name</td>
+        <td>Quiz Id</td> 
+    </thead>
+    <tbody>
+    <% @questions.each do |question| %>
+        <tr>
+            <td><%= question.question %></td>
+            <td><%= question.quiz_id %></td>
+        </tr>
+    <% end %> 
+    </tbody>
+</table>

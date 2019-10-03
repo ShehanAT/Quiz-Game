@@ -140,6 +140,7 @@ function saveAndSubmit(){
     dataType: "json",
     data: {questionArr},
     success: function(data){
+      window.location.href = data.redirect;
       console.log(data);
     }
 
