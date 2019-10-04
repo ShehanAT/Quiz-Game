@@ -26,20 +26,13 @@ class QuizzesController < ApplicationController
     end
 
     def show
-        @quiz = Quiz.find(params[:id])
-        @questions = Question.where(quiz_id: params[:id]) 
-        @answers_arr = []
-        sql = "SELECT * FROM answers INNER JOIN questions ON answers.question_id = questions.id;"
-        array = ActiveRecord::Base.connection.execute(sql)
-  
-        array.each do |answer|
-            Rails.logger.info "#{answer["quiz_id"]}"
-        end
-        session[:quiz_id] = @quiz.id 
+        Session.set_quiz_id(session, params[:id])
+        @quizContent = Content.getQuizContent(params[:id])  
+        @quiz = Quiz.find(params[:id])      
         respond_to do |format|
             format.html { render "show" }
             format.js { render "show" }
-            format.json { render json: {questions: @questions, quiz: @quiz, answers: @answers} }
+            format.json { render json: {quizContent: @quizContent, quiz: @quiz } }
         end 
     end 
 

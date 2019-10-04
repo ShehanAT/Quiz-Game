@@ -5,6 +5,7 @@ one:
   name: First Sample Quiz
   category: Sample1
   description: This the first quiz testing your knowledge of random questions
+
 two:
   id: 2
   name: Second Sample Quiz

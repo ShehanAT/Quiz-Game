@@ -6,166 +6,198 @@ chaos:
   question_id: 1
   answer: chaos
   correct_answer: 0
+  quiz_id: 1
 
 establish:
   id: 2
   question_id: 1
   answer: establish
   correct_answer: 1
+  quiz_id: 1
 bush:
   id: 3 
   question_id: 1
   answer: bush
   correct_answer: 0
+  quiz_id: 1
 fraud:
   id: 4
   question_id: 1
   answer: fraud
   correct_answer: 0
+  quiz_id: 1
 #Quiz 1 Question 2
 chest:
   id: 5
   question_id: 2
   answer: chest
   correct_answer: 1
+  quiz_id: 1
 undress:
   id: 6
   question_id: 2
   answer: undress
   correct_answer: 0
+  quiz_id: 1
 entitlement:
   id: 7
   question_id: 2
   answer: entitlement
   correct_answer: 0
+  quiz_id: 1
 rocket:
   id: 8
   question_id: 2
   answer: rocket
   correct_answer: 0
+  quiz_id: 1
 #Quiz 1 Question 3
 lump:
   id: 9
   question_id: 3
   answer: lump
   correct_answer: 0
+  quiz_id: 1
 hunting:
   id: 10
   question_id: 3
   answer: hunting
   correct_answer: 0
+  quiz_id: 1
 refuse:
   id: 11
   question_id: 3
   answer: refuse
   correct_answer: 0
+  quiz_id: 1
 tribute:
   id: 12
   question_id: 3
   answer: tribute
   correct_answer: 1
+  quiz_id: 1
 #Quiz 1 Question 4
 satisfied:
   id: 13
   question_id: 4
   answer: satisfied
   correct_answer: 1
+  quiz_id: 1
 executive:
   id: 14
   question_id: 4
   answer: executive
   correct_answer: 0
+  quiz_id: 1
 dance:
   id: 15
   question_id: 4
   answer: dance
   correct_answer: 0
+  quiz_id: 1
 adopt:
   id: 16
   question_id: 4
   answer: adopt
   correct_answer: 0
+  quiz_id: 1
 #Quiz 2 Question 1
 suffering:
   id: 17 
   question_id: 1
   answer: suffering
   correct_answer: 0
+  quiz_id: 2
 chauvinist:
   id: 18
   question_id: 1
   answer: chauvinist
   correct_answer: 1
+  quiz_id: 2
 arrogant:
   id: 19 
   question_id: 1
   answer: arrogant
   correct_answer: 0
+  quiz_id: 2
 seal:
   id: 20
   question_id: 1
   answer: seal
   correct_answer: 0
+  quiz_id: 2
 #Quiz 2 Question 2
 paradox:
   id: 21
   question_id: 2
   answer: paradox
   correct_answer: 1
+  quiz_id: 2
 step:
   id: 22
   question_id: 2
   answer: step
   correct_answer: 0
+  quiz_id: 2
 sympathetic:
   id: 23
   question_id: 2
   answer: sympathetic
   correct_answer: 0
+  quiz_id: 2
 strange:
   id: 24
   question_id: 2
   answer: strange
   correct_answer: 0
+  quiz_id: 2
 #Quiz 2 Question 3
 redeem:
   id: 25
   question_id: 3
   answer: redeem
   correct_answer: 0
+  quiz_id: 2
 workOut:
   id: 26
   question_id: 3
   answer: workOut
   correct_answer: 1
+  quiz_id: 2
 enhance:
   id: 27
   question_id: 3
   answer: enhance
   correct_answer: 0
+  quiz_id: 2
 low:
   id: 28
   question_id: 3
   answer: low
   correct_answer: 0
+  quiz_id: 2
 #Quiz 2 Question 4
 transparent:
   id: 29
   question_id: 4
   answer: transparent
   correct_answer: 0
+  quiz_id: 2
 writer:
   id: 30
   question_id: 4
   answer: writer
   correct_answer: 0
+  quiz_id: 2
 item:
   id: 31
   question_id: 4
   answer: item
   correct_answer: 0
+  quiz_id: 2
 overeat:
   id: 32
   question_id: 4
   answer: overeat
   correct_answer: 1
+  quiz_id: 2

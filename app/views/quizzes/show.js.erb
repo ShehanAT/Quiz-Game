@@ -29,14 +29,14 @@ $.ajax({
     method: "GET",
     data: {},
     success: function(data){
-        var quizId = data.quiz.id;
-        var questionsLeft = data.questions.length;
-        var randomArr = shuffle(data.questions);
+        var quizId = data.quizContent.quiz.id;
+        var questionsLeft = data.quizContent.questions.length;
+        var randomArr = shuffle(data.quizContent.questions);
         var currentQuestion;
         var score = 0;
         function changeScene(e){
             if(currentQuestion = randomArr.pop()){
-                setupQuiz(data, currentQuestion)
+                setupQuiz(data.quizContent, currentQuestion)
             }else{
                 $.ajax({
                     url: "/save_score",
@@ -58,7 +58,6 @@ $.ajax({
         }
         
         function checkAnswer(e){
-            console.log(questionsLeft);
             if(questionsLeft){
                 questionsLeft -= 1;
                 if(e.target.value == currentQuestion.answer_id){
@@ -75,16 +74,18 @@ $.ajax({
         
 
         function setupQuiz(data, nextQuestion){
-            console.log("passing");
+           // # console.log(nextQuestion.id);
             $("#current_question").text(nextQuestion.question);
             var currentChoices = []
             for(var i = 0; i < data.answers.length; i++){
-                if(data.answers[i].question_id === nextQuestion.id){
+                
+                if(data.answers[i].question_id == nextQuestion.id){
                     currentChoices.push(data.answers[i]);
                 }
             }
             for(var i = 1; i = currentChoices.length; i++){
                 var answer = currentChoices.pop()
+                console.log("passing");
                 $("#answer"+i).text(answer.answer);
                 $("#answer"+i).val(i);
             }
@@ -92,7 +93,7 @@ $.ajax({
 
         (function setFirstQuestion(){
             currentQuestion = randomArr.pop();
-            setupQuiz(data, currentQuestion);
+            setupQuiz(data.quizContent, currentQuestion);
         }());
 
         (function setupInterface(){

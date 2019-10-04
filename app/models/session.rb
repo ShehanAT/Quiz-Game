@@ -11,4 +11,8 @@ class Session < ApplicationRecord
             return "All Time High Score: #{self.highScore}" 
         end 
     end 
+
+    def self.set_quiz_id(session, quiz_id)
+        session[:quiz_id] = quiz_id
+    end 
 end 
