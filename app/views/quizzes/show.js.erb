@@ -61,8 +61,6 @@ $.ajax({
             console.log(questionsLeft);
             if(questionsLeft){
                 questionsLeft -= 1;
-                console.log("The selected answer is " + e.target.value);
-                console.log("The actual answer is " + currentQuestion.answer_id)
                 if(e.target.value == currentQuestion.answer_id){
                     updateScore();
                 } 
@@ -77,17 +75,18 @@ $.ajax({
         
 
         function setupQuiz(data, nextQuestion){
+            console.log("passing");
             $("#current_question").text(nextQuestion.question);
             var currentChoices = []
             for(var i = 0; i < data.answers.length; i++){
-                if(data.answers[i].question_id === nextQuestion.question_id){
+                if(data.answers[i].question_id === nextQuestion.id){
                     currentChoices.push(data.answers[i]);
                 }
             }
             for(var i = 1; i = currentChoices.length; i++){
                 var answer = currentChoices.pop()
                 $("#answer"+i).text(answer.answer);
-                $("#answer"+i).val(answer.answer_id);
+                $("#answer"+i).val(i);
             }
         }
 

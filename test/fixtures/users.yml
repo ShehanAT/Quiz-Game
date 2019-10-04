@@ -2,14 +2,14 @@
 
 one:
   id: 1
-  username: testing1
+  username: testing1  
   email: testing1@gmail.com
   fullName: Shehan Atukorala
   bio: Shehan Atukorala
-  password: $2a$12$lPHwY8edCo1nrPDS18hJ/OmzkB7uc64h14VKhpq9V.Kx6mOH5KxPG
-  p_salt: $2a$12$lPHwY8edCo1nrPDS18hJ/O
-  created_at: 2019-09-26 17:18:33.120900
-  updated_at: 2019-09-26 17:18:33.120900
+  password: $2a$12$an3rk4kMzd.9dXK27nDeCOb/ZWiiDT3d0VwsC9.Ln1TI8UgObD9kC
+  p_salt: $2a$12$an3rk4kMzd.9dXK27nDeCO
+  created_at: 2019-10-03 17:30:57.095461
+  updated_at: 2019-10-03 17:30:57.095461
 
 two:
   id: 2

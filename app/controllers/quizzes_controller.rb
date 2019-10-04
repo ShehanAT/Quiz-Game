@@ -27,8 +27,20 @@ class QuizzesController < ApplicationController
 
     def show
         @quiz = Quiz.find(params[:id])
-        @questions = Question.where(quiz_id: params[:id])
-        @answers = Answer.where(quiz_id: params[:id])
+        @questions = Question.where(quiz_id: params[:id]) 
+        @answers_arr = []
+        sql = "SELECT * FROM answers INNER JOIN questions ON answers.question_id = questions.id;"
+        array = ActiveRecord::Base.connection.execute(sql)
+        Rails.logger.info "#{array}"
+        # answers_arr = []
+        # Rails.logger.info "QUIZ ID: #{@quiz.id}"
+        # array.each do |answer|
+        #     # if answer["quiz_id"] === @quiz.id
+        #     Rails.logger.info "#{answer["quiz_id"]}"
+        #     answers_arr.push(answer)
+        #     # end
+        # end
+        # Rails.logger.info "ANSWERS_ARR LENGTH: #{answers_arr.length()}"
         session[:quiz_id] = @quiz.id 
         respond_to do |format|
             format.html { render "show" }
@@ -54,6 +66,6 @@ class QuizzesController < ApplicationController
 
     private 
     def quiz_params
-        params.require(:quiz).permit(:name, :category, :description, :total_questions)
+        params.require(:quiz).permit(:name, :category, :description)
     end
 end
