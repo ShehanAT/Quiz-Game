@@ -31,16 +31,10 @@ class QuizzesController < ApplicationController
         @answers_arr = []
         sql = "SELECT * FROM answers INNER JOIN questions ON answers.question_id = questions.id;"
         array = ActiveRecord::Base.connection.execute(sql)
-        Rails.logger.info "#{array}"
-        # answers_arr = []
-        # Rails.logger.info "QUIZ ID: #{@quiz.id}"
-        # array.each do |answer|
-        #     # if answer["quiz_id"] === @quiz.id
-        #     Rails.logger.info "#{answer["quiz_id"]}"
-        #     answers_arr.push(answer)
-        #     # end
-        # end
-        # Rails.logger.info "ANSWERS_ARR LENGTH: #{answers_arr.length()}"
+  
+        array.each do |answer|
+            Rails.logger.info "#{answer["quiz_id"]}"
+        end
         session[:quiz_id] = @quiz.id 
         respond_to do |format|
             format.html { render "show" }
