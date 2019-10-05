@@ -45,11 +45,26 @@ RSpec.describe QuestionHelper do
         expect(old_path).not_to eq(new_path)
     end 
 
-    it "/questions/:id should display corresponding quiz name" do 
+    it "/questions/:id should display corresponding info" do 
         capybara_questions_index 
         Capybara.page.first("a").click 
         sleep 0.1
         expect(Capybara.page.first("h3[id='question_name']").text).not_to eq("")
+        expect(Capybara.page.first("h3[id='quiz_name']").text).not_to eq("")
+    end 
+
+    it "/questions/:id links to homepage+index page should work" do 
+        buttons = ["input[id='homepage_link']", "input[id='questions_link']"]
+        for a in 0...2 
+            capybara_questions_index
+            Capybara.page.first("a").click 
+            sleep 0.1
+            old_path = Capybara.page.current_path
+            Capybara.page.first("#{buttons[a]}").click
+            sleep 0.1 
+            new_path = Capybara.page.current_path
+            expect(old_path).not_to eq(new_path)
+        end 
     end 
 
 
