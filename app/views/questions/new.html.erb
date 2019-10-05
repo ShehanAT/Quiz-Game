@@ -105,7 +105,6 @@ class QuestionSet{
 
   revertDefaultChoice(){
     for(var i = 1; i <= 4; i++){
-      console.log(this[`answer${i}`]);
       this[`answer${i}`].correct_answer = "0";
     }
   }
@@ -121,18 +120,16 @@ class QuestionSet{
 
 var questionArr = [];
 var currentQuestion = 0;
+var totalQuestions = questionArr.length;
 $("input[type='checkbox']").attr("correct_answer", "0");
 $("input[type='checkbox']").on("click", function(){
   $("input[type='checkbox']").not(this).prop("checked", false);
   if($(this).prop("checked")){
     $(this).attr("correct_answer", "1");
     updateQuestionArrCheckbox(this.value, true);
-    console.log(questionArr[currentQuestion-1]);
   }else{
     updateQuestionArrCheckbox(this.value, false);
     $(this).attr("correct_answer", "0");
-    console.log(questionArr[currentQuestion-1]);
-
   }
   
 });
@@ -154,7 +151,34 @@ function updateQuestionArrCheckbox(value ,checked){
 
 function updateQuestionArrText(value){
   questionArr[currentQuestion-1].updateFields(value.id);
-  console.log(questionArr[currentQuestion-1]);
+}
+
+function updateForm(question, errors, toggle){
+  if(!errors && !toggle){
+    $(".gallery_container").append(`<div style='cursor: pointer;' onclick='toggleQuestions(this)' value=${question}><h1>Question ${question}</h1></div>`);
+    $("#add_questions_message").text(`Now Editing Question #${question}`);  
+  }
+  else if(!errors && toggle){
+    $("#add_questions_message").text(`Now Editing Question #${question}`); 
+  }
+  else{
+    $("#question_errors").html(questionArr[currentQuestion-1].getErrors);
+  }
+}
+
+function toggleTextFields(value){
+  $("#question").val(questionArr[value-1].question);
+  $("#answer1").val(questionArr[value-1].answer1.answer);
+  $("#answer2").val(questionArr[value-1].answer2.answer);
+  $("#answer3").val(questionArr[value-1].answer3.answer);
+  $("#answer4").val(questionArr[value-1].answer4.answer);
+  for(var i = 1 ; i <= 4; i++){
+    if(questionArr[value-1][`answer${i}`].correct_answer == "1"){
+      $(`input[value='${i}']`).prop("checked", true);
+      $("input[type='checkbox']").not($(`input[value='${i}']`)).prop("checked", false);
+      break;
+    }
+  }
 }
 
 function setupQuestionArr(){
@@ -168,26 +192,45 @@ function setCurrentQuestion(){
 }
 
 function toggleQuestions(question){
-  console.log(question);
+  clearErrors();
+  if(checkValidBeforeToggle()){
+    var value = $(question).attr("value");
+    currentQuestion = value;
+    updateForm(currentQuestion, false, true);
+    toggleTextFields(value);
+  }else{
+    updateForm(currentQuestion, true, false);
+  }
+}
+
+function checkValidBeforeToggle(){
+  if(questionArr[currentQuestion-1].doValidations()){
+    return true
+  }else{
+    return false;
+  }
+}
+
+function clearErrors(){
+  $("#question_errors").empty();
 }
 
 function addQuestion(){
-  $("#question_errors").empty();
+  clearErrors();
   if(questionArr[currentQuestion-1].doValidations()){
     addToQuestionArr();
     currentQuestion++;
-    $(".gallery_container").append(`<div style='cursor: pointer;' onclick='toggleQuestions(this)' value=${currentQuestion}><h1>Question ${currentQuestion}</h1></div>`);
+    updateForm(totalQuestions, false, false);
+    eraseTextFields();
   }else{
-    console.log(questionArr[currentQuestion - 1]);
-    
-    console.log(questionArr[currentQuestion-1].getErrors);
-    $("#question_errors").html(questionArr[currentQuestion-1].getErrors);
+    updateForm(currentQuestion, true, false);
   }
 }
 
 function addToQuestionArr(){
   var newQuestion = new QuestionSet($("#question").text(), $("#answer1").text(), $("#answer2").text(), $("#answer3").text(), $("#answer4").text(), $("input[type='checkbox']").val())
-  questionArr.push(newQuestion)
+  questionArr.push(newQuestion);
+  totalQuestions = questionArr.length;
 }
 
 function eraseTextFields(){
