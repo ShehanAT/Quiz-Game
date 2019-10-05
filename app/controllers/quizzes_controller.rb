@@ -26,14 +26,13 @@ class QuizzesController < ApplicationController
     end
 
     def show
-        @quiz = Quiz.find(params[:id])
-        @questions = Question.where(quiz_id: params[:id])
-        @answers = Answer.where(quiz_id: params[:id])
-        session[:quiz_id] = @quiz.id 
+        Session.set_quiz_id(session, params[:id])
+        @quizContent = Content.getQuizContent(params[:id])  
+        @quiz = Quiz.find(params[:id])      
         respond_to do |format|
             format.html { render "show" }
             format.js { render "show" }
-            format.json { render json: {questions: @questions, quiz: @quiz, answers: @answers} }
+            format.json { render json: {quizContent: @quizContent, quiz: @quiz } }
         end 
     end 
 
@@ -54,6 +53,6 @@ class QuizzesController < ApplicationController
 
     private 
     def quiz_params
-        params.require(:quiz).permit(:name, :category, :description, :total_questions)
+        params.require(:quiz).permit(:name, :category, :description)
     end
 end

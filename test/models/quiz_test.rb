@@ -8,8 +8,8 @@ class QuizTest < ActiveSupport::TestCase
     quiz = Quiz.new 
     assert quiz, "quiz object is not truthy"
   end 
-  test "quiz object should not save without name/category/total_quizzes" do 
+  test "quiz object should not save without name/category" do 
     quiz = Quiz.new 
-    assert_not quiz.save, "quiz is saving without name/category/total_quizzes"
+    assert_not quiz.save, "quiz is saving without name/category"
   end 
 end

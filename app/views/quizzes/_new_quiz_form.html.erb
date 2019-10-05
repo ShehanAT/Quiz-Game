@@ -12,15 +12,5 @@
     <%= form.label(:description, "New Quiz Description:") %>
     <%= form.text_field :description %>
     <br />
-    <div class="hide">
-        <%= form.label(:total_questions, "Total Number of Questions New Quiz Will Contain:") %>
-        <%= form.text_field :total_questions, value: "0" %>
-    </div>
-    <br />
     <%= form.submit "Save and Submit", :type => "submit", :id => "submit_new_quiz_link" %>  
-<% end %>
-
-<% if false %>
-, :value => “0” 
-
 <% end %>

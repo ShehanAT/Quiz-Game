@@ -29,14 +29,14 @@ $.ajax({
     method: "GET",
     data: {},
     success: function(data){
-        var quizId = data.quiz.id;
-        var questionsLeft = data.questions.length;
-        var randomArr = shuffle(data.questions);
+        var quizId = data.quizContent.quiz.id;
+        var questionsLeft = data.quizContent.questions.length;
+        var randomArr = shuffle(data.quizContent.questions);
         var currentQuestion;
         var score = 0;
         function changeScene(e){
             if(currentQuestion = randomArr.pop()){
-                setupQuiz(data, currentQuestion)
+                setupQuiz(data.quizContent, currentQuestion)
             }else{
                 $.ajax({
                     url: "/save_score",
@@ -58,14 +58,17 @@ $.ajax({
         }
         
         function checkAnswer(e){
-            console.log(questionsLeft);
             if(questionsLeft){
                 questionsLeft -= 1;
-                console.log("The selected answer is " + e.target.value);
-                console.log("The actual answer is " + currentQuestion.answer_id)
-                if(e.target.value == currentQuestion.answer_id){
-                    updateScore();
-                } 
+                for(var i = 0 ; i < data.quizContent.answers.length; i++){
+                    if(data.quizContent.answers[i].answer == e.currentTarget.innerText && data.quizContent.answers[i].correct_answer === 1){
+                        console.log("passing");
+                        updateScore();
+                    }
+                }
+               /* # if(currentChoices[e.target.value - 1].correctAnswer){
+                #     updateScore();
+                # } */
             }
         }
 
@@ -80,20 +83,21 @@ $.ajax({
             $("#current_question").text(nextQuestion.question);
             var currentChoices = []
             for(var i = 0; i < data.answers.length; i++){
-                if(data.answers[i].question_id === nextQuestion.question_id){
+                
+                if(data.answers[i].question_id == nextQuestion.id){
                     currentChoices.push(data.answers[i]);
                 }
             }
             for(var i = 1; i = currentChoices.length; i++){
                 var answer = currentChoices.pop()
                 $("#answer"+i).text(answer.answer);
-                $("#answer"+i).val(answer.answer_id);
+                $("#answer"+i).val(i);
             }
         }
 
         (function setFirstQuestion(){
             currentQuestion = randomArr.pop();
-            setupQuiz(data, currentQuestion);
+            setupQuiz(data.quizContent, currentQuestion);
         }());
 
         (function setupInterface(){

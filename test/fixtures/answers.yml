@@ -1,204 +1,203 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-#GIVE RANDOM NAMES BEFORE DB:FIXTURES:LOAD
 #Quiz 1 Question 1
 chaos:
   id: 1 
-  quiz_id: 1
   question_id: 1
   answer: chaos
-  answer_id: 1
+  correct_answer: 0
+  quiz_id: 1
+
 establish:
   id: 2
-  quiz_id: 1
   question_id: 1
   answer: establish
-  answer_id: 2
+  correct_answer: 1
+  quiz_id: 1
 bush:
   id: 3 
-  quiz_id: 1
   question_id: 1
   answer: bush
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 1
 fraud:
   id: 4
-  quiz_id: 1
   question_id: 1
   answer: fraud
-  answer_id: 4
+  correct_answer: 0
+  quiz_id: 1
 #Quiz 1 Question 2
 chest:
   id: 5
-  quiz_id: 1
   question_id: 2
   answer: chest
-  answer_id: 1
+  correct_answer: 1
+  quiz_id: 1
 undress:
   id: 6
-  quiz_id: 1
   question_id: 2
   answer: undress
-  answer_id: 2
+  correct_answer: 0
+  quiz_id: 1
 entitlement:
   id: 7
-  quiz_id: 1
   question_id: 2
   answer: entitlement
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 1
 rocket:
   id: 8
-  quiz_id: 1
   question_id: 2
   answer: rocket
-  answer_id: 4
+  correct_answer: 0
+  quiz_id: 1
 #Quiz 1 Question 3
 lump:
   id: 9
-  quiz_id: 1
   question_id: 3
   answer: lump
-  answer_id: 1
+  correct_answer: 0
+  quiz_id: 1
 hunting:
   id: 10
-  quiz_id: 1
   question_id: 3
   answer: hunting
-  answer_id: 2
+  correct_answer: 0
+  quiz_id: 1
 refuse:
   id: 11
-  quiz_id: 1
   question_id: 3
   answer: refuse
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 1
 tribute:
   id: 12
-  quiz_id: 1
   question_id: 3
   answer: tribute
-  answer_id: 4
+  correct_answer: 1
+  quiz_id: 1
 #Quiz 1 Question 4
 satisfied:
   id: 13
-  quiz_id: 1
   question_id: 4
   answer: satisfied
-  answer_id: 1
+  correct_answer: 1
+  quiz_id: 1
 executive:
   id: 14
-  quiz_id: 1
   question_id: 4
   answer: executive
-  answer_id: 2
+  correct_answer: 0
+  quiz_id: 1
 dance:
   id: 15
-  quiz_id: 1
   question_id: 4
   answer: dance
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 1
 adopt:
   id: 16
-  quiz_id: 1
   question_id: 4
   answer: adopt
-  answer_id: 4
-
+  correct_answer: 0
+  quiz_id: 1
 #Quiz 2 Question 1
 suffering:
   id: 17 
-  quiz_id: 2
   question_id: 1
   answer: suffering
-  answer_id: 1
+  correct_answer: 0
+  quiz_id: 2
 chauvinist:
   id: 18
-  quiz_id: 2
   question_id: 1
   answer: chauvinist
-  answer_id: 2
+  correct_answer: 1
+  quiz_id: 2
 arrogant:
   id: 19 
-  quiz_id: 2
   question_id: 1
   answer: arrogant
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 2
 seal:
   id: 20
-  quiz_id: 2
   question_id: 1
   answer: seal
-  answer_id: 4
+  correct_answer: 0
+  quiz_id: 2
 #Quiz 2 Question 2
 paradox:
   id: 21
-  quiz_id: 2
   question_id: 2
   answer: paradox
-  answer_id: 1
+  correct_answer: 1
+  quiz_id: 2
 step:
   id: 22
-  quiz_id: 2
   question_id: 2
   answer: step
-  answer_id: 2
+  correct_answer: 0
+  quiz_id: 2
 sympathetic:
   id: 23
-  quiz_id: 2
   question_id: 2
   answer: sympathetic
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 2
 strange:
   id: 24
-  quiz_id: 2
   question_id: 2
   answer: strange
-  answer_id: 4
+  correct_answer: 0
+  quiz_id: 2
 #Quiz 2 Question 3
 redeem:
   id: 25
-  quiz_id: 2
   question_id: 3
   answer: redeem
-  answer_id: 1
+  correct_answer: 0
+  quiz_id: 2
 workOut:
   id: 26
-  quiz_id: 2
   question_id: 3
   answer: workOut
-  answer_id: 2
+  correct_answer: 1
+  quiz_id: 2
 enhance:
   id: 27
-  quiz_id: 2
   question_id: 3
   answer: enhance
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 2
 low:
   id: 28
-  quiz_id: 2
   question_id: 3
   answer: low
-  answer_id: 4
+  correct_answer: 0
+  quiz_id: 2
 #Quiz 2 Question 4
 transparent:
   id: 29
-  quiz_id: 2
   question_id: 4
   answer: transparent
-  answer_id: 1
+  correct_answer: 0
+  quiz_id: 2
 writer:
   id: 30
-  quiz_id: 2
   question_id: 4
   answer: writer
-  answer_id: 2
+  correct_answer: 0
+  quiz_id: 2
 item:
   id: 31
-  quiz_id: 2
   question_id: 4
   answer: item
-  answer_id: 3
+  correct_answer: 0
+  quiz_id: 2
 overeat:
   id: 32
-  quiz_id: 2
   question_id: 4
   answer: overeat
-  answer_id: 4
+  correct_answer: 1
+  quiz_id: 2

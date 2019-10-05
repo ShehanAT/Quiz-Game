@@ -5,26 +5,23 @@ one:
   name: First Sample Quiz
   category: Sample1
   description: This the first quiz testing your knowledge of random questions
-  total_questions: 4
+
 two:
   id: 2
   name: Second Sample Quiz
   category: Sample2
   description: Knowledge is Power, Power is Quizzes so Knowledge is Quizzes?
-  total_questions: 4
 
 three:
   id: 3
   name: Third Sample Quiz
   category: Sample3
   description: To Quiz or not to quiz, that is the question...
-  total_questions: 0
 
 four:
   id: 4
   name: Fourth Sample Quiz
   category: Sample4
   description: Trivial Game are a great way to learn various random facts with no real life application
-  total_questions: 0
 
   

@@ -10,12 +10,7 @@ class AnswerTest < ActiveSupport::TestCase
     assert_not answer.save, "question is saving with empty quizId/question/answerId"
   end   
 
-  test "should not save string for answerId attribute of question instance" do 
-    answer = Answer.new 
-    answer.answer_id = "ThisIsAString"
-    answer.answer = "ThisIsASampleQuestion?"
-    assert_not answer.save, "question is saving with invalid datatype for answerId"
-  end 
+ 
   
   
 end

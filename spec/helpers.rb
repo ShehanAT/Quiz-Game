@@ -81,7 +81,6 @@ module Helpers
         Capybara.fill_in("quiz_name", with: "testing1")
         Capybara.fill_in("quiz_category", with: "testing1")
         Capybara.fill_in("quiz_description", with: "testing1")
-        Capybara.fill_in("quiz_total_questions", with: "10")
         Capybara.page.first("input[id='submit_new_quiz_link']").click
         sleep 0.1
     end 
