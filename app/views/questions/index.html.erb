@@ -3,12 +3,14 @@
    
         <td>Question Name</td>
         <td>Corresponding Quiz</td> 
+        <td>Quiz Category</td>
     </thead>
     <tbody>
     <% @questions.each_with_index do |question, index| %>
         <tr>
             <td class='question_name'><%= link_to "#{question.question}", question_path(question.id) %></td>
             <td class='quiz_name'><%= @results[index]["name"] %></td>
+            <td class='quiz_category'><%= @results[index]["category"] %></td>
         </tr>
     <% end %> 
     </tbody>

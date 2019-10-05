@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
   end 
 
   def show 
-  
+    get_question_quiz = "SELECT * FROM questions INNER JOIN quizzes ON questions.quiz_id=quizzes.id WHERE questions.id='#{params[:id]}'"
+    @question = ActiveRecord::Base.connection.execute(get_question_quiz)
   end 
 end

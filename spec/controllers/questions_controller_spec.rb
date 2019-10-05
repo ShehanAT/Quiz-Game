@@ -40,10 +40,17 @@ RSpec.describe QuestionHelper do
         capybara_questions_index
         old_path = Capybara.page.current_path
         Capybara.page.first("td[class='question_name']").click
+        sleep 0.1
         new_path = Capybara.page.current_path
         expect(old_path).not_to eq(new_path)
     end 
 
+    it "/questions/:id should display corresponding quiz name" do 
+        capybara_questions_index 
+        Capybara.page.first("a").click 
+        sleep 0.1
+        expect(Capybara.page.first("h3[id='question_name']").text).not_to eq("")
+    end 
 
 
 end 
