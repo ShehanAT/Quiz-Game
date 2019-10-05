@@ -73,19 +73,24 @@ class QuestionSet{
   }
 
   doValidations(){
+    this.errors = "";
     if(this.question == "")this.errors+=`<p class='error'>Question field cannot be empty</p>`;
     if(this.answer1.answer == "")this.errors+= "<p class='error'>Answer 1 field cannot be empty</p>";
     if(this.answer2.answer == "")this.errors+= "<p class='error'>Answer 2 field cannot be empty</p>";
     if(this.answer3.answer == "")this.errors+= "<p class='error'>Answer 3 field cannot be empty</p>";
     if(this.answer4.answer == "")this.errors+= "<p class='error'>Answer 4 field cannot be empty</p>";
-    for(var i = 1; i <= 4; i++){
-
+    if(this.answer1.correct_answer == "0" && this.answer2.correct_answer == "0" && this.answer3.correct_answer == "0" && this.answer4.correct_answer == "0"){
+      this.errors+= "<p class='error'>Correct Answer Field cannot be empty</p>";
     }
     return (this.errors == "") ? true : false;
   }
 
   updateFields(field){
-    this[`${field}`] = $(`#${field}`).val(); 
+    if(field != "question"){
+      this[`${field}`].answer = $(`#${field}`).val(); 
+    }else{
+      this[`${field}`] = $(`#${field}`).val();
+    }
   }
 
   setCorrectAnswer(choice){
@@ -100,6 +105,7 @@ class QuestionSet{
 
   revertDefaultChoice(){
     for(var i = 1; i <= 4; i++){
+      console.log(this[`answer${i}`]);
       this[`answer${i}`].correct_answer = "0";
     }
   }
@@ -166,12 +172,15 @@ function toggleQuestions(question){
 }
 
 function addQuestion(){
+  $("#question_errors").empty();
   if(questionArr[currentQuestion-1].doValidations()){
     addToQuestionArr();
     currentQuestion++;
     $(".gallery_container").append(`<div style='cursor: pointer;' onclick='toggleQuestions(this)' value=${currentQuestion}><h1>Question ${currentQuestion}</h1></div>`);
   }else{
     console.log(questionArr[currentQuestion - 1]);
+    
+    console.log(questionArr[currentQuestion-1].getErrors);
     $("#question_errors").html(questionArr[currentQuestion-1].getErrors);
   }
 }
