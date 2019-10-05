@@ -27,13 +27,14 @@
       <%= text_field_tag :answer4, "", :onkeyup => "updateQuestionArr(this)" %>
       <br />
       <%= label_tag(:correct_answer, "Choose The Correct Answer: ") %>
-      <input type="checkbox" class="radio" value="1" id="correctAnswer" name="answer1" onclick="updateQuestionArr(this)" />Answer #1</label>
       <label>
-        <input type="checkbox" class="radio" value="2" id="correctAnswer" name="answer2" onclick="updateQuestionArr(this)" />Answer #2</label>
+        <input type="checkbox" class="radio" value="1"  />Answer #1</label>
       <label>
-        <input type="checkbox" class="radio" value="3" id="correctAnswer" name="answer3" onclick="updateQuestionArr(this)" />Answer #3</label>
+        <input type="checkbox" class="radio" value="2"  />Answer #2</label>
       <label>
-        <input type="checkbox" class="radio" value="4" id="correctAnswer" name="answer4" onclick="updateQuestionArr(this)" />Answer #4</label>
+        <input type="checkbox" class="radio" value="3"  />Answer #3</label>
+      <label>
+        <input type="checkbox" class="radio" value="4"  />Answer #4</label>
       <br />
     </div>
     <div class="col-md-6">
@@ -49,101 +50,70 @@
  
 </div>
 <script>
-
 var questionArr = [];
-$('input[type="checkbox"]').on('change', function() {
-   $('input[type="checkbox"]').not(this).prop('checked', false);
+var currentQuestion = 0;
+$("input[type='checkbox']").attr("correct_answer", "0");
+$("input[type='checkbox']").on("click", function(){
+  $("input[type='checkbox']").not(this).prop("checked", false);
+  if($(this).prop("checked")){
+    $(this).attr("correct_answer", "1");
+    updateCorrectAnswer(this.value, true);
+  }else{
+    $(this).attr("correct_answer", "0");
+  }
+  
 });
 
-function addAnotherQuestion(){
-  //do validations 
-  var errors = "";
-  if(!$("#question").val()){
-    errors += "<p class='error'>Question field cannot be empty<br/></p>";
-  }
-  if(!$("#answer1").val()){
-    errors += "<p class='error'>Answer field 1 cannot be empty<br/></p>";
-  }
-  if(!$("#answer2").val()){
-    errors += "<p class='error'>Answer field 2 cannot be empty<br/></p>";
-  } 
-  if(!$("#answer3").val()){
-    errors += "<p class='error'>Answer field 3 cannot be empty<br/></p>";
-  }
-  if(!$("#answer4").val()){
-    errors += "<p class='error'>Answer field 4 cannot be empty<br/></p>";
-  }
-  if(!$("input[type='checkbox']:checked").length){
-    errors += "<p class='error'>Correct Answer field cannot be unchecked<br/></p>"
-  }
-  if(errors.length === 0){
-    $(".add_question_section").attr("value", questionArr.length + 1);
-    $(".add_question_section").find("h3#add_questions_message").text(`Now Editing Question #${questionArr.length + 1}`);
-    emptyTextField();
-  }else{
-    $("#question_errors").html(errors);
-  }
-}
+(function(){
+  setupQuestionArr();
+}())
 
-function updateGalleryView(){
-  $(".gallery_container").append(`
-  <div id='${questionArr.length}' class='question_thumbnail' style='cursor: pointer;' onclick='toggleThumbnail(this)' >
-    <h2>Question ${questionArr.length}</h2>
-  </div>
-  `);
-}
-
-function updateQuestionArr(e){
-  if ($(".add_question_section").attr("value") > questionArr.length){
-    var newQuestion = {
-      question: $("#question").val(),
-      answer1: $("#answer1").val(),
-      answer2: $("#answer2").val(),
-      answer3: $("#answer3").val(),
-      answer4: $("#answer4").val(),
+function updateCorrectAnswer(value ,checked){
+  if(checked){
+    for(var i = 1; i <= 4; i++){
+      if(i == value){
+        questionArr[currentQuestion][`answer${i}`]["correct_answer"] = "1";
+      }else{
+        questionArr[currentQuestion][`answer${i}`]["correct_answer"] = "0";
+      }
     }
-    questionArr.push(newQuestion);
-    updateGalleryView();
-  }else{
-    questionArr[$(".add_question_section").attr("value")  - 1][`${e.id}`] = $(e).val();
   }
+/*else{
+    questionArr[currentQuestion][`answer${value}`]["correct_answer"] = "0";
+  }*/
+  console.log(questionArr);
 }
 
-
-function toggleThumbnail(e){
-  emptyTextField()
-  $("h3#add_questions_message").text(`Now Editing Question #${e.id}`);
-  $("#question").val(questionArr[e.id - 1].question);
-  $("#answer1").val(questionArr[e.id - 1].answer1);
-  $("#answer2").val(questionArr[e.id - 1].answer2);
-  $("#answer3").val(questionArr[e.id - 1].answer3);
-  $("#answer4").val(questionArr[e.id - 1].answer4);
-  $(`:checkbox[value=${questionArr[e.id - 1].correctAnswer}]`).prop("checked","true");
-  $(".add_question_section").attr("value", e.id);
+function setupQuestionArr(){
+  var newQuestion = {
+    question: $("#question").text(),
+    answer1: {
+      answer: $("#answer1").text(),
+      correct_answer: "0"
+    },
+    answer2: {
+      answer: $("#answer2").text(),
+      correct_answer: "0"
+    },
+    answer3: {
+      answer: $("#answer3").text(),
+      correct_answer: "0"
+    },
+    answer4: {
+      answer: $("#answer4").text(),
+      correct_answer: "0"
+    }
+  }
+  questionArr.push(newQuestion);
 }
 
-function emptyTextField(){
-  $("#question_errors").html("");
-  $('input[type="checkbox"]').prop('checked', false);
+function eraseTextFields(){
   $("#question").val("");
   $("#answer1").val("");
   $("#answer2").val("");
   $("#answer3").val("");
   $("#answer4").val("");
-}
-
-function saveAndSubmit(){
-  $.ajax({
-    url: "/questions",
-    method: "POST",
-    dataType: "json",
-    data: {questionArr},
-    success: function(data){
-      window.location.href = data.redirect;
-      console.log(data);
-    }
-
-  })
+  $("input[type='checkbox']").prop("checked", false);
 }
 </script>
 

@@ -7,7 +7,6 @@ $.ajax({
     data: {},
     success: function(data){
         success: function(data){
-            console.log(data);
             $("#question_errors").html(`
             <% if @question.errors.any? %>
                 <ul>
@@ -20,11 +19,3 @@ $.ajax({
         }
     }
 });
-
-function addAnotherQuestion(){
-
-}
-
-function saveQuestion(){
-    console.log("passing123");
-  }
