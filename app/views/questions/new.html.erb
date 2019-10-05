@@ -12,19 +12,19 @@
       <h3 id="add_questions_message">Now Editing Question #1 </h3>
     
       <%= label_tag(:question, "New Question:") %>
-      <%= text_field_tag :question, "", :onkeyup => "updateQuestionArr(this)" %>
+      <%= text_field_tag :question, "", :onkeyup => "updateQuestionArrText(this)" %>
       <br />
       <%= label_tag(:answer1, "Answer Choice #1:") %>
-      <%= text_field_tag :answer1, "", :onkeyup => "updateQuestionArr(this)" %>
+      <%= text_field_tag :answer1, "", :onkeyup => "updateQuestionArrText(this)" %>
       <br />
       <%= label_tag(:answer2, "Answer Choice #2:") %>
-      <%= text_field_tag :answer2, "", :onkeyup => "updateQuestionArr(this)" %>
+      <%= text_field_tag :answer2, "", :onkeyup => "updateQuestionArrText(this)" %>
       <br />
       <%= label_tag(:answer3, "Answer Choice #3:") %>
-      <%= text_field_tag :answer3, "", :onkeyup => "updateQuestionArr(this)" %>
+      <%= text_field_tag :answer3, "", :onkeyup => "updateQuestionArrText(this)" %>
       <br />
       <%= label_tag(:answer4, "Answer Choice #4:") %>
-      <%= text_field_tag :answer4, "", :onkeyup => "updateQuestionArr(this)" %>
+      <%= text_field_tag :answer4, "", :onkeyup => "updateQuestionArrText(this)" %>
       <br />
       <%= label_tag(:correct_answer, "Choose The Correct Answer: ") %>
       <label>
@@ -38,7 +38,7 @@
       <br />
     </div>
     <div class="col-md-6">
-      <button onclick="addAnotherQuestion()" id="add_question_link" class="btn btn-secondary">Add Another Question</button>
+      <button onclick="addQuestion()" id="add_question_link" class="btn btn-secondary">Add Another Question</button>
       <button onclick="saveAndSubmit()" id="submit_link" class="btn btn-primary">Save And Exit</button>
       <div class="gallery_container">
 
@@ -50,6 +50,67 @@
  
 </div>
 <script>
+class QuestionSet{
+  constructor(question, answer1, answer2, answer3, answer4, correct_answer){
+    this.question = question;
+    this.answer1 = {
+      answer: answer1,
+      correct_answer: "0"
+    };
+    this.answer2 = {
+      answer: answer2,
+      correct_answer: "0"
+    };
+    this.answer3 = {
+      answer: answer3,
+      correct_answer: "0"
+    };
+    this.answer4 = {
+      answer: answer4,
+      correct_answer: "0"
+    };  
+    this.errors = "";
+  }
+
+  doValidations(){
+    if(this.question == "") this.errors+="Question field cannot be empty";
+    if(this.answer1 == "") this.errors+="Answer 1 field cannot be empty";
+    if(this.answer2 == "") this.errors+="Answer 2 field cannot be empty";
+    if(this.answer3 == "") this.errors+="Answer 3 field cannot be empty";
+    if(this.answer4 == "") this.errors+="Answer 4 field cannot be empty";
+    return (this.errors == "") ? true : false;
+  }
+
+  updateFields(field){
+    this[`${field}`] = $(`#${field}`).val(); 
+  }
+
+  setCorrectAnswer(choice){
+    console.log(choice);
+    for(var i = 1; i <= 4; i++){
+      if(i == choice){
+        this[`answer${i}`].correct_answer = "1";
+      }else{
+        this[`answer${i}`].correct_answer = "0";
+      }
+    }
+  }
+
+  revertDefaultChoice(){
+    for(var i = 1; i <= 4; i++){
+      this[`answer${i}`].correct_answer = "0";
+    }
+  }
+
+  get getErrors() {
+    return this.errors;
+  }
+  
+  set setErrors(error){
+    this.errors += error;
+  }
+}
+
 var questionArr = [];
 var currentQuestion = 0;
 $("input[type='checkbox']").attr("correct_answer", "0");
@@ -57,7 +118,8 @@ $("input[type='checkbox']").on("click", function(){
   $("input[type='checkbox']").not(this).prop("checked", false);
   if($(this).prop("checked")){
     $(this).attr("correct_answer", "1");
-    updateCorrectAnswer(this.value, true);
+    updateQuestionArrCheckbox(this.value, true);
+    console.log(questionArr[currentQuestion-1]);
   }else{
     $(this).attr("correct_answer", "0");
   }
@@ -66,45 +128,55 @@ $("input[type='checkbox']").on("click", function(){
 
 (function(){
   setupQuestionArr();
+  setCurrentQuestion();
 }())
 
-function updateCorrectAnswer(value ,checked){
+
+function updateQuestionArrCheckbox(value ,checked){
   if(checked){
     for(var i = 1; i <= 4; i++){
       if(i == value){
-        questionArr[currentQuestion][`answer${i}`]["correct_answer"] = "1";
+        questionArr[currentQuestion-1].setCorrectAnswer(value);
       }else{
-        questionArr[currentQuestion][`answer${i}`]["correct_answer"] = "0";
+        questionArr[currentQuestion-1].revertDefaultChoice;
       }
     }
   }
-/*else{
-    questionArr[currentQuestion][`answer${value}`]["correct_answer"] = "0";
-  }*/
-  console.log(questionArr);
+}
+
+function updateQuestionArrText(value){
+  questionArr[currentQuestion-1].updateFields(value.id);
+  console.log(questionArr[currentQuestion-1]);
 }
 
 function setupQuestionArr(){
-  var newQuestion = {
-    question: $("#question").text(),
-    answer1: {
-      answer: $("#answer1").text(),
-      correct_answer: "0"
-    },
-    answer2: {
-      answer: $("#answer2").text(),
-      correct_answer: "0"
-    },
-    answer3: {
-      answer: $("#answer3").text(),
-      correct_answer: "0"
-    },
-    answer4: {
-      answer: $("#answer4").text(),
-      correct_answer: "0"
-    }
-  }
+  var newQuestion = new QuestionSet("", "", "", "", "", "0");
   questionArr.push(newQuestion);
+}
+
+function setCurrentQuestion(){
+  currentQuestion = 1;
+  $(".gallery_container").append(`<div style='cursor: pointer;' onclick='toggleQuestions(this)' value=${currentQuestion}><h1>Question ${currentQuestion}</h1></div>`);
+}
+
+function toggleQuestions(question){
+  console.log(question);
+}
+
+function addQuestion(){
+  if(questionArr[currentQuestion-1].doValidations()){
+    addToQuestionArr();
+    currentQuestion++;
+    $(".gallery_container").append(`<div style='cursor: pointer;' onclick='toggleQuestions(this)' value=${currentQuestion}><h1>Question ${currentQuestion}</h1></div>`);
+  }else{
+    console.log(questionArr[currentQuestion - 1]);
+    $("#question_errors").text(questionArr[currentQuestion-1].getErrors);
+  }
+}
+
+function addToQuestionArr(){
+  var newQuestion = new QuestionSet($("#question").text(), $("#answer1").text(), $("#answer2").text(), $("#answer3").text(), $("#answer4").text(), $("input[type='checkbox']").val())
+  questionArr.push(newQuestion)
 }
 
 function eraseTextFields(){
