@@ -2,9 +2,6 @@ class Content < ApplicationRecord
 
     def self.addQuizContent(questionArr, current_quiz_id)
         parsed_questionArr = JSON.parse(questionArr)
-        Rails.logger.info "--------------------\n"
-
-        Rails.logger.info "#{parsed_questionArr["0"]}"
         for i in 0...parsed_questionArr.length() do 
             get_max_question_id = "SELECT MAX(id) AS max_id FROM questions;"
             get_max_question_sql = ActiveRecord::Base.connection.execute(get_max_question_id)

@@ -19,7 +19,17 @@ RSpec.describe QuestionHelper do
         Capybara.page.first("button[id='submit_link']").click 
         new_path = Capybara.page.current_path 
         expect(new_path).not_to eq(old_path)
-    end       
+    end   
+    
+    it "homepage button should redirect to root_url" do 
+        capybara_questions_index
+        expect(Capybara.page.first("input[id='homepage_link']").value).to eq("Back To Home")
+        old_path = Capybara.page.current_path
+        Capybara.page.first("input[id='homepage_link']").click 
+        sleep 0.1
+        new_path = Capybara.page.current_path
+        expect(old_path).not_to eq(new_path)
+    end 
 
 
 
