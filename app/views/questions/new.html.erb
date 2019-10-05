@@ -192,9 +192,10 @@ function setCurrentQuestion(){
 }
 
 function toggleQuestions(question){
+  var value = $(question).attr("value");
+  
   clearErrors();
   if(checkValidBeforeToggle()){
-    var value = $(question).attr("value");
     currentQuestion = value;
     updateForm(currentQuestion, false, true);
     toggleTextFields(value);
@@ -204,8 +205,10 @@ function toggleQuestions(question){
 }
 
 function checkValidBeforeToggle(){
+
+  console.log(questionArr[currentQuestion-1].doValidations());
   if(questionArr[currentQuestion-1].doValidations()){
-    return true
+    return true;
   }else{
     return false;
   }
@@ -219,7 +222,6 @@ function addQuestion(){
   clearErrors();
   if(questionArr[currentQuestion-1].doValidations()){
     addToQuestionArr();
-    currentQuestion++;
     updateForm(totalQuestions, false, false);
     eraseTextFields();
   }else{
@@ -231,6 +233,7 @@ function addToQuestionArr(){
   var newQuestion = new QuestionSet($("#question").text(), $("#answer1").text(), $("#answer2").text(), $("#answer3").text(), $("#answer4").text(), $("input[type='checkbox']").val())
   questionArr.push(newQuestion);
   totalQuestions = questionArr.length;
+  currentQuestion = totalQuestions;
 }
 
 function eraseTextFields(){
@@ -251,10 +254,10 @@ function saveAndSubmit(){
       questionArr: questionArr
     },
     success: function(data){
-    
-      console.log(data);
+      window.location.href = data.redirect;
     }
   });
+  console.log("submitted");
 }
 </script>
 
