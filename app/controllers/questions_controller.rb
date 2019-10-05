@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
     @quiz = Quiz.find(session[:quiz_id])  
     respond_to do |format|
       format.html { render "new" }
-      # format.js { render "new" }
       format.json { render json: {path: "#{new_questions_path}", quiz_name: params[:name] } }
     end 
   end 

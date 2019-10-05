@@ -241,6 +241,21 @@ function eraseTextFields(){
   $("#answer4").val("");
   $("input[type='checkbox']").prop("checked", false);
 }
+
+function saveAndSubmit(){
+  $.ajax({
+    url: "/questions",
+    method: "POST",
+    dataType: "json",
+    data: {
+      questionArr: questionArr
+    },
+    success: function(data){
+    
+      console.log(data);
+    }
+  });
+}
 </script>
 
 
