@@ -73,11 +73,14 @@ class QuestionSet{
   }
 
   doValidations(){
-    if(this.question == "") this.errors+="Question field cannot be empty";
-    if(this.answer1 == "") this.errors+="Answer 1 field cannot be empty";
-    if(this.answer2 == "") this.errors+="Answer 2 field cannot be empty";
-    if(this.answer3 == "") this.errors+="Answer 3 field cannot be empty";
-    if(this.answer4 == "") this.errors+="Answer 4 field cannot be empty";
+    if(this.question == "")this.errors+=`<p class='error'>Question field cannot be empty</p>`;
+    if(this.answer1.answer == "")this.errors+= "<p class='error'>Answer 1 field cannot be empty</p>";
+    if(this.answer2.answer == "")this.errors+= "<p class='error'>Answer 2 field cannot be empty</p>";
+    if(this.answer3.answer == "")this.errors+= "<p class='error'>Answer 3 field cannot be empty</p>";
+    if(this.answer4.answer == "")this.errors+= "<p class='error'>Answer 4 field cannot be empty</p>";
+    for(var i = 1; i <= 4; i++){
+
+    }
     return (this.errors == "") ? true : false;
   }
 
@@ -86,7 +89,6 @@ class QuestionSet{
   }
 
   setCorrectAnswer(choice){
-    console.log(choice);
     for(var i = 1; i <= 4; i++){
       if(i == choice){
         this[`answer${i}`].correct_answer = "1";
@@ -121,7 +123,10 @@ $("input[type='checkbox']").on("click", function(){
     updateQuestionArrCheckbox(this.value, true);
     console.log(questionArr[currentQuestion-1]);
   }else{
+    updateQuestionArrCheckbox(this.value, false);
     $(this).attr("correct_answer", "0");
+    console.log(questionArr[currentQuestion-1]);
+
   }
   
 });
@@ -133,15 +138,12 @@ $("input[type='checkbox']").on("click", function(){
 
 
 function updateQuestionArrCheckbox(value ,checked){
-  if(checked){
     for(var i = 1; i <= 4; i++){
-      if(i == value){
-        questionArr[currentQuestion-1].setCorrectAnswer(value);
-      }else{
-        questionArr[currentQuestion-1].revertDefaultChoice;
+      if(i == value && checked){
+        questionArr[currentQuestion-1].setCorrectAnswer(i);
       }
     }
-  }
+    if(!checked) questionArr[currentQuestion-1].revertDefaultChoice();
 }
 
 function updateQuestionArrText(value){
@@ -170,7 +172,7 @@ function addQuestion(){
     $(".gallery_container").append(`<div style='cursor: pointer;' onclick='toggleQuestions(this)' value=${currentQuestion}><h1>Question ${currentQuestion}</h1></div>`);
   }else{
     console.log(questionArr[currentQuestion - 1]);
-    $("#question_errors").text(questionArr[currentQuestion-1].getErrors);
+    $("#question_errors").html(questionArr[currentQuestion-1].getErrors);
   }
 }
 
