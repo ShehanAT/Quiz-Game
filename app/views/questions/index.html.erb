@@ -1,0 +1,16 @@
+<table>
+    <thead>
+   
+        <td>Question Name</td>
+        <td>Corresponding Quiz</td> 
+    </thead>
+    <tbody>
+    <% @questions.each_with_index do |question, index| %>
+        <tr>
+            <td class='question_name'><%= link_to "#{question.question}", question_path(question.id) %></td>
+            <td class='quiz_name'><%= @results[index]["name"] %></td>
+        </tr>
+    <% end %> 
+    </tbody>
+</table>
+<%= button_to "Back To Home", root_url, id:"homepage_link", method: :get %>

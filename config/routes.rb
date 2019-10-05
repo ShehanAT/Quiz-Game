@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :sessions
   resource :users
   resources :quizzes
-  resource :questions
+  resources :questions
   resource :answers
   get "save_score", to: "quizzes#save_score"
 end

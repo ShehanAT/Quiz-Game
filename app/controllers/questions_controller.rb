@@ -15,8 +15,13 @@ class QuestionsController < ApplicationController
       format.json { render json: { redirect: "/questions" } }
     end 
   end 
+  def index 
+    @questions = Question.all
+    get_questions_quizzes = "SELECT * FROM questions INNER JOIN quizzes ON questions.quiz_id=quizzes.id;"
+    @results = ActiveRecord::Base.connection.execute(get_questions_quizzes)
+  end 
 
   def show 
-    @questions = Question.all
+  
   end 
 end

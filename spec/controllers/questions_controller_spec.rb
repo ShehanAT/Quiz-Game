@@ -31,6 +31,19 @@ RSpec.describe QuestionHelper do
         expect(old_path).not_to eq(new_path)
     end 
 
+    it "index page should show corresponding quiz for each question" do 
+        capybara_questions_index
+        expect(Capybara.page.first("td[class='quiz_name']").text).not_to eq("")
+    end 
+
+    it "click on question on index page should redirect to /questions/:id" do 
+        capybara_questions_index
+        old_path = Capybara.page.current_path
+        Capybara.page.first("td[class='question_name']").click
+        new_path = Capybara.page.current_path
+        expect(old_path).not_to eq(new_path)
+    end 
+
 
 
 end 
