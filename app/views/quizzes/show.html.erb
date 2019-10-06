@@ -6,8 +6,8 @@
 <h3>Category: </h3><strong><%= @quiz.category %></strong>
 <h3>Description: </h3><strong><%= @quiz.description %></strong>
 <br />
-
-<%= render_add_questions_form %>
+<%= button_to "Add More Questions", new_question_path, :id => "add_questions_link", method: :get %>
+<%= button_to "Edit This Quiz", edit_quiz_path(@quiz.id), :id => "edit_quiz_link", method: :get %>
 <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :id => "take_quiz_link", method: :get %>
 </div>
 

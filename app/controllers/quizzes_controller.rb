@@ -36,6 +36,19 @@ class QuizzesController < ApplicationController
         end 
     end 
 
+    def edit  
+        @quiz = Quiz.find(params[:id])
+    end 
+    
+    def update 
+        if(params[:commit] === "Update Quiz")
+            Content.updateQuiz(params)
+        elsif(params[:commit] === "Delete This Quiz")
+            Content.deleteQuiz(params[:quiz_id])
+        end 
+        redirect_to quizzes_path
+    end     
+
     def save_score 
         old_score = Score.where(user_id: session[:user_id]).take
         if old_score

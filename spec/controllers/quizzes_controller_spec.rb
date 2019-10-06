@@ -131,5 +131,26 @@ RSpec.describe "quizzes/new" do
         expect(new_path).not_to eq(old_path)
     end 
 
+    it "/quizzes/:id should redirect to /quizzes/:id/edit on button click" do 
+        capybara_quizzes_index 
+        Capybara.page.first("a[class='quiz_link']").click 
+        Capybara.page.first("input[id='edit_quiz_link'").click 
+        expect(Capybara.page.current_path).to eq("/quizzes/1/edit")
+    end 
+
+    it "/quizzes/:id/edit update+delete buttons should redirect to /quizzes" do 
+        buttons = ["input[value='Update Quiz']", "input[value='Delete This Quiz']"]
+        for i in 0...2 
+            capybara_quizzes_index 
+            Capybara.page.first("a[class='quiz_link'").click 
+            Capybara.page.first("input[id='edit_quiz_link'").click 
+            old_path = Capybara.page.current_path
+            Capybara.page.first(buttons[i]).click 
+            new_path = Capybara.page.current_path
+            expect(old_path).not_to eq(new_path)
+        end 
+
+    end 
+
 
 end 

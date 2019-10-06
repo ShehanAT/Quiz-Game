@@ -23,7 +23,6 @@ class Content < ApplicationRecord
     end
 
     def self.updateQuestion(params)
-        Rails.logger.info "CONTENT PARAMS: #{params}"
         question = Question.find(params[:question_id])
         question.update(question: params[:question])
 
@@ -49,5 +48,18 @@ class Content < ApplicationRecord
     def self.deleteQuestion(question_id)
         Question.destroy(question_id)
     end 
+    
+    def self.updateQuiz(params)
+        quiz = Quiz.find(params[:id])
+        quiz.update(name: params[:quiz_name])
+        quiz.update(category: params[:quiz_category])
+        quiz.update(description: params[:quiz_description])
+        quiz.save!
+    end 
+
+    def self.deleteQuiz(quiz_id)
+        Quiz.destroy(quiz_id)
+    end 
+
    
 end 

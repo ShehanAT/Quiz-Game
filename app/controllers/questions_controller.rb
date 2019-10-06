@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
+  
   def new 
     @question = Question.new
     @quiz = Quiz.find(session[:quiz_id])  
