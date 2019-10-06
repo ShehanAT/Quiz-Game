@@ -18,10 +18,17 @@ RSpec.describe QuizzesHelper do
     end 
 
     it "/quizzes quiz link should redirect to /quizzes/:quiz_id" do 
-        capybara_quizzes_index
-        Capybara.page.first("a[class='quiz_link']").click
-        sleep 0.1
-        expect(Capybara.page.current_path).to eq("/quizzes/1")
+        buttons = ["a[class='quiz_link']", "input[id='back_link']"]
+        for i in 0...2 
+            capybara_quizzes_index
+            Capybara.page.first(buttons[i]).click
+            if i === 0
+                expect(Capybara.page.current_path).to eq("/quizzes/1")
+            elsif i === 1
+                expect(Capybara.page.current_path).to eq("/")
+            end 
+        end 
+ 
     end 
 
     it "/quiz/:id should display quiz info" do 
@@ -87,11 +94,7 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.first("h4[id='save_score_status']").text).not_to eq("")
         expect(Capybara.page.first("button[id='replay_quiz_button']").text).not_to eq("")
     end
-    
-end
 
-RSpec.describe "quizzes/new" do 
-    
     it "/quizzes/new should display new quiz form" do 
         capybara_quizzes_index 
         old_path = Capybara.page.current_path
@@ -131,11 +134,18 @@ RSpec.describe "quizzes/new" do
         expect(new_path).not_to eq(old_path)
     end 
 
-    it "/quizzes/:id should redirect to /quizzes/:id/edit on button click" do 
-        capybara_quizzes_index 
-        Capybara.page.first("a[class='quiz_link']").click 
-        Capybara.page.first("input[id='edit_quiz_link'").click 
-        expect(Capybara.page.current_path).to eq("/quizzes/1/edit")
+    it "/quizzes/:id should redirect on button click" do 
+        buttons = ["input[id='edit_quiz_link']", "input[id='back_link']"]
+        for i in 0...2 
+            capybara_quizzes_index 
+            Capybara.page.first("a[class='quiz_link']").click 
+            Capybara.page.first(buttons[i]).click 
+            if i === 0
+                expect(Capybara.page.current_path).to eq("/quizzes/1/edit") 
+            elsif i === 1
+                expect(Capybara.page.current_path).to eq("/quizzes") 
+            end   
+        end 
     end 
 
     it "/quizzes/:id/edit update+delete buttons should redirect to /quizzes" do 
