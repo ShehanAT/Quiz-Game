@@ -29,11 +29,14 @@ gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails', '~> 4.3.5'
 
 gem 'bootstrap', '~> 4.3.1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+gem 'activerecord-session_store', '~> 1.1.3'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0.beta2'

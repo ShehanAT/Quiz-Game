@@ -1,5 +1,15 @@
+<div>
 <h3 id="question_name">Question: <%= @question[0]["question"] %></h3>
 <h3 id="quiz_name">Belongs to Quiz Name: <%= @question[0]["name"] %></h3>
-
+<% @answers.each_with_index do |answer, index| %>
+    <%= content_tag(:h3, "Answer #{index + 1}:  #{answer["answer"]}", :id => "answer#{index+1}", :value => "answer#{index+1}") %>
+<% end %>
+<% @answers.each_with_index do |answer, index| %>
+    <% if answer["correct_answer"] == 1 %>
+        <%= content_tag(:h3, "Correct Answer: #{answer["answer"]}", :id => "correct_answer") %>
+    <% end %>
+<% end %>
+</div>
 <%= button_to "Back To Home", root_url, id: "homepage_link", method: :get %>
 <%= button_to "Back To Questions", questions_path, id: "questions_link", method: :get  %>
+<%= button_to "Edit This Question", edit_question_path(@question[0]["id"]), id: "edit_question_link", method: :get %>

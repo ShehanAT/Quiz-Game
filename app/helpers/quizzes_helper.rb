@@ -68,7 +68,7 @@ module QuizzesHelper
     end 
 
     def render_add_questions_form 
-        button_to("Add More Questions", new_questions_path, :id => "add_questions_link", method: :get )
+        button_to("Add More Questions", new_question_path, :id => "add_questions_link", method: :get )
         
     end 
 

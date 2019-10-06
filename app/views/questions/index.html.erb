@@ -8,7 +8,7 @@
     <tbody>
     <% @questions.each_with_index do |question, index| %>
         <tr>
-            <td class='question_name'><%= link_to "#{question.question}", question_path(question.id) %></td>
+            <td><%= link_to "#{question.question}", question_path(question.id), class:'question_name' %></td>
             <td class='quiz_name'><%= @results[index]["name"] %></td>
             <td class='quiz_category'><%= @results[index]["category"] %></td>
         </tr>
