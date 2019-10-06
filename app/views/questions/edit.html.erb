@@ -1,5 +1,5 @@
 <h3 id="edit_question_title">Edit Question: <%= @question.question %></h3>
-<%= form_with do |form| %>
+<%= form_with :url => question_path(@question.id), :question_id => @question.id, method: :put do |form| %>
 <%= form.label :question, "Question: "  %>
 <%= form.text_field :question %>
 <br />
@@ -25,14 +25,22 @@
 <label>
   <input type="checkbox" class="radio" value="4"  />Answer #4</label>
 <br />
+<%= hidden_field_tag "#{@question.question}", @question.question, { :id => "question_name"} %>
+<%= hidden_field_tag :question_id, @question.id %>
+<%= hidden_field_tag :question_quiz_id, @question.quiz_id %>
+<%= hidden_field_tag :answer1_id, @answers[0]["id"] %>
+<%= hidden_field_tag :answer2_id, @answers[1]["id"] %>
+<%= hidden_field_tag :answer3_id, @answers[2]["id"] %>
+<%= hidden_field_tag :answer4_id, @answers[3]["id"] %>
+<%= hidden_field_tag :answer1_value, @answers[0]["answer"], :correct_answer => @answers[0]["correct_answer"] %>
+<%= hidden_field_tag :answer2_value, @answers[1]["answer"], :correct_answer => @answers[1]["correct_answer"] %>
+<%= hidden_field_tag :answer3_value, @answers[2]["answer"], :correct_answer => @answers[2]["correct_answer"] %>
+<%= hidden_field_tag :answer4_value, @answers[3]["answer"], :correct_answer => @answers[3]["correct_answer"] %>
 <%= form.submit "Update Question" %> 
+<%= form.submit "Delete This Question" %>
 <% end %>
 <%= button_to "Back", question_path(@question.id), id:'back_link', method: :get %>
-<%= hidden_field_tag "#{@question.question}", @question.question, { :id => "question_name"} %>
-<%= hidden_field_tag "#{@answers[0]["answer"]}", @answers[0]["answer"], { :id => "answer1_value", :correct_answer => "#{@answers[0]["correct_answer"]}"} %>
-<%= hidden_field_tag "#{@answers[1]["answer"]}", @answers[1]["answer"], { :id => "answer2_value", :correct_answer => "#{@answers[1]["correct_answer"]}"} %>
-<%= hidden_field_tag "#{@answers[2]["answer"]}", @answers[2]["answer"], { :id => "answer3_value", :correct_answer => "#{@answers[2]["correct_answer"]}"} %>
-<%= hidden_field_tag "#{@answers[3]["answer"]}", @answers[3]["answer"], { :id => "answer4_value", :correct_answer => "#{@answers[3]["correct_answer"]}"} %>
+
 
 <script>
 console.log($("#question_name").val());

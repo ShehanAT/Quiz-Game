@@ -12,4 +12,4 @@
 </div>
 <%= button_to "Back To Home", root_url, id: "homepage_link", method: :get %>
 <%= button_to "Back To Questions", questions_path, id: "questions_link", method: :get  %>
-<%= button_to "Edit This Question", edit_question_path(@question[0]["id"]), id: "edit_question_link", method: :get %>
+<%= button_to "Edit This Question", edit_question_path(@question[0]["id"]), id: "edit_question_link", method: :get, :question_id => @question[0]["id"] %>

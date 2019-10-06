@@ -82,6 +82,17 @@ RSpec.describe QuestionHelper do
         expect(Capybara.page.current_path).not_to eq("/questions/1/edit")
     end 
 
+    it "/questions/:id/edit form submit should redirect to /questions" do
+        buttons = ["input[type='submit']"] 
+        for i in 0..2 
+            capybara_questions_index
+            Capybara.page.first("a").click 
+            Capybara.page.first("input[id='edit_question_link']").click 
+            Capybara.page.first("input[type='submit']").click 
+            expect(Capybara.page.current_path).to eq("/questions")
+        end 
+    end 
+
 
 
 end 
