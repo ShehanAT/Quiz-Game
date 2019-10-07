@@ -25,7 +25,35 @@ class UsersController < ApplicationController
     end
 
     def show 
-        @users = User.all
+        Rails.logger.info "USER ID: #{params[:id]}"
+        @user = User.find(params[:id])
+    end 
+
+    def edit 
+        @user = User.find(params[:id])
+
+    end 
+
+    def username_validations
+        respond_to do |format|
+            format.json { render json:{ response: Validation.check_username(params[:username]) } }
+        end 
+    end 
+
+    def email_validations
+        respond_to do |format|
+            format.json { render json:{ status: Validation.check_email(params[:email]) } }
+        end 
+    end 
+
+    def update_password
+        respond_to do |format|
+            format.json { render json: { status: Validation.update_password(params) } }
+        end 
+    end 
+
+    def update 
+        redirect_to root_url
     end 
 
     private 

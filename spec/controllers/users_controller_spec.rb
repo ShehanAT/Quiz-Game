@@ -6,7 +6,7 @@ RSpec.configure do |c|
 end
 
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe UserHelper do
 
     it "from: /users/new form submission should be successful with valid form data" do 
         old_path = Capybara.page.current_path
@@ -15,6 +15,44 @@ RSpec.describe UsersController, type: :controller do
         expect(old_path).not_to eq(new_path)
     end 
 
+    it "root_url should redirect to /users/:id on button click" do 
+        capybara_login
+        Capybara.page.first("a[id='user_profile_link']").click 
+        expect(Capybara.page.current_path).to eq("/users/1") 
+    end 
 
+    it "/users/:id should display user info and redirect to /users/:id/edit" do 
+        buttons = ["input[id='edit_user_link']", "input[id='back_link']"]
+        for i in 0...2
+            capybara_login
+            Capybara.page.first("a[id='user_profile_link'").click 
+            Capybara.page.first(buttons[i]).click
+            if i === 0
+                expect(Capybara.page.current_path).to eq("/users/1/edit")    
+            elsif i === 1
+                expect(Capybara.page.current_path).to eq("/")
+            end 
+        end
+    end 
+
+    it "/users/:id should display user info " do 
+        capybara_login
+        Capybara.page.first("a[id='user_profile_link'").click 
+        expect(Capybara.page.first("h3[id='username']").text).to eq("Username: testing1")
+        expect(Capybara.page.first("h3[id='email']").text).to eq("Email: testing1@gmail.com")
+        expect(Capybara.page.first("h3[id='fullName']").text).to eq("Full Name: Shehan Atukorala")
+        expect(Capybara.page.first("h3[id='bio']").text).to eq("Bio: Shehan Atukorala")
+    end 
+
+    it "/users/:id/edit should display errors on invalid submit" do 
+        capybara_login
+        Capybara.page.first("a[id='user_profile_link']").click 
+        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("button[id='change_password_link']").click 
+        Capybara.page.first("button[id='update_password_link']").click 
+        expect(Capybara.page.first("div[id='password_errors']").text).not_to eq("")
+        Capybara.page.first("input[id='save_and_exit_link']").click 
+        expect(Capybara.page.current_path).to eq("/")
+    end 
 
 end 

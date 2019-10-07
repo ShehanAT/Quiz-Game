@@ -13,7 +13,7 @@ module QuizzesHelper
     def render_register_link
         if !session[:user_id]
             content_tag :li do 
-              link_to "Register", new_users_path, id: "register_link"
+              link_to "Register", new_user_path, id: "register_link"
             end
         end 
 

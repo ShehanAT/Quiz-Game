@@ -1,0 +1,166 @@
+<h3 id="edit_quiz_title">Edit User: <%= @user.username %></h3>
+
+<%= form_with :url => user_path(@user.id), :user_id => @user.id, method: :put, :remote => true do |form| %>
+<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+<div class="username_section">
+    <div id="username_errors"></div>
+    <div id="current_username_section">
+        <label for="current_username">Current Username: <%= @user.username %></label>
+        <button type="button" id="current_username" class="username_field" onclick="changeUsername()">Change Username</button>
+    </div>
+    <div style="display: none;" id="change_username_section">
+        <label for="new_username">New Username:</label>
+        <input type="text" id="new_username" class="username_field" />
+            
+        <input type="hidden" name="hidden_user_id" value="#{@user.id}" />
+        <input type="hidden" name="hidden_current_username" value="<%= @user.username %>" id="hidden_current_username" />
+        <button onclick="updateUsername()" type="button" id="update_username_link" >Update Username</button>
+        <button onclick="cancelUsername()" type="button"  id="cancel_username_link">Cancel</button>
+    </div>  
+</div>
+<br />
+<%= form.label :email, "Email: " %>
+<%= form.text_field :email %>
+<span id="email_errors">
+</span>
+<br />
+<%= form.label :fullName, "Full Name: " %>
+<%= form.text_field :fullName %>
+<br />
+<button type="button" onclick="changePassword()" id="change_password_link">Change Password</button>
+
+<div id="change_password_section" style="display: none;">
+    <div id="password_errors"></div>
+    <label for="current_password">Current Password</label>
+    <input type="password" id="current_password" class="password_field" />
+
+    <label for="new_password">New Password</label>
+    <input type="password" id="new_password" class="password_field" />
+
+    <label for="new_password_confirm">Confirm New Password</label>
+    <input type="password" id="new_password_confirm" class="password_field" />
+    
+    <input type="hidden" name="hidden_user_id" value="#{@user.id}" />
+    <button onclick="updatePassword()" type="button" id="update_password_link" >Update Password</button>
+    <button onclick="cancelPassword()" type="button"  id="cancel_password_link">Cancel</button>
+</div>
+<br />
+<%= hidden_field_tag "#{@user.username}", @user.username, { :id => "hidden_user_username"} %>
+<%= hidden_field_tag "#{@user.email}", @user.email, { :id => "hidden_user_email"} %>
+<%= hidden_field_tag "#{@user.fullName}", @user.fullName, { :id => "hidden_user_fullName"} %>
+<%= hidden_field_tag "#{@user.bio}", @user.bio, { :id => "hidden_user_bio"} %>
+
+<%= form.submit "Save And Exit", id:"save_and_exit_link" %> 
+<%= form.submit "Delete Your Account" %>
+<% end %>
+<%= button_to "Back", user_path(@user.id), id:'back_link', method: :get %>
+
+<script>
+(function loadFormValues(){
+    $("#username").val($("#hidden_user_username").val());
+    $("#email").val($("#hidden_user_email").val());
+    $("#fullName").val($("#hidden_user_fullName").val());
+    $("#bio").val($("#hidden_user_bio").val());
+}());
+
+(function setEventListeners(){
+    $("#new_username").on("keyup", function(){
+        checkUserName(this.value);});
+    $("#email").on("keyup", function(){
+        checkEmail(this.value);});
+}());
+
+function checkUserName(value){
+    $("#username_errors").html("");
+    $.ajax({
+        url: "/username_validations",
+        method: "get",
+        dataType: "json",
+        data: {
+            username:value
+        },
+        success: function(data){
+            console.log(data);
+            $("#username_errors").html(`${data.response.message}`)
+            if(!data.response.status) $("#update_username_link").prop('disabled', true);
+            else $("#update_username_link").prop('disabled', false);
+        }
+    });
+}
+
+function checkEmail(value){
+    $("#email_errors").html("");
+    $.ajax({
+        url: "/email_validations",
+        method: "get",
+        dataType: "json",
+        data: {
+            email:value
+        },
+        success: function(data){
+            $("#email_errors").html(`${data.status}`)
+        }
+    });
+}
+
+function changePassword(){
+    $("#change_password_section").css("display", "inline");
+    $("#change_password_link").css("display", "none");
+}
+
+function updatePassword(){
+    doPasswordValidations();
+    var currentPassword = $("#current_password").val();
+    var newPassword = $("#new_password").val();
+    var confirmPassword = $("#new_password_confirm").val();
+    //var user_id = $("#")
+    if($("#password_errors").children().length == 0){
+        $.ajax({
+            url: "/update_password",
+            method: "post",
+            data: {
+                current_password: currentPassword,
+                new_password: newPassword,
+                confirm_password: confirmPassword,
+                authenticity_token: window._token 
+            },
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+            }
+        });
+    }
+}
+
+function doPasswordValidations(){
+    $("#password_errors").empty();
+    var errors = [];
+    if(!$("#current_password").val()) errors.push("Current Password Field Cannot Be Empty");
+    if(!$("#new_password").val()) errors.push("New Password Field Cannot Be Empty");
+    if(!$("#new_password_confirm").val()) errors.push("Confirm Password Field Cannot Be Empty");
+    if($("#new_password").val() != $("#new_password_confirm").val()) errors.push("New Passwords Do Not Match");
+    errors.forEach(function(error){
+        $("#password_errors").append(`<p style='color: red;'>${error}</p>`);
+    });
+}
+
+function cancelPassword(){
+    $("#change_password_section").css("display", "none");
+    $("#change_password_link").css("display", "inline");
+}
+
+function changeUsername(){
+    $("#new_username").val($("#hidden_current_username").val());
+    $("#change_username_section").css("display", "inline");
+    $("#current_username_section").css("display", "none");
+}
+
+function updateUsername(){
+
+}
+
+function cancelUsername(){
+    $("#change_username_section").css("display", "none");
+    $("#current_username_section").css("display", "inline");
+}
+</script>
