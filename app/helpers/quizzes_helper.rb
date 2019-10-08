@@ -67,9 +67,7 @@ module QuizzesHelper
         end 
     end 
 
-    def edit_links
-        # Rails.logger.info "#{request.query_parameters}"
-        
+    def edit_links        
     end 
 
     def render_quizzes_link 

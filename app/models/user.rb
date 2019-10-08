@@ -10,21 +10,42 @@ class User < ApplicationRecord
 
     def self.authenticate(username, password)
         user = User.find_by_username(username)
-        
-        if user && user.password === BCrypt::Engine.hash_secret(password, user.p_salt)
-            user
+        if user 
+            auth_password = BCrypt::Password.new(user.password)
+            Rails.logger.info "AUTH PASSWORD #{auth_password}"
+            if auth_password == password  then 
+                return user
+            else 
+                return false
+            end
         else 
-            nil
+            return false 
         end 
+    end
+    
+    def self.change_password(current_password, new_password)
+        saved_session = Session.all 
+        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+        if User.authenticate(user.username, current_password)
+            new_hashed_password = BCrypt::Password.create(new_password)
+            save_new_password = "UPDATE users SET password='#{new_hashed_password}' WHERE username='#{user.username}'"
+            result = ActiveRecord::Base.connection.execute(save_new_password)
+            if result
+                return { message: "Password Updated Successfully", status: true }
+            else 
+                return { message: "Password Update Failed", status: false }
+            end 
+        else 
+            return { message: "Entered Current Password Is Invalid", status: true } 
+        end 
+       
     end 
 
-    def encrypt_password 
-        password_salt = BCrypt::Engine.generate_salt
-        if hashed_password = BCrypt::Engine.hash_secret(password, password_salt)
-            self.password = hashed_password 
-            self.p_salt = password_salt
-        else 
-            nil
+    def encrypt_password
+        if hashed_password = BCrypt::Password.create(password)
+            self.password = hashed_password
+        else
+            return nil
         end 
     end 
 

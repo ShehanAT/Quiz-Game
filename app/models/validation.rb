@@ -24,16 +24,28 @@ class Validation < ApplicationRecord
 
     def self.check_email(email)
         if email === ""
-            return "<span style='color: red;'>Email cannot be blank</span>" 
+            return  {
+                message: "<span style='color: red;'>Email cannot be blank</span>",
+                status: false
+            }
         end 
         check_email_sql = "SELECT * FROM users WHERE email='#{email}'"
         results = ActiveRecord::Base.connection.execute(check_email_sql)
         if !(!(email =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i).nil?)
-            return "<span style='color: red;'>Email is invalid</span>" 
+            return  {
+                message: "<span style='color: red;'>Email is invalid</span>",
+                status: false
+            }
         elsif results.length() != 0
-            return "<span style='color: red;'>Email already taken</span>" 
+            return {
+                message: "<span style='color: red;'>Email already taken</span>",
+                status: false
+            }
         else
-            return "<span style='color: green;'>Email is valid</span>"  
+            return {
+                message: "<span style='color: green;'>Email is valid</span>",
+                status: true
+            }
         end 
     end 
 

@@ -12,20 +12,43 @@
         <label for="new_username">New Username:</label>
         <input type="text" id="new_username" class="username_field" />
             
-        <input type="hidden" name="hidden_user_id" value="#{@user.id}" />
         <input type="hidden" name="hidden_current_username" value="<%= @user.username %>" id="hidden_current_username" />
         <button onclick="updateUsername()" type="button" id="update_username_link" >Update Username</button>
         <button onclick="cancelUsername()" type="button"  id="cancel_username_link">Cancel</button>
     </div>  
 </div>
 <br />
-<%= form.label :email, "Email: " %>
-<%= form.text_field :email %>
-<span id="email_errors">
-</span>
+<div class="email_section">
+    <div id="email_errors"></div>
+    <div id="current_email_section">
+        <label for="current_email">Current Email: <%= @user.email %></label>
+        <button type="button" id="current_email" class="email_field" onclick="changeEmail()">Change Email</button>
+    </div>
+    <div style="display: none;" id="change_email_section">
+        <label for="new_email">New Email:</label>
+        <input type="text" id="new_email" class="email_field" />
+            
+        <input type="hidden" name="hidden_current_email" value="<%= @user.email %>" id="hidden_current_email" />
+        <button onclick="updateEmail()" type="button" id="update_email_link" >Update Email</button>
+        <button onclick="cancelEmail()" type="button"  id="cancel_email_link">Cancel</button>
+    </div>  
+</div>
 <br />
-<%= form.label :fullName, "Full Name: " %>
-<%= form.text_field :fullName %>
+<div class="fullName_section">
+    <div id="fullName_errors"></div>
+    <div id="current_fullName_section">
+        <label for="current_fullName">Current Full Name: <%= @user.fullName %></label>
+        <button type="button" id="current_fullName" class="fullName_field" onclick="changeFullName()">Change Full Name</button>
+    </div>
+    <div style="display: none;" id="change_fullName_section">
+        <label for="new_fullName">New Full Name:</label>
+        <input type="text" id="new_fullName" class="fullName_field" />
+            
+        <input type="hidden" name="hidden_current_fullName" value="<%= @user.fullName %>" id="hidden_current_fullName" />
+        <button onclick="updateFullName()" type="button" id="update_fullName_link" >Update Full Name</button>
+        <button onclick="cancelFullName()" type="button"  id="cancel_fullName_link">Cancel</button>
+    </div>  
+</div>
 <br />
 <button type="button" onclick="changePassword()" id="change_password_link">Change Password</button>
 
@@ -63,12 +86,6 @@
     $("#bio").val($("#hidden_user_bio").val());
 }());
 
-(function setEventListeners(){
-    $("#new_username").on("keyup", function(){
-        checkUserName(this.value);});
-    $("#email").on("keyup", function(){
-        checkEmail(this.value);});
-}());
 
 function checkUserName(value){
     $("#username_errors").html("");
@@ -80,8 +97,7 @@ function checkUserName(value){
             username:value
         },
         success: function(data){
-            console.log(data);
-            $("#username_errors").html(`${data.response.message}`)
+            $("#username_errors").html(`${data.response.message}`);
             if(!data.response.status) $("#update_username_link").prop('disabled', true);
             else $("#update_username_link").prop('disabled', false);
         }
@@ -98,7 +114,9 @@ function checkEmail(value){
             email:value
         },
         success: function(data){
-            $("#email_errors").html(`${data.status}`)
+            $("#email_errors").html(`${data.response.message}`);
+            if(!data.response.status) $("#update_email_link").prop('disabled', true);
+            else $("#update_email_link").prop('disabled', false);
         }
     });
 }
@@ -113,10 +131,9 @@ function updatePassword(){
     var currentPassword = $("#current_password").val();
     var newPassword = $("#new_password").val();
     var confirmPassword = $("#new_password_confirm").val();
-    //var user_id = $("#")
     if($("#password_errors").children().length == 0){
         $.ajax({
-            url: "/update_password",
+            url: "/change_password",
             method: "post",
             data: {
                 current_password: currentPassword,
@@ -126,7 +143,8 @@ function updatePassword(){
             },
             dataType: "json",
             success: function(data){
-                console.log(data);
+                alert(`${data.response.message}`);
+                location.reload();            
             }
         });
     }
@@ -150,17 +168,94 @@ function cancelPassword(){
 }
 
 function changeUsername(){
+    $("#new_username").on("keyup", function(event){
+    checkUserName(this.value);});
     $("#new_username").val($("#hidden_current_username").val());
     $("#change_username_section").css("display", "inline");
     $("#current_username_section").css("display", "none");
 }
 
 function updateUsername(){
-
+    $.ajax({
+        url: "/change_username",
+        method: "get",
+        dataType: "json",
+        data: {
+            username: $("#new_username").val()
+        },
+        success: function(data){
+            console.log(data);
+            if(data.response.status){
+                alert(`${data.response.message}`);
+                location.reload();
+            }
+        }
+    });
 }
 
 function cancelUsername(){
+    $("#username_errors").html("");
     $("#change_username_section").css("display", "none");
     $("#current_username_section").css("display", "inline");
+}
+
+function changeEmail(){
+    $("#new_email").on("keyup", function(){
+        checkEmail(this.value);});
+    $("#new_email").val($("#hidden_current_email").val());
+    $("#change_email_section").css("display", "inline");
+    $("#current_email_section").css("display", "none");
+}
+
+function updateEmail(){
+    $.ajax({
+        url: "/change_email",
+        method: "get",
+        dataType: "json",
+        data: {
+            email: $("#new_email").val()
+        },
+        success: function(data){
+            console.log(data);
+            if(data.response.status){
+                alert(`${data.response.message}`);
+                location.reload();
+            }
+        }
+    });
+}
+
+function cancelEmail(){
+    $("#change_email_section").css("display", "none");
+    $("#current_email_section").css("display", "inline");
+}
+
+function changeFullName(){
+    $("#new_fullName").val($("#hidden_current_fullName").val());
+    $("#change_fullName_section").css("display", "inline");
+    $("#current_fullName_section").css("display", "none");
+}
+
+function updateFullName(){
+    $.ajax({
+        url: "/change_fullName",
+        method: "get",
+        dataType: "json",
+        data: {
+            fullName: $("#new_fullName").val()
+        },
+        success: function(data){
+            console.log(data);
+            if(data.response.status){
+                alert(`${data.response.message}`);
+                location.reload();
+            }
+        }
+    });
+}
+
+function cancelFullName(){
+    $("#change_fullName_section").css("display", "none");
+    $("#current_fullName_section").css("display", "inline");
 }
 </script>

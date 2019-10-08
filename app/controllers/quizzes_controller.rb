@@ -1,9 +1,8 @@
 class QuizzesController < ApplicationController
 
     def home 
-        new_session = Session.all
         if session[:user_id]
-            @user = User.find(JSON.parse(new_session[0].data)["value"]["user_id"])
+            @user = User.find(session[:user_id])
         end
     end 
 

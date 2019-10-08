@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     end
 
     def show 
-        Rails.logger.info "USER ID: #{params[:id]}"
         @user = User.find(params[:id])
     end 
 
@@ -42,7 +41,7 @@ class UsersController < ApplicationController
 
     def email_validations
         respond_to do |format|
-            format.json { render json:{ status: Validation.check_email(params[:email]) } }
+            format.json { render json:{ response: Validation.check_email(params[:email]) } }
         end 
     end 
 
@@ -50,7 +49,31 @@ class UsersController < ApplicationController
         respond_to do |format|
             format.json { render json: { status: Validation.update_password(params) } }
         end 
+    end
+    
+    def change_username
+        respond_to do |format|
+            format.json { render json: { response: Content.change_username(params[:username])}}
+        end 
     end 
+
+    def change_email
+        respond_to do |format|
+            format.json { render json: { response: Content.change_email(params[:email])}}
+        end 
+    end 
+
+    def change_fullName
+        respond_to do |format|
+            format.json { render json: { response: Content.change_fullName(params[:fullName])}}
+        end 
+    end 
+
+    def change_password
+        respond_to do |format|
+            format.json { render json: { response: User.change_password(params[:current_password], params[:new_password]) } }
+        end 
+    end     
 
     def update 
         redirect_to root_url
