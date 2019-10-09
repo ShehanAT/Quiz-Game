@@ -12,7 +12,6 @@ class User < ApplicationRecord
         user = User.find_by_username(username)
         if user 
             auth_password = BCrypt::Password.new(user.password)
-            Rails.logger.info "AUTH PASSWORD #{auth_password}"
             if auth_password == password  then 
                 return user
             else 
@@ -79,6 +78,56 @@ class User < ApplicationRecord
             return { message: "Full Name Updated Successfully", status: true }
         else 
             return { message: "Full Name Update Failed", status: false }
+        end 
+    end 
+
+    def self.check_username(username)
+        if username === ""
+            return {
+                message: "<span style='color: red;'>Username cannot be blank</span>",
+                status: false
+            }
+        end 
+        check_username_sql = "SELECT * FROM users WHERE username='#{username}'"
+        results = ActiveRecord::Base.connection.execute(check_username_sql)
+        if results.length() == 0
+            return {
+                message: "<span style='color: green;'>Username is valid</span>",
+                status: true
+            }
+        else 
+            return {
+                message: "<span style='color: red;'>Username is already taken</span>",
+                status: false 
+            }
+        end 
+    end 
+
+
+    def self.check_email(email)
+        if email === ""
+            return  {
+                message: "<span style='color: red;'>Email cannot be blank</span>",
+                status: false
+            }
+        end 
+        check_email_sql = "SELECT * FROM users WHERE email='#{email}'"
+        results = ActiveRecord::Base.connection.execute(check_email_sql)
+        if !(!(email =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i).nil?)
+            return  {
+                message: "<span style='color: red;'>Email is invalid</span>",
+                status: false
+            }
+        elsif results.length() != 0
+            return {
+                message: "<span style='color: red;'>Email already taken</span>",
+                status: false
+            }
+        else
+            return {
+                message: "<span style='color: green;'>Email is valid</span>",
+                status: true
+            }
         end 
     end 
 

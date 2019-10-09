@@ -41,15 +41,15 @@ class UsersController < ApplicationController
 
     def email_validations
         respond_to do |format|
-            format.json { render json:{ response: Validation.check_email(params[:email]) } }
+            format.json { render json:{ response: User.check_email(params[:email]) } }
         end 
     end 
 
-    def update_password
-        respond_to do |format|
-            format.json { render json: { status: Validation.update_password(params) } }
-        end 
-    end
+    # def update_password
+    #     respond_to do |format|
+    #         format.json { render json: { status: User.update_password(params) } }
+    #     end 
+    # end
     
     def change_username
         respond_to do |format|
