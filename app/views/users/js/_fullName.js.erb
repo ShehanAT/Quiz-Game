@@ -1,0 +1,28 @@
+function changeFullName(){
+    $("#new_fullName").val($("#hidden_current_fullName").val());
+    $("#change_fullName_section").css("display", "inline");
+    $("#current_fullName_section").css("display", "none");
+}
+
+function updateFullName(){
+    $.ajax({
+        url: "/change_fullName",
+        method: "get",
+        dataType: "json",
+        data: {
+            fullName: $("#new_fullName").val()
+        },
+        success: function(data){
+            console.log(data);
+            if(data.response.status){
+                alert(`${data.response.message}`);
+                location.reload();
+            }
+        }
+    });
+}
+
+function cancelFullName(){
+    $("#change_fullName_section").css("display", "none");
+    $("#current_fullName_section").css("display", "inline");
+}

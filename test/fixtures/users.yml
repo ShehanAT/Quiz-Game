@@ -6,7 +6,7 @@ one:
   email: testing1@gmail.com
   fullName: Shehan Atukorala
   bio: Shehan Atukorala
-  password: $2a$12$CK84ONXp4q2fFH90qiKFxOO6nycb16dlTe1wtdr2OhJd6W5gZJYDe
+  password: $2a$12$HAmJWTcGXB49F/5Zh9nt6u1NMUlvb5H/wZw0VzQbx/945wgjHwbWO
   created_at: 2019-10-03 17:30:57.095461
   updated_at: 2019-10-03 17:30:57.095461
 

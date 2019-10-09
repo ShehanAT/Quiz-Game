@@ -1,0 +1,78 @@
+
+<%= form_with :url => user_path(@user.id), :user_id => @user.id, method: :put, :remote => true do |form| %>
+    <%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+    <div class="username_section">
+        <div id="username_errors"></div>
+        <div id="current_username_section">
+            <label for="current_username">Current Username: <%= @user.username %></label>
+            <button type="button" id="current_username" class="username_field" onclick="changeUsername()" >Change Username</button>
+        </div>
+        <div style="display: none;" id="change_username_section">
+            <label for="new_username">New Username:</label>
+            <input type="text" id="new_username" class="username_field" />
+                
+            <input type="hidden" name="hidden_current_username" value="<%= @user.username %>" id="hidden_current_username" />
+            <button onclick="updateUsername()" type="button" id="update_username_link" >Update Username</button>
+            <button onclick="cancelUsername()" type="button"  id="cancel_username_link">Cancel</button>
+        </div>  
+    </div>
+    <br />
+    <div class="email_section">
+        <div id="email_errors"></div>
+        <div id="current_email_section">
+            <label for="current_email">Current Email: <%= @user.email %></label>
+            <button type="button" id="current_email" class="email_field" onclick="changeEmail()">Change Email</button>
+        </div>
+        <div style="display: none;" id="change_email_section">
+            <label for="new_email">New Email:</label>
+            <input type="text" id="new_email" class="email_field" />
+                
+            <input type="hidden" name="hidden_current_email" value="<%= @user.email %>" id="hidden_current_email" />
+            <button onclick="updateEmail()" type="button" id="update_email_link" >Update Email</button>
+            <button onclick="cancelEmail()" type="button"  id="cancel_email_link">Cancel</button>
+        </div>  
+    </div>
+    <br />
+    <div class="fullName_section">
+        <div id="fullName_errors"></div>
+        <div id="current_fullName_section">
+            <label for="current_fullName">Current Full Name: <%= @user.fullName %></label>
+            <button type="button" id="current_fullName" class="fullName_field" onclick="changeFullName()">Change Full Name</button>
+        </div>
+        <div style="display: none;" id="change_fullName_section">
+            <label for="new_fullName">New Full Name:</label>
+            <input type="text" id="new_fullName" class="fullName_field" />
+                
+            <input type="hidden" name="hidden_current_fullName" value="<%= @user.fullName %>" id="hidden_current_fullName" />
+            <button onclick="updateFullName()" type="button" id="update_fullName_link" >Update Full Name</button>
+            <button onclick="cancelFullName()" type="button"  id="cancel_fullName_link">Cancel</button>
+        </div>  
+    </div>
+    <br />
+    <button type="button" onclick="changePassword()" id="change_password_link">Change Password</button>
+    
+    <div id="change_password_section" style="display: none;">
+        <div id="password_errors"></div>
+        <label for="current_password">Current Password</label>
+        <input type="password" id="current_password" class="password_field" />
+    
+        <label for="new_password">New Password</label>
+        <input type="password" id="new_password" class="password_field" />
+    
+        <label for="new_password_confirm">Confirm New Password</label>
+        <input type="password" id="new_password_confirm" class="password_field" />
+        
+        <input type="hidden" name="hidden_user_id" value="#{@user.id}" />
+        <button onclick="updatePassword()" type="button" id="update_password_link" >Update Password</button>
+        <button onclick="cancelPassword()" type="button"  id="cancel_password_link">Cancel</button>
+    </div>
+    <br />
+    <%= hidden_field_tag "#{@user.username}", @user.username, { :id => "hidden_user_username"} %>
+    <%= hidden_field_tag "#{@user.email}", @user.email, { :id => "hidden_user_email"} %>
+    <%= hidden_field_tag "#{@user.fullName}", @user.fullName, { :id => "hidden_user_fullName"} %>
+    <%= hidden_field_tag "#{@user.bio}", @user.bio, { :id => "hidden_user_bio"} %>
+    
+    <%= form.submit "Save And Exit", id:"save_and_exit_link" %> 
+    <%= form.submit "Delete Your Account" %>
+    <% end %>
+    <%= button_to "Back", user_path(@user.id), id:'back_link', method: :get %>

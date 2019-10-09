@@ -1,0 +1,48 @@
+function checkEmail(value){
+    $("#email_errors").html("");
+    $.ajax({
+        url: "/email_validations",
+        method: "get",
+        dataType: "json",
+        data: {
+            email:value
+        },
+        success: function(data){
+            $("#email_errors").html(`${data.response.message}`);
+            if(!data.response.status) $("#update_email_link").prop('disabled', true);
+            else $("#update_email_link").prop('disabled', false);
+        }
+    });
+}
+
+function changeEmail(){
+    $("#new_email").on("keyup", function(){
+        checkEmail(this.value);});
+    $("#new_email").val($("#hidden_current_email").val());
+    $("#change_email_section").css("display", "inline");
+    $("#current_email_section").css("display", "none");
+}
+
+function updateEmail(){
+    $.ajax({
+        url: "/change_email",
+        method: "get",
+        dataType: "json",
+        data: {
+            email: $("#new_email").val()
+        },
+        success: function(data){
+            console.log(data);
+            if(data.response.status){
+                alert(`${data.response.message}`);
+                location.reload();
+            }
+        }
+    });
+}
+
+function cancelEmail(){
+    $("#email_errors").html("");
+    $("#change_email_section").css("display", "none");
+    $("#current_email_section").css("display", "inline");
+}

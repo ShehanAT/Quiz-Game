@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
     def username_validations
         respond_to do |format|
-            format.json { render json:{ response: Validation.check_username(params[:username]) } }
+            format.json { render json:{ response: User.check_username(params[:username]) } }
         end 
     end 
 
@@ -44,12 +44,6 @@ class UsersController < ApplicationController
             format.json { render json:{ response: User.check_email(params[:email]) } }
         end 
     end 
-
-    # def update_password
-    #     respond_to do |format|
-    #         format.json { render json: { status: User.update_password(params) } }
-    #     end 
-    # end
     
     def change_username
         respond_to do |format|

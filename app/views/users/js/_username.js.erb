@@ -1,0 +1,51 @@
+
+function changeUsername(){
+    $("#new_username").on("keyup", function(event){
+    checkUserName(this.value);});
+    $("#new_username").val($("#hidden_current_username").val());
+    $("#change_username_section").css("display", "inline");
+    $("#current_username_section").css("display", "none");
+}
+
+
+function updateUsername(){
+    $.ajax({
+        url: "/change_username",
+        method: "get",
+        dataType: "json",
+        data: {
+            username: $("#new_username").val()
+        },
+        success: function(data){
+            console.log(data);
+            if(data.response.status){
+                alert(`${data.response.message}`);
+                location.reload();
+            }
+        }
+    });
+}
+
+function cancelUsername(){
+    $("#username_errors").html("");
+    $("#change_username_section").css("display", "none");
+    $("#current_username_section").css("display", "inline");
+}
+
+function checkUserName(value){
+    $("#username_errors").html("");
+    $.ajax({
+        url: "/username_validations",
+        method: "get",
+        dataType: "json",
+        data: {
+            username:value
+        },
+        success: function(data){
+            $("#username_errors").html(`${data.response.message}`);
+            if(!data.response.status) $("#update_username_link").prop('disabled', true);
+            else $("#update_username_link").prop('disabled', false);
+        }
+    });
+}
+
