@@ -49,5 +49,37 @@ class User < ApplicationRecord
         end 
     end 
 
-  
+    def self.change_username(username)
+        saved_session = Session.all
+        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+        user.update(username: username)
+        if user.save!
+            return { message: "Username Updated Successfully", status: true }
+        else 
+            return { message: "Username Update Failed", status: false }
+        end 
+    end 
+
+    def self.change_email(email)
+        saved_session = Session.all 
+        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+        user.update(email: email)
+        if user.save! 
+            return { message: "Email Updated Successfully", status: true }
+        else 
+            return { message: "Email Update Failed", status: false }
+        end 
+    end 
+
+    def self.change_fullName(fullName)
+        saved_session = Session.all 
+        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+        user.update(fullName: fullName)
+        if user.save! 
+            return { message: "Full Name Updated Successfully", status: true }
+        else 
+            return { message: "Full Name Update Failed", status: false }
+        end 
+    end 
+
 end

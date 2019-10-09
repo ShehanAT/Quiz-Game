@@ -33,7 +33,7 @@ class QuizzesController < ApplicationController
 
     def show
         Score.set_quiz_id(session, params[:id])
-        @quizContent = Content.getQuizContent(params[:id])  
+        @quizContent = Quiz.getQuizContent(params[:id])  
         @quiz = Quiz.find(params[:id])      
         respond_to do |format|
             format.html { render "show" }
@@ -48,9 +48,9 @@ class QuizzesController < ApplicationController
     
     def update 
         if(params[:commit] === "Update Quiz")
-            Content.updateQuiz(params)
+            Quiz.updateQuiz(params)
         elsif(params[:commit] === "Delete This Quiz")
-            Content.deleteQuiz(params[:quiz_id])
+            Quiz.deleteQuiz(params[:quiz_id])
         end 
         redirect_to quizzes_path
     end     

@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   end 
 
   def create 
-    Content.addQuizContent(params[:questionArr].to_json, session[:quiz_id])
+    Quiz.addQuizContent(params[:questionArr].to_json, session[:quiz_id])
     respond_to do |format|
       format.json { render json: { redirect: "/questions" } }
     end 
@@ -40,9 +40,9 @@ class QuestionsController < ApplicationController
   
   def update 
     if(params[:commit] === "Update Question")
-      Content.updateQuestion(params)
+      Question.updateQuestion(params)
     elsif(params[:commit] === "Delete This Question")
-      Content.deleteQuestion(params[:question_id])
+      Question.deleteQuestion(params[:question_id])
     end 
     redirect_to questions_path
   end 

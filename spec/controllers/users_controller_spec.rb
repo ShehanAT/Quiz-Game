@@ -55,4 +55,17 @@ RSpec.describe UserHelper do
         expect(Capybara.page.current_path).to eq("/")
     end 
 
+    it "/users/:id/edit shoud display alert on valid password change" do 
+        capybara_login
+        Capybara.page.first("a[id='user_profile_link']").click 
+        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("button[id='change_password_link']").click 
+        Capybara.fill_in("current_password", with: "testing1")
+        Capybara.fill_in("new_password", with: "admin")
+        Capybara.fill_in("new_password_confirm", with: "admin")
+        Capybara.page.first("button[id='update_password_link']").click 
+        sleep 4
+        expect(Capybara.page.driver.browser.switch_to.alert.text).to eq("Password Updated Successfully")
+    end 
+
 end 
