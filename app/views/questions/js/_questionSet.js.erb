@@ -43,10 +43,11 @@ class QuestionSet{
   }
 
   updateFields(field){
-    if(field != "question"){
-      this[`${field}`].answer = $(`#${field}`).val(); 
-    }else{
+    if(field == "question"){
       this[`${field}`] = $(`#${field}`).val();
+    }else{
+      this[`${field}`].answer = $(`#${field}`).val(); 
+
     }
   }
 

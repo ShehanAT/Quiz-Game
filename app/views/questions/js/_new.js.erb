@@ -25,45 +25,44 @@ $("input[type='checkbox']").on("click", function(){
 function updateQuestionArrCheckbox(value ,checked){
     for(var i = 1; i <= 4; i++){
       if(i == value && checked){
-        questionArr[currentQuestion-1].setCorrectAnswer(i);
+        currentQuestion.setCorrectAnswer(i);
       }
     }
-    if(!checked) questionArr[currentQuestion-1].revertDefaultChoice();
+    if(!checked) currentQuestion.revertDefaultChoice();
 }
 
 function updateQuestionArrText(value){
-  questionArr[currentQuestion-1].updateFields(value.id);
+
+  currentQuestion.updateFields(value.id);
 }
 
 function toggleTextFields(question){
-  console.log(question);
   var currentIndex = questionArr.findIndex(function(element){
     return element.id == question.id;
   });
-  $("#add_questions_message").text(`Now Editing Question #${currentQuestion}`);
+  $("#add_questions_message").text(`Now Editing Question #${currentIndex}`);
   $("#question").val(question.question);
   for(var i = 1 ; i <= 4; i++){
     $(`#answer${i}`).val(question[`answer${i}`].answer);
     if(question[`answer${i}`].correct_answer == "1"){
       $(`input[value='${i}']`).prop("checked", true);
       $("input[type='checkbox']").not($(`input[value='${i}']`)).prop("checked", false);
-      break;
+    
     }
   }
 }
   
 
 function setCurrentQuestion(){
-  currentQuestion = 1;
-  var newQuestion = new QuestionSet(currentQuestion,"", "", "", "", "", "0");
-  questionArr.push(newQuestion);
-  displayNewQuestion(currentQuestion);
+  currentQuestion = new QuestionSet(QuestionSet.getHighestId(),"", "", "", "", "", "0");
+  questionArr.push(currentQuestion);
+  displayNewQuestion(currentQuestion.id);
   bindToElement(QuestionSet.getHighestId());  
 }
 
 function displayNewQuestion(value){
   var questionIndex = questionArr.findIndex(function(element){
-    return element.id == value;;
+    return element.id == value;
   });
   var question = questionArr.find(function(element){
     return element.id == value;
@@ -73,13 +72,12 @@ function displayNewQuestion(value){
 
 function bindToElement(value){
   $(`#toggle_${value}`).bind("click", function(){
-    console.log(questionArr);
     var value = $(this).attr("value");
-    var question = questionArr.find(function(element){
+    currentQuestion = questionArr.find(function(element){
       return value == element.id;
     });
     eraseFields();
-    toggleTextFields(question);
+    toggleTextFields(currentQuestion);
   });
 }
 
@@ -105,12 +103,10 @@ function updateQuestionNumbers(){
 
 function addToQuestionArr(){
   var newId = QuestionSet.incrementId();
-  var newQuestion = new QuestionSet(QuestionSet.getHighestId(), $("#question").text(), $("#answer1").text(), $("#answer2").text(), $("#answer3").text(), $("#answer4").text(), $("input[type='checkbox']").val())
-  questionArr.push(newQuestion);
+  currentQuestion = new QuestionSet(QuestionSet.getHighestId(), $("#question").text(), $("#answer1").text(), $("#answer2").text(), $("#answer3").text(), $("#answer4").text(), $("input[type='checkbox']").val())
+  questionArr.push(currentQuestion);
   totalQuestions = questionArr.length;
-  currentQuestion = totalQuestions;
-  console.log(questionArr);
-  return newQuestion;
+  return currentQuestion;
 }
 
 function eraseFields(){
@@ -122,8 +118,7 @@ function eraseFields(){
 }
 
 function deleteQuestion(e){
-
-  if(currentQuestion > 1){
+  if(questionArr.length > 1){
     var index = getArrayIndex($(e).parent());
     questionArr.splice(index, 1);
     $(e).parent().remove();
