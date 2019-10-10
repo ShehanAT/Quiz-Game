@@ -1,0 +1,180 @@
+
+var questionArr = [];
+var currentQuestion = 0;
+var totalQuestions = questionArr.length;
+var errors = [];
+$("input[type='checkbox']").attr("correct_answer", "0");
+$("input[type='checkbox']").on("click", function(){
+  $("input[type='checkbox']").not(this).prop("checked", false);
+  if($(this).prop("checked")){
+    $(this).attr("correct_answer", "1");
+    updateQuestionArrCheckbox(this.value, true);
+  }else{
+    updateQuestionArrCheckbox(this.value, false);
+    $(this).attr("correct_answer", "0");
+  }
+  
+});
+
+(function(){
+  QuestionSet.id = 1;
+  setCurrentQuestion();
+}())
+
+
+function updateQuestionArrCheckbox(value ,checked){
+    for(var i = 1; i <= 4; i++){
+      if(i == value && checked){
+        questionArr[currentQuestion-1].setCorrectAnswer(i);
+      }
+    }
+    if(!checked) questionArr[currentQuestion-1].revertDefaultChoice();
+}
+
+function updateQuestionArrText(value){
+  questionArr[currentQuestion-1].updateFields(value.id);
+}
+
+function toggleTextFields(question){
+  console.log(question);
+  var currentIndex = questionArr.findIndex(function(element){
+    return element.id == question.id;
+  });
+  $("#add_questions_message").text(`Now Editing Question #${currentQuestion}`);
+  $("#question").val(question.question);
+  for(var i = 1 ; i <= 4; i++){
+    $(`#answer${i}`).val(question[`answer${i}`].answer);
+    if(question[`answer${i}`].correct_answer == "1"){
+      $(`input[value='${i}']`).prop("checked", true);
+      $("input[type='checkbox']").not($(`input[value='${i}']`)).prop("checked", false);
+      break;
+    }
+  }
+}
+  
+
+function setCurrentQuestion(){
+  currentQuestion = 1;
+  var newQuestion = new QuestionSet(currentQuestion,"", "", "", "", "", "0");
+  questionArr.push(newQuestion);
+  displayNewQuestion(currentQuestion);
+  bindToElement(QuestionSet.getHighestId());  
+}
+
+function displayNewQuestion(value){
+  var questionIndex = questionArr.findIndex(function(element){
+    return element.id == value;;
+  });
+  var question = questionArr.find(function(element){
+    return element.id == value;
+  });
+  $(".gallery_container").append(`<div style='cursor: pointer;' value='${question.id}' id='toggle_${question.id}' ><span><h1 style='display: inline;' >Question #${questionIndex + 1}</h1></span><button onclick="deleteQuestion(this)" id="delete_question_link" class="btn btn-danger">Delete Question</button></div>`);
+}
+
+function bindToElement(value){
+  $(`#toggle_${value}`).bind("click", function(){
+    console.log(questionArr);
+    var value = $(this).attr("value");
+    var question = questionArr.find(function(element){
+      return value == element.id;
+    });
+    eraseFields();
+    toggleTextFields(question);
+  });
+}
+
+function clearErrors(){
+  $("#question_errors").empty();
+}
+
+function addQuestion(){
+  clearErrors();
+  eraseFields();
+  var newQuestion = addToQuestionArr();
+  displayNewQuestion(newQuestion.id);
+  bindToElement(QuestionSet.getHighestId());
+  updateQuestionNumbers();
+}
+
+function updateQuestionNumbers(){
+  var questionElements = $(".gallery_container").children();
+  for(var i = 0 ; i < questionElements.length; i++){
+    $(questionElements[i]).find("h1").text(`Question #${i+1}`);
+  }
+}
+
+function addToQuestionArr(){
+  var newId = QuestionSet.incrementId();
+  var newQuestion = new QuestionSet(QuestionSet.getHighestId(), $("#question").text(), $("#answer1").text(), $("#answer2").text(), $("#answer3").text(), $("#answer4").text(), $("input[type='checkbox']").val())
+  questionArr.push(newQuestion);
+  totalQuestions = questionArr.length;
+  currentQuestion = totalQuestions;
+  console.log(questionArr);
+  return newQuestion;
+}
+
+function eraseFields(){
+  $("#question").val("");
+  for(var i = 0; i < 4; i++){
+    $(`#answer${i+1}`).val("");
+  }
+  $("input[type='checkbox']").prop("checked", false);
+}
+
+function deleteQuestion(e){
+
+  if(currentQuestion > 1){
+    var index = getArrayIndex($(e).parent());
+    questionArr.splice(index, 1);
+    $(e).parent().remove();
+    totalQuestions--;
+    currentQuestion--;
+    updateQuestionNumbers();
+  }
+
+}
+
+function getArrayIndex(domQuestion){
+  var value = $(domQuestion).attr("value");
+  var question = questionArr.find(function(element){
+    return value == element.id;
+  });
+  return questionArr.findIndex(function(element){
+    return question.id == element.id;
+  })
+}
+
+function showModal(){
+  $("#modal_text").html("");
+  for(var i = 0; i < errors.length; i++){
+    $("#modal_text").append(errors[i]);
+  }
+  $("#questionModal").css("display", "block");
+}
+function validate(){
+  errors = [];
+  for(var i = 0 ; i < questionArr.length; i++){
+    if(!questionArr[i].doValidations()){
+      errors.push(`<p>Question ${i+1} has errors. <button onclick='' class='btn btn-primary'>Click here to fix them</button></p>`);
+    }
+  }
+  if(errors.length){
+    showModal();
+  }
+}
+function saveAndSubmit(){
+  validate();
+  /*
+  $.ajax({
+    url: "/questions",
+    method: "POST",
+    dataType: "json",
+    data: {
+      questionArr: questionArr
+    },
+    success: function(data){
+      window.location.href = data.redirect;
+    }
+  });
+  */
+}

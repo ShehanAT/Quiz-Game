@@ -1,0 +1,21 @@
+
+(function loadFormValues(){
+    $("#question").val($("#question_name").val());
+    $("#answer1").val($("#answer1_value").val());
+    $("#answer2").val($("#answer2_value").val());
+    $("#answer3").val($("#answer3_value").val());
+    $("#answer4").val($("#answer4_value").val());
+    for(var i = 1; i <= 4; i++){
+        if($(`#correct_answer_${i}`).attr("correct_answer") === "1"){
+            $(`input[value='${i}'`).prop("checked", true);
+        }
+    }
+}());
+
+function setupCorrectAnswer(answers){
+    console.log(answers);
+}
+
+$("input[type='checkbox']").on("click", function(){
+    $("input[type='checkbox']").not(this).prop("checked", false);
+});

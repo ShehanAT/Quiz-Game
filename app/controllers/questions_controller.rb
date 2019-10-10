@@ -34,8 +34,18 @@ class QuestionsController < ApplicationController
   def edit 
     @question = Question.find(params[:id])
     quiz_id = @question["quiz_id"]
+    Rails.logger.info "quiz_id#{quiz_id} question_id=#{params[:id]}"
     get_answers = "SELECT * FROM answers WHERE quiz_id='#{quiz_id}' AND question_id='#{params[:id]}'"
     @answers = ActiveRecord::Base.connection.execute(get_answers)
+    for i in 0...@answers.length()
+      if @answers[i]["correct_answer"] === 1 
+        @correct_answer = @answers[i]
+      end 
+    end   
+    respond_to do |format|
+      format.html { render "edit" }
+      format.js { render "_edit_form"}
+    end 
   end
   
   def update 

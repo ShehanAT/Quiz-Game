@@ -1,0 +1,18 @@
+<%= form_with :url => quiz_path(@quiz.id), :quiz_id => @quiz.id, method: :put do |form| %>
+    <%= form.label :quiz_name, "Quiz Name: "  %>
+    <%= form.text_field :quiz_name %>
+    <br />
+    <%= form.label :quiz_category, "Quiz Category: " %>
+    <%= form.text_field :quiz_category %>
+    <br />
+    <%= form.label :quiz_description, "Quiz Description: " %>
+    <%= form.text_field :quiz_description %>
+    <br />
+    <%= hidden_field_tag "#{@quiz.question}", @quiz.name, { :id => "hidden_quiz_name"} %>
+    <%= hidden_field_tag "#{@quiz.category}", @quiz.category, { :id => "hidden_quiz_category"} %>
+    <%= hidden_field_tag "#{@quiz.description}", @quiz.description, { :id => "hidden_quiz_description"} %>
+    
+    <%= hidden_field_tag :quiz_id, @quiz.id %>
+    <%= form.submit "Update Quiz" %> 
+    <%= form.submit "Delete This Quiz" %>
+    <% end %>

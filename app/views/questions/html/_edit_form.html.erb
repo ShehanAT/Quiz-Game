@@ -1,0 +1,48 @@
+<%= form_with :remote => true, :question_id => @question.id, method: :put do |form| %>
+    <%= form.label :question, "Question: "  %>
+    <%= form.text_field :question %>
+    <br />
+    <%= form.label :answer1, "Answer 1: " %>
+    <%= form.text_field :answer1 %>
+    <br />
+    <%= form.label :answer2, "Answer 2: " %>
+    <%= form.text_field :answer2 %>
+    <br />
+    <%= form.label :answer3, "Answer 3: " %>
+    <%= form.text_field :answer3 %>
+    <br />
+    <%= form.label :answer4, "Answer 4: " %>
+    <%= form.text_field :answer4 %>
+    <br />
+    <%= label_tag(:correct_answer, "Correct Answer: ") %>
+    <%= label_tag(:answer_1, "Answer #1") %>
+    <%= check_box_tag "Answer #1", "#{@answers[0]["id"]}" %>
+    <%= label_tag(:answer_2, "Answer #2") %>
+    <%= check_box_tag "Answer #2", "#{@answers[1]["id"]}" %>
+    <%= label_tag(:answer_3, "Answer #3") %>
+    <%= check_box_tag "Answer #3", "#{@answers[2]["id"]}" %>
+    <%= label_tag(:answer_4, "Answer #4") %>
+    <%= check_box_tag "Answer #4", "#{@answers[3]["id"]}" %>
+    <label>
+    <label>
+    <label>
+    <br />
+    <%= hidden_field_tag "#{@question.question}", @question.question, { :id => "question_name"} %>
+    <%= hidden_field_tag :question_id, @question.id %>
+    <%= hidden_field_tag :question_quiz_id, @question.quiz_id %>
+    <%= hidden_field_tag :answer1_id, @answers[0]["id"] %>
+    <%= hidden_field_tag :answer2_id, @answers[1]["id"] %>
+    <%= hidden_field_tag :answer3_id, @answers[2]["id"] %>
+    <%= hidden_field_tag :answer4_id, @answers[3]["id"] %>
+    <%= hidden_field_tag :answer1_value, @answers[0]["answer"], :correct_answer => @answers[0]["correct_answer"] %>
+    <%= hidden_field_tag :answer2_value, @answers[1]["answer"], :correct_answer => @answers[1]["correct_answer"] %>
+    <%= hidden_field_tag :answer3_value, @answers[2]["answer"], :correct_answer => @answers[2]["correct_answer"] %>
+    <%= hidden_field_tag :answer4_value, @answers[3]["answer"], :correct_answer => @answers[3]["correct_answer"] %>
+
+    <%= form.submit "Update Question" %> 
+    <%= form.submit "Delete This Question" %>
+<% end %>
+<script>
+    <%= render "questions/js/edit.js.erb" %>
+    setupCorrectAnswer("#{}")
+</script>

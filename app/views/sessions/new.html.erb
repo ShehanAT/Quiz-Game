@@ -1,24 +1,4 @@
-<% if false %>
-    <%= form_with( method: "post", id: "login_form", remote: true) do %>
-    
-        <% if flash[:alert] %>
-            <div id="alert_message"><%= flash[:alert] %></div>
-        <% end %>
-    
-        <div id="alert_message"> 
-        </div>
-        <%= label_tag(:username, "Username:") %>
-        <%= text_field_tag(:username)  %>
-        
-        <%= label_tag(:password, "Password:") %>
-        <%= password_field_tag(:password)  %>
-        
-        <%= submit_tag "Login", data: { "disable-with": "Loading..." }, remote: true %>
-        
-    <% end %>
-   
-    
-<% end %>
+
 <%= form_with url: "/sessions" do |form| %>
     <div id="session_errors"></div>
     <%= form.label :username, "Username: " %>

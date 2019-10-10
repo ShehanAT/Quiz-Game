@@ -3,6 +3,7 @@ class Question < ApplicationRecord
     belongs_to :quiz
 
     def self.updateQuestion(params)
+        Rails.logger.info params;
         question = Question.find(params[:question_id])
         question.update(question: params[:question])
 
