@@ -39,7 +39,7 @@ function toggleTextFields(question){
   var currentIndex = questionArr.findIndex(function(element){
     return element.id == question.id;
   });
-  $("#add_questions_message").text(`Now Editing Question #${currentIndex}`);
+  $("#add_questions_message").text(`Now Editing Question #${currentIndex + 1}`);
   $("#question").val(question.question);
   for(var i = 1 ; i <= 4; i++){
     $(`#answer${i}`).val(question[`answer${i}`].answer);
@@ -153,11 +153,14 @@ function validate(){
   }
   if(errors.length){
     showModal();
+    return false;
   }
+  return true;
 }
 
 function fixErrors(e){
   closeModal();
+  eraseFields();
   var value = $(e).attr("value");
   currentQuestion = questionArr.find(function(element){
     return element.id == value;
@@ -170,18 +173,17 @@ function closeModal(){
 }
 
 function saveAndSubmit(){
-  validate();
-  /*
-  $.ajax({
-    url: "/questions",
-    method: "POST",
-    dataType: "json",
-    data: {
-      questionArr: questionArr
-    },
-    success: function(data){
-      window.location.href = data.redirect;
-    }
-  });
-  */
+  if(validate()){
+    $.ajax({
+      url: "/questions",
+      method: "POST",
+      dataType: "json",
+      data: {
+        questionArr: questionArr
+      },
+      success: function(data){
+        window.location.href = data.redirect;
+      }
+    });
+  }
 }
