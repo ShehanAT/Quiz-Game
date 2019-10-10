@@ -43,6 +43,7 @@ class QuestionSet{
   }
 
   updateFields(field){
+    console.log(this.id);
     if(field == "question"){
       this[`${field}`] = $(`#${field}`).val();
     }else{

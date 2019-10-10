@@ -32,7 +32,6 @@ function updateQuestionArrCheckbox(value ,checked){
 }
 
 function updateQuestionArrText(value){
-
   currentQuestion.updateFields(value.id);
 }
 
@@ -47,7 +46,6 @@ function toggleTextFields(question){
     if(question[`answer${i}`].correct_answer == "1"){
       $(`input[value='${i}']`).prop("checked", true);
       $("input[type='checkbox']").not($(`input[value='${i}']`)).prop("checked", false);
-    
     }
   }
 }
@@ -150,13 +148,27 @@ function validate(){
   errors = [];
   for(var i = 0 ; i < questionArr.length; i++){
     if(!questionArr[i].doValidations()){
-      errors.push(`<p>Question ${i+1} has errors. <button onclick='' class='btn btn-primary'>Click here to fix them</button></p>`);
+      errors.push(`<p>Question ${i+1} has errors. <button value='${questionArr[i].id}' onclick='fixErrors(this)' class='btn btn-primary'>Click here to fix them</button></p>`);
     }
   }
   if(errors.length){
     showModal();
   }
 }
+
+function fixErrors(e){
+  closeModal();
+  var value = $(e).attr("value");
+  currentQuestion = questionArr.find(function(element){
+    return element.id == value;
+  });
+  toggleTextFields(currentQuestion);
+}
+
+function closeModal(){
+  $("#questionModal").hide();
+}
+
 function saveAndSubmit(){
   validate();
   /*
