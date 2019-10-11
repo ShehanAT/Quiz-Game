@@ -96,8 +96,8 @@ RSpec.describe QuestionHelper do
     it "/questions/new should delete question on btn click" do 
         capybara_new_quiz_fill_in
         Capybara.page.first("button[id='add_question_link']").click 
-        Capybara.page.first("button[id='delete_question_link']").click 
-        expect(Capybara.page.first("div[value='2']")).to be_an_instance_of(nil)
+        Capybara.page.first("button.delete_question_link").click 
+        expect(Capybara.page.all("h1.question_text")[1]).not_to be_an_instance_of(Capybara::Node::Element)
     end 
 
 

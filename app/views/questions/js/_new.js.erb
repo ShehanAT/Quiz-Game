@@ -34,11 +34,14 @@ function updateQuestionArrText(value){
   currentQuestion.updateFields(value.id);
 }
 
-function toggleTextFields(question){
+function updateStatusMessage(question){
   var currentIndex = questionArr.findIndex(function(element){
     return element.id == question.id;
   });
   $("#add_questions_message").text(`Now Editing Question #${currentIndex + 1}`);
+}
+function toggleTextFields(question){
+ 
   $("#question").val(question.question);
   for(var i = 1 ; i <= 4; i++){
     $(`#answer${i}`).val(question[`answer${i}`].answer);
@@ -64,7 +67,7 @@ function displayNewQuestion(value){
   var question = questionArr.find(function(element){
     return element.id == value;
   });
-  $(".gallery_container").append(`<div style='cursor: pointer;' value='${question.id}' id='toggle_${question.id}' ><span><h1 style='display: inline;' >Question #${questionIndex + 1}</h1></span><button onclick="deleteQuestion(this)" id="delete_question_link" class="btn btn-danger">Delete Question</button></div>`);
+  $(".gallery_container").append(`<div style='cursor: pointer;' value='${question.id}' id='toggle_${question.id}' ><span><h1 style='display: inline;' class='question_text' >Question #${questionIndex + 1}</h1></span><button onclick="deleteQuestion(this)" class="btn btn-danger delete_question_link">Delete Question</button></div>`);
 }
 
 function bindToElement(value){
@@ -75,6 +78,7 @@ function bindToElement(value){
     });
     eraseFields();
     toggleTextFields(currentQuestion);
+    updateStatusMessage(currentQuestion);
   });
 }
 
@@ -89,6 +93,7 @@ function addQuestion(){
   displayNewQuestion(newQuestion.id);
   bindToElement(QuestionSet.getHighestId());
   updateQuestionNumbers();
+  updateStatusMessage(newQuestion);
 }
 
 function updateQuestionNumbers(){
