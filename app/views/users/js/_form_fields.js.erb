@@ -1,0 +1,76 @@
+
+(function loadFormValues(){
+$("#username").val($("#hidden_user_username").val());
+$("#email").val($("#hidden_user_email").val());
+$("#fullName").val($("#hidden_user_fullName").val());
+$("#bio").val($("#hidden_user_bio").val());
+}());
+
+function deleteAccount(){
+    showDeleteModal();
+    
+}
+
+function showDeleteModal(){
+    $("#userDeleteModal").show();
+}
+
+function closeDeleteModal(){
+    $("#userDeleteModal").hide();
+}
+
+function deleteUser(e){
+    switch(e.id){
+        case "userDeleteYes":
+            var userId = $("#hidden_user_id").val();
+            $.ajax({
+                url: `/users/${userId}`,
+                method: "DELETE",
+                data: {
+                    user_id: userId,
+                    authenticity_token: window._token
+                },
+                dataType: "json",
+                success: function(data){
+                    if(data.status){
+                        window.location.href = "/";
+                    }else{
+                        alert(data.message);
+                    }
+                }
+            });
+            break;
+        case "userDeleteNo":
+            closeDeleteModal();
+            break;
+        default:
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

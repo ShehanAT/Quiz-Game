@@ -30,7 +30,6 @@ class UsersController < ApplicationController
 
     def edit 
         @user = User.find(params[:id])
-
     end 
 
     def username_validations
@@ -71,6 +70,22 @@ class UsersController < ApplicationController
 
     def update 
         redirect_to root_url
+    end 
+
+    def destroy
+        if User.destroy(params[:id])
+            session[:user_id] = false 
+            session[:username] = false 
+            session[:quiz_id] = false 
+            respond_to do |format|
+                format.json { render json: {status: true, message: "User Deleted!" } }
+            end 
+        else 
+            respond_to do |format| 
+                format.html { render "edit" }
+                format.json { render json: { status: false, message: "Attempt To Delete User Failed!" } }
+            end 
+        end 
     end 
 
     private 

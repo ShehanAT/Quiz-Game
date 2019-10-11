@@ -1,0 +1,18 @@
+<div id="userDeleteModal" class="modal">
+
+  <div id="userDeleteModelText" class="modal-content">
+    <h1>Are You Sure You Want To Delete This User? This Action Is Irreversible!</h1>
+    <button id="userDeleteNo" onclick="deleteUser(this)" class="btn btn-success" >Cancel</button>
+    <button id="userDeleteYes" onclick="deleteUser(this)" class="btn btn-danger" >Delete This User</button>
+  </div>
+
+</div>
+<script>
+$(document).click(function (e) {
+    if ($(e.target).is('#userDeleteModal')) {
+        $("#userDeleteModal").fadeOut(500);
+    }
+
+});
+
+</script>

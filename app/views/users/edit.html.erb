@@ -1,9 +1,10 @@
 <h3 id="edit_quiz_title">Edit User: <%= @user.username %></h3>
 
 
-<%= render partial: "form_fields" %>
+<%= render partial: "users/html/form_fields" %>
+<%= render partial: "users/html/delete_modal" %>
 <script>
-    <%= render partial: "/users/form_fields.js.erb" %>
+    <%= render partial: "/users/js/form_fields.js.erb" %>
     <%= render partial: "/users/js/username.js.erb" %>
     <%= render partial: "/users/js/password.js.erb" %>
     <%= render partial: "/users/js/email.js.erb" %>
