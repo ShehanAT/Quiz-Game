@@ -62,7 +62,6 @@ $.ajax({
                 questionsLeft -= 1;
                 for(var i = 0 ; i < data.quizContent.answers.length; i++){
                     if(data.quizContent.answers[i].answer == e.currentTarget.innerText && data.quizContent.answers[i].correct_answer === 1){
-                        console.log("passing");
                         updateScore();
                     }
                 }
@@ -79,16 +78,18 @@ $.ajax({
         function setupQuiz(data, nextQuestion){
             $("#current_question").text(nextQuestion.question);
             var currentChoices = []
+            console.log(`Question id ${nextQuestion.id}`);
             for(var i = 0; i < data.answers.length; i++){
                 
                 if(data.answers[i].question_id == nextQuestion.id){
                     currentChoices.push(data.answers[i]);
                 }
             }
-            for(var i = 1; i = currentChoices.length; i++){
-                var answer = currentChoices.pop()
+            for(var i = 1; i <= 4; i++){
+                var answer = currentChoices.pop();
                 $("#answer"+i).text(answer.answer);
                 $("#answer"+i).val(i);
+
             }
         }
 
