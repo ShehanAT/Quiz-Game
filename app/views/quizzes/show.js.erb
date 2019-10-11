@@ -47,7 +47,6 @@ $.ajax({
                     },
                     dataType: "json",
                     success: function(data){
-                        console.log(data);
                         $("#save_score_status").text(data.status);
                     }
                 });
@@ -78,7 +77,6 @@ $.ajax({
         function setupQuiz(data, nextQuestion){
             $("#current_question").text(nextQuestion.question);
             var currentChoices = []
-            console.log(`Question id ${nextQuestion.id}`);
             for(var i = 0; i < data.answers.length; i++){
                 
                 if(data.answers[i].question_id == nextQuestion.id){
