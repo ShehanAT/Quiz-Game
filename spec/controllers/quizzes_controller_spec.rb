@@ -1,8 +1,14 @@
 
-require "helpers"
+require "helpers/sessions_helper_spec"
+require "helpers/users_helper_spec"
+require "helpers/quizzes_helper_spec"
+require "helpers/questions_helper_spec"
 
 RSpec.configure do |c|
-    c.include Helpers
+    c.include QuestionsHelper 
+    c.include QuizzesHelper 
+    c.include UsersHelper 
+    c.include SessionsHelper 
 end
 
 RSpec.describe QuizzesHelper do
@@ -10,6 +16,11 @@ RSpec.describe QuizzesHelper do
     it "root_url should contain link for /quizzes" do 
         capybara_quizzes_index
         expect(Capybara.page.current_path).to eq("/quizzes")
+    end 
+
+    it "root_url should render 4 links" do 
+        capybara_login_admin
+        expect(Capybara.page.all("a")[3]).to be_an_instance_of(Capybara::Node::Element) 
     end 
 
     it "/quizzes should show all quizzes" do 

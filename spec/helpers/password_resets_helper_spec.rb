@@ -1,15 +1,10 @@
-require 'rails_helper'
+module PasswordResetsHelper 
+    
+  def capybara_password_reset
+    Capybara.current_driver = Capybara.javascript_driver
+    Capybara.visit("/sessions/new")
+    Capybara.page.first("a[id='password_reset_link']").click 
+  end 
 
-# Specs in this file have access to a helper object that includes
-# the PasswordResetsHelper. For example:
-#
-# describe PasswordResetsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe PasswordResetsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+
+end 

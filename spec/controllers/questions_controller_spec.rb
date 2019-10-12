@@ -1,8 +1,14 @@
-require "helpers"
-require 'spec_helper'
+require "spec_helper"
+require "helpers/sessions_helper_spec"
+require "helpers/users_helper_spec"
+require "helpers/quizzes_helper_spec"
+require "helpers/questions_helper_spec"
 
 RSpec.configure do |c|
-    c.include Helpers
+    c.include SessionsHelper
+    c.include UsersHelper
+    c.include QuizzesHelper 
+    c.include QuestionsHelper
 end
 
 RSpec.describe QuestionHelper do
