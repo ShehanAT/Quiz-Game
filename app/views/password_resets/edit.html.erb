@@ -1,0 +1,19 @@
+<%= form_with(model: @user, url: password_reset_path(params[:id]), method: :put, :remote => true) do |form| %>
+    <div id="password_reset_errors">
+        <% if @user.errors.any? %>
+            <% @user.errors.has_messages.each do |error| %>
+                <p class="error"><%= error %></p>
+            <% end %>
+        <% end %>
+    </div>
+<%= form.label(:password, "Enter New Password: ") %>
+<%= form.password_field(:password) %>
+</br>
+
+<%= form.label(:confirm_password, "Confirm New Password: ") %>
+<%= form.password_field(:confirm_password) %>
+
+<%= form.hidden_field(:password_reset_token) %>
+<%= form.submit "Update Password" %>
+
+<% end %>

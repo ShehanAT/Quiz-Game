@@ -1,0 +1,25 @@
+$("#password_reset_errors").html("");
+if($("#user_password").val() === "" || $("#user_confirm_password").val() === "" ){
+    $("#password_reset_errors").append("<p class='error'>Password Fields Cannot Be Empty</p>");
+}
+else if($("#user_password").val() === $("#user_confirm_password").val()){
+    $.ajax({
+        url: "/password_resets/" + $("#user_password_reset_token").val(),
+        method: "PUT",
+        dataType: "json",
+        data: {
+            password: $("#user_password").val(),
+            authenticity_token: window._token
+        },
+        success: function(data){
+            if(data.status){
+                alert("Password Has Been Reset!");
+                window.location.href = "/";
+            }
+            console.log(data);
+        }
+    });
+}
+else{
+    $("#password_reset_errors").append("<p class='error'>Passwords Do Not Match</p>");
+}

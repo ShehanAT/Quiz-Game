@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_145533) do
+ActiveRecord::Schema.define(version: 2019_10_12_125934) do
 
   create_table "answers", force: :cascade do |t|
     t.string "answer"
@@ -57,11 +57,13 @@ ActiveRecord::Schema.define(version: 2019_10_06_145533) do
     t.string "username", default: "", null: false
     t.string "email", default: "", null: false
     t.string "password", default: "", null: false
-    t.string "p_salt"
     t.string "fullName"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "auth_token"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end

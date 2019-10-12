@@ -6,6 +6,9 @@
 
   <body>
       <%= render_welcome_message %>
+      <% if flash[:notice] %>
+        <h3><%= flash[:notice] %></h3>
+      <% end %>
         <ul>
             <%= render_login_link %>
             <%= render_register_link %> 

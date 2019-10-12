@@ -3,7 +3,7 @@ module QuizzesHelper
     def render_welcome_message 
         if !session[:user_id]
             content_tag(:h1, "Please Login Or Register") +
-            content_tag(:h3, "Choose An Action:")
+            content_tag(:h3, "Choose An Action:", id: "choose_action_message")
         else 
             content_tag(:h1, "Welcome " << session[:username]) +
             content_tag(:h3, "Choose An Action:")

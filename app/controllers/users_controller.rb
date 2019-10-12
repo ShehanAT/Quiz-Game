@@ -46,25 +46,25 @@ class UsersController < ApplicationController
     
     def change_username
         respond_to do |format|
-            format.json { render json: { response: User.change_username(params[:username])}}
+            format.json { render json: { response: User.change_username(params[:username], session[:user_id])}}
         end 
     end 
 
     def change_email
         respond_to do |format|
-            format.json { render json: { response: User.change_email(params[:email])}}
+            format.json { render json: { response: User.change_email(params[:email], session[:user_id])}}
         end 
     end 
 
     def change_fullName
         respond_to do |format|
-            format.json { render json: { response: User.change_fullName(params[:fullName])}}
+            format.json { render json: { response: User.change_fullName(params[:fullName], session[:user_id])}}
         end 
     end 
 
     def change_password
         respond_to do |format|
-            format.json { render json: { response: User.change_password(params[:current_password], params[:new_password]) } }
+            format.json { render json: { response: User.change_password(params[:current_password], params[:new_password], session[:user_id]) } }
         end 
     end     
 

@@ -8,12 +8,7 @@ end
 
 RSpec.describe UserHelper do
 
-    it "from: /users/new form submission should be successful with valid form data" do 
-        old_path = Capybara.page.current_path
-        capybara_login
-        new_path = Capybara.page.current_path
-        expect(old_path).not_to eq(new_path)
-    end 
+ 
 
     it "root_url should redirect to /users/:id on button click" do 
         capybara_login
@@ -39,7 +34,7 @@ RSpec.describe UserHelper do
         capybara_login
         Capybara.page.first("a[id='user_profile_link'").click 
         expect(Capybara.page.first("h3[id='username']").text).to eq("Username: testing1")
-        expect(Capybara.page.first("h3[id='email']").text).to eq("Email: testing1@gmail.com")
+        expect(Capybara.page.first("h3[id='email']").text).to eq("Email: shehanatuk@gmail.com")
         expect(Capybara.page.first("h3[id='fullName']").text).to eq("Full Name: Shehan Atukorala")
         expect(Capybara.page.first("h3[id='bio']").text).to eq("Bio: Shehan Atukorala")
     end 

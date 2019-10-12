@@ -3,7 +3,7 @@
 one:
   id: 1
   username: testing1  
-  email: testing1@gmail.com
+  email: shehanatuk@gmail.com
   fullName: Shehan Atukorala
   bio: Shehan Atukorala
   password: $2a$12$HAmJWTcGXB49F/5Zh9nt6u1NMUlvb5H/wZw0VzQbx/945wgjHwbWO
@@ -17,4 +17,3 @@ two:
   fullName: Admin Admin
   bio: Admin
   password: $2a$12$lrEjlgT3U53bI5Ug1.b8kOE.S5FK7BZi7xYtaEoASEWRAkGplS4MW
-  p_salt: $2a$12$lrEjlgT3U53bI5Ug1.b8kO

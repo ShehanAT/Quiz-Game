@@ -1,0 +1,14 @@
+
+<%= form_with(url: password_resets_path) do |form| %>
+
+<%= form.label(:email, "Enter The Email Address Associated With Your Account: ") %>
+    <div id="send_reset_email_errors" >
+        <% if flash[:notice] %>
+            <p class="error"><%= flash[:notice] %></p>
+        <% end %>
+    </div>
+<%= form.text_field(:email) %>    
+</br>
+<%= form.submit("Reset Password", :id => "reset_password_submit") %>
+
+<% end %>

@@ -6,7 +6,9 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true
     validates :password, presence: true
     validates :password, confirmation: { case_sensitive: true }
-    before_save :encrypt_password
+    before_create { encrypt_password } 
+    before_create { generate_token(:auth_token) }
+    before_update { encrypt_password }
 
     def self.authenticate(username, password)
         user = User.find_by_username(username)
@@ -22,9 +24,8 @@ class User < ApplicationRecord
         end 
     end
     
-    def self.change_password(current_password, new_password)
-        saved_session = Session.all 
-        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+    def self.change_password(current_password, new_password, user_id)
+        user = User.find(user_id)
         if User.authenticate(user.username, current_password)
             new_hashed_password = BCrypt::Password.create(new_password)
             save_new_password = "UPDATE users SET password='#{new_hashed_password}' WHERE username='#{user.username}'"
@@ -48,9 +49,8 @@ class User < ApplicationRecord
         end 
     end 
 
-    def self.change_username(username)
-        saved_session = Session.all
-        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+    def self.change_username(username, user_id)
+        user = User.find(user_id)
         user.update(username: username)
         if user.save!
             return { message: "Username Updated Successfully", status: true }
@@ -59,9 +59,8 @@ class User < ApplicationRecord
         end 
     end 
 
-    def self.change_email(email)
-        saved_session = Session.all 
-        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+    def self.change_email(email, user_id)
+        user = User.find(user_id)
         user.update(email: email)
         if user.save! 
             return { message: "Email Updated Successfully", status: true }
@@ -70,9 +69,8 @@ class User < ApplicationRecord
         end 
     end 
 
-    def self.change_fullName(fullName)
-        saved_session = Session.all 
-        user = User.find(JSON.parse(saved_session[0].data)["value"]["user_id"])
+    def self.change_fullName(fullName, user_id)
+        user = User.find(user_id)
         user.update(fullName: fullName)
         if user.save! 
             return { message: "Full Name Updated Successfully", status: true }
@@ -129,6 +127,19 @@ class User < ApplicationRecord
                 status: true
             }
         end 
+    end 
+
+    def send_password_reset 
+        generate_token(:password_reset_token)
+        self.password_reset_sent_at = Time.zone.now 
+        save!
+        UserMailer.password_reset(self).deliver 
+    end 
+
+    def generate_token(column)
+        begin 
+            self[column] = SecureRandom.urlsafe_base64
+        end while User.exists?(column => self[column])
     end 
 
 end

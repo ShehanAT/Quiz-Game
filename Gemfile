@@ -30,6 +30,8 @@ gem 'jquery-rails', '~> 4.3.5'
 
 gem 'bootstrap', '~> 4.3.1'
 
+gem 'figaro'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -64,6 +66,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rack_session_access'
   gem 'rails-controller-testing', '~> 1.0.4'
 end
 
