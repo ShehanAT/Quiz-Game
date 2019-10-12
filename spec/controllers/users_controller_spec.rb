@@ -7,9 +7,6 @@ end
 
 
 RSpec.describe UserHelper do
-
- 
-
     it "root_url should redirect to /users/:id on button click" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 

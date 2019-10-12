@@ -1,4 +1,0 @@
-class Attempt < ApplicationRecord
-
-
-end 
