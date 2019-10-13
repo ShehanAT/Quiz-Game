@@ -1,4 +1,4 @@
-
+<h3>Registration Form</h3>
 <%= form_with model: @user do |form| %>
     <div id="user_errors">
     </div>
@@ -21,6 +21,7 @@
     <%= form.label(:bio, "Bio:") %>
     <%= form.text_field :bio %>
     <br />
-    <%= form.submit %>
+    <%= form.submit "Register", :class => "btn btn-primary" %>
     
 <% end %>
+<%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", method: :get %>

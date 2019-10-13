@@ -94,7 +94,7 @@ RSpec.describe QuestionHelper do
             capybara_questions_index
             Capybara.page.first("a").click 
             Capybara.page.first("input[id='edit_question_link']").click 
-            Capybara.page.first("input[type='submit']").click 
+            Capybara.page.first("button[id='update_question_link']").click 
             expect(Capybara.page.current_path).to eq("/questions")
         end 
     end 

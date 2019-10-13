@@ -17,7 +17,7 @@ $.ajax({
         <% if @quiz.errors.any? %>
             <ul>
                 <% @quiz.errors.full_messages.each do |error| %>
-                    <li><%= error %></li>
+                    <p class='error'><%= error %></p>
                 <% end %>
             </ul>
         <% end %>

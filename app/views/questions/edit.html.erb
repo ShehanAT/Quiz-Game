@@ -1,7 +1,5 @@
 <h3 id="edit_question_title">Edit Question: <%= @question.question %></h3>
 <%= render partial: "questions/html/edit_form" %> 
-<%= button_to "Back", question_path(@question.id), id:'back_link', method: :get %>
-
 
 <script>
   <%= render partial: "questions/js/edit.js.erb" %>

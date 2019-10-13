@@ -1,4 +1,4 @@
-
+<h3>Login Form</h3>
 <%= form_with url: "/sessions" do |form| %>
     <div id="session_errors"></div>
     <%= form.label :username, "Username: " %>
@@ -10,3 +10,4 @@
     <%= form.submit( "Login", class: "btn btn-primary") %>
 <% end %>
 <%= link_to "Forgot Password?", new_password_reset_path, :id => "password_reset_link" %>
+<%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", :type => "button", method: :get %>

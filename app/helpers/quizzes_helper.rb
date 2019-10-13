@@ -63,7 +63,7 @@ module QuizzesHelper
 
     def render_quizzes_restfull_routes
         content_tag(:div, :id => "quizzes_restfull_section") do 
-            button_to("Add New Quiz", new_quiz_url, :id => "new_quiz_link", method: :get )
+            button_to("Add New Quiz", new_quiz_url, :id => "new_quiz_link", :class => "btn btn-primary", method: :get )
         end 
     end 
 

@@ -4,5 +4,5 @@
     <h3 id="fullName">Full Name: <%= @user.fullName %></h3>
     <h3 id="bio">Bio: <%= @user.bio %></h3>
 </div>
-<%= button_to "Edit Profile", edit_user_path(@user.id), :id => "edit_user_link", method: :get %>
-<%= button_to "Back", root_url, :id => "back_link", method: :get %>
+<%= button_to "Edit Profile", edit_user_path(@user.id), :id => "edit_user_link", :class => "btn btn-primary", method: :get %>
+<%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", method: :get %>

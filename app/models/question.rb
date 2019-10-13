@@ -3,27 +3,23 @@ class Question < ApplicationRecord
     belongs_to :quiz
 
     def self.updateQuestion(params)
-        Rails.logger.info params;
-        question = Question.find(params[:question_id])
-        question.update(question: params[:question])
-
-        answer1 = Answer.find(params[:answer1_id])
-        answer1.update(answer: params[:answer1])
-
-        answer2 = Answer.find(params[:answer2_id])
-        answer2.update(answer: params[:answer2])
-
-        answer3 = Answer.find(params[:answer3_id])
-        answer3.update(answer: params[:answer3])
-
-        answer4 = Answer.find(params[:answer4_id])
-        answer4.update(answer: params[:answer4])
-
+        question = Question.find(params[:question][:id])
+        question.update(question: params[:question][:value])
         question.save!
-        answer1.save!
-        answer2.save!
-        answer3.save!
-        answer4.save!
+        for i in 0...4
+            answer = Answer.find(params[:"answer#{i+1}"][:id])
+            answer.update(answer: params[:"answer#{i+1}"][:value])
+            Rails.logger.info "#{answer.id}"
+            Rails.logger.info "#{params[:correct_answer]}"
+            if answer.id === params[:correct_answer].to_i
+                Rails.logger.info "PASSING"
+                answer.update(correct_answer: 1)
+            else 
+                answer.update(correct_answer: 0)
+            end 
+            answer.save!
+        end 
+
     end
 
     def self.deleteQuestion(question_id)

@@ -9,7 +9,7 @@ $.ajax({
             <% if @user.errors.any? %>
                 <ul>
                     <% @user.errors.full_messages.each do |error| %>
-                        <li><%= error %></li>
+                        <p class="error" ><%= error %></p>
                     <% end %>
                 </ul>
             <% end %>
