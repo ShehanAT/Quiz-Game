@@ -52,5 +52,12 @@ RSpec.describe SessionHelper do
         expect(Capybara.page.current_path).to eq("/")
     end 
 
+    it "after logout questions link should disappear" do 
+        capybara_logout 
+        expect { Capybara.page.first("a[id='questions_link']") }.to raise_error
+        Capybara.page.first("a[id='quizzes_link']").click 
+        Capybara.page.first("a[class='quiz_link']").click 
+        expect { Capybara.page.first("input[id='add_questions_link']") }.to raise_error
+    end 
 
 end 

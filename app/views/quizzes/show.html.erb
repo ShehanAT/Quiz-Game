@@ -7,9 +7,11 @@
 <h3>Description: </h3><strong><%= @quiz.description %></strong>
 <br />
 <%= hidden_field_tag :hidden_quiz_id, @quiz.id %>
-<%= button_to "Add More Questions", new_question_path, :id => "add_questions_link", :class => "btn btn-secondary", method: :get %>
-<%= button_to "Edit This Quiz", edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn btn-secondary",method: :get %>
-<button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz</button>
+<% if session[:user_id] %>
+    <%= button_to "Add More Questions", new_question_path, :id => "add_questions_link", :class => "btn btn-secondary", method: :get %>
+    <%= button_to "Edit This Quiz", edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn btn-secondary",method: :get %>
+    <button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz</button>
+<% end %>
 <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :class => "btn btn-primary", :id => "take_quiz_link", method: :get %>
 <%= button_to "Back", quizzes_path, :id => "back_link", :class => "btn btn-dark", method: :get %>
 </div>

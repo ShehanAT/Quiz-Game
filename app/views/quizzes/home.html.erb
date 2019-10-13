@@ -13,9 +13,9 @@
             <%= render_login_link %>
             <%= render_register_link %> 
             <li><%= link_to "Quizzes", quizzes_path, id: "quizzes_link" %></li>
-            <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
             <% if session[:user_id] %>
               <li><%= link_to "User Profile", user_path(@user.id), id: "user_profile_link" %></li>
+              <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
             <% end %>
             <%= render_logout_link %>
         </ul>
