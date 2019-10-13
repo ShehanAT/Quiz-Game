@@ -10,7 +10,6 @@ class QuizzesController < ApplicationController
         @quizzes = Quiz.all   
         quiz_categories_sql = "SELECT DISTINCT quizzes.category FROM quizzes;"
         @quiz_categories = ActiveRecord::Base.connection.execute(quiz_categories_sql)
-        Rails.logger.info "#{@quiz_categories}"
     end 
 
     def new 
@@ -37,7 +36,8 @@ class QuizzesController < ApplicationController
     def show
         Score.set_quiz_id(session, params[:id])
         @quizContent = Quiz.getQuizContent(params[:id])  
-        @quiz = Quiz.find(params[:id])      
+        @quiz = Quiz.find(params[:id])    
+        @highScore = Score.eval_highest_score(session[:quiz_id], session[:user_id])
         respond_to do |format|
             format.html { render "show" }
             format.js { render "show" }
@@ -59,17 +59,10 @@ class QuizzesController < ApplicationController
     end     
 
     def save_score 
-        old_score = Score.where(user_id: session[:user_id]).take
-        if old_score
-            update_status = old_score.eval_highest_score(params[:score])
-            respond_to do |format|
-                format.json { render json: { status: update_status}}
-            end 
-        else 
-            new_score= Score.create(:user_id => session[:user_id], :quiz_id => params[:quiz_id], :highScore => params[:score])
-            respond_to do |format|
-                format.json { render json: { status: "High Score Saved" } }
-            end
+        new_score= Score.create(:user_id => session[:user_id], :quiz_id => params[:quiz_id], :score => params[:score])
+        new_score.save!
+        respond_to do |format|
+            format.json { render json: { status: "Score Saved" } }
         end
     end 
     

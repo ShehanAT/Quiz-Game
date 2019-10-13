@@ -5,6 +5,7 @@
 <h3>Title: </h3><strong><%= @quiz.name %></strong>
 <h3>Category: </h3><strong><%= @quiz.category %></strong>
 <h3>Description: </h3><strong><%= @quiz.description %></strong>
+<h3 id="highscore_message">Your Best Score For This Quiz: <strong><%= @highScore %></strong>
 <br />
 <%= hidden_field_tag :hidden_quiz_id, @quiz.id %>
 <% if session[:user_id] %>

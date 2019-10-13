@@ -1,14 +1,13 @@
 class Score < ApplicationRecord
-    validates :user_id, presence: true
-    validates_uniqueness_of :user_id
 
-    def eval_highest_score(new_score)
-        if new_score.to_i > self.highScore
-            self.highScore = new_score 
-            self.save!
-            return "All Time High Score: #{self.highScore}"
+    def self.eval_highest_score(quiz_id, user_id)
+        get_high_score = "SELECT MAX(scores.score) FROM scores WHERE quiz_id='#{quiz_id}' AND user_id='#{user_id}';"
+        result = ActiveRecord::Base.connection.execute(get_high_score)
+        high_score = result[0]["MAX(scores.score)"]
+        if high_score
+            return high_score
         else 
-            return "All Time High Score: #{self.highScore}" 
+            return 0
         end 
     end 
 
