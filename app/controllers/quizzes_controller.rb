@@ -8,6 +8,9 @@ class QuizzesController < ApplicationController
 
     def index 
         @quizzes = Quiz.all   
+        quiz_categories_sql = "SELECT DISTINCT quizzes.category FROM quizzes;"
+        @quiz_categories = ActiveRecord::Base.connection.execute(quiz_categories_sql)
+        Rails.logger.info "#{@quiz_categories}"
     end 
 
     def new 
