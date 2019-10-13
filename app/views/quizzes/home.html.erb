@@ -17,7 +17,6 @@
             <% if session[:user_id] %>
               <li><%= link_to "User Profile", user_path(@user.id), id: "user_profile_link" %></li>
             <% end %>
-            <li><%= link_to "Answers", answers_path, id: "answers_link" %></li>
             <%= render_logout_link %>
         </ul>
   </body>

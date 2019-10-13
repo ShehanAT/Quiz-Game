@@ -184,5 +184,11 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.current_path).to eq("/quizzes")
     end 
 
+    it "index page should show categories of quizzes" do 
+        capybara_quizzes_index 
+        expect(Capybara.page.first("h3[id='category_heading']").text).to eq("Quiz Categories")
+
+    end 
+
 
 end 
