@@ -173,5 +173,16 @@ RSpec.describe QuizzesHelper do
 
     end 
 
+    it "delete quiz link should redirect to quizzes_path" do 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link']").click 
+        Capybara.page.first("button[id='delete_quiz_link']").click 
+        Capybara.page.first("button[id='quizDeleteYes']").click 
+        sleep 0.5
+        Capybara.page.driver.browser.switch_to.alert.accept
+        sleep 0.5
+        expect(Capybara.page.current_path).to eq("/quizzes")
+    end 
+
 
 end 

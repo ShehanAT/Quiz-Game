@@ -74,6 +74,6 @@
     <%= hidden_field_tag "#{@user.bio}", @user.bio, { :id => "hidden_user_bio"} %>
     
     <button id="save_and_exit_link" class="btn btn-primary" type="submit" >Save And Exit</button>
-    <button id="delete_account_link" class="btn btn-danger" type="button" onclick="deleteAccount()">Delete This Account</button>
+    <button id="delete_account_link" class="btn btn-danger" type="button" onclick="showDeleteModal()">Delete This Account</button>
     <% end %>
     <%= button_to "Back", user_path(@user.id), id:'back_link', method: :get %>

@@ -1,0 +1,38 @@
+
+function showDeleteModal(){
+    $("#deleteQuizModal").show();
+}
+
+function closeDeleteModal(){
+    $("#deleteQuizModal").hide();
+}
+
+
+function deleteQuiz(e){
+    switch(e.id){
+        case "quizDeleteYes":
+            var quizId = $("#hidden_quiz_id").val();
+            $.ajax({
+                url: "/quizzes/"+quizId,
+                method: "DELETE",
+                data: {
+                    quiz_id: quizId,
+                    authenticity_token: window._token
+                },
+                dataType: "json",
+                success: function(data){
+                    if(data.status){
+                        alert(data.message);
+                        window.location.href = "/quizzes";
+                    }
+                }
+            });
+            break;
+
+        case "quizDeleteNo":
+            $("#deleteQuizModal").hide();
+            break;
+        default:
+            break;
+    }
+}

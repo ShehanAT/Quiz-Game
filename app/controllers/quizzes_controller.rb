@@ -68,7 +68,17 @@ class QuizzesController < ApplicationController
                 format.json { render json: { status: "High Score Saved" } }
             end
         end
-    end     
+    end 
+    
+    def destroy 
+        Quiz.destroy(params[:id])
+        delete_all_questions_sql = "DELETE FROM questions WHERE quiz_id='#{params[:id]}'"
+        result = ActiveRecord::Base.connection.execute(delete_all_questions_sql)
+        respond_to do |format|
+            format.js { render "quizzes/js/delete_quiz"}
+            format.json { render json: { status: true, message: "Quiz And All Associated Questions Deleted Successfully!" } }
+        end     
+    end 
 
     private 
     def quiz_params

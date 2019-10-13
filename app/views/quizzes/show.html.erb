@@ -6,11 +6,17 @@
 <h3>Category: </h3><strong><%= @quiz.category %></strong>
 <h3>Description: </h3><strong><%= @quiz.description %></strong>
 <br />
+<%= hidden_field_tag :hidden_quiz_id, @quiz.id %>
 <%= button_to "Add More Questions", new_question_path, :id => "add_questions_link", method: :get %>
 <%= button_to "Edit This Quiz", edit_quiz_path(@quiz.id), :id => "edit_quiz_link", method: :get %>
+<button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz</button>
 <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :id => "take_quiz_link", method: :get %>
 <%= button_to "Back", quizzes_path, :id => "back_link", method: :get %>
 </div>
 
 <%= render_answer_links %>
 <%= render_end_game_message %>
+<%= render partial: "quizzes/html/delete_quiz_modal" %>
+<script>
+    <%= render partial: "quizzes/js/delete_quiz.js.erb" %>
+</script>
