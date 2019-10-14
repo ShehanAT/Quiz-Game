@@ -2,8 +2,7 @@ module QuizzesHelper
 
     def render_welcome_message 
         if !session[:user_id]
-            content_tag(:h1, "Please Login Or Register") +
-            content_tag(:h3, "Choose An Action:", id: "choose_action_message")
+            content_tag(:h1, "Quiz Game") 
         else 
             content_tag(:h1, "Welcome " << session[:username]) +
             content_tag(:h3, "Choose An Action:")
@@ -31,7 +30,7 @@ module QuizzesHelper
     def render_logout_link 
         if session[:user_id]
             content_tag :li do
-              link_to "Log Out", sessions_path, method: "delete", id: "logout_link"
+              link_to "Log Out", sessions_path(1), method: :delete, id: "logout_link"
             end 
         end 
     end 

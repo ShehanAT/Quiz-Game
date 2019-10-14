@@ -17,8 +17,9 @@
               <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
             <% end %>
             <%= render_logout_link %>
+            <% if false %><% link_to "Logout", sessions_path, method: :delete %><% end %>
         </ul>
-
+        <strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong>
         <h3 id="category_heading">Quiz Categories</h3>
         <% @quiz_categories.each do |quiz_category| %>
             <h5><%= quiz_category["category"] %></h5>

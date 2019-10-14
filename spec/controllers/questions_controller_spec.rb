@@ -52,7 +52,7 @@ RSpec.describe QuestionHelper do
 
     it "/questions/:id should display corresponding info" do 
         capybara_questions_index 
-        Capybara.page.first("a").click 
+        Capybara.page.first("a[class='question_name']").click 
         sleep 0.1
         expect(Capybara.page.first("h3[id='question_name']").text).not_to eq("")
         expect(Capybara.page.first("h3[id='quiz_name']").text).not_to eq("")
@@ -62,7 +62,7 @@ RSpec.describe QuestionHelper do
         buttons = ["input[id='homepage_link']", "input[id='questions_link']", "input[id='edit_question_link']"]
         for a in 0...3
             capybara_questions_index
-            Capybara.page.first("a").click 
+            Capybara.page.first("a[class='question_name']").click 
             sleep 0.1
             old_path = Capybara.page.current_path
             Capybara.page.first("#{buttons[a]}").click
@@ -74,7 +74,7 @@ RSpec.describe QuestionHelper do
 
     it "/questions/:id/edit should render form" do 
         capybara_questions_index 
-        Capybara.page.first("a").click 
+        Capybara.page.first("a[class='question_name']").click 
         sleep 0.1 
         Capybara.page.first("input[id='edit_question_link']").click 
         sleep 0.1 
@@ -92,7 +92,7 @@ RSpec.describe QuestionHelper do
         buttons = ["input[type='submit']"] 
         for i in 0..2 
             capybara_questions_index
-            Capybara.page.first("a").click 
+            Capybara.page.first("a[class='question_name']").click 
             Capybara.page.first("input[id='edit_question_link']").click 
             Capybara.page.first("button[id='update_question_link']").click 
             expect(Capybara.page.current_path).to eq("/questions")
