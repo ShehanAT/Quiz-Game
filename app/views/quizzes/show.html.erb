@@ -14,9 +14,8 @@
     <button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz</button>
 <% end %>
 <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :class => "btn btn-primary", :id => "take_quiz_link", method: :get %>
-<%= button_to "Back", quizzes_path, :id => "back_link", :class => "btn btn-dark", method: :get %>
 </div>
-
+<%= button_to "Back", quizzes_path, :id => "back_link", :class => "btn btn-dark", method: :get %>
 <%= render_answer_links %>
 <%= render_end_game_message %>
 <%= render partial: "quizzes/html/delete_quiz_modal" %>

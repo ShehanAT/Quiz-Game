@@ -23,7 +23,7 @@ function deleteQuiz(e){
                 success: function(data){
                     if(data.status){
                         alert(data.message);
-                        window.location.href = "/quizzes";
+                        window.location.href = data.redirect;
                     }
                 }
             });

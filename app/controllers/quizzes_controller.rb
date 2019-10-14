@@ -1,12 +1,9 @@
 class QuizzesController < ApplicationController
 
-    def home 
+    def index 
         if session[:user_id]
             @user = User.find(session[:user_id])
         end
-    end 
-
-    def index 
         @quizzes = Quiz.all   
         quiz_categories_sql = "SELECT DISTINCT quizzes.category FROM quizzes;"
         @quiz_categories = ActiveRecord::Base.connection.execute(quiz_categories_sql)
@@ -74,7 +71,7 @@ class QuizzesController < ApplicationController
         ActiveRecord::Base.connection.execute(delete_all_answers_sql)
         respond_to do |format|
             format.js { render "quizzes/js/delete_quiz"}
-            format.json { render json: { status: true, message: "Quiz And All Associated Questions Deleted Successfully!" } }
+            format.json { render json: { status: true, message: "Quiz And All Associated Questions Deleted Successfully!", redirect: "/" } }
         end     
     end 
 

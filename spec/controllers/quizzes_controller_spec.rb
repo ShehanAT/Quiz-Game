@@ -13,9 +13,9 @@ end
 
 RSpec.describe QuizzesHelper do
    
-    it "root_url should contain link for /quizzes" do 
+    it "root_url should render " do 
         capybara_quizzes_index
-        expect(Capybara.page.current_path).to eq("/quizzes")
+        expect(Capybara.page.current_path).to eq("/")
     end 
 
     it "root_url should render 4 links" do 
@@ -173,7 +173,7 @@ RSpec.describe QuizzesHelper do
 
     end 
 
-    it "delete quiz link should redirect to quizzes_path" do 
+    it "delete quiz link should redirect to root_url" do 
         capybara_quizzes_index
         Capybara.page.first("a[class='quiz_link']").click 
         Capybara.page.first("button[id='delete_quiz_link']").click 
@@ -181,7 +181,7 @@ RSpec.describe QuizzesHelper do
         sleep 0.5
         Capybara.page.driver.browser.switch_to.alert.accept
         sleep 0.5
-        expect(Capybara.page.current_path).to eq("/quizzes")
+        expect(Capybara.page.current_path).to eq("/")
     end 
 
     it "index page should show categories of quizzes" do 
