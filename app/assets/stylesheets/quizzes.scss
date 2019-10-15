@@ -391,3 +391,39 @@ button[class*="btn"] {border: 0;}
 .btn-gradient.purple:active {background: #BD8EB7;}
 .btn-gradient.yellow:active {background: #f1bc31;}
 .btn-gradient.green:active  {background: #72B08E;}
+
+
+.wrongAnswer {
+    background-color: red;
+    padding: 15px 15px 15px 15px;
+    text-align:center;
+    margin-bottom: 4px;
+    font-size: 24px;
+    border-radius: 5px;
+    -moz-transition:all 0.5s ease-in-out;
+    -webkit-transition:all 0.5s ease-in-out;
+    -o-transition:all 0.5s ease-in-out;
+    -ms-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out; 
+    -moz-animation:blink normal 1.5s infinite ease-in-out; /* Firefox */
+    -webkit-animation:blink normal 1.5s infinite ease-in-out; /* Webkit */
+    -ms-animation:blink normal 1.5s infinite ease-in-out; /* IE */
+    animation:blink normal 1.5s infinite ease-in-out; /* Opera */
+}
+.correctAnswer {
+    background-color: green;
+    padding: 15px 15px 15px 15px;
+    text-align:center;
+    margin-bottom: 4px;
+    font-size: 24px;
+    border-radius: 5px;
+    -moz-transition:all 0.5s ease-in-out;
+    -webkit-transition:all 0.5s ease-in-out;
+    -o-transition:all 0.5s ease-in-out;
+    -ms-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out; 
+    -moz-animation:blink normal 1.5s infinite ease-in-out; /* Firefox */
+    -webkit-animation:blink normal 1.5s infinite ease-in-out; /* Webkit */
+    -ms-animation:blink normal 1.5s infinite ease-in-out; /* IE */
+    animation:blink normal 1.5s infinite ease-in-out; /* Opera */
+}

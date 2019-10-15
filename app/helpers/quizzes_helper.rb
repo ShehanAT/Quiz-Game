@@ -39,13 +39,13 @@ module QuizzesHelper
         content_tag(:div, :id => "quiz_gameplay_section") do 
             @content = content_tag(:h3, "Your score: ", :class => "save_score_message", :style => "display:none" )
             @content << content_tag(:h3, "current_question", :id => "current_question", :style => "display:none")
-            @content << content_tag(:button, "answer1", :id => "answer1", :href => "", :style => "display:none", :class => "answer_link btn-gradient green large" )
+            @content << content_tag(:button, "answer1", :id => "answer1", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
             @content << content_tag(:br)
-            @content << content_tag(:button, "answer2", :id => "answer2", :href => "", :style => "display:none", :class => "answer_link btn-gradient red large" )
+            @content << content_tag(:button, "answer2", :id => "answer2", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
             @content << content_tag(:br)
-            @content << content_tag(:button, "answer3", :id => "answer3", :href => "", :style => "display:none", :class => "answer_link btn-gradient orange large" )
+            @content << content_tag(:button, "answer3", :id => "answer3", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
             @content << content_tag(:br)
-            @content << content_tag(:button, "answer4", :id => "answer4", :href => "", :style => "display:none", :class => "answer_link btn-gradient blue large" )
+            @content << content_tag(:button, "answer4", :id => "answer4", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
         end 
     end 
 

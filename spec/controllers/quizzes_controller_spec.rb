@@ -70,12 +70,13 @@ RSpec.describe QuizzesHelper do
 
     it "/quiz/:id should show next question on a[class='answer_link'] click" do 
         capybara_quizzes_index
-        Capybara.page.first("a[class='quiz_link'").click 
+        Capybara.page.first("a[class='quiz_link']").click 
         sleep 0.1
         Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         old_question = Capybara.page.first("h3[id='current_question']").text 
-        Capybara.page.first("button[class='answer_link'").click 
+        Capybara.page.find("#answer1").click 
+        sleep 5
         new_question = Capybara.page.first("h3[id='current_question']").text 
         expect(old_question).not_to eq(new_question)
     end 
@@ -87,7 +88,8 @@ RSpec.describe QuizzesHelper do
         Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         for i in (0..3)
-            Capybara.page.first("button[class='answer_link']").click 
+            Capybara.page.find("#answer1").click 
+            sleep 5        
         end 
         expect(Capybara.page.first("h3[id='end_quiz_message']", :visible => true).text).to eq("Quiz Finished!")
     end 
@@ -99,7 +101,8 @@ RSpec.describe QuizzesHelper do
         Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         for i in (0..3)
-            Capybara.page.first("button[class='answer_link']").click 
+            Capybara.page.find("#answer1").click 
+            sleep 5
         end 
         sleep 0.1
         expect(Capybara.page.first("h4[id='save_score_status']").text).not_to eq("")

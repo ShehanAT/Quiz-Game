@@ -33,38 +33,59 @@ $.ajax({
         var questionsLeft = data.quizContent.questions.length;
         var randomArr = shuffle(data.quizContent.questions);
         var currentQuestion;
+        var correctAnswer;
         var score = 0;
         function changeScene(e){
             if(currentQuestion = randomArr.pop()){
                 setupQuiz(data.quizContent, currentQuestion)
             }else{
-                $.ajax({
-                    url: "/save_score",
-                    method: "GET",
-                    data: {
-                        score: score,
-                        quiz_id: quizId
-                    },
-                    dataType: "json",
-                    success: function(data){
-                        $("#save_score_status").text(data.status);
-                    }
-                });
+                if(data.auth){
+                    $.ajax({
+                        url: "/save_score",
+                        method: "GET",
+                        data: {
+                            score: score,
+                            quiz_id: quizId
+                        },
+                        dataType: "json",
+                        success: function(data){
+                            $("#save_score_status").text(data.status);
+                        }
+                    });
+                }
                 $("#quiz_gameplay_section").hide().children().hide();
                 $("#quiz_end_game_section").show().children().show();
                 $("#end_score_message").text("Your Score: " + score); 
             }
         }
-        
+        function setCorrectAnswer(){
+            correctAnswer = data.quizContent.answers.find(function(element){
+                if(currentQuestion.id == element.question_id && element.correct_answer === 1) return element
+            });
+        }
+        function resetButtons(){
+            $(".answer_link").removeClass("wrongAnswer");
+            $(".answer_link").removeClass("correctAnswer");
+            $(".answer_link").addClass("cyan");
+        }
         function checkAnswer(e){
             if(questionsLeft){
                 questionsLeft -= 1;
-                for(var i = 0 ; i < data.quizContent.answers.length; i++){
-                    if(data.quizContent.answers[i].answer == e.currentTarget.innerText && data.quizContent.answers[i].correct_answer === 1){
-                        updateScore();
+                var questionId;
+                for(var i = 0 ;i < 4; i++){
+                    if($(`#answer${i+1}`).text() === correctAnswer.answer){
+                        $(`#answer${i+1}`).removeClass("cyan");
+                        $(`#answer${i+1}`).addClass("correctAnswer");
                     }
                 }
+                if($(`#${e.currentTarget.id}`).text() != correctAnswer.answer){
+                    $(`#${e.currentTarget.id}`).removeClass("cyan");
+                    $(`#${e.currentTarget.id}`).addClass("wrongAnswer");
+                    return false;
+                }
+                return true;              
             }
+            return false;
         }
 
         function updateScore(){
@@ -78,7 +99,6 @@ $.ajax({
             $("#current_question").text(nextQuestion.question);
             var currentChoices = []
             for(var i = 0; i < data.answers.length; i++){
-                
                 if(data.answers[i].question_id == nextQuestion.id){
                     currentChoices.push(data.answers[i]);
                 }
@@ -87,19 +107,29 @@ $.ajax({
                 var answer = currentChoices.pop();
                 $("#answer"+i).text(answer.answer);
                 $("#answer"+i).val(i);
-
+                $("#answer"+i).removeClass("wrongAnswer");
+                $("#answer"+i).removeClass("correctAnswer");
+                $("#answer"+i).addClass("cyan");
             }
         }
 
         (function setFirstQuestion(){
             currentQuestion = randomArr.pop();
+            setCorrectAnswer();
             setupQuiz(data.quizContent, currentQuestion);
         }());
 
         (function setupInterface(){
+            
             $("button").on("click ", function(e){
-                checkAnswer(e);
-                changeScene(e);
+                setCorrectAnswer();
+                if(checkAnswer(e)){
+                    updateScore();
+                }
+                setTimeout(function(){
+                    resetButtons();
+                    changeScene(e);
+                }, 2000);
                 
             });
             $(".save_score_message").text("Your Score: " + score);
