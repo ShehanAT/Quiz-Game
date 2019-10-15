@@ -16,8 +16,9 @@
 require "rails_helper"
 require 'action_view'
 require "rack_session_access/capybara"
+
 RSpec.configure do |config|
-  
+  config.include ApplicationHelper
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

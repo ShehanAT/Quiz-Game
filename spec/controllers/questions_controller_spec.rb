@@ -11,7 +11,7 @@ RSpec.configure do |c|
     c.include QuestionsHelper
 end
 
-RSpec.describe QuestionHelper do
+RSpec.describe QuestionsHelper do
 
     it "should change /questions/new form title on button click" do 
         capybara_new_quiz_fill_in

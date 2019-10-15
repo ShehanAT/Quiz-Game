@@ -5,7 +5,7 @@ require "helpers/quizzes_helper_spec"
 require "helpers/questions_helper_spec"
 
 RSpec.configure do |c|
-    c.include QuestionsHelper 
+    c.include QuestionsHelper
     c.include QuizzesHelper 
     c.include UsersHelper 
     c.include SessionsHelper 

@@ -5,11 +5,8 @@
 # files.
 
 require 'cucumber/rails'
-# require 'capybara/culerity'
+
 # frozen_string_literal: true
-# Capybara.register_driver :culerity do |app|
-#   Capybara::Driver::Culerity.new(app)
-# end
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -55,10 +52,7 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 #
-# Culerity.jruby_invocation = File.expand_path("~/.rvm/bin/celerity_jruby")
 
-Capybara.javascript_driver = :culerity
-# Capybara.default_driver = :rack_test #non-JS eg rake-test
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
