@@ -1,5 +1,5 @@
 <h3 id="edit_quiz_title">Edit Quiz: <%= @quiz.name %></h3>
-<%= render "form_fields" %>
+<%= render "quizzes/html/form_fields" %>
 <%= button_to "Back", quiz_path(@quiz.id), id:'back_link', method: :get %>
 
 <script>
