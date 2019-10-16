@@ -13,8 +13,25 @@ $("input[type='checkbox']").on("click", function(){
     updateQuestionArrCheckbox(this.value, false);
     $(this).attr("correct_answer", "0");
   }
-  
 });
+$("input[type='file']").on("change", function(){
+  console.log($("#question_image_form")[0]);
+  var fd = new FormData($("#question_image_form")[0]);
+  /*
+  $.ajax({
+    url: "/question_images",
+    method: "post",
+    dataType: "json",
+    data: {
+      question_image: fd,
+      authenticity_token: window._token
+    },
+    success: function(data){
+      console.log(data);
+    }
+    });
+    */
+  });
 
 (function(){
   QuestionSet.id = 1;

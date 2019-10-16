@@ -1,0 +1,5 @@
+<%= form_with(url: question_images_path) do |form| %>
+    <%= form.label :question_image %>
+    <%= form.file_field :question_image %>
+    <%= form.submit %>
+<% end %>

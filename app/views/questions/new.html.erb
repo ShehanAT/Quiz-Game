@@ -4,7 +4,10 @@
 <li>Category: <%= @quiz.category %></li>
 <li>Description: <%= @quiz.description %></li>
 </ul>
+
 <%= render partial: "questions/html/new_form" %>
+
+<h3 id="image_upload_status"></h3>
 <script>
   <%= render partial: "questions/js/questionSet.js.erb" %>
   <%= render partial: "questions/js/new.js.erb" %>

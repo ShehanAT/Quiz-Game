@@ -32,6 +32,7 @@ gem 'bootstrap', '~> 4.3.1'
 
 gem 'figaro'
 
+gem "google-cloud-storage", "~> 1.11", require: false
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

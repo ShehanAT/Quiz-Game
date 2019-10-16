@@ -31,6 +31,10 @@
     <label>
       <input type="checkbox" class="radio" value="4"  />Answer #4</label>
     <br />
+    <%= form_with(url: question_images_path, :id => "question_image_form") do |form| %>
+      <%= label_tag :question_image %>
+      <%= file_field_tag :question_image %>
+    <% end %>
   </div>
   <div class="col-md-6">
     <button onclick="addQuestion()" id="add_question_link" class="btn btn-success">Add Another Question</button>

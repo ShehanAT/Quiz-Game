@@ -193,5 +193,11 @@ RSpec.describe QuizzesHelper do
 
     end 
 
+    # it "new_questions_path should contain file upload section" do 
+    #     capybara_new_quiz_question
+    #     Capybara.attach_file("Question image", Rails.root + "public/apple-touch-icon.png")
+    #     expect(Capybara.page.first("h3[id='image_upload_status']").text).to eq("The Image Has Been Successfully Uploaded!")
+
+    # end 
 
 end 

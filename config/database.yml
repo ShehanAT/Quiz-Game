@@ -8,6 +8,9 @@ default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: 
+  password: [MYSQL_PASS]
+  database: [MYSQL_DATABASE]
 
 development:
   <<: *default
