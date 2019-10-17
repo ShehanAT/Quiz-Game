@@ -15,5 +15,10 @@ end
 
 RSpec.describe QuizCategoriesHelper do
 
+    # it "should navigate to /quiz_categories/:id after new category created" do 
+    #     capybara_new_quiz_no_images
+    #     Capybara.visit("/quiz_categories/1")
+    #     expect(Capybara.page.first("h3[id='category_title']")).not_to eq("")
+    # end 
 
 end 

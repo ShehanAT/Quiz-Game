@@ -6,10 +6,8 @@ class QuestionsController < ApplicationController
     @quiz = Quiz.find(session[:quiz_id]) 
     if @quiz.contains_images === 1
       flash[:notice] = "images"
-      # render "new"
-    else 
-      render "new"
-    end  
+    end 
+    render "new"
   end 
 
   def create 

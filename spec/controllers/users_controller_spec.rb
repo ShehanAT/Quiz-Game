@@ -108,6 +108,7 @@ RSpec.describe UserHelper do
         Capybara.page.first("input[id='edit_user_link']").click 
         Capybara.page.first("button[id='delete_account_link']").click 
         Capybara.page.first("button[id='userDeleteYes']").click 
+        sleep 1.5
         expect(Capybara.page.current_path).to eq("/")        
     end 
 
