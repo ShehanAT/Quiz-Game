@@ -1,16 +1,24 @@
-<h3>You are currently adding questions to quiz:"<%= @quiz.name %>"</h3>
-<ul>  
-<li>Name: <%= @quiz.name %></li>
-<li>Category: <%= @quiz.category %></li>
-<li>Description: <%= @quiz.description %></li>
-</ul>
+<%= form_with(url: questions_path) do |form| %>
+    <% if flash[:success] %>
+        <h3><%= flash[:success] %></h3>
+    <% end %>
+    <%= form.label :question %>
+    <%= form.text_field :question %>
+    <br />
+    <% for i in 0...4 %>
+        <%= form.label :"answer#{i+1}" %>
+        <%= form.text_field :"answer#{i+1}" %>
+        <br />
+    <% end %>
+    <%= form.label(:correct_answer, "Which Answer Is The Correct One?") %>
+    <%= form.select :correct_answer, raw("<option value='1'>Choice #1</option><option value='2'>Choice #2</option><option value='3'>Choice #3</option><option value='4'>Choice #4</option>") %>
+    <br />
+    <% if flash[:notice] %>
+        <%= form.label :question_image %>
+        <%= form.file_field :question_image %>
+    <% end %>
+    <br />
+    <%= form.submit "Submit And Exit", :class => "btn btn-dark" %>
+    <%= form.submit "Submit And Add Another Question", :class => "btn btn-primary" %>
 
-<%= render partial: "questions/html/new_form" %>
-
-<h3 id="image_upload_status"></h3>
-<script>
-  <%= render partial: "questions/js/questionSet.js.erb" %>
-  <%= render partial: "questions/js/new.js.erb" %>
-</script>
-
-
+<% end %> 

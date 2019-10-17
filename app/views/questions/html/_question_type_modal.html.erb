@@ -1,0 +1,16 @@
+<div id="questionTypeModal" class="modal">
+
+  <div id="question_type_text" class="modal-content">
+    <h3>Would You Like To Add Questions With Or Without Images? 
+    <button onclick="showQuestionSection('images')">Questions With Images</button>
+    <button onclick="showQuestionSection('text')">Questions Without Images</button>
+  </div>
+
+</div>
+<script>
+$(document).click(function (e) {
+    if ($(e.target).is('#questionTypeModal')) {
+        $("#questionTypeModal").fadeOut(500);
+    }
+});
+</script>

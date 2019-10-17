@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_185758) do
+ActiveRecord::Schema.define(version: 2019_10_16_182132) do
 
   create_table "answers", force: :cascade do |t|
     t.string "answer"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_10_15_185758) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "quiz_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_10_15_185758) do
     t.integer "created_at", default: 1569682240, null: false
     t.integer "updated_at", default: 1569682240, null: false
     t.string "description"
+    t.integer "contains_images", default: 0
   end
 
   create_table "scores", force: :cascade do |t|

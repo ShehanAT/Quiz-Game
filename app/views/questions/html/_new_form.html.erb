@@ -3,7 +3,8 @@
 <div class="row">
   <div class="add_question_section col-md-6" value="1">
     <%= render partial: "questions/html/modal_form" %>
-    
+    <%= render partial: "questions/html/question_type_modal" %>
+    <div id="question_errors"></div>
     <h3 id="add_questions_message">Now Editing Question #1 </h3>
   
     <%= label_tag(:question, "New Question:") %>
@@ -31,10 +32,10 @@
     <label>
       <input type="checkbox" class="radio" value="4"  />Answer #4</label>
     <br />
-    <%= form_with(url: question_images_path, :id => "question_image_form") do |form| %>
-      <%= label_tag :question_image %>
-      <%= file_field_tag :question_image %>
-    <% end %>
+    <form id="question_image_form" enctype="multipart/form-data" data-remote="true" >
+      <input name="question_image" type="file" />
+      <input type="submit" value="Upload" />
+    </form>
   </div>
   <div class="col-md-6">
     <button onclick="addQuestion()" id="add_question_link" class="btn btn-success">Add Another Question</button>
@@ -42,9 +43,7 @@
     <div class="gallery_container">
 
     </div>
+   </div>
   </div>
-</div>
-
-
 
 </div>

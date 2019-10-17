@@ -3,17 +3,23 @@ class QuestionsController < ApplicationController
   
   def new 
     @question = Question.new
-    @quiz = Quiz.find(session[:quiz_id])  
-    respond_to do |format|
-      format.html { render "new" }
-      format.json { render json: {path: "#{new_questions_path}", quiz_name: params[:name] } }
-    end 
+    @quiz = Quiz.find(session[:quiz_id]) 
+    if @quiz.contains_images === 1
+      flash[:notice] = "images"
+      # render "new"
+    else 
+      render "new"
+    end  
   end 
 
   def create 
-    Quiz.addQuizContent(params[:questionArr].to_json, session[:quiz_id])
-    respond_to do |format|
-      format.json { render json: { redirect: "/questions" } }
+    Quiz.addQuizContent(params, session[:quiz_id])
+    if params[:commit] === "Submit And Exit"
+      flash[:notice] = "Question Added Created Successfully!"
+      redirect_to quiz_path(session[:quiz_id])
+    elsif params[:commit] === "Submit And Add Another Question"
+      flash[:success] = "Question Added. Keep Adding Questions!" 
+      render new_question_path
     end 
   end 
 

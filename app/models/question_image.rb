@@ -18,7 +18,6 @@ class QuestionImage < ApplicationRecord
           content_type: question_image.content_type,
           acl: "public"
     
-        Rails.logger.info file.public_url
         update_columns image_url: file.public_url
       end
 end

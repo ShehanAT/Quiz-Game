@@ -13,6 +13,9 @@
     <%= form.label(:description, "New Quiz Description:") %>
     <%= form.text_field :description %>
     <br />
+    <%= form.label(:contains_images, "Will This Quiz Need Images?") %>
+    <%= form.select "contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>") %>
+    <br />
     <%= form.submit "Save and Submit", :type => "submit", :id => "submit_new_quiz_link", :class => "btn btn-primary" %>
 <% end %>
 <%= button_to "Back", quizzes_path, :id => "back_link", :class => "btn btn-dark", :type => "button", method: :get %>
