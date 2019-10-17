@@ -5,8 +5,9 @@ class QuizzesController < ApplicationController
             @user = User.find(session[:user_id])
         end
         @quizzes = Quiz.all   
-        quiz_categories_sql = "SELECT DISTINCT quizzes.category FROM quizzes;"
+        quiz_categories_sql = "SELECT DISTINCT LTRIM(RTRIM(quizzes.category)) FROM quizzes;"
         @quiz_categories = ActiveRecord::Base.connection.execute(quiz_categories_sql)
+        Rails.logger.info @quiz_categories
     end 
 
     def new 
@@ -33,7 +34,7 @@ class QuizzesController < ApplicationController
     def show
         Score.set_quiz_id(session, params[:id])
         @quizContent = Quiz.getQuizContent(params[:id])  
-        @quiz = Quiz.find(params[:id])  
+        @quiz = Quiz.find(params[:id])
         if session[:user_id]
             @highScore = Score.eval_highest_score(session[:quiz_id], session[:user_id])
             respond_to do |format|

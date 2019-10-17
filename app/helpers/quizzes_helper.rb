@@ -39,6 +39,8 @@ module QuizzesHelper
         content_tag(:div, :id => "quiz_gameplay_section") do 
             @content = content_tag(:h3, "Your score: ", :class => "save_score_message", :style => "display:none" )
             @content << content_tag(:h3, "current_question", :id => "current_question", :style => "display:none")
+            @content << content_tag(:img, "",:id => "current_question_img", :alt => "question image", :style => "display: none;")
+            @content << content_tag(:br)
             @content << content_tag(:button, "answer1", :id => "answer1", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
             @content << content_tag(:br)
             @content << content_tag(:button, "answer2", :id => "answer2", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )

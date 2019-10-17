@@ -3,11 +3,11 @@
         <h3><%= flash[:success] %></h3>
     <% end %>
     <%= form.label :question %>
-    <%= form.text_field :question %>
+    <%= form.text_field :question, required: true %>
     <br />
     <% for i in 0...4 %>
         <%= form.label :"answer#{i+1}" %>
-        <%= form.text_field :"answer#{i+1}" %>
+        <%= form.text_field :"answer#{i+1}", required: true %>
         <br />
     <% end %>
     <%= form.label(:correct_answer, "Which Answer Is The Correct One?") %>
@@ -15,7 +15,7 @@
     <br />
     <% if flash[:notice] %>
         <%= form.label :question_image %>
-        <%= form.file_field :question_image %>
+        <%= form.file_field :question_image, required: true %>
     <% end %>
     <br />
     <%= form.submit "Submit And Exit", :class => "btn btn-dark" %>

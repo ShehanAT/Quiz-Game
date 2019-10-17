@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
       redirect_to quiz_path(session[:quiz_id])
     elsif params[:commit] === "Submit And Add Another Question"
       flash[:success] = "Question Added. Keep Adding Questions!" 
-      render new_question_path
+      redirect_to new_question_path
     end 
   end 
 

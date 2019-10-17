@@ -192,6 +192,16 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.current_path).to eq("/quizzes/5")
     end 
 
+    it "quiz with images should render image on /quizzes/:id" do 
+        capybara_new_quiz_question_image 
+        Capybara.page.first("input[value='Submit And Exit']").click 
+        sleep 1.5 
+        Capybara.page.first("input[id='take_quiz_link']").click 
+        sleep 1.5 
+        expect(Capybara.page.first("img"))
+
+    end     
+
 
 
 end 

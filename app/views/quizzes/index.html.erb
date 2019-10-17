@@ -22,9 +22,9 @@
         <strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong>
         <h3 id="category_heading">Quiz Categories</h3>
         <% @quiz_categories.each do |quiz_category| %>
-            <h5><%= quiz_category["category"] %></h5>
+            <h5><%= quiz_category["LTRIM(RTRIM(quizzes.category))"].strip %></h5>
             <% @quizzes.each do |quiz| %>
-                <% if quiz_category["category"] === quiz.category %>
+                <% if quiz_category["LTRIM(RTRIM(quizzes.category))"].strip == quiz.category.strip %>
                     <%= link_to quiz.name, quiz_path(quiz.id), :class => "quiz_link", :id => "quiz#{quiz.id}" %>
                     <br/>
                 <% end %>

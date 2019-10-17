@@ -25,34 +25,24 @@ class Quiz < ApplicationRecord
                 answer2.save!
             when "3"
                 answer3.correct_answer = 1
-                answer2.save!
+                answer3.save!
             when "4"
                 answer4.correct_answer = 1
                 answer4.save!
             else     
         end 
     end 
-    # def self.addQuizContent(questionArr, current_quiz_id)
-    #     Rails.logger.info questionArr
-        # parsed_questionArr = JSON.parse(questionArr)
-        # get_max_question_id = "SELECT MAX(id) AS max_id FROM questions;"
-        # get_max_question_sql = ActiveRecord::Base.connection.execute(get_max_question_id)
-        # question_id = get_max_question_sql[0]["max_id"].to_i + 1
-        # for i in 0...parsed_questionArr.length() do 
-        #     Question.create(:question => parsed_questionArr["#{i}"]["question"], :quiz_id => current_quiz_id, :id => question_id)
-        #     Answer.create(:answer => parsed_questionArr["#{i}"]["answer1"]["answer"], :quiz_id => current_quiz_id, :correct_answer => parsed_questionArr["#{i}"]["answer1"]["correct_answer"], :question_id => question_id)
-        #     Answer.create(:answer => parsed_questionArr["#{i}"]["answer2"]["answer"], :quiz_id => current_quiz_id, :correct_answer => parsed_questionArr["#{i}"]["answer2"]["correct_answer"], :question_id => question_id)
-        #     Answer.create(:answer => parsed_questionArr["#{i}"]["answer3"]["answer"], :quiz_id => current_quiz_id, :correct_answer => parsed_questionArr["#{i}"]["answer3"]["correct_answer"], :question_id => question_id)
-        #     Answer.create(:answer => parsed_questionArr["#{i}"]["answer4"]["answer"], :quiz_id => current_quiz_id, :correct_answer => parsed_questionArr["#{i}"]["answer4"]["correct_answer"], :question_id => question_id)
-        #     question_id += 1
-        # end 
-    # end 
     
     def self.getQuizContent(quiz_id)
         quiz = Quiz.find(quiz_id)
         questions = Question.where(quiz_id: quiz_id) 
         answers = Answer.where(quiz_id: quiz_id) 
-        quizInfo = {quiz: quiz, questions: questions, answers:answers}
+        if quiz.contains_images === 1
+            question_images = QuestionImage.where(quiz_id: quiz_id)
+        elsif quiz.contains_images === 0
+            question_images = false
+        end 
+        quizInfo = {quiz: quiz, questions: questions, answers:answers, questionImages: question_images}
         return quizInfo
     end
 

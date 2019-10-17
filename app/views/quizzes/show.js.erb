@@ -37,7 +37,7 @@ $.ajax({
         var score = 0;
         function changeScene(e){
             if(currentQuestion = randomArr.pop()){
-                setupQuiz(data.quizContent, currentQuestion)
+                setupQuiz(data.quizContent, currentQuestion);
             }else{
                 if(data.auth){
                     $.ajax({
@@ -59,6 +59,7 @@ $.ajax({
             }
         }
         function setCorrectAnswer(){
+            console.log(currentQuestion.id);
             correctAnswer = data.quizContent.answers.find(function(element){
                 if(currentQuestion.id == element.question_id && element.correct_answer === 1) return element
             });
@@ -99,19 +100,30 @@ $.ajax({
             $("#current_question").text(nextQuestion.question);
             var currentChoices = []
             for(var i = 0; i < data.answers.length; i++){
+                
                 if(data.answers[i].question_id == nextQuestion.id){
                     currentChoices.push(data.answers[i]);
                 }
             }
-            for(var i = 1; i <= 4; i++){
+            for(var i = 0; i < 4; i++){
                 var answer = currentChoices.pop();
-                $("#answer"+i).text(answer.answer);
-                $("#answer"+i).val(i);
-                $("#answer"+i).removeClass("wrongAnswer");
-                $("#answer"+i).removeClass("correctAnswer");
-                $("#answer"+i).addClass("cyan");
+                $(`#answer${i+1}`).text(answer.answer);
+                $(`#answer${i+1}`).val(i+1);
+                $(`#answer${i+1}`).removeClass("wrongAnswer");
+                $(`#answer${i+1}`).removeClass("correctAnswer");
+                $(`#answer${i+1}`).addClass("cyan");
             }
-        }
+            if(data.questionImages){
+                questionImage = data.questionImages.find(function(element){
+                    return element.question_id === nextQuestion.id
+                });
+                $("#current_question_img").attr("src", questionImage.image_url);
+                $("#current_question_img").show();
+            }
+            else{
+                $("#current_question_img").hide();
+            }
+        }    
 
         (function setFirstQuestion(){
             currentQuestion = randomArr.pop();
