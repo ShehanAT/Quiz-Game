@@ -1,5 +1,51 @@
 
 <style>
+.navbar-top{
+    padding: 0px;
+}
+.nav_top_container{
+    min-width: 100%;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    background-color: #4D5061;
+}
+
+.pull-left{
+    display: inline;
+}
+
+.pull-left li{
+    background-color: #4D5061;
+}
+
+.pull-right{
+    display: inline;
+    float: right;
+}
+.pull-right a {
+    font-size: 20px;
+}
+.pull-right input[type='submit'] {
+    font-size: 20px;
+}
+
+.pull-right .btn-success{
+    margin-right: 0px;
+}
+
+.pull-right form {
+    display: inline;
+}
+
+.pull-right .btn-primary{
+    margin-left: 0px;
+}
+
+.navbar-top {
+    background: #4D5061;
+    border-bottom: 4px solid #60B078;
+    color: #FFF;
+}
 
 h1 {
   text-align: center;
@@ -171,18 +217,43 @@ nav ul li {
 
 }
 </style>
+<nav class="navbar navbar-top">
+
+<div class="nav_top_container">
+    <!-- left nav top -->
+    <ul class="nav navbar-nav pull-left">
+        <li><a href="/">Home</a></li>
+        <% if session[:user_id] %>
+            <li><%= link_to "Add New Quiz", new_quiz_url, :id => "new_quiz_link" %></li>
+            <li><%= link_to "User Profile", user_path(session[:user_id]), id: "user_profile_link" %></li>
+            <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
+        <% end %>
+    </ul>
+    <!-- right nav top -->
+    <ul class="nav navbar-nav pull-right" style="padding:9px;">
+        <% if !session[:user_id] %>
+            <%= form_with(url: sessions_path) do |form| %>
+                <%= form.text_field :username, :placeholder => "Username", :id => "navbar-username" %>
+                <%= form.password_field :password, :placeholder => "Password", :id => "navbar-password" %>
+                <!--
+                <input type="text" class="" name="username" >
+            <input type="text" class="" name="password" placeholder="Password">
+            <a href="/sessions" method="post" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-user"></span> Sign In</a>
+                -->
+                <%= form.submit "Login", :class => "btn btn-sm btn-success" %>
+            <% end %>
+            <a href="/users/new" class="btn btn-sm btn-primary" id="register_link" ><span class="glyphicon glyphicon-certificate"></span> Register</a>
+        <% else %>
+            <%= link_to "Log Out", sessions_path(1), method: :delete, id: "logout_link" %>
+        <% end %>
+    </ul>
+</div>
+
+</nav>
 <nav>
   <label for="drop" class="toggle">&#8801; Menu</label>
   <input type="checkbox" id="drop" />
   <ul class="menu">
-    <li><a href="/">Home</a></li>
-    <% if !session[:user_id] %>
-        <li><a href="/sessions/new">Login</a></li>
-        <li><a href="/users/new" id='register_link' >Register</a></li>
-    <% end %>
     <%= navbar_quiz_links %>
-    <% if session[:user_id] %>
-        <li><%= link_to "Logout", sessions_path(session[:user_id]), method: :delete %>
-    <% end %>
   </ul>
 </nav>

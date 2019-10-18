@@ -2,12 +2,12 @@
 <%= form_with url: "/sessions" do |form| %>
     <div id="session_errors"></div>
     <%= form.label :username, "Username: " %>
-    <%= form.text_field :username %>
+    <%= form.text_field :username, :id => "login_username" %>
     <br />
     <%= form.label :password, "Password: " %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, :id => "login_password" %>
     <br />
-    <%= form.submit( "Login", class: "btn btn-primary") %>
+    <%= form.submit( "Login", class: "btn btn-primary", :id => "login_link") %>
 <% end %>
 <%= link_to "Forgot Password?", new_password_reset_path, :id => "password_reset_link" %>
 <%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", :type => "button", method: :get %>

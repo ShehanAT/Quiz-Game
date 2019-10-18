@@ -14,11 +14,6 @@
             <%= render_login_link %>
             <%= render_register_link %> 
         <% end %>
-            <% if session[:user_id] %>
-              <li><%= link_to "User Profile", user_path(@user.id), id: "user_profile_link" %></li>
-              <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
-            <% end %>
-            <%= render_logout_link %>
         </ul>
         <strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong>
         <h3 id="category_heading">Quiz Categories</h3>

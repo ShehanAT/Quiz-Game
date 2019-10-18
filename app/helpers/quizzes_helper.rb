@@ -25,13 +25,7 @@ module QuizzesHelper
         end 
     end 
 
-    def render_logout_link 
-        if session[:user_id]
-            content_tag :li do
-              link_to "Log Out", sessions_path(1), method: :delete, id: "logout_link"
-            end 
-        end 
-    end 
+  
 
     def render_answer_links
         content_tag(:div, :id => "quiz_gameplay_section") do 
@@ -54,15 +48,14 @@ module QuizzesHelper
             @content = content_tag(:h3, "Quiz Finished!", :id => "end_quiz_message", :style => "display:none")
             @content << content_tag(:h4, "Your score: ", :id => "end_score_message", :style => "display:none" )
             @content << content_tag(:h4, " ", :id => "save_score_status", :style => "display:none" )
-            @content << content_tag(:button, "Replay Quiz", :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none" )
-            @content << content_tag(:button, "Take Another Quiz", :onclick => "goToQuizzes()", :id => "another_quiz_button", :style => "display:none" )
-            @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none" )
+            @content << content_tag(:button, "Replay Quiz", :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none", :class => "btn btn-success" )
+            @content << content_tag(:button, "Take Another Quiz", :onclick => "goToQuizzes()", :id => "another_quiz_button", :style => "display:none", :class => "btn btn-primary" )
+            @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none", :class => "btn btn-primary" )
         end 
     end 
 
     def render_new_quiz_link
         content_tag(:div, :id => "new_quiz_section") do 
-            button_to("Add New Quiz", new_quiz_url, :id => "new_quiz_link", :class => "btn btn-primary", method: :get )
         end 
     end 
 

@@ -12,7 +12,15 @@ RSpec.configure do |c|
 end
 
 RSpec.describe QuestionsHelper do
-
+    
+    it "/questions/new should delete question on btn click" do 
+        capybara_new_quiz_question_image
+        Capybara.page.first("input[value='Submit And Exit']").click 
+        sleep 1.5
+        Capybara.page.first("button[id='delete_quiz_link']").click 
+        sleep 1.5
+        expect(Capybara.page.all("h1.question_text")[1]).not_to be_an_instance_of(Capybara::Node::Element)
+    end 
     
     it "back button should redirect to root_url" do 
         capybara_questions_index
@@ -38,7 +46,7 @@ RSpec.describe QuestionsHelper do
         sleep 0.5
         Capybara.page.first("a[class='question_name']").click 
         sleep 0.5
-        Capybara.find("input.back").click
+        Capybara.page.first("input[value='Back']").click
         sleep 0.5
         expect(Capybara.page.current_path).to eq("/questions")
     end
@@ -79,14 +87,7 @@ RSpec.describe QuestionsHelper do
         expect(Capybara.page.current_path).to eq("/questions")
     end 
 
-    it "/questions/new should delete question on btn click" do 
-        capybara_new_quiz_question_image
-        Capybara.page.first("input[value='Submit And Exit']").click 
-        sleep 1.5
-        Capybara.page.first("button[id='delete_quiz_link']").click 
-        sleep 1.5
-        expect(Capybara.page.all("h1.question_text")[1]).not_to be_an_instance_of(Capybara::Node::Element)
-    end 
+ 
 
 
 end 
