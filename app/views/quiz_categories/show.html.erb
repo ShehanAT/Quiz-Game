@@ -1,4 +1,4 @@
-<h3><%= params[:category] %> Quizzes:</h3>
+<h3><%= @category.category %> Quizzes:</h3>
 <% @quizzes.each do |quiz| %>
     <%= link_to "#{quiz["name"]}", quiz_path(quiz["id"]), :class => "quiz_link" %>
     <br />

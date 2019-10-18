@@ -9,7 +9,7 @@
       <% if flash[:notice] %>
         <h3><%= flash[:notice] %></h3>
       <% end %>
-        <ul>
+        <ul class="action_panel">
             <%= render_login_link %>
             <%= render_register_link %> 
             <% if session[:user_id] %>
