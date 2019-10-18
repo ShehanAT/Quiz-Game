@@ -29,16 +29,9 @@ RSpec.describe QuizzesHelper do
     end 
 
     it "/quizzes quiz link should go to /quizzes/:quiz_id" do 
-        buttons = ["a[class='quiz_link']", "input[id='back_link']"]
-        for i in 0...2 
-            capybara_quizzes_index
-            Capybara.page.first(buttons[i]).click
-            if i === 0
-                expect(Capybara.page.current_path).to eq("/quizzes/1")
-            elsif i === 1
-                expect(Capybara.page.current_path).to eq("/")
-            end 
-        end 
+        capybara_quizzes_index
+        Capybara.page.first("a[class='quiz_link']").click
+        expect(Capybara.page.current_path).to eq("/quizzes/1")
     end 
 
     it "/quiz/:id should display quiz info" do 
@@ -89,7 +82,7 @@ RSpec.describe QuizzesHelper do
             sleep 5
         end 
         sleep 5
-        expect(Capybara.page.first("h3[id='end_quiz_message']", :visible => true).text).to eq("Quiz Finished!")
+        expect(Capybara.page.first("h3[id='end_quiz_message']").text).to eq("Quiz Finished!")
         expect(Capybara.page.first("h4[id='save_score_status']").text).not_to eq("")
         expect(Capybara.page.first("button[id='replay_quiz_button']").text).not_to eq("")
     end

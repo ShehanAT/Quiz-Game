@@ -3,8 +3,6 @@ class PasswordResetsController < ApplicationController
   end 
 
   def create 
-    Rails.logger.info "#{ENV["GMAIL_USERNAME"]}"
-    Rails.logger.info "#{ENV["GMAIL_PASSWORD"]}"
     user = User.find_by_email(params[:email])
     if user
       user.send_password_reset  

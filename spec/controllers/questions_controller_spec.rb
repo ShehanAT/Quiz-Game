@@ -14,17 +14,14 @@ end
 RSpec.describe QuestionsHelper do
 
     
-    it "homepage button should redirect to root_url" do 
+    it "back button should redirect to root_url" do 
         capybara_questions_index
-        expect(Capybara.page.first("input[id='homepage_link']").value).to eq("Back To Home")
-        old_path = Capybara.page.current_path
         Capybara.page.first("input[id='homepage_link']").click 
         sleep 0.1
-        new_path = Capybara.page.current_path
-        expect(old_path).not_to eq(new_path)
+        expect(Capybara.page.current_path).to eq("/")
     end 
 
-    it "index page should show corresponding quiz for each question" do 
+    it "index page should show corresponding question for each quiz" do 
         capybara_questions_index
         expect(Capybara.page.first("td[class='quiz_name']").text).not_to eq("")
     end 
@@ -36,20 +33,14 @@ RSpec.describe QuestionsHelper do
         expect(Capybara.page.current_path).not_to eq("/questions")
     end 
 
-    it "/questions/:id links to homepage page should work" do 
+    it "/questions/:id links to questions index should work" do 
         capybara_questions_index
+        sleep 0.5
         Capybara.page.first("a[class='question_name']").click 
-        old_path = Capybara.page.current_path
-        Capybara.page.first("input[id='homepage_link']").click
-        expect(Capybara.page.current_path).not_to eq("/questions/1")
-    end
-
-    it "/questions/:id links to index page should work" do 
-        capybara_questions_index
-        Capybara.page.first("a[class='question_name']").click 
-        sleep 1.5
-        Capybara.page.first("input[id='questions_link']").click
-        expect(Capybara.page.current_path).not_to eq("/questions/1")
+        sleep 0.5
+        Capybara.find("input.back").click
+        sleep 0.5
+        expect(Capybara.page.current_path).to eq("/questions")
     end
 
     it "/questions/:id links to edit page should work" do 
@@ -63,8 +54,9 @@ RSpec.describe QuestionsHelper do
 
     it "/questions/:id/edit should render form" do 
         capybara_questions_index 
+        sleep 0.5
         Capybara.page.first("a[class='question_name']").click 
-        sleep 0.1 
+        sleep 1
         Capybara.page.first("input[id='edit_question_link']").click 
         sleep 0.1 
         expect(Capybara.page.first("h3[id='edit_question_title']")).not_to eq("")

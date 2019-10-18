@@ -45,6 +45,7 @@ RSpec.describe UserHelper do
     it "/users/:id/edit should display errors on invalid submit" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
+        sleep 0.5
         Capybara.page.first("input[id='edit_user_link']").click 
         Capybara.page.first("button[id='change_password_link']").click 
         Capybara.page.first("button[id='update_password_link']").click 

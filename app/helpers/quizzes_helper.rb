@@ -14,9 +14,7 @@ module QuizzesHelper
             content_tag :li do 
               link_to "Register", new_user_path, id: "register_link"
             end
-        end 
-
-        
+        end  
     end
 
     def render_login_link 
@@ -62,13 +60,10 @@ module QuizzesHelper
         end 
     end 
 
-    def render_quizzes_restfull_routes
-        content_tag(:div, :id => "quizzes_restfull_section") do 
+    def render_new_quiz_link
+        content_tag(:div, :id => "new_quiz_section") do 
             button_to("Add New Quiz", new_quiz_url, :id => "new_quiz_link", :class => "btn btn-primary", method: :get )
         end 
-    end 
-
-    def edit_links        
     end 
 
     def render_quizzes_link 

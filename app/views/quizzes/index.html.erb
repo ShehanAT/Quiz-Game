@@ -10,14 +10,15 @@
         <h3><%= flash[:notice] %></h3>
       <% end %>
         <ul class="action_panel">
+        <% if false %>
             <%= render_login_link %>
             <%= render_register_link %> 
+        <% end %>
             <% if session[:user_id] %>
               <li><%= link_to "User Profile", user_path(@user.id), id: "user_profile_link" %></li>
               <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
             <% end %>
             <%= render_logout_link %>
-            <% if false %><% link_to "Logout", sessions_path, method: :delete %><% end %>
         </ul>
         <strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong>
         <h3 id="category_heading">Quiz Categories</h3>
@@ -30,8 +31,9 @@
                 <% end %>
             <% end %>
         <% end %>
-        <%= render_quizzes_restfull_routes %>
-        <%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", method: :get %>
+        <% if session[:user_id] %>
+          <%= render_new_quiz_link %>
+        <% end %>
 
   </body>
 </html>

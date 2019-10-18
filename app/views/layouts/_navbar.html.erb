@@ -1,124 +1,188 @@
 
 <style>
-/*Strip the ul of padding and list styling*/
-.wrapper{
-  width: 100%;
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  line-height: 70px;
+  font-family: 'roboto', sans-serif;
+}
+#container {
+  margin: 0 auto;
+  max-width: 890px;
+}
+p { text-align: center; }
+ .toggle, [id^=drop] {
+ display: none;
+}
+nav {
+  margin: 0;
+  padding: 0;
+  background-color: #9b111e;
+}
+
+#logo {
+  display: block;
+  padding: 0 30px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  margin: 0px;
   display: inline-block;
+  float: left;
+  background-color: #9b111e;
 }
-ul.hidden{
-    position: absolute;
-    top: 50px;
+
+nav a {
+  display: block;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
 }
-ul#menu {
-    display: flex;
-    width: 100%;
-    list-style-type:none;
-    margin:0;
-    padding:0;
-    position: absolute;
+
+nav ul li ul li:hover { background: #000000; }
+
+nav a:hover { background-color: #ffffff; }
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
 }
-/*Create a horizontal list with spacing*/
-li.nav_item {
-    display:flex;
-    flex: 1;
-    //float: left;
-    margin-right: 1px;
+
+nav ul li:hover > ul { display: inherit; }
+
+nav ul ul li {
+  width: 300px;
+  float: none;
+  display: list-item;
+  position: relative;
 }
-/*Style for menu links*/
-li.nav_item a {
-    display:block;
-    min-width:140px;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #fff;
-    background: #2f3036;
-    text-decoration: none;
+nav ul ul li a {
+    color: white;
 }
-/*Hover state for top level links*/
-li.nav_item:hover a {
-    background: #19c589;
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
 }
-/*Style for dropdown links*/
-li.nav_item:hover ul a {
-    background: #f3f3f3;
-    color: #2f3036;
-    height: 40px;
-    line-height: 40px;
+
+li > a:after { content: ' +'; }
+li > a:only-child:after { content: ''; }
+
+.dropdown-item {
+    color: #ffffff;
 }
-/*Hover state for dropdown links*/
-li.nav_item:hover ul a:hover {
-    background: #19c589;
-    color: #fff;
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+#logo {
+  display: block;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  float: none;
 }
-/*Hide dropdown links until they are needed*/
-li.nav_item ul {
-    display: none;
+
+nav { margin: 0; }
+
+.toggle + a,
+ .menu { display: none; }
+
+.toggle {
+  display: block;
+  background-color: #254441;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 22px;
+  font-weight:bold;
+  line-height: 60px;
+  text-decoration: none;
+  border: none;
 }
-/*Make dropdown links vertical*/
-li.nav_item ul li {
-    display: block;
-    float: none;
+
+.toggle:hover { background-color: #000000; }
+
+[id^=drop]:checked + ul { display: block; }
+
+nav ul li {
+  display: block;
+  width: 100%;
 }
-/*Prevent text wrapping*/
-li.nav_item ul li a {
-    width: auto;
-    min-width: 100px;
-    padding: 0 20px;
+
+nav ul ul .toggle,
+ nav ul ul a { padding: 0 40px; }
+
+nav ul ul ul a { padding: 0 80px; }
+
+nav a:hover,
+ nav ul ul ul a { background-color: #000000; }
+
+nav ul li ul li .toggle,
+ nav ul ul a { background-color: #212121; }
+
+nav ul ul {
+  float: none;
+  position: static;
+  color: #ffffff;
 }
-/*Display the dropdown on hover*/
-ul li a:hover + .hidden, .hidden:hover {
-    display: flex;
-    flex-direction: column;
+
+nav ul ul li:hover > ul,
+nav ul li:hover > ul { display: none; }
+
+nav ul ul li {
+  display: block;
+  width: 100%;
 }
-/*Style 'show menu' label button and hide it by default*/
-.show-menu {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-decoration: none;
-    color: #fff;
-    background: #19c589;
-    text-align: center;
-    padding: 10px 0;
-    display: none;
+
+nav ul ul ul li { 
+    position: static;
 }
-/*Hide checkbox*/
-input[type=checkbox]{
-    display: none;
 }
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #menu{
-    display: block;
+
+@media all and (max-width : 330px) {
+
+nav ul li {
+  display: block;
+  width: 94%;
 }
-/*Responsive Styles*/
-@media screen and (max-width : 760px){
-    /*Make dropdown links appear inline*/
-    ul#menu {
-        position: static;
-        display: none;
-    }
-    /*Create vertical spacing*/
-    li {
-        margin-bottom: 1px;
-    }
-    /*Make all menu links full width
-    ul#menu li, li a {
-        width: 100%;
-    }*/
-    /*Display 'show menu' link*/
-    .show-menu {
-        display:block;
-    }
+
 }
 </style>
-<div class="wrapper">
-  <label for="show-menu" class="show-menu">&#9776;</label>
-  <input type="checkbox" id="show-menu" role="button">
-  <ul id="menu">
-      <li class="nav_item"><a href="/">Home</a></li>
-      <li class="nav_item"><a href="/sessions/new">Login</a></li>
-      <li class="nav_item"><a href="/users/new">Register</a></li>
-      <%= navbar_quiz_links %>
+<nav>
+  <label for="drop" class="toggle">&#8801; Menu</label>
+  <input type="checkbox" id="drop" />
+  <ul class="menu">
+    <li><a href="/">Home</a></li>
+    <% if !session[:user_id] %>
+        <li><a href="/sessions/new">Login</a></li>
+        <li><a href="/users/new" id='register_link' >Register</a></li>
+    <% end %>
+    <%= navbar_quiz_links %>
+    <% if session[:user_id] %>
+        <li><%= link_to "Logout", sessions_path(session[:user_id]), method: :delete %>
+    <% end %>
   </ul>
-</div>
+</nav>

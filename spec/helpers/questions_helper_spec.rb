@@ -29,6 +29,7 @@ module QuestionsHelper
         Capybara.fill_in("username", with: "testing1")
         Capybara.fill_in("password", with: "testing1") 
         Capybara.page.first("input[type='submit']").click
+        sleep 0.5
         Capybara.page.first("a[id='questions_link']").click
     end 
 
