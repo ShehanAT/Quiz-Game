@@ -6,7 +6,11 @@ function showDeleteModal(){
 function closeDeleteModal(){
     $("#deleteQuizModal").hide();
 }
-
+$(document).click(function (e) {
+    if ($(e.target).is('#deleteQuizModal')) {
+        $("#deleteQuizModal").fadeOut(500);
+    }
+});
 
 function deleteQuiz(e){
     switch(e.id){

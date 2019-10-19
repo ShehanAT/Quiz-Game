@@ -21,7 +21,6 @@
     <div class="hidden" id="question_json" ><%= @question.to_json %></div>
     <div class="btn_container">
         <button class="btn btn-primary" onclick="updateQuestion()" id="update_question_link" type="button" >Update Question</button>
-        <button class="btn btn-danger" onclick="deleteQuestion()" id="delete_question_link" type="button" >Delete Question</button>
         <%= link_to "Back", question_path(@question.id), id:'back_link', :class => "btn btn-dark" %>
     </div>
     <% end %>

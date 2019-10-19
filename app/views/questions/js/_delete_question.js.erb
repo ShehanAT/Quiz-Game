@@ -1,0 +1,41 @@
+$("#deleteQuestionModal").hide();
+
+$(document).click(function (e) {
+    if ($(e.target).is('#deleteQuestionModal')) {
+        $("#deleteQuestionModal").fadeOut(500);
+    }
+});
+
+
+function showModal(){
+    $("#deleteQuestionModal").show();
+}
+
+function closeModal(){
+    $("#deleteQuestionModal").hide();
+}
+
+function deleteQuestion(e){
+    if(e.id === "questionDeleteNo"){
+        closeModal();
+    }
+    else if(e.id === "questionDeleteYes"){
+        $.ajax({
+            url: "<%= question_path(@question[0]['id']) %>",
+            method: "DELETE",
+            dataType: "json",
+            data: {
+                question_id: "<%= @question[0]['id'] %>",
+            },
+            success: function(data){
+                ajaxSuccess(data);
+            }
+        });   
+    }
+}
+
+function ajaxSuccess(data){
+    if(data.status){
+        window.location.href = data.redirect;
+    }
+}

@@ -12,5 +12,10 @@
 </div>
 <div class="btn_container">
     <%= button_to "Edit This Question", edit_question_path(@question[0]["id"]), id: "edit_question_link", :class => "btn btn-primary", method: :get, :question_id => @question[0]["id"] %>
+    <button class="btn btn-danger" onclick="showModal()" id="delete_question_link" >Delete Question</button>
     <%= button_to "Back", questions_path, :class => "btn btn-dark back", method: :get  %>
 </div>
+<%= render partial: "questions/html/delete_question_modal" %> 
+<script>
+    <%= render "questions/js/delete_question.js.erb" %>
+</script>

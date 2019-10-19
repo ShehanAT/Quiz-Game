@@ -2,6 +2,15 @@ var answers = JSON.parse($("#answers_json").text());
 var question = JSON.parse($("#question_json").text());
 var correctAnswer;
 var errors = [];
+$("input[type='checkbox']").on("click", function(e){
+    if($(this).prop("checked")){
+        correctAnswer = e.currentTarget.id;
+    }else{
+        correctAnswer = false;
+    }
+    $("input[type='checkbox']").not(this).prop("checked", false);
+});
+
 (function loadFormValues(){
     $("#question").val(question["question"]);
     for(var i = 0 ; i < 4 ; i++ ){
@@ -14,6 +23,7 @@ var errors = [];
         }
     }   
 }());
+
 
 function updateQuestion(){
     if(!validate()){
@@ -58,28 +68,7 @@ function showErrors(){
         $("#question_edit_errors").append("<p class='error'>" + errors[i] + "</p>");
     }
 }
-$("input[type='checkbox']").on("click", function(e){
-    if($(this).prop("checked")){
-        correctAnswer = e.currentTarget.id;
-    }else{
-        correctAnswer = false;
-    }
-    $("input[type='checkbox']").not(this).prop("checked", false);
-});
-function deleteQuestion(){
-    $.ajax({
-        url: `/questions/${question["id"]}`,
-        method: "PUT",
-        dataType: "json",
-        data: {
-            question_id: question["id"],
-            commit: "Delete Question"
-        },
-        success: function(data){
-            ajaxSuccess(data);
-        }
-    })
-}
+
 function ajaxSuccess(data){
     if(data.status){
         window.location.href = data.redirect;

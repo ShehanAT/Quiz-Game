@@ -50,14 +50,18 @@ class QuestionsController < ApplicationController
   end
   
   def update 
-    if(params[:commit] === "Update Question")
-      Question.updateQuestion(params)
-    elsif(params[:commit] === "Delete Question")
-      Question.deleteQuestion(params[:question_id])
-    end 
+    Question.updateQuestion(params)
     respond_to do |format|
       format.html { render "edit" }
       format.json { render json: { status: true, message: "Question Updated Successfully!", redirect: "/questions"} }
+    end 
+  end 
+
+  def destroy 
+    Question.deleteQuestion(params[:question_id])
+    respond_to do |format|
+      format.html { render "edit" }
+      format.json { render json: { status: true, redirect: "/questions" } }
     end 
   end 
 end

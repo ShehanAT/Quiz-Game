@@ -13,13 +13,14 @@ end
 
 RSpec.describe QuestionsHelper do
     
-    it "/questions/new should delete question on btn click" do 
-        capybara_new_quiz_question_image
-        Capybara.page.first("input[value='Submit And Exit']").click 
-        sleep 1.5
-        Capybara.page.first("button[id='delete_quiz_link']").click 
-        sleep 1.5
-        expect(Capybara.page.all("h1.question_text")[1]).not_to be_an_instance_of(Capybara::Node::Element)
+    it "delete question link should redirect to questions_path" do 
+        capybara_login
+        Capybara.page.first("a[id='questions_link']").click 
+        Capybara.page.first("a[class='question_name']").click 
+        Capybara.page.first("button[id='delete_question_link']").click
+        Capybara.page.first("button[id='questionDeleteYes']").click 
+        sleep 0.5
+        expect(Capybara.page.current_path).to eq("/questions")
     end 
     
     it "back button should redirect to root_url" do 
@@ -41,7 +42,7 @@ RSpec.describe QuestionsHelper do
         expect(Capybara.page.current_path).not_to eq("/questions")
     end 
 
-    it "/questions/:id back link to root url should work" do 
+    it "/questions/:id back link to questions_path should work" do 
         capybara_questions_index
         sleep 0.5
         Capybara.page.first("a[class='question_name']").click 
@@ -73,7 +74,7 @@ RSpec.describe QuestionsHelper do
         expect(Capybara.page.first("input[id='answer2']").value).not_to eq("")
         expect(Capybara.page.first("input[id='answer3']").value).not_to eq("")
         expect(Capybara.page.first("input[id='answer4']").value).not_to eq("")
-        Capybara.page.first("input[id='back_link']").click
+        Capybara.page.first("a[id='back_link']").click
         expect(Capybara.page.current_path).not_to eq("/questions/1/edit")
     end 
 

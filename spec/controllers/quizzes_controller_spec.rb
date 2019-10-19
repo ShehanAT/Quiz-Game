@@ -136,18 +136,13 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.current_path).to eq("/") 
     end 
 
-    it "/quizzes/:id/edit update+delete buttons should redirect to /quizzes" do 
-        buttons = ["input[value='Update Quiz']", "input[value='Delete This Quiz']"]
-        for i in 0...2 
-            capybara_login 
-            Capybara.page.first("a[class='quiz_link'").click 
-            Capybara.page.first("input[id='edit_quiz_link'").click 
-            old_path = Capybara.page.current_path
-            Capybara.page.first(buttons[i]).click 
-            new_path = Capybara.page.current_path
-            expect(old_path).not_to eq(new_path)
-        end 
-
+    it "/quizzes/:id/edit update buttons should redirect to /quizzes" do 
+        capybara_login 
+        Capybara.page.first("a[class='quiz_link'").click 
+        Capybara.page.first("input[id='edit_quiz_link'").click 
+        Capybara.page.first("input[value='Update Quiz']").click 
+        sleep 0.5
+        expect(Capybara.page.current_path).to eq("/quizzes/1")
     end 
 
     it "delete quiz link should redirect to root_url" do 

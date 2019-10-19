@@ -62,10 +62,11 @@ class QuizzesController < ApplicationController
     def update 
         if(params[:commit] === "Update Quiz")
             Quiz.updateQuiz(params)
+            redirect_to quiz_path(params[:id])
         elsif(params[:commit] === "Delete This Quiz")
             Quiz.deleteQuiz(params[:quiz_id])
+            redirect_to root_url
         end 
-        redirect_to quizzes_path
     end     
 
     def save_score 
