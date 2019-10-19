@@ -1,20 +1,26 @@
 <h3>Fill In These Details: </h3>
-<%= form_with url:"/quizzes", model: @quiz do |form| %>
-    <div id="user_errors">
+<%= form_with(url:"/quizzes", model: @quiz, :class => "form-group") do |form| %>
+    <div id="quiz_errors">
     </div>
     <br />
-    <%= form.label(:name, "New Quiz Name:") %>
-    <%= form.text_field :name %>
-    <br />
-    <%= form.label(:category, "New Quiz Category:") %>
-    <%= form.text_field :category %>
-    <br />
-    <%= form.label(:description, "New Quiz Description:") %>
-    <%= form.text_field :description %>
-    <br />
-    <%= form.label(:contains_images, "Will This Quiz Need Images?") %>
-    <%= form.select "contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>") %>
-    <br />
+    <div class="form-group">
+    <%= form.label(:name, "Quiz Name:") %>
+    <%= form.text_field :name, :class => "form-control", :placeholder => "Enter Quiz Name" %>
+    </div>
+    <div class="form-group">
+    <%= form.label(:category, "Quiz Category:") %>
+    <%= form.text_field :category, :class => "form-control", :placeholder => "Enter Quiz Category" %>
+    </div>
+    <div class="form-group">
+    <%= form.label(:description, "Quiz Description:") %>
+    <%= form.text_field :description, :class => "form-control", :placeholder => "Enter Quiz Description" %>
+    </div>
+    <div class="form-group">
+    <%= form.label(:contains_images, "Does This Quiz Uses Images In Its Questions?") %>
+    <%= form.select "contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>"), :class => "form-control" %>
+    </div>
+    <div class="btn_container">
     <%= form.submit "Save and Submit", :type => "submit", :id => "submit_new_quiz_link", :class => "btn btn-primary" %>
+    <%= link_to "Back", root_url, :id => "back_link", :class => "btn btn-dark" %>
+    </div>
 <% end %>
-<%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", :type => "button", method: :get %>

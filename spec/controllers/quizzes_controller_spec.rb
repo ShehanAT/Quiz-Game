@@ -38,7 +38,7 @@ RSpec.describe QuizzesHelper do
         capybara_login
         Capybara.page.first("a[class='quiz_link']").click 
         sleep 1.5
-        expect(Capybara.page.first("h3").text).to eq("Title:")
+        expect(Capybara.page.first("h3").text).to eq("Title: First Sample Quiz")
     end     
 
     it "/quiz/:id should display 4 answer buttons after input[id='take_quiz_link'] click " do 
@@ -159,12 +159,6 @@ RSpec.describe QuizzesHelper do
         Capybara.page.driver.browser.switch_to.alert.accept
         sleep 0.5
         expect(Capybara.page.current_path).to eq("/")
-    end 
-
-    it "index page should show categories of quizzes" do 
-        capybara_login 
-        expect(Capybara.page.first("h3[id='category_heading']").text).to eq("Quiz Categories")
-
     end 
 
     it "new_questions_path should refresh after submit" do 

@@ -1,27 +1,30 @@
 <%= form_with :remote => true, :question_id => @question.id, url: question_path(@question.id), method: :put do |form| %>
     <div id="question_edit_errors"></div>
-    <%= form.label :question, "Question: "  %>
-    <%= form.text_field :question %>
-    <br />
-    <% for i in 1...5 do %>
-        <%= form.label :"answer#{i}", "Answer #{i}: " %>
-        <%= form.text_field :"answer#{i}" %>
-        <br />
+    <div class="form-group">
+        <%= form.label :question, "Question: "  %>
+        <%= form.text_field :question, :class => "form-control" %>
+    </div>
+    <% for i in 0...4 do %>
+        <div class="form-group">
+            <%= form.label :"answer#{i+1}", "Answer Choice ##{i+1}: " %>
+            <%= form.text_field :"answer#{i+1}", :class => "form-control" %>
+        </div>
     <% end %>
     <%= label_tag(:correct_answer, "Correct Answer: ") %>
-    <br/>
-    <% for i in 1...5 do %>
-        <%= label_tag(:"answer_#{i}", "Answer ##{i}") %>
-        <%= form.check_box "Answer ##{i}", :id => "#{@answers[i-1]["id"]}", :name => "#{i}" %>
-        <br/>
+    <% for i in 0...4 do %>
+        <div class="form-check form-check-inline">
+            <%= form.check_box "Answer Choise##{i+1}", :id => "#{@answers[i]["id"]}", :name => "#{i+1}", :class => "form-check-input" %>
+            <%= label_tag(:"answer_#{i+1}", "Choice ##{i+1}", :class => "form-check-label") %>
+        </div>
     <% end %>
     <div class="hidden" id="answers_json" ><%= @answers.to_json %></div>
     <div class="hidden" id="question_json" ><%= @question.to_json %></div>
-
-    <button class="btn btn-primary" onclick="updateQuestion()" id="update_question_link" type="button" >Update Question</button>
-    <button class="btn btn-danger" onclick="deleteQuestion()" id="delete_question_link" type="button" >Delete Question</button>
+    <div class="btn_container">
+        <button class="btn btn-primary" onclick="updateQuestion()" id="update_question_link" type="button" >Update Question</button>
+        <button class="btn btn-danger" onclick="deleteQuestion()" id="delete_question_link" type="button" >Delete Question</button>
+        <%= link_to "Back", question_path(@question.id), id:'back_link', :class => "btn btn-dark" %>
+    </div>
     <% end %>
-<%= button_to "Back", question_path(@question.id), id:'back_link', :class => "btn btn-dark", method: :get %>
 <script>
     <%= render "questions/js/edit.js.erb" %>
 </script>

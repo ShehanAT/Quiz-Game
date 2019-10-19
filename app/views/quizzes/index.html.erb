@@ -10,14 +10,10 @@
         <h3><%= flash[:notice] %></h3>
       <% end %>
         <ul class="action_panel">
-        <% if false %>
-            <%= render_login_link %>
-            <%= render_register_link %> 
-        <% end %>
         </ul>
-        <strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong>
-        <h3 id="category_heading">Quiz Categories</h3>
+        <h3 class="main_heading_instructions"><strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong></h3>        <div class="quiz_links_container">
         <% @quiz_categories.each do |quiz_category| %>
+            <div class="quiz_link_section">
             <h5><%= quiz_category["LTRIM(RTRIM(quizzes.category))"].strip %></h5>
             <% @quizzes.each do |quiz| %>
                 <% if quiz_category["LTRIM(RTRIM(quizzes.category))"].strip == quiz.category.strip %>
@@ -25,10 +21,9 @@
                     <br/>
                 <% end %>
             <% end %>
+            </div>
         <% end %>
-        <% if session[:user_id] %>
-          <%= render_new_quiz_link %>
-        <% end %>
+        </div>
 
   </body>
 </html>

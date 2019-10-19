@@ -4,7 +4,7 @@ module SessionsHelper
         Capybara.current_driver = Capybara.javascript_driver
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
-        Capybara.fill_in("login_password", with: "testing1") 
+        Capybara.fill_in("login_password", with: "testing") 
         Capybara.page.first("input[id='login_link']").click
     end 
 

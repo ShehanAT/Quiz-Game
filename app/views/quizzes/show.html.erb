@@ -1,23 +1,31 @@
 
 
 <div id="quiz_info_section">
-
-<h3>Title: </h3><strong><%= @quiz.name %></strong>
-<h3>Category: </h3><strong><%= @quiz.category %></strong>
-<h3>Description: </h3><strong><%= @quiz.description %></strong>
+<h1>Quiz Info</h1>
+<h3>Title: <%= @quiz.name %></h3>
+<h3>Category: <%= @quiz.category %></h3>
+<h3>Description: <%= @quiz.description %></h3>
 <% if session[:user_id] %>
-    <h3 id="highscore_message">Your Best Score For This Quiz: <strong><%= @highScore %></strong>
+    <h3 id="highscore_message">Your Best Score For This Quiz: <strong><%= @highScore %></strong></h3>
 <% end %>
-<br />
 <%= hidden_field_tag :hidden_quiz_id, @quiz.id %>
-<% if session[:user_id] %>
-    <%= button_to "Add More Questions", new_question_path, :id => "add_questions_link", :class => "btn btn-secondary", method: :get %>
-    <%= button_to "Edit This Quiz", edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn btn-secondary",method: :get %>
-    <button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz</button>
+<% if !@takeQuiz %>
+    <p class="form-text disable_take_quiz error" >* You Must Add Some Questions To Take This Quiz</p>
 <% end %>
-<%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :class => "btn btn-primary", :id => "take_quiz_link", method: :get %>
+    <div class="btn_container" id="quiz_btn_container">
+    <% if session[:user_id] %>
+        <%= button_to "Add More Questions", new_question_path, :id => "add_questions_link", :class => "btn btn-primary", method: :get %>
+        <%= button_to "Edit This Quiz", edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn btn-primary",method: :get %>
+        <button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz</button>
+    <% end %>
+    <% if !@takeQuiz %>
+        <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :class => "btn btn-success", :id => "take_quiz_link", method: :get, :disabled => true %>
+    <% else %>
+        <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :class => "btn btn-success", :id => "take_quiz_link", method: :get %>
+    <% end %>
+    <%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", method: :get %>
+    </div>
 </div>
-<%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", method: :get %>
 <%= render_answer_links %>
 <%= render_end_game_message %>
 <%= render partial: "quizzes/html/delete_quiz_modal" %>

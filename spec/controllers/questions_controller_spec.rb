@@ -48,7 +48,7 @@ RSpec.describe QuestionsHelper do
         sleep 0.5
         Capybara.page.first("input[value='Back']").click
         sleep 0.5
-        expect(Capybara.page.current_path).to eq("/")
+        expect(Capybara.page.current_path).to eq("/questions")
     end
 
     it "/questions/:id links to edit page should work" do 

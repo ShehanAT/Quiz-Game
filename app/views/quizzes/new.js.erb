@@ -13,7 +13,7 @@ $.ajax({
     },
     success: function(data){
         console.log(data);
-        $("#new_quiz_errors").html(`
+        $("#quiz_errors").html(`
         <% if @quiz.errors.any? %>
             <ul>
                 <% @quiz.errors.full_messages.each do |error| %>

@@ -35,6 +35,10 @@ class QuizzesController < ApplicationController
         Score.set_quiz_id(session, params[:id])
         @quizContent = Quiz.getQuizContent(params[:id])  
         @quiz = Quiz.find(params[:id])
+        @takeQuiz = false 
+        if @quizContent[:questions].length() > 0
+            @takeQuiz = true 
+        end 
         if session[:user_id]
             @highScore = Score.eval_highest_score(session[:quiz_id], session[:user_id])
             respond_to do |format|

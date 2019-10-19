@@ -1,6 +1,15 @@
 // Place all the styles related to the quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#quiz_btn_container{
+	margin-top: 30px;
+}
+
+.disable_take_quiz{
+	font-size: 18px;
+}
+
 .hide{
     display: none;
 }

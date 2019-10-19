@@ -4,8 +4,7 @@ module QuizzesHelper
         if !session[:user_id]
             content_tag(:h1, "Quiz Game") 
         else 
-            content_tag(:h1, "Welcome " << session[:username]) +
-            content_tag(:h3, "Choose An Action:")
+            content_tag(:h1, "Welcome " << session[:username])
         end 
     end 
 
@@ -51,11 +50,6 @@ module QuizzesHelper
             @content << content_tag(:button, "Replay Quiz", :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none", :class => "btn btn-success" )
             @content << content_tag(:button, "Take Another Quiz", :onclick => "goToQuizzes()", :id => "another_quiz_button", :style => "display:none", :class => "btn btn-primary" )
             @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none", :class => "btn btn-primary" )
-        end 
-    end 
-
-    def render_new_quiz_link
-        content_tag(:div, :id => "new_quiz_section") do 
         end 
     end 
 

@@ -1,24 +1,32 @@
-<%= form_with(url: questions_path) do |form| %>
+<%= form_with(url: questions_path, :class => "form-group") do |form| %>
+    <h1>Add New Questions</h1>
+    <h3 class="center">To: <%= @quiz.name %></h3>
     <% if flash[:success] %>
         <h3><%= flash[:success] %></h3>
     <% end %>
-    <%= form.label :question %>
-    <%= form.text_field :question, required: true %>
-    <br />
+    <div class="form-group">
+        <%= form.label :question %>
+        <%= form.text_field :question, required: true, :class => "form-control", :placeholder => "Enter The New Question" %>
+    </div>
     <% for i in 0...4 %>
-        <%= form.label :"answer#{i+1}" %>
-        <%= form.text_field :"answer#{i+1}", required: true %>
-        <br />
+        <div class="form-group">
+            <%= form.label :"answer#{i+1}", "Answer Choice ##{i+1}" %>
+            <%= form.text_field :"answer#{i+1}", required: true, :class => "form-control", :placeholder => "Enter Answer Choice ##{i+1}" %>
+        </div>
     <% end %>
-    <%= form.label(:correct_answer, "Which Answer Is The Correct One?") %>
-    <%= form.select :correct_answer, raw("<option value='1'>Choice #1</option><option value='2'>Choice #2</option><option value='3'>Choice #3</option><option value='4'>Choice #4</option>") %>
-    <br />
+    <div class="form-group">
+        <%= form.label(:correct_answer, "Which Is The Correct Choice?") %>
+        <%= form.select :correct_answer, raw("<option value='1'>Choice #1</option><option value='2'>Choice #2</option><option value='3'>Choice #3</option><option value='4'>Choice #4</option>"), :class => "form-control" %>
+    </div>
     <% if flash[:notice] %>
-        <%= form.label :question_image %>
-        <%= form.file_field :question_image, required: true %>
+        <div class="form-group">
+            <%= form.label :question_image, "Upload Question Image" %>
+            <%= form.file_field :question_image, required: true, :class => "form-control-file" %>
+        </div>
     <% end %>
-    <br />
-    <%= form.submit "Submit And Exit", :class => "btn btn-dark" %>
-    <%= form.submit "Submit And Add Another Question", :class => "btn btn-primary" %>
-
+    <div class="btn_container">
+        <%= form.submit "Submit And Exit", :class => "btn btn-success" %>
+        <%= form.submit "Submit And Add Another Question", :class => "btn btn-primary" %>
+        <%= link_to "Back", quiz_path(@quiz.id), :class => "btn btn-dark" %>
+    </div>
 <% end %> 

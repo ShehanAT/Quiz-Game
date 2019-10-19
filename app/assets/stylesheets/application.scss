@@ -15,6 +15,11 @@
  */
  @import "bootstrap";
 
+.quiz_category_link:hover{
+    color: #000000;
+    text-decoration: none;
+}
+
 .back-btn{
     display: block;
     width: 5%;
@@ -22,4 +27,27 @@
 
 #content{
     padding: 10px;
+    margin-top: 70px;
+}
+
+input, button{
+    z-index: 1;
+}
+
+.main_heading_instructions{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.quiz_links_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.center{
+    text-align: center;
+}
+
+.btn_container{
+	display: flex;
 }
