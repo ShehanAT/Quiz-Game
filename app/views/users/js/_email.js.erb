@@ -5,6 +5,7 @@ function checkEmail(value){
         method: "get",
         dataType: "json",
         data: {
+            commit: "change_email",
             email:value
         },
         success: function(data){

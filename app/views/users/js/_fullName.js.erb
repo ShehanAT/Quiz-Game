@@ -10,6 +10,7 @@ function updateFullName(){
         method: "get",
         dataType: "json",
         data: {
+            commit: "change_fullName",
             fullName: $("#new_fullName").val()
         },
         success: function(data){

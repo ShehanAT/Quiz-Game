@@ -41,14 +41,14 @@ RSpec.describe QuestionsHelper do
         expect(Capybara.page.current_path).not_to eq("/questions")
     end 
 
-    it "/questions/:id links to questions index should work" do 
+    it "/questions/:id back link to root url should work" do 
         capybara_questions_index
         sleep 0.5
         Capybara.page.first("a[class='question_name']").click 
         sleep 0.5
         Capybara.page.first("input[value='Back']").click
         sleep 0.5
-        expect(Capybara.page.current_path).to eq("/questions")
+        expect(Capybara.page.current_path).to eq("/")
     end
 
     it "/questions/:id links to edit page should work" do 
