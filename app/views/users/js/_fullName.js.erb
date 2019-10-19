@@ -6,17 +6,16 @@ function changeFullName(){
 
 function updateFullName(){
     $.ajax({
-        url: "/change_fullName",
-        method: "get",
+        url: "<%= user_path(@user.id) %>",
+        method: "put",
         dataType: "json",
         data: {
             commit: "change_fullName",
             fullName: $("#new_fullName").val()
         },
         success: function(data){
-            console.log(data);
-            if(data.response.status){
-                alert(`${data.response.message}`);
+            if(data.status){
+                alert(`${data.message}`);
                 location.reload();
             }
         }

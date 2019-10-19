@@ -28,7 +28,7 @@ class PasswordResetsController < ApplicationController
         format.js { render "edit" }
         format.json { render json: {status: false, message: "Password Reset Token Has Been Expired. Please Restart The Reset Process." } }
       end 
-    elsif @user.update(:password => params[:password])
+    elsif User.encrypt_password_after_reset(params[:password], @user.id)
       session[:user_id] = false 
       session[:username] = false 
       cookies.delete(:auth_token)

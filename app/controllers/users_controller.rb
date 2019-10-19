@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+    protect_from_forgery unless: -> { request.format.json? }
     def new 
         @user = User.new 
         respond_to do |format|
@@ -30,46 +30,28 @@ class UsersController < ApplicationController
 
     def edit 
         @user = User.find(params[:id])
-    end 
-
-    def username_validations
-        respond_to do |format|
-            format.json { render json:{ response: User.check_username(params[:username]) } }
-        end 
-    end 
-
-    def email_validations
-        respond_to do |format|
-            format.json { render json:{ response: User.check_email(params[:email]) } }
-        end 
-    end 
-    
-    def change_username
-        respond_to do |format|
-            format.json { render json: { response: User.change_username(params[:username], session[:user_id])}}
-        end 
-    end 
-
-    def change_email
-        respond_to do |format|
-            format.json { render json: { response: User.change_email(params[:email], session[:user_id])}}
-        end 
-    end 
-
-    def change_fullName
-        respond_to do |format|
-            format.json { render json: { response: User.change_fullName(params[:fullName], session[:user_id])}}
-        end 
-    end 
-
-    def change_password
-        respond_to do |format|
-            format.json { render json: { response: User.change_password(params[:current_password], params[:new_password], session[:user_id]) } }
-        end 
-    end     
+    end    
 
     def update 
-        redirect_to root_url
+        response ||= { }
+        case params[:commit]
+        when "change_username"
+            response = User.change_username(params[:username], session[:user_id])
+        when "change_email"
+            response = User.change_email(params[:email], session[:user_id])
+        when "change_password"
+            response = User.change_password(params[:current_password], params[:new_password], session[:user_id])
+        when "change_fullName"
+            response = User.change_fullName(params[:fullName], session[:user_id])
+        when "check_email"
+            response = User.check_email(params[:email])
+        when "check_username"
+            response = User.check_username(params[:username])
+        else 
+        end 
+        respond_to do |format|
+            format.json { render json: response }
+        end 
     end 
 
     def destroy

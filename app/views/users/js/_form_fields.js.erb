@@ -19,7 +19,7 @@ function deleteUser(e){
         case "userDeleteYes":
             var userId = $("#hidden_user_id").val();
             $.ajax({
-                url: `/users/${userId}`,
+                url: "<%= user_path(@user.id) %>",
                 method: "DELETE",
                 data: {
                     user_id: userId,

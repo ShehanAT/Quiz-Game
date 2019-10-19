@@ -1,3 +1,20 @@
+function checkUserName(value){
+    $("#username_errors").html("");
+    $.ajax({
+        url: "<%= user_path(@user.id) %>",
+        method: "put",
+        dataType: "json",
+        data: {
+            commit: "check_username",
+            username:value
+        },
+        success: function(data){
+            $("#username_errors").html(`${data.message}`);
+            if(!data.status) $("#update_username_link").prop('disabled', true);
+            else $("#update_username_link").prop('disabled', false);
+        }
+    });
+}
 
 function changeUsername(){
     $("#new_username").on("keyup", function(event){
@@ -10,17 +27,16 @@ function changeUsername(){
 
 function updateUsername(){
     $.ajax({
-        url: "/change_username",
-        method: "get",
+        url: "<%= user_path(@user.id) %>",
+        method: "put",
         dataType: "json",
         data: {
             commit: "change_username",
             username: $("#new_username").val()
         },
         success: function(data){
-            console.log(data);
-            if(data.response.status){
-                alert(`${data.response.message}`);
+            if(data.status){
+                alert(`${data.message}`);
                 location.reload();
             }
         }
@@ -33,20 +49,5 @@ function cancelUsername(){
     $("#current_username_section").css("display", "inline");
 }
 
-function checkUserName(value){
-    $("#username_errors").html("");
-    $.ajax({
-        url: "/username_validations",
-        method: "get",
-        dataType: "json",
-        data: {
-            username:value
-        },
-        success: function(data){
-            $("#username_errors").html(`${data.response.message}`);
-            if(!data.response.status) $("#update_username_link").prop('disabled', true);
-            else $("#update_username_link").prop('disabled', false);
-        }
-    });
-}
+
 

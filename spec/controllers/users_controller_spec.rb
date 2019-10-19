@@ -50,8 +50,14 @@ RSpec.describe UserHelper do
         Capybara.page.first("button[id='change_password_link']").click 
         Capybara.page.first("button[id='update_password_link']").click 
         expect(Capybara.page.first("div[id='password_errors']").text).not_to eq("")
-        Capybara.page.first("button[id='save_and_exit_link']").click 
-        expect(Capybara.page.current_path).to eq("/")
+    end 
+
+    it "/users/:id/edit back link should work" do 
+        capybara_login
+        Capybara.page.first("a[id='user_profile_link']").click 
+        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("a[id='back_link']").click 
+        expect(Capybara.page.current_path).to eq("/users/1")
     end 
 
     it "/users/:id/edit shoud display alert on valid password change" do 

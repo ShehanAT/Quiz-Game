@@ -8,7 +8,6 @@ class User < ApplicationRecord
     validates :password, confirmation: { case_sensitive: true }
     before_create { encrypt_password } 
     before_create { generate_token(:auth_token) }
-    before_update { encrypt_password }
 
     def self.authenticate(username, password)
         user = User.find_by_username(username)
@@ -39,6 +38,13 @@ class User < ApplicationRecord
             return { message: "Entered Current Password Is Invalid", status: true } 
         end 
        
+    end 
+
+    def self.encrypt_password_after_reset(new_password, user_id)
+        hashed_password = BCrypt::Password.create(new_password)
+        user = User.find(user_id)
+        user.password = hashed_password
+        user.save!
     end 
 
     def encrypt_password
