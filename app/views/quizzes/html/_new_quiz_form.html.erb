@@ -1,6 +1,5 @@
 <h3>Fill In These Details: </h3>
 <%= form_with url:"/quizzes", model: @quiz do |form| %>
-   
     <div id="user_errors">
     </div>
     <br />
@@ -18,4 +17,4 @@
     <br />
     <%= form.submit "Save and Submit", :type => "submit", :id => "submit_new_quiz_link", :class => "btn btn-primary" %>
 <% end %>
-<%= button_to "Back", quizzes_path, :id => "back_link", :class => "btn btn-dark", :type => "button", method: :get %>
+<%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", :type => "button", method: :get %>

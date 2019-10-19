@@ -177,7 +177,7 @@ RSpec.describe QuizzesHelper do
     it "new_questions_path should redirect to question_path(question.id) after save and exit btn" do 
         capybara_new_quiz_question_image 
         Capybara.page.first("input[value='Submit And Exit']").click 
-        sleep 1.5
+        sleep 2
         expect(Capybara.page.current_path).to eq("/quizzes/5")
     end 
 
