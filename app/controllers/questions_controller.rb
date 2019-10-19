@@ -11,7 +11,11 @@ class QuestionsController < ApplicationController
   end 
 
   def create 
-    Quiz.addQuizContent(params, session[:quiz_id])
+    if params[:question_image]
+      Quiz.addImageQuizContent(params, session[:quiz_id])
+    else 
+      Quiz.addTextQuizContent(params, session[:quiz_id])
+    end 
     if params[:commit] === "Submit And Exit"
       flash[:notice] = "Question Added Created Successfully!"
       redirect_to quiz_path(session[:quiz_id])

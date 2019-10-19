@@ -5,7 +5,7 @@ class Quiz < ApplicationRecord
     validates :category, presence: true
 
 
-    def self.addQuizContent(params, current_quiz_id)
+    def self.addImageQuizContent(params, current_quiz_id)
         get_max_question_id = "SELECT MAX(id) AS max_id FROM questions;"
         get_max_question_sql = ActiveRecord::Base.connection.execute(get_max_question_id)
         new_question_id = get_max_question_sql[0]["max_id"].to_i + 1
@@ -32,7 +32,33 @@ class Quiz < ApplicationRecord
             else     
         end 
     end 
-    
+
+    def self.addTextQuizContent(params, current_quiz_id)
+        get_max_question_id = "SELECT MAX(id) AS max_id FROM questions;"
+        get_max_question_sql = ActiveRecord::Base.connection.execute(get_max_question_id)
+        new_question_id = get_max_question_sql[0]["max_id"].to_i + 1
+        question = Question.create(:id => new_question_id, :quiz_id => current_quiz_id, :question => params[:question])
+        answer1 = Answer.create(:quiz_id => current_quiz_id, :question_id => new_question_id, :answer => params[:answer1], :correct_answer => 0)
+        answer2 = Answer.create(:quiz_id => current_quiz_id, :question_id => new_question_id, :answer => params[:answer2], :correct_answer => 0)
+        answer3 = Answer.create(:quiz_id => current_quiz_id, :question_id => new_question_id, :answer => params[:answer3], :correct_answer => 0)
+        answer4 = Answer.create(:quiz_id => current_quiz_id, :question_id => new_question_id, :answer => params[:answer4], :correct_answer => 0)
+        case params[:correct_answer]
+            when "1"
+                answer1.correct_answer = 1
+                answer1.save!
+            when "2"
+                answer2.correct_answer = 1
+                answer2.save!
+            when "3"
+                answer3.correct_answer = 1
+                answer3.save!
+            when "4"
+                answer4.correct_answer = 1
+                answer4.save!
+            else     
+        end 
+    end 
+
     def self.getQuizContent(quiz_id)
         quiz = Quiz.find(quiz_id)
         questions = Question.where(quiz_id: quiz_id) 
