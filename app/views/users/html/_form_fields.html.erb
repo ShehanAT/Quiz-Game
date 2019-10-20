@@ -49,7 +49,6 @@
         </div>  
     </div>
     <br />
-    <button type="button" onclick="changePassword()" id="change_password_link" class="btn btn-primary" >Change Password</button>
     
     <div id="change_password_section" style="display: none;">
         <div id="password_errors"></div>
@@ -73,7 +72,9 @@
     <%= hidden_field_tag "#{@user.fullName}", @user.fullName, { :id => "hidden_user_fullName"} %>
     <%= hidden_field_tag "#{@user.bio}", @user.bio, { :id => "hidden_user_bio"} %>
 
+    <div class="btn_container">
+    <button type="button" onclick="changePassword()" id="change_password_link" class="btn btn-primary" >Change Password</button>
     <button id="delete_account_link" class="btn btn-danger" type="button" onclick="showDeleteModal()">Delete This Account</button>
     <%= link_to "Back", user_path(@user.id), id:'back_link', :class => "btn btn-dark back-btn", method: :get %>
-
+    </div>
     <% end %>

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.choice_btn_section{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 #quiz_btn_container{
 	margin-top: 30px;
 }

@@ -27,19 +27,20 @@ module QuizzesHelper
   
 
     def render_answer_links
-        content_tag(:div, :id => "quiz_gameplay_section") do 
-            @content = content_tag(:h3, "Your score: ", :class => "save_score_message", :style => "display:none" )
-            @content << content_tag(:h3, "current_question", :id => "current_question", :style => "display:none")
-            @content << content_tag(:img, "",:id => "current_question_img", :alt => "question image", :style => "display: none;")
-            @content << content_tag(:br)
-            @content << content_tag(:button, "answer1", :id => "answer1", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
-            @content << content_tag(:br)
-            @content << content_tag(:button, "answer2", :id => "answer2", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
-            @content << content_tag(:br)
-            @content << content_tag(:button, "answer3", :id => "answer3", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
-            @content << content_tag(:br)
-            @content << content_tag(:button, "answer4", :id => "answer4", :href => "", :style => "display:none", :class => "answer_link btn-gradient cyan large" )
-        end 
+        # content_tag(:div, :id => "quiz_gameplay_section") do 
+            @content = "<div id='quiz_gameplay_section'>"
+            @content << "<h3 class='save_score_message' style='display:none;'>Your score: </h3>"
+            @content << "<h3 id='current_question' style='display:none;'>current_question</h3>"
+            @content << "<img id='current_question_img' alt='question image' style='display: none;'/>"
+            @content << "<div class='choice_btn_section'>"
+            @content << "<button id='answer1' style='display:none' class='answer_link btn-gradient cyan large'>answer1</button>"
+            @content << "<button id='answer2' style='display:none' class='answer_link btn-gradient cyan large'>answer2</button>"
+            @content << "<button id='answer3' style='display:none' class='answer_link btn-gradient cyan large'>answer3</button>"
+            @content << "<button id='answer4' style='display:none' class='answer_link btn-gradient cyan large'>answer4</button>"
+            @content << "</div></div>"
+            return @content.html_safe
+        # end 
+       
     end 
 
     def render_end_game_message
