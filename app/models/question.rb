@@ -19,8 +19,10 @@ class Question < ApplicationRecord
 
     end
 
-    def self.deleteQuestion(question_id)
+    def self.deleteQuestion(question_id, quiz_id)
         Question.destroy(question_id)
+        delete_answers_sql = "DELETE FROM answers WHERE question_id=#{question_id} AND quiz_id=#{quiz_id}"
+        ActiveRecord::Base.connection.execute(delete_answers_sql)
     end 
 
 

@@ -2,7 +2,9 @@
     <h1>Add New Questions</h1>
     <h3 class="center">To: <%= @quiz.name %></h3>
     <% if flash[:success] %>
-        <h3><%= flash[:success] %></h3>
+        <div class="alert alert-primary" role="alert">
+            <h3><%= flash[:success] %></h3>
+        </div>
     <% end %>
     <div class="form-group">
         <%= form.label :question %>

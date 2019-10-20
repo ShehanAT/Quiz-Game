@@ -74,7 +74,6 @@
 
     <div class="btn_container">
     <button type="button" onclick="changePassword()" id="change_password_link" class="btn btn-primary" >Change Password</button>
-    <button id="delete_account_link" class="btn btn-danger" type="button" onclick="showDeleteModal()">Delete This Account</button>
     <%= link_to "Back", user_path(@user.id), id:'back_link', :class => "btn btn-dark back-btn", method: :get %>
     </div>
     <% end %>

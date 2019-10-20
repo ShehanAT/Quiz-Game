@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
       Quiz.addTextQuizContent(params, session[:quiz_id])
     end 
     if params[:commit] === "Submit And Exit"
-      flash[:notice] = "Question Added Created Successfully!"
+      flash[:success] = "Question Added Successfully!"
       redirect_to quiz_path(session[:quiz_id])
     elsif params[:commit] === "Submit And Add Another Question"
       flash[:success] = "Question Added. Keep Adding Questions!" 
@@ -28,14 +28,16 @@ class QuestionsController < ApplicationController
   def index 
     @questions = Question.all
     get_questions_quizzes = "SELECT * FROM questions INNER JOIN quizzes ON questions.quiz_id=quizzes.id;"
+    Rails.logger.info "Questions Length: #{@questions.length()}"
     @results = ActiveRecord::Base.connection.execute(get_questions_quizzes)
+    Rails.logger.info "Results Length: #{@results.length()}" 
   end
 
   def show 
     get_question_quiz = "SELECT questions.id, questions.quiz_id, questions.question, quizzes.name, quizzes.category, quizzes.description FROM questions INNER JOIN quizzes ON questions.quiz_id=quizzes.id WHERE questions.id='#{params[:id]}';"
     @question = ActiveRecord::Base.connection.execute(get_question_quiz)
-    quiz_id = @question[0]["quiz_id"]
-    get_answers = "SELECT * FROM answers WHERE quiz_id='#{quiz_id}' AND question_id='#{params[:id]}'"
+    @quiz_id = @question[0]["quiz_id"]
+    get_answers = "SELECT * FROM answers WHERE quiz_id='#{@quiz_id}' AND question_id='#{params[:id]}'"
     @answers = ActiveRecord::Base.connection.execute(get_answers)
   end 
 
@@ -53,12 +55,12 @@ class QuestionsController < ApplicationController
     Question.updateQuestion(params)
     respond_to do |format|
       format.html { render "edit" }
-      format.json { render json: { status: true, message: "Question Updated Successfully!", redirect: "/questions"} }
+      format.json { render json: { status: true, message: "Question Updated Successfully!", redirect: "/questions/#{params[:question][:id]}"} }
     end 
   end 
 
   def destroy 
-    Question.deleteQuestion(params[:question_id])
+    Question.deleteQuestion(params[:question_id], params[:quiz_id])
     respond_to do |format|
       format.html { render "edit" }
       format.json { render json: { status: true, redirect: "/questions" } }

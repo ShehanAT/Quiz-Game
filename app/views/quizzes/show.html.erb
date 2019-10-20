@@ -2,6 +2,13 @@
 
 <div id="quiz_info_section">
 <h1>Quiz Info</h1>
+<% if flash[:success] %>
+    <div class="alert alert-primary" role="alert">
+        <h3><%= flash[:success] %></h3>
+    </div>
+<% end %>
+
+
 <h3>Title: <%= @quiz.name %></h3>
 <h3>Category: <%= @quiz.category %></h3>
 <h3>Description: <%= @quiz.description %></h3>

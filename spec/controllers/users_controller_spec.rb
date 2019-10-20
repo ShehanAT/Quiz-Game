@@ -112,7 +112,6 @@ RSpec.describe UserHelper do
     it "/users/:id/edit 'Delete Account' should redirect to root url logged out" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
-        Capybara.page.first("input[id='edit_user_link']").click 
         Capybara.page.first("button[id='delete_account_link']").click 
         Capybara.page.first("button[id='userDeleteYes']").click 
         sleep 1.5

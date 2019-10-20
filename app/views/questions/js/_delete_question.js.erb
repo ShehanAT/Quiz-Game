@@ -25,6 +25,7 @@ function deleteQuestion(e){
             method: "DELETE",
             dataType: "json",
             data: {
+                quiz_id: "<%= @quiz_id %>",
                 question_id: "<%= @question[0]['id'] %>",
             },
             success: function(data){
