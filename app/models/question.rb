@@ -9,10 +9,7 @@ class Question < ApplicationRecord
         for i in 0...4
             answer = Answer.find(params[:"answer#{i+1}"][:id])
             answer.update(answer: params[:"answer#{i+1}"][:value])
-            Rails.logger.info "#{answer.id}"
-            Rails.logger.info "#{params[:correct_answer]}"
             if answer.id === params[:correct_answer].to_i
-                Rails.logger.info "PASSING"
                 answer.update(correct_answer: 1)
             else 
                 answer.update(correct_answer: 0)

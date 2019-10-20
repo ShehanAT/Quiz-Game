@@ -6,6 +6,9 @@ module SessionsHelper
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing") 
         Capybara.page.first("input[id='login_link']").click
+        sleep 0.5
+        Capybara.page.driver.browser.switch_to.alert.accept
+        sleep 0.5
     end 
 
     def capybara_logout 

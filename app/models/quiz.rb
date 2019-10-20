@@ -73,14 +73,44 @@ class Quiz < ApplicationRecord
     end
 
     def self.deleteQuiz(quiz_id)
-        Quiz.destroy(quiz_id)
+        quiz = Quiz.find(quiz_id)
+        quiz_category = quiz.category 
+
+        delete_all_questions_sql = "DELETE FROM questions WHERE quiz_id='#{quiz_id}'"
+        ActiveRecord::Base.connection.execute(delete_all_questions_sql)
+        delete_all_answers_sql = "DELETE FROM answers WHERE quiz_id='#{quiz_id}'"
+        ActiveRecord::Base.connection.execute(delete_all_answers_sql)
+
+        quiz.destroy 
+
+        check_category_sql = "SELECT * FROM quizzes WHERE category='#{quiz_category}'"
+        result = ActiveRecord::Base.connection.execute(check_category_sql)
+        if result.length() === 0
+            category = QuizCategory.find_by_category(quiz_category)
+            category.destroy
+        end 
     end 
 
     def self.updateQuiz(params)
         quiz = Quiz.find(params[:id])
+
+        previous_category = quiz.category
+
         quiz.update(name: params[:quiz_name])
         quiz.update(category: params[:quiz_category])
         quiz.update(description: params[:quiz_description])
+
+        new_category = quiz.category
+
+        QuizCategory.where(category: new_category).first_or_create
+
+        check_category_sql = "SELECT * FROM quizzes WHERE category='#{previous_category}'"
+        result = ActiveRecord::Base.connection.execute(check_category_sql)
+        if result.length() === 0
+            category = QuizCategory.find_by_category(previous_category)
+            category.destroy
+        end 
+        
         quiz.save!
     end 
 

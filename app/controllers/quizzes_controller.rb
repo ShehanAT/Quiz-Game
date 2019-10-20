@@ -7,7 +7,6 @@ class QuizzesController < ApplicationController
         @quizzes = Quiz.all   
         quiz_categories_sql = "SELECT DISTINCT LTRIM(RTRIM(quizzes.category)) FROM quizzes;"
         @quiz_categories = ActiveRecord::Base.connection.execute(quiz_categories_sql)
-        Rails.logger.info @quiz_categories
     end 
 
     def new 
@@ -21,6 +20,7 @@ class QuizzesController < ApplicationController
 
     def create
         @quiz = Quiz.new(quiz_params)
+        QuizCategory.where(category: @quiz.category).first_or_create
         if @quiz.save
             redirect_to quiz_path(@quiz.id) 
         else 
@@ -60,14 +60,17 @@ class QuizzesController < ApplicationController
     end 
     
     def update 
-        if(params[:commit] === "Update Quiz")
-            Quiz.updateQuiz(params)
-            redirect_to quiz_path(params[:id])
-        elsif(params[:commit] === "Delete This Quiz")
-            Quiz.deleteQuiz(params[:quiz_id])
-            redirect_to root_url
-        end 
+        Quiz.updateQuiz(params)
+        redirect_to quiz_path(params[:id])
     end     
+
+    def destroy 
+        Quiz.deleteQuiz(params[:id])
+        respond_to do |format|
+            format.js { render "quizzes/js/delete_quiz"}
+            format.json { render json: { status: true, message: "Quiz And All Associated Questions Deleted Successfully!", redirect: "/" } }
+        end     
+    end 
 
     def save_score 
         new_score= Score.create(:user_id => session[:user_id], :quiz_id => params[:quiz_id], :score => params[:score])
@@ -75,18 +78,6 @@ class QuizzesController < ApplicationController
         respond_to do |format|
             format.json { render json: { status: "Score Saved" } }
         end
-    end 
-    
-    def destroy 
-        Quiz.destroy(params[:id])
-        delete_all_questions_sql = "DELETE FROM questions WHERE quiz_id='#{params[:id]}'"
-        ActiveRecord::Base.connection.execute(delete_all_questions_sql)
-        delete_all_answers_sql = "DELETE FROM answers WHERE quiz_id='#{params[:id]}'"
-        ActiveRecord::Base.connection.execute(delete_all_answers_sql)
-        respond_to do |format|
-            format.js { render "quizzes/js/delete_quiz"}
-            format.json { render json: { status: true, message: "Quiz And All Associated Questions Deleted Successfully!", redirect: "/" } }
-        end     
     end 
 
     private 

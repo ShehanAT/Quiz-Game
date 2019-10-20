@@ -2,7 +2,7 @@ class QuizCategoriesController < ApplicationController
 
     def show
         @category = QuizCategory.find(params[:id])
-        get_all_quizzes = "SELECT * FROM quizzes WHERE category='#{@category.category}'"
-        @quizzes = ActiveRecord::Base.connection.execute(get_all_quizzes)
+        quizzes_sql = "SELECT * FROM quizzes WHERE category=LTRIM(RTRIM('#{@category.category}')) OR category='#{@category.category << " "}'"
+        @quizzes = ActiveRecord::Base.connection.execute(quizzes_sql)
     end 
 end

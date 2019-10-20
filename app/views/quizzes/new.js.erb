@@ -12,7 +12,6 @@ $.ajax({
             }
     },
     success: function(data){
-        console.log(data);
         $("#quiz_errors").html(`
         <% if @quiz.errors.any? %>
             <ul>

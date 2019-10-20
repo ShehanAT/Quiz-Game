@@ -1,12 +1,11 @@
 function goToHomePage(){
     window.location.href = "/";
 }
-function goToQuizzes(){
-    window.location.href = "/quizzes";
-}
+
 function replayQuiz(){
     location.reload();
 }
+
 $(document).ready(function(){
 $("#quiz_gameplay_section").show().children().show();
 $("#quiz_info_section").hide().children().hide();
@@ -59,7 +58,6 @@ $.ajax({
             }
         }
         function setCorrectAnswer(){
-            console.log(currentQuestion.id);
             correctAnswer = data.quizContent.answers.find(function(element){
                 if(currentQuestion.id == element.question_id && element.correct_answer === 1) return element
             });

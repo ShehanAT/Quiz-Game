@@ -15,12 +15,11 @@ $(document).click(function (e) {
 function deleteQuiz(e){
     switch(e.id){
         case "quizDeleteYes":
-            var quizId = $("#hidden_quiz_id").val();
             $.ajax({
-                url: "/quizzes/"+quizId,
+                url: "<%= quiz_path(@quiz.id) %>",
                 method: "DELETE",
                 data: {
-                    quiz_id: quizId,
+                    quiz_id: "<%= @quiz.id %>",
                     authenticity_token: window._token
                 },
                 dataType: "json",
