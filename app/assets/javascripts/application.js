@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery3
+//= require jquery.remotipart
 //= require popper
 //= require bootstrap

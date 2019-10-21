@@ -62,12 +62,12 @@ RSpec.describe QuizzesHelper do
 
     it "/quiz/:id should show next question on a[class='answer_link'] click" do 
         capybara_login
-        Capybara.page.first("a[class='quiz_link']").click 
+        Capybara.visit("/quizzes/1")
         sleep 0.1
         Capybara.page.first("input[id='take_quiz_link']").click 
         sleep 0.1
         old_question = Capybara.page.first("h3[id='current_question']").text 
-        Capybara.page.find("#answer1").click 
+        Capybara.page.first("button[id='answer1']").click 
         sleep 3
         new_question = Capybara.page.first("h3[id='current_question']").text 
         expect(old_question).not_to eq(new_question)

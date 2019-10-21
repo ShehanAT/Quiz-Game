@@ -83,10 +83,18 @@ RSpec.describe QuestionsHelper do
         Capybara.page.first("a[class='question_name']").click 
         sleep 1.5
         Capybara.page.first("input[id='edit_question_link']").click 
-        Capybara.page.first("button[id='update_question_link']").click 
+        Capybara.page.first("input[id='update_question_link']").click 
         sleep 1.5
         expect(Capybara.page.current_path).to eq("/questions/1")
     end 
+
+    it "/questions/:id/edit should include file upload for image question" do 
+        capybara_questions_index
+        Capybara.page.first("a[class='question_name']").click 
+        sleep 1.5 
+        Capybara.page.first("input[id='edit_question_link']").click 
+        expect(Capybara.page.first("input[type='file']")).to be_an_instance_of(Capybara::Node::Element) 
+    end     
 
  
 

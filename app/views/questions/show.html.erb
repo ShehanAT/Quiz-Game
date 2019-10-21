@@ -9,6 +9,12 @@
         <%= content_tag(:h3, "Correct Answer: #{answer["answer"]}", :id => "correct_answer") %>
     <% end %>
 <% end %>
+<% if @question[0]["contains_images"] === 1 %>
+    <h3>Question Type: Image Question</h3>
+    <img src="<%= @question_image.image_url %>" alt="About Question" />
+<% elsif @question[0]["contains_images"] === 0 %>
+    <h3>Question Type: Text Question</h3>
+<% end %>
 </div>
 <div class="btn_container">
     <%= button_to "Edit This Question", edit_question_path(@question[0]["id"]), id: "edit_question_link", :class => "btn btn-primary", method: :get, :question_id => @question[0]["id"] %>

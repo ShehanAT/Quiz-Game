@@ -1,29 +1,37 @@
-<%= form_with :remote => true, :question_id => @question.id, url: question_path(@question.id), method: :put do |form| %>
+<%= form_with :remote => true, :question_id => @question.id, url: question_path(@question.id), method: :put, :html => { :multipart => true }, :format => "js" do |form| %>
     <div id="question_edit_errors"></div>
     <div class="form-group">
         <%= form.label :question, "Question: "  %>
-        <%= form.text_field :question, :class => "form-control" %>
+        <%= form.text_field :question, :class => "form-control", :required => true %>
     </div>
     <% for i in 0...4 do %>
         <div class="form-group">
             <%= form.label :"answer#{i+1}", "Answer Choice ##{i+1}: " %>
-            <%= form.text_field :"answer#{i+1}", :class => "form-control" %>
+            <%= form.text_field :"answer#{i+1}", :class => "form-control", :required => true %>
         </div>
     <% end %>
     <%= label_tag(:correct_answer, "Correct Answer: ") %>
+    <div class="form-check form-check-inline">
     <% for i in 0...4 do %>
-        <div class="form-check form-check-inline">
             <%= form.check_box "Answer Choise##{i+1}", :id => "#{@answers[i]["id"]}", :name => "#{i+1}", :class => "form-check-input" %>
             <%= label_tag(:"answer_#{i+1}", "Choice ##{i+1}", :class => "form-check-label") %>
+    <% end %>
+    </div>
+    <% if @quiz.contains_images === 1 %>
+        <h3>Change Question Image</h3>
+        <div class="form-group">
+            <img src="<%= @image.image_url %>" alt="About Question" />
+            <caption class='img-caption'>Current Question Image</caption>
+        </div>
+        <div class="form-group">
+            <%= label_tag(:question_image, "Select New Image: ") %>
+            <%= form.file_field :question_image, :class => "form-control" %>
         </div>
     <% end %>
-    <div class="hidden" id="answers_json" ><%= @answers.to_json %></div>
+    <%= form.hidden_field :"answers", :value => "#{@answers.to_json}" %>
     <div class="hidden" id="question_json" ><%= @question.to_json %></div>
     <div class="btn_container">
-        <button class="btn btn-primary" onclick="updateQuestion()" id="update_question_link" type="button" >Update Question</button>
+        <%= form.submit "Update Question", :id => "update_question_link", :class => "btn btn-primary" %>
         <%= link_to "Back", question_path(@question.id), id:'back_link', :class => "btn btn-dark" %>
     </div>
     <% end %>
-<script>
-    <%= render "questions/js/edit.js.erb" %>
-</script>

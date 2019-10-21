@@ -1,8 +1,16 @@
-var answers = JSON.parse($("#answers_json").text());
+var answers = JSON.parse($("#answers").val());
 var question = JSON.parse($("#question_json").text());
 var correctAnswer;
 var errors = [];
 $("input[type='checkbox']").on("click", function(e){
+    if($('div.form-check :checkbox:checked').length == 0){
+        $("#question_edit_errors").html("<p class='error'>Correct Answer Field Cannot Be Empty</p>");
+        $("#update_question_link").attr("disabled", true);
+    }else{
+        $("#question_edit_errors").html("");
+        $("#update_question_link").attr("disabled", false);
+
+    }
     if($(this).prop("checked")){
         correctAnswer = e.currentTarget.id;
     }else{
@@ -23,54 +31,3 @@ $("input[type='checkbox']").on("click", function(e){
         }
     }   
 }());
-
-
-function updateQuestion(){
-    if(!validate()){
-        showErrors();
-    }else{
-        $.ajax({
-            url: `/questions/${question["id"]}`,
-            method: "PUT",
-            dataType: "json",
-            data: {
-                question: { id: question["id"], value: $("#question").val() },
-                answer1: { id: answers[0]["id"], value: $("#answer1").val() },
-                answer2: { id: answers[1]["id"], value: $("#answer2").val() },
-                answer3: { id: answers[2]["id"], value: $("#answer3").val() },
-                answer4: { id: answers[3]["id"], value: $("#answer4").val() },
-                correct_answer: correctAnswer,
-                commit: "Update Question"
-            },
-            success: function(data){
-                ajaxSuccess(data);
-            }
-        })
-    }
-}
-
-function validate(){
-    errors = [];
-    $("#question_edit_errors").html("");
-    if($("#question").val() === "") errors.push("Question Field Cannot Be Empty");
-    for(var i = 0; i < 4; i++ ){
-        if($(`#answer${i+1}`).val() === ""){
-            errors.push(`Answer Field ${i+1} Cannot Be Empty`);
-        }
-    }
-    if(!correctAnswer) errors.push("Correct Answer Field Cannot Be Empty");
-    if(!errors.length) return true 
-    else return false 
-}
-
-function showErrors(){
-    for(var i = 0; i < errors.length; i++){
-        $("#question_edit_errors").append("<p class='error'>" + errors[i] + "</p>");
-    }
-}
-
-function ajaxSuccess(data){
-    if(data.status){
-        window.location.href = data.redirect;
-    }
-}
