@@ -4,7 +4,7 @@
     <div class="username_section">
         <div id="username_errors"></div>
         <div id="current_username_section">
-            <label for="current_username">Current Username: <%= @user.username %></label>
+            <label for="current_username"><i class="heading_text">Username:</i> <%= @user.username %></label>
             <button type="button" id="current_username" class="username_field btn btn-primary" onclick="changeUsername()" >Change Username</button>
         </div>
         <div style="display: none;" id="change_username_section">
@@ -20,7 +20,7 @@
     <div class="email_section">
         <div id="email_errors"></div>
         <div id="current_email_section">
-            <label for="current_email">Current Email: <%= @user.email %></label>
+            <label for="current_email"><i class="heading_text">Email:</i> <%= @user.email %></label>
             <button type="button" id="current_email" class="email_field btn btn-primary" onclick="changeEmail()" >Change Email</button>
         </div>
         <div style="display: none;" id="change_email_section">
@@ -36,7 +36,7 @@
     <div class="fullName_section">
         <div id="fullName_errors"></div>
         <div id="current_fullName_section">
-            <label for="current_fullName">Current Full Name: <%= @user.fullName %></label>
+            <label for="current_fullName"><i class="heading_text">Full Name:</i> <%= @user.fullName %></label>
             <button type="button" id="current_fullName" class="fullName_field btn btn-primary" onclick="changeFullName()" class="btn btn-primary" >Change Full Name</button>
         </div>
         <div style="display: none;" id="change_fullName_section">

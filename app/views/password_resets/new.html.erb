@@ -7,8 +7,11 @@
             <p class="error"><%= flash[:notice] %></p>
         <% end %>
     </div>
-<%= form.text_field(:email) %>    
+<small class="text-muted">We will email you a link that will allow you to reset your password</small>
+<div class="form-group">
+    <%= form.text_field(:email, :class => "form-control", :placeholder => "Enter your email" ) %>   
+</div> 
 </br>
-<%= form.submit("Reset Password", :id => "reset_password_submit") %>
+<%= form.submit("Reset Password", :id => "reset_password_submit", :class => "btn btn-primary") %>
 
 <% end %>

@@ -5,19 +5,19 @@
     <br />
     <div class="form-group">
     <%= form.label(:name, "Quiz Name:") %>
-    <%= form.text_field :name, :class => "form-control", :placeholder => "Enter Quiz Name" %>
+    <%= form.text_field :name, :class => "form-control", :placeholder => "Enter Quiz Name", :onkeyup => "checkQuizName()", :required => true %>
     </div>
     <div class="form-group">
     <%= form.label(:category, "Quiz Category:") %>
-    <%= form.text_field :category, :class => "form-control", :placeholder => "Enter Quiz Category" %>
+    <%= form.text_field :category, :class => "form-control", :placeholder => "Enter Quiz Category", :required => true %>
     </div>
     <div class="form-group">
     <%= form.label(:description, "Quiz Description:") %>
-    <%= form.text_field :description, :class => "form-control", :placeholder => "Enter Quiz Description" %>
+    <%= form.text_field :description, :class => "form-control", :placeholder => "Enter Quiz Description", :required => true %>
     </div>
     <div class="form-group">
     <%= form.label(:contains_images, "Does This Quiz Uses Images In Its Questions?") %>
-    <%= form.select "contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>"), :class => "form-control" %>
+    <%= form.select :"contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>"), :class => "form-control" %>
     </div>
     <div class="btn_container">
     <%= form.submit "Save and Submit", :type => "submit", :id => "submit_new_quiz_link", :class => "btn btn-primary" %>

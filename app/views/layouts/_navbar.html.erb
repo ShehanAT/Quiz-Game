@@ -1,8 +1,8 @@
 
 <style>
 
-nav {
-  z-index: 2;
+navbar-bottom {
+  z-index: 1;
   position: absolute;
   width: 100%;
 }
@@ -247,6 +247,7 @@ nav ul li {
             <li><%= link_to "Add New Quiz", new_quiz_url, :id => "new_quiz_link" %></li>
             <li><%= link_to "User Profile", user_path(session[:user_id]), id: "user_profile_link" %></li>
             <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
+            <li><input type="text" id="quiz_search_bar" onkeyup="searchQuizzes(this)" placeholder="&#128269;Search For Quizzes..." class="form-control" /><div id="search_results_section"></div></li>
         <% end %>
     </ul>
     <!-- right nav top -->
@@ -266,10 +267,46 @@ nav ul li {
 </div>
 
 </nav>
-<nav>
+<nav class="navbar-bottom">
   <label for="drop" class="toggle">&#8801; Menu</label>
   <input type="checkbox" id="drop" />
   <ul class="menu">
     <%= navbar_quiz_links %>
   </ul>
 </nav>
+<script>
+  $(window).click(function() {
+      $("#search_results_section").html("")
+  });
+
+  $("#search_results_section").on("click", function(event){
+      event.stopPropagation();
+  });
+
+  function searchQuizzes(e){
+    if(e.value != ""){
+      $.ajax({
+        url: "<%= search_quizzes_quiz_url(1) %>",
+        method: "GET",
+        dataType: "json",
+        data: {
+          quiz_name: e.value
+        },
+        success: function(data){
+          $("#search_results_section").html("");
+          var result = "<ul class='search-history'>";
+          for(var i = 0; i < data.result.length; i++){
+            id = parseInt(data.result[i].id);
+            result += `<li><span class='text'><a href='/quizzes/${id}' class='search_quiz_link'>${data.result[i].name}</a></span></li>`;
+          }
+       
+          result += "</ul>";
+          $("#search_results_section").html(result);
+        }
+      });
+    }else{
+      $("#search_results_section").html("");
+    }
+    
+  }
+</script>

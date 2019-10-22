@@ -114,6 +114,16 @@ class Quiz < ApplicationRecord
         quiz.save!
     end 
 
+    def self.check_name(quiz_name)
+        quiz_sql = "SELECT * FROM quizzes WHERE name='#{quiz_name}'"
+        quiz = ActiveRecord::Base.connection.execute(quiz_sql)
+        if quiz.length() != 0  
+            return { status: false, message: "A Quiz With The Same Name Already Exists!"}
+        else 
+            return { status: true, message: "Valid Quiz Name" }
+        end 
+    end 
+
 
 end
     

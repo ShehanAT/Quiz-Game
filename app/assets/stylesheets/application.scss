@@ -15,6 +15,88 @@
  */
  @import "bootstrap";
 
+ $primary: #0000FA;
+ $accent: #F5F6FD;
+/* Search Bar Styles */
+#quiz_search_bar{
+    width: 300px;
+    margin-top: 10px;
+}
+
+ul.search-history {
+    z-index: 3;
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    width: 100%;
+    
+    &:hover {
+      li {
+         opacity: .5;
+      }
+    }
+    
+    li {
+      color: $primary;
+      font-size: 16px;
+      margin-bottom: 8px;
+      padding: 12px 24px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      transition: all .3s ease-in-out;
+      border-radius: 8px;
+      
+      &:hover {
+        opacity: 1;
+      }
+      
+      span.text {
+        position: relative;
+        z-index: 3;
+        
+        a {
+          text-decoration: none;
+        }
+      }
+      
+      a.link {
+        width: 100%;
+        height: 40px;
+        display: block;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+      }
+      
+      &:before, &:after {
+        font-family: 'Font Awesome\ 5 Free';
+        font-weight: 900;
+        margin-right: 12px;
+        transition: all .3s ease-in-out;
+      }
+      
+      &:hover {
+        background: rgba($primary, .1);
+        
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+}
+
+/* Miscelleneous */
+.heading_text{
+    color: #808080;
+}
+
+label {
+    font-size: 1.75rem;
+}
+
 .quiz_category_link:hover{
     color: #000000;
     text-decoration: none;

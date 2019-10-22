@@ -9,19 +9,19 @@
 <% end %>
 
 
-<h3>Title: <%= @quiz.name %></h3>
-<h3>Category: <%= @quiz.category %></h3>
-<h3>Description: <%= @quiz.description %></h3>
+<h3><i class="heading_text">Title:</i> <%= @quiz.name %></h3>
+<h3><i class="heading_text">Category:</i> <%= @quiz.category %></h3>
+<h3><i class="heading_text">Description:</i> <%= @quiz.description %></h3>
 <% if @quiz.contains_images === 1 %>
-    <h3>Quiz Type: Image Quiz</h3>
+    <h3><i class="heading_text">Quiz Type:</i> Image Quiz</h3>
 <% elsif @quiz.contains_images === 0 %>
-    <h3>Quiz Type: Text Quiz</h3>
+    <h3><i class="heading_text">Quiz Type:</i> Text Quiz</h3>
 <% end %>
 <% if session[:user_id] %>
-    <h3 id="highscore_message">Your Best Score For This Quiz: <strong><%= @highScore %></strong></h3>
+    <h3 id="highscore_message"><i class="heading_text">Your Best Score For This Quiz:</i> <strong><%= @highScore %></strong></h3>
 <% end %>
 <% if !@takeQuiz %>
-    <p class="form-text disable_take_quiz error" >* You Must Add Some Questions To Take This Quiz</p>
+    <p class="form-text disable_take_quiz error heading_text" >* You Must Add Some Questions To Take This Quiz</p>
 <% end %>
     <div class="btn_container" id="quiz_btn_container">
     <% if session[:user_id] %>

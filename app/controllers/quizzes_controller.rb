@@ -13,21 +13,22 @@ class QuizzesController < ApplicationController
         @quiz = Quiz.new
         respond_to do |format|
             format.html { render "new" }
-            format.js { render "new" }
-            format.json { render :json =>  @quiz }
         end 
     end 
 
     def create
-        @quiz = Quiz.new(quiz_params)
-        QuizCategory.where(category: @quiz.category).first_or_create
-        if @quiz.save
-            redirect_to quiz_path(@quiz.id) 
-        else 
+        if params[:commit] === "check_quiz_name"
             respond_to do |format|
-                format.html { render "new" }
-                format.js { render "new" }
-            end
+                format.json { render json: Quiz.check_name(params[:quiz_name]).to_json }
+            end 
+        else 
+            @quiz = Quiz.new(quiz_params)
+            QuizCategory.where(category: @quiz.category).first_or_create
+            if @quiz.save!
+                redirect_to quiz_path(@quiz.id) 
+            else 
+                render "new"
+            end 
         end 
     end
 
@@ -78,6 +79,15 @@ class QuizzesController < ApplicationController
         respond_to do |format|
             format.json { render json: { status: "Score Saved" } }
         end
+    end 
+
+    def search_quizzes
+        search_quizzes_sql = "SELECT quizzes.name, quizzes.id FROM quizzes WHERE name LIKE '%#{params[:quiz_name]}%'"
+        result = ActiveRecord::Base.connection.execute(search_quizzes_sql)
+        
+        respond_to do |format|
+            format.json { render json: { status: "Testing1", result: result } }
+        end 
     end 
 
     private 

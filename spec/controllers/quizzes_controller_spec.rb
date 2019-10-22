@@ -95,17 +95,11 @@ RSpec.describe QuizzesHelper do
         expect(Capybara.page.current_path).to eq("/quizzes/new")
     end 
 
-    it "new quiz info section => add questions section" do
-        capybara_login 
-        Capybara.page.first("a[id='new_quiz_link']").click 
-        sleep 0.1
-        old_path = Capybara.page.current_path 
-        Capybara.fill_in("quiz_name", with: "testing1")
-        Capybara.fill_in("quiz_category", with: "testing1")
-        Capybara.fill_in("quiz_description", with: "testing1")
-        Capybara.page.first("input[id='submit_new_quiz_link']").click
-        new_path = Capybara.page.current_path
-        expect(old_path).not_to eq(new_path)
+    it "new quiz section should redirect to quiz show action" do
+        capybara_new_quiz_no_images 
+        Capybara.page.first("input[type='submit']").click
+        sleep 1
+        expect(Capybara.page.current_path).to eq("/quizzes/5")
     end
 
     it "from: /, 'Register' link should take to: /new " do 
@@ -178,7 +172,14 @@ RSpec.describe QuizzesHelper do
         sleep 1.5 
         expect(Capybara.page.first("img"))
 
-    end     
+    end  
+    
+    it "search bar result should navigate to quiz_path(:id)" do 
+        capybara_login
+        Capybara.fill_in("quiz_search_bar", with: "T")
+        Capybara.page.first("a[class='search_quiz_link']").click 
+        # expect(Capybara.page.current_path).to eq("/quizzes/1")
+    end 
 
 
 

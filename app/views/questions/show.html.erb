@@ -1,19 +1,19 @@
 <div>
-<h3 id="question_name">Question: <%= @question[0]["question"] %></h3>
-<h3 id="quiz_name">Belongs to Quiz Name: <%= @question[0]["name"] %></h3>
+<h3 id="question_name"><i class="heading_text">Question:</i> <%= @question[0]["question"] %></h3>
+<h3 id="quiz_name"><i class="heading_text">Belongs to Quiz Name:</i> <%= @question[0]["name"] %></h3>
 <% @answers.each_with_index do |answer, index| %>
-    <%= content_tag(:h3, "Answer #{index + 1}:  #{answer["answer"]}", :id => "answer#{index+1}", :value => "answer#{index+1}") %>
+    <%= content_tag(:h3, "<i class='heading_text'>Answer Choice #{index + 1}:</i>  #{answer["answer"]}".html_safe, :id => "answer#{index+1}", :value => "answer#{index+1}") %>
 <% end %>
 <% @answers.each_with_index do |answer, index| %>
     <% if answer["correct_answer"] == 1 %>
-        <%= content_tag(:h3, "Correct Answer: #{answer["answer"]}", :id => "correct_answer") %>
+        <%= content_tag(:h3, "<i class='heading_text'>Correct Answer:</i> #{answer["answer"]}".html_safe, :id => "correct_answer") %>
     <% end %>
 <% end %>
 <% if @question[0]["contains_images"] === 1 %>
-    <h3>Question Type: Image Question</h3>
+    <h3><i class="heading_text">Question Type:</i> Image Question</h3>
     <img src="<%= @question_image.image_url %>" alt="About Question" />
 <% elsif @question[0]["contains_images"] === 0 %>
-    <h3>Question Type: Text Question</h3>
+    <h3><i class="heading_text">Question Type:</i> Text Question</h3>
 <% end %>
 </div>
 <div class="btn_container">

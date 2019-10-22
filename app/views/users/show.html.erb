@@ -1,9 +1,9 @@
 <div id="user_info_section">
     <h1>Your Profile Information</h1>
-    <h3 id="username">Username: <%= @user.username %></h3>
-    <h3 id="email">Email: <%= @user.email %></h3>
-    <h3 id="fullName">Full Name: <%= @user.fullName %></h3>
-    <h3 id="bio">Bio: <%= @user.bio %></h3>
+    <h3 id="username"><i class="heading_text">Username:</i> <%= @user.username %></h3>
+    <h3 id="email"><i class="heading_text">Email:</i> <%= @user.email %></h3>
+    <h3 id="fullName"><i class="heading_text">Full Name:</i> <%= @user.fullName %></h3>
+    <h3 id="bio"><i class="heading_text">Bio:</i> <%= @user.bio %></h3>
 </div>
 <div class="btn_container">
 <%= button_to "Edit Profile", edit_user_path(@user.id), :id => "edit_user_link", :class => "btn btn-primary", method: :get %>
