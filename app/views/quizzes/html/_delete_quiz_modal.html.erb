@@ -1,9 +1,11 @@
 <div id="deleteQuizModal" class="modal">
 
 <div id="deleteQuizModal_text" class="modal-content">
-    <h1>Are You Sure You Want To Delete This Quiz And All Associated Questions? This Action Is Irreversible!</h1>
+    <h3>Are You Sure You Want To Delete This Quiz?<br/><small class="error">*This action is irreversible and will delete all questions, answers and scores linked to this quiz!</small></h3>
+    <div class="btn_container">
     <button id="quizDeleteNo" onclick="deleteQuiz(this)" class="btn btn-success" >Cancel</button>
     <button id="quizDeleteYes" onclick="deleteQuiz(this)" class="btn btn-danger" >Delete This Quiz</button>
+    </div>
 </div>
 
 

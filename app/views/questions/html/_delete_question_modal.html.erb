@@ -1,7 +1,9 @@
 <div id="deleteQuestionModal" class="modal">
 <div id="deleteQuestionModal_text" class="modal-content">
-    <h1>Are You Sure You Want To Delete This Question? This Action Is Irreversible!</h1>
+    <h3>Are You Sure You Want To Delete This Question?<br/><small class="error">*This action is irreversible and will delete all answers linked to this question!</small></h3>
+    <div class="btn_container">
     <button id="questionDeleteNo" onclick="deleteQuestion(this)" class="btn btn-success" >Cancel</button>
     <button id="questionDeleteYes" onclick="deleteQuestion(this)" class="btn btn-danger" >Delete This Question</button>
+    </div>
 </div>
 </div>

@@ -1,9 +1,11 @@
 <div id="userDeleteModal" class="modal">
 
   <div id="userDeleteModelText" class="modal-content">
-    <h1>Are You Sure You Want To Delete This User? This Action Is Irreversible!</h1>
-    <button id="userDeleteNo" onclick="deleteUser(this)" class="btn btn-success" >Cancel</button>
-    <button id="userDeleteYes" onclick="deleteUser(this)" class="btn btn-danger" >Delete This User</button>
+    <h3>Are You Sure You Want To Delete This User?<br/><small class="error">*This action is irreversible and will delete all scores linked to this user!</small></h3>
+    <div class="btn_container">
+      <button id="userDeleteNo" onclick="deleteUser(this)" class="btn btn-success" >Cancel</button>
+      <button id="userDeleteYes" onclick="deleteUser(this)" class="btn btn-danger" >Delete This User</button>
+    </div>
   </div>
 
 </div>

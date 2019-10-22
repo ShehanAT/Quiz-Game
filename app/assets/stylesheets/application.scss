@@ -19,8 +19,18 @@
 
 /* Modal Styles */
 .modal-content{
+  display: block;
+  small{
+    font-size: 16px;
+  }
+  h1{
+    font-size: 16px;
+  }
+  button{
+    width: 50%;
+  }
   width: 500px;
-  height: 500px;
+  height: 250px;
 }
 /* Search Bar Styles */
 $primary: #0000FA;
