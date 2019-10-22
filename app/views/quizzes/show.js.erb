@@ -40,7 +40,7 @@ $.ajax({
             }else{
                 if(data.auth){
                     $.ajax({
-                        url: "/save_score",
+                        url: "<%= save_score_quiz_url %>",
                         method: "GET",
                         data: {
                             score: score,

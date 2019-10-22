@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   resources :users
   resources :quizzes do 
     get :search_quizzes, on: :member
+    get :save_score, on: :member
   end 
   resources :questions
   resource :answers
   resources :password_resets
   resources :quiz_categories
-  get "save_score", to: "quizzes#save_score"
+  # get "save_score", to: "quizzes#save_score"
   
 end
