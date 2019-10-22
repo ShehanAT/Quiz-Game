@@ -15,9 +15,17 @@
  */
  @import "bootstrap";
 
- $primary: #0000FA;
- $accent: #F5F6FD;
+ 
+
+/* Modal Styles */
+.modal-content{
+  width: 500px;
+  height: 500px;
+}
 /* Search Bar Styles */
+$primary: #0000FA;
+$accent: #F5F6FD;
+
 #quiz_search_bar{
     width: 300px;
     margin-top: 10px;
@@ -33,7 +41,7 @@ ul.search-history {
     
     &:hover {
       li {
-         opacity: .5;
+         opacity: 1;
       }
     }
     
@@ -41,7 +49,6 @@ ul.search-history {
       color: $primary;
       font-size: 16px;
       margin-bottom: 8px;
-      padding: 12px 24px;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -69,13 +76,6 @@ ul.search-history {
         position: absolute;
         z-index: 2;
         left: 0;
-      }
-      
-      &:before, &:after {
-        font-family: 'Font Awesome\ 5 Free';
-        font-weight: 900;
-        margin-right: 12px;
-        transition: all .3s ease-in-out;
       }
       
       &:hover {

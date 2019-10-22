@@ -72,7 +72,7 @@ class Quiz < ApplicationRecord
         return quizInfo
     end
 
-    def self.deleteQuiz(quiz_id)
+    def self.deleteQuiz(quiz_id, user_id)
         quiz = Quiz.find(quiz_id)
         quiz_category = quiz.category 
 
@@ -89,6 +89,10 @@ class Quiz < ApplicationRecord
             category = QuizCategory.find_by_category(quiz_category)
             category.destroy
         end 
+        
+        delete_scores_sql = "DELETE FROM scores WHERE quiz_id=#{quiz_id} AND user_id=#{user_id}"
+        ActiveRecord::Base.connection.execute(delete_scores_sql)
+
     end 
 
     def self.updateQuiz(params)

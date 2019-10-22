@@ -66,7 +66,7 @@ class QuizzesController < ApplicationController
     end     
 
     def destroy 
-        Quiz.deleteQuiz(params[:id])
+        Quiz.deleteQuiz(params[:id], session[:user_id])
         respond_to do |format|
             format.js { render "quizzes/js/delete_quiz"}
             format.json { render json: { status: true, message: "Quiz And All Associated Questions Deleted Successfully!", redirect: "/" } }
