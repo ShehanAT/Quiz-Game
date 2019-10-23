@@ -5,19 +5,22 @@
   color: #000000;
   text-decoration: none;
   background-color: #FFFFFF;
-  border-radius: 8px;
 }
 
 #register_link{
   position: absolute;
-  right: 40px;
   top: 10px;
+
+  font-size: 14px;
+  width: 105%;
+  right: 0px;
+  margin-right: 20px;
 }
 
 #navbar_login_link{
   margin-bottom: 50px;
   position: absolute;
-  right: 195px;
+  right: 165px;
   top: 0px;
 }
 
@@ -33,7 +36,13 @@
   width: 175%;
 }
 
+nav i.material-icons {
+  line-height: 35px;
+}
 
+#logout_link{
+  font-size: 14px;
+}
 
 
 
@@ -302,14 +311,14 @@ nav ul li {
         <% end %>
     </ul>
     <!-- right nav top -->
-    <ul class="nav navbar-nav pull-right" style="padding:9px;">
+    <ul class="nav navbar-nav pull-right">
         <% if !session[:user_id] %>
             <%= form_with(url: sessions_path) do |form| %>
                 <%= form.text_field :username, :placeholder => "Username", :id => "navbar-username" %>
                 <%= form.password_field :password, :placeholder => "Password", :id => "navbar-password" %>
-                <%= form.submit "Login", :class => "btn btn-sm btn-success", :id => "navbar_login_link" %>
+                <button class="btn waves-effect waves-light" id="navbar_login_link" type="submit">Login<i class='material-icons right'>vpn_key</i></button>
             <% end %>
-            <a href="/users/new" class="btn btn-sm btn-primary" id="register_link" ><span class="glyphicon glyphicon-certificate"></span> Register</a>
+            <a href="/users/new" class="waves-effect waves-light btn" id="register_link" >Register<i class='material-icons right'>group_add</i></a>
             <%= link_to "Forgot Password?", new_password_reset_path, :id => "password_reset_link" %>
         <% else %>
             <%= link_to "Log Out<i class='material-icons right'>arrow_forward</i>".html_safe, sessions_path(1), method: :delete, id: "logout_link", :class => "waves-effect waves-light btn" %>
