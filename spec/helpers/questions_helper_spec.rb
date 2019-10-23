@@ -2,7 +2,7 @@ module QuestionsHelper
 
     def capybara_new_quiz_question_no_image
         capybara_new_quiz_no_images
-        Capybara.page.first("input[id='add_questions_link']").click 
+        Capybara.page.first("a[id='add_questions_link']").click 
         sleep 0.1 
         Capybara.fill_in("question", with: "what is the circumference of the Earth?")
         Capybara.fill_in("answer1", with: "10000 miles")
@@ -14,7 +14,7 @@ module QuestionsHelper
     def capybara_new_quiz_question_image 
         capybara_new_quiz_images 
         sleep 0.5
-        Capybara.page.first("input[id='add_questions_link']").click 
+        Capybara.page.first("a[id='add_questions_link']").click 
         sleep 0.1 
         Capybara.fill_in("question", with: "what is the circumference of the Earth?")
         Capybara.fill_in("answer1", with: "10000 miles")
@@ -29,7 +29,7 @@ module QuestionsHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing1") 
-        Capybara.page.first("input[id='login_link']").click
+        Capybara.page.first("input[id='content_login_link']").click
         sleep 0.5
         Capybara.page.first("a[id='questions_link']").click
     end 

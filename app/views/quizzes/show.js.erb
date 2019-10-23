@@ -21,6 +21,8 @@ function shuffle(a) {
 }
 
 
+
+
 var quizIdParms = window.location.pathname
 $.ajax({
     url: quizIdParms,
@@ -63,8 +65,8 @@ $.ajax({
             });
         }
         function resetButtons(){
-            $(".answer_link").removeClass("wrongAnswer");
-            $(".answer_link").removeClass("correctAnswer");
+            $(".answer_link").removeClass("red");
+            $(".answer_link").removeClass("green");
             $(".answer_link").addClass("cyan");
         }
         function checkAnswer(e){
@@ -74,12 +76,12 @@ $.ajax({
                 for(var i = 0 ;i < 4; i++){
                     if($(`#answer${i+1}`).text() === correctAnswer.answer){
                         $(`#answer${i+1}`).removeClass("cyan");
-                        $(`#answer${i+1}`).addClass("correctAnswer");
+                        $(`#answer${i+1}`).addClass("green");
                     }
                 }
                 if($(`#${e.currentTarget.id}`).text() != correctAnswer.answer){
                     $(`#${e.currentTarget.id}`).removeClass("cyan");
-                    $(`#${e.currentTarget.id}`).addClass("wrongAnswer");
+                    $(`#${e.currentTarget.id}`).addClass("red");
                     return false;
                 }
                 return true;              
@@ -107,8 +109,6 @@ $.ajax({
                 var answer = currentChoices.pop();
                 $(`#answer${i+1}`).text(answer.answer);
                 $(`#answer${i+1}`).val(i+1);
-                $(`#answer${i+1}`).removeClass("wrongAnswer");
-                $(`#answer${i+1}`).removeClass("correctAnswer");
                 $(`#answer${i+1}`).addClass("cyan");
             }
             if(data.questionImages){
@@ -124,14 +124,13 @@ $.ajax({
         }    
 
         (function setFirstQuestion(){
+            $(".save_score_message").text("Your Score: " + score);
             currentQuestion = randomArr.pop();
             setCorrectAnswer();
             setupQuiz(data.quizContent, currentQuestion);
-        }());
 
-        (function setupInterface(){
-            
-            $("button").on("click ", function(e){
+            $("button").bind("click", function(e){
+                $("button").css("pointer-events", "none");
                 setCorrectAnswer();
                 if(checkAnswer(e)){
                     updateScore();
@@ -139,10 +138,9 @@ $.ajax({
                 setTimeout(function(){
                     resetButtons();
                     changeScene(e);
+                    $("button").css("pointer-events", "auto");
                 }, 2000);
-                
             });
-            $(".save_score_message").text("Your Score: " + score);
         }());
     }   
 })

@@ -6,7 +6,7 @@
     <h3 id="bio"><i class="heading_text">Bio:</i> <%= @user.bio %></h3>
 </div>
 <div class="btn_container">
-<%= button_to "Edit Profile", edit_user_path(@user.id), :id => "edit_user_link", :class => "btn btn-primary", method: :get %>
+<%= button_to "Edit Profile<i class='material-icons right'>edit</i>".html_safe, edit_user_path(@user.id), :id => "edit_user_link", :class => "btn", method: :get %>
 <button id="delete_account_link" class="btn btn-danger" type="button" onclick="showDeleteModal()">Delete This Account</button>
 <%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", method: :get %>
 </div>

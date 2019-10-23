@@ -25,14 +25,14 @@
 <% end %>
     <div class="btn_container" id="quiz_btn_container">
     <% if session[:user_id] %>
-        <%= button_to "Add More Questions", new_question_path, :id => "add_questions_link", :class => "btn btn-primary", method: :get %>
-        <%= button_to "Edit This Quiz", edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn btn-primary",method: :get %>
-        <button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz</button>
+        <%= link_to "Add Questions<i class='material-icons left'>add</i>".html_safe, new_question_path, :id => "add_questions_link", :class => "btn waves-effect waves-light" %>
+        <%= link_to "Edit This Quiz<i class='material-icons left'>edit</i>".html_safe, edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn waves-effect waves-light" %>
+        <button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete This Quiz<i class="material-icons left">delete</i></button>
     <% end %>
     <% if !@takeQuiz %>
-        <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :class => "btn btn-success", :id => "take_quiz_link", method: :get, :disabled => true %>
+        <%= link_to "Take this Quiz<i class='material-icons left'>play_arrow</i>".html_safe, quiz_path(@quiz.id), :remote => true, :class => "btn waves-effect waves-light", :id => "take_quiz_link", :disabled => true %>
     <% else %>
-        <%= button_to "Take this Quiz!", quiz_path(@quiz.id), :remote => true, :class => "btn btn-success", :id => "take_quiz_link", method: :get %>
+        <%= link_to "Take this Quiz<i class='material-icons left'>play_arrow</i>".html_safe, quiz_path(@quiz.id), :remote => true, :class => "btn waves-effect waves-light", :id => "take_quiz_link"  %>
     <% end %>
     <%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", method: :get %>
     </div>

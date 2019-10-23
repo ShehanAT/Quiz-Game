@@ -1,14 +1,5 @@
 module ApplicationHelper
-#     <li> 
-#     <label for="drop-1" class="toggle"></label>
-#     <a href="#">Service</a>
-#     <input type="checkbox" id="drop-1"/>
-#     <ul>
-#       <li><a href="#">Service 1</a></li>
-#       <li><a href="#">Service 2</a></li>
-#       <li><a href="#">Service 3</a></li>
-#     </ul>
-#   </li>
+
     def navbar_quiz_links 
         quiz_category_id_sql = "SELECT quiz_categories.id, quiz_categories.category FROM quiz_categories;"
         quiz_category_ids = ActiveRecord::Base.connection.execute(quiz_category_id_sql)

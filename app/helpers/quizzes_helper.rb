@@ -33,10 +33,10 @@ module QuizzesHelper
             @content << "<h3 id='current_question' style='display:none;'>current_question</h3>"
             @content << "<img id='current_question_img' alt='question image' style='display: none;'/>"
             @content << "<div class='choice_btn_section'>"
-            @content << "<button id='answer1' style='display:none' class='answer_link btn-gradient cyan large'>answer1</button>"
-            @content << "<button id='answer2' style='display:none' class='answer_link btn-gradient cyan large'>answer2</button>"
-            @content << "<button id='answer3' style='display:none' class='answer_link btn-gradient cyan large'>answer3</button>"
-            @content << "<button id='answer4' style='display:none' class='answer_link btn-gradient cyan large'>answer4</button>"
+            @content << "<button id='answer1' style='display:none' class='answer_link btn'>answer1</button>"
+            @content << "<button id='answer2' style='display:none' class='answer_link btn'>answer2</button>"
+            @content << "<button id='answer3' style='display:none' class='answer_link btn'>answer3</button>"
+            @content << "<button id='answer4' style='display:none' class='answer_link btn'>answer4</button>"
             @content << "</div></div>"
             return @content.html_safe
         # end 
@@ -48,8 +48,8 @@ module QuizzesHelper
             @content = content_tag(:h3, "Quiz Finished!", :id => "end_quiz_message", :style => "display:none")
             @content << content_tag(:h4, "Your score: ", :id => "end_score_message", :style => "display:none" )
             @content << content_tag(:h4, " ", :id => "save_score_status", :style => "display:none" )
-            @content << content_tag(:button, "Replay Quiz", :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none", :class => "btn btn-success" )
-            @content << content_tag(:button, "Back To Homepage", :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none", :class => "btn btn-primary" )
+            @content << content_tag(:button, "Replay Quiz<i class='material-icons left'>replay</i>".html_safe, :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none", :class => "btn waves-effect waves-light" )
+            @content << content_tag(:button, "Back To Homepage<i class='material-icons left'>home</i>".html_safe, :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none", :class => "btn waves-effect waves-light" )
         end 
     end 
 

@@ -20,10 +20,9 @@
     <%= form.select :"contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>"), :class => "form-control" %>
     </div>
     <div class="btn_container">
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit_new_quiz_link" >Submit
     <i class="material-icons right">send</i>
     </button>
-    <% if false %><%= form.submit "Save and Submit", :type => "submit", :id => "submit_new_quiz_link", :class => "btn waves-effect waves-light" %><% end %>
     <%= link_to "Back", root_url, :id => "back_link", :class => "btn btn-dark" %>
     </div>
 <% end %>

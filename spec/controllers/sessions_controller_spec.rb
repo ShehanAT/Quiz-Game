@@ -56,7 +56,7 @@ RSpec.describe SessionHelper do
         capybara_logout 
         expect { Capybara.page.first("a[id='questions_link']") }.to raise_error(Capybara::ExpectationNotMet)
         Capybara.page.first("a[class='quiz_link']").click 
-        expect { Capybara.page.first("input[id='add_questions_link']") }.to raise_error(Capybara::ExpectationNotMet)
+        expect { Capybara.page.first("a[id='add_questions_link']") }.to raise_error(Capybara::ExpectationNotMet)
     end 
 
     it "quizzes show view should display high score for quiz" do 
