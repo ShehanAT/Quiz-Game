@@ -19,3 +19,5 @@
 //= require jquery.remotipart
 //= require popper
 //= require bootstrap
+//= require materialize-sprockets
+//= require materialize

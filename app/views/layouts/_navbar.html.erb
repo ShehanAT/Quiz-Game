@@ -1,6 +1,30 @@
 
 <style>
+/* Top Navbar Styles  */
+.top_nav_link:hover{
+  color: #000000;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
 
+
+
+
+
+/* Bottom Navbar Styles */
+
+.btn{
+  background-color: #000000;
+}
+.btn:hover{
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.menu{
+  position: absolute;
+}
 navbar-bottom {
   z-index: 1;
   position: absolute;
@@ -27,7 +51,7 @@ navbar-bottom {
     min-width: 100%;
     margin-bottom: 0px;
     margin-right: 0px;
-    background-color: #4D5061;
+    background-color: #BC4639;
 }
 
 .pull-left{
@@ -35,7 +59,7 @@ navbar-bottom {
 }
 
 .pull-left li{
-    background-color: #4D5061;
+    background-color: #BC4639;
 }
 
 .pull-right{
@@ -62,8 +86,7 @@ navbar-bottom {
 }
 
 .navbar-top {
-    background: #4D5061;
-    border-bottom: 4px solid #60B078;
+    background: #BC4639;
     color: #FFF;
 }
 
@@ -84,7 +107,7 @@ p { text-align: center; }
 nav {
   margin: 0;
   padding: 0;
-  background-color: #9b111e;
+  background-color: #E85A4F;
 }
 
 #logo {
@@ -113,7 +136,7 @@ nav ul li {
   margin: 0px;
   display: inline-block;
   float: left;
-  background-color: #9b111e;
+  background-color: #E85A4F;
 }
 
 nav a {
@@ -125,9 +148,8 @@ nav a {
   text-decoration: none;
 }
 
-nav ul li ul li:hover { background: #000000; }
 
-nav a:hover { background-color: #ffffff; }
+
 
 nav ul ul {
   display: none;
@@ -153,7 +175,7 @@ nav ul ul ul li {
   left: 170px;
 }
 
-li > a:after { content: ' +'; }
+li > a:after { content: ' ↓'; }
 li > a:only-child:after { content: ''; }
 
 .dropdown-item {
@@ -242,11 +264,12 @@ nav ul li {
 <div class="nav_top_container">
     <!-- left nav top -->
     <ul class="nav navbar-nav pull-left">
-        <li><a href="/">Home</a></li>
+        <li><a href="/" class="top_nav_link waves-effect waves-light btn" >Home<i class='material-icons left'>home</i></a></li>
         <% if session[:user_id] %>
-            <li><%= link_to "Add New Quiz", new_quiz_url, :id => "new_quiz_link" %></li>
-            <li><%= link_to "User Profile", user_path(session[:user_id]), id: "user_profile_link" %></li>
-            <li><%= link_to "Questions", questions_path, id: "questions_link" %></li>
+        <% if false %><% end %>
+            <li><%= link_to "Add New Quiz<i class='material-icons left'>add</i>".html_safe, new_quiz_url, :id => "new_quiz_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
+            <li><%= link_to "User Profile<i class='material-icons left'>person</i>".html_safe, user_path(session[:user_id]), id: "user_profile_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
+            <li><%= link_to "Questions<i class='material-icons left'>question_answer</i>".html_safe, questions_path, id: "questions_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
             <li><input type="text" id="quiz_search_bar" onkeyup="searchQuizzes(this)" placeholder="&#128269;Search For Quizzes..." class="form-control" /><div id="search_results_section"></div></li>
         <% end %>
     </ul>
@@ -261,7 +284,7 @@ nav ul li {
             <a href="/users/new" class="btn btn-sm btn-primary" id="register_link" ><span class="glyphicon glyphicon-certificate"></span> Register</a>
             <%= link_to "Forgot Password?", new_password_reset_path, :id => "password_reset_link" %>
         <% else %>
-            <%= link_to "Log Out", sessions_path(1), method: :delete, id: "logout_link" %>
+            <%= link_to "Log Out<i class='material-icons right'>arrow_forward</i>".html_safe, sessions_path(1), method: :delete, id: "logout_link", :class => "waves-effect waves-light btn" %>
         <% end %>
     </ul>
 </div>

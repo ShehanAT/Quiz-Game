@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+
+@import 'materialize';
 
  
 
@@ -38,7 +39,6 @@ $accent: #F5F6FD;
 
 #quiz_search_bar{
     width: 300px;
-    margin-top: 10px;
 }
 
 ul.search-history {
@@ -48,12 +48,6 @@ ul.search-history {
     padding: 0;
     margin: 16px 0 0 0;
     width: 100%;
-    
-    &:hover {
-      li {
-         opacity: 1;
-      }
-    }
     
     li {
       color: $primary;
@@ -65,11 +59,7 @@ ul.search-history {
       position: relative;
       transition: all .3s ease-in-out;
       border-radius: 8px;
-      
-      &:hover {
-        opacity: 1;
-      }
-      
+
       span.text {
         position: relative;
         z-index: 3;
@@ -87,18 +77,21 @@ ul.search-history {
         z-index: 2;
         left: 0;
       }
-      
-      &:hover {
-        background: rgba($primary, .1);
-        
-        &:after {
-          opacity: 1;
-        }
+      &:hover { 
+        background-color: #ffffff;
+        text-decoration: none;
+      }
+      a:hover{
+        color: #000000;
       }
     }
 }
 
 /* Miscelleneous */
+select{
+  display: block;
+
+}
 .heading_text{
     color: #808080;
 }
@@ -108,8 +101,9 @@ label {
 }
 
 .quiz_category_link:hover{
-    // color: #000000;
+    color: #000000;
     text-decoration: none;
+    background-color: #FFFFFF;
 }
 
 .back-btn{

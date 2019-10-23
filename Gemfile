@@ -35,11 +35,15 @@ gem 'figaro'
 gem 'remotipart', '~> 1.4.3'
 
 gem "google-cloud-storage", "~> 1.11", require: false
+
+gem 'materialize-sass', '~> 1.0.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+
 
 gem 'activerecord-session_store', '~> 1.1.3'
 
