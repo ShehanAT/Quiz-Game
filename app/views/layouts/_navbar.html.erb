@@ -33,7 +33,7 @@
 
 #navbar-username{
   position: absolute;
-  right: 550px;
+  right: 520px;
   width: 175%;
   top: 10px;
 }
@@ -66,6 +66,42 @@ navbar-bottom {
   z-index: 1;
   position: absolute;
   width: 100%;
+}
+
+/* Mobile Navbar Styles*/
+#mobile_menu_first{
+  margin-left: 10px;
+}
+
+.mobile-menu ul li{
+  margin-left: 0px;
+}
+
+.navbar-mobile .btn {
+    margin-left: 0px;
+}
+
+.mobile-menu{
+  margin: 0px;
+}
+
+.mobile-menu > li:not(:first-child){
+  margin: 10px;
+}
+
+
+
+
+
+
+
+.navbar-mobile{
+  display: none;
+  background-color: #E85A4F;
+}
+
+.navbar_mobile_bottom{
+  display: none;
 }
 
 #password_reset_link{
@@ -223,8 +259,11 @@ li > a:only-child:after { content: ''; }
 /* Media Queries
 --------------------------------------------- */
 
-@media all and (max-width : 768px) {
+@media all and (max-width : 900px) {
 
+#drop{
+  display: block;
+}
 #logo {
   display: block;
   padding: 0;
@@ -236,6 +275,7 @@ li > a:only-child:after { content: ''; }
 nav { margin: 0; }
 
 .toggle + a,
+  .navbar-top,
  .menu { display: none; }
 
 .toggle {
@@ -305,7 +345,6 @@ nav ul li {
     <ul class="nav navbar-nav pull-left">
         <li><a href="/" class="top_nav_link waves-effect waves-light btn" >Home<i class='material-icons left'>home</i></a></li>
         <% if session[:user_id] %>
-        <% if false %><% end %>
             <li><%= link_to "Add New Quiz<i class='material-icons left'>add</i>".html_safe, new_quiz_url, :id => "new_quiz_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
             <li><%= link_to "User Profile<i class='material-icons left'>person</i>".html_safe, user_path(session[:user_id]), id: "user_profile_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
             <li><%= link_to "Questions<i class='material-icons left'>question_answer</i>".html_safe, questions_path, id: "questions_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
@@ -330,16 +369,56 @@ nav ul li {
 
 </nav>
 <nav class="navbar-bottom">
-  <label for="drop" class="toggle">&#8801; Menu</label>
-  <input type="checkbox" id="drop" />
+  <a href="javascript:void(0);" class="icon" onclick="showMobileNav()" id="drop">&#9776;</a>
+  
   <ul class="menu">
     <%= navbar_quiz_links %>
   </ul>
 </nav>
+
+<div class="navbar-mobile">
+    <ul class="mobile-menu">
+      <li id='mobile_menu_first'><a href="/" class="waves-effect waves-light btn" >Home<i class='material-icons left'>home</i></a></li>
+      <% if session[:user_id] %>
+        <li><%= link_to "Add New Quiz<i class='material-icons left'>add</i>".html_safe, new_quiz_url, :class => "waves-effect waves-light btn" %></li>
+        <li><%= link_to "User Profile<i class='material-icons left'>person</i>".html_safe, user_path(session[:user_id]), :class => "waves-effect waves-light btn" %></li>
+        <li><%= link_to "Questions<i class='material-icons left'>question_answer</i>".html_safe, questions_path, :class => "waves-effect waves-light btn" %></li>
+        <li><input type="text" onkeyup="searchQuizzes(this)" placeholder="&#128269;Search For Quizzes..." class="form-control" /><div id="search_results_section"></div></li>
+        <li><%= link_to "Log Out<i class='material-icons right'>arrow_forward</i>".html_safe, sessions_path(1), method: :delete, :class => "waves-effect waves-light btn" %></li>
+      <% else %>
+        <li>
+        <%= form_with(url: sessions_path) do |form| %>
+          <%= form.text_field :username, :placeholder => "Username" %>
+          <%= form.password_field :password, :placeholder => "Password" %>
+          <button class="btn waves-effect waves-light" type="submit" >Login<i class='material-icons right'>vpn_key</i></button>
+        <% end %>
+        </li>
+        <li>
+          <a href="/users/new" class="waves-effect waves-light btn" >Register<i class='material-icons right'>group_add</i></a>
+        </li>
+        <li>
+          <%= link_to "Forgot Password?", new_password_reset_path %>
+        </li>
+        <li>
+          <input type="text" onkeyup="searchQuizzes(this)" placeholder="&#128269;Search For Quizzes..." class="form-control" /><div id="search_results_section"></div>
+        </li>
+      <% end %>
+      <li>
+          <label>Quizzes</label>
+      </li>
+      <%= navbar_quiz_links %>
+    </ul>
+</div>
 <script>
   $(window).click(function() {
       $("#search_results_section").html("")
   });
+
+  function showMobileNav(){
+    $(".navbar-mobile").css("display", "block");
+    $(".navbar_mobile_bottom").css("display", "block");
+    $("#content").css("display", "none");
+  }
 
   $("#search_results_section").on("click", function(event){
       event.stopPropagation();
