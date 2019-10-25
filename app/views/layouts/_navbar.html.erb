@@ -51,6 +51,11 @@ nav i.material-icons {
 
 /* Bottom Navbar Styles */
 
+.navbar-bottom label {
+  display: none;
+}
+
+
 .btn{
   background-color: #000000;
 }
@@ -250,7 +255,6 @@ nav ul ul ul li {
   left: 170px;
 }
 
-li > a:after { content: ' ↓'; }
 li > a:only-child:after { content: ''; }
 
 .dropdown-item {
@@ -261,6 +265,10 @@ li > a:only-child:after { content: ''; }
 
 @media all and (max-width : 900px) {
 
+.navbar-bottom label {
+  display: block;
+  margin-left: 10px;
+}
 #drop{
   display: block;
 }
@@ -274,8 +282,8 @@ li > a:only-child:after { content: ''; }
 
 nav { margin: 0; }
 
-.toggle + a,
-  .navbar-top,
+
+.navbar-top,
  .menu { display: none; }
 
 .toggle {
@@ -369,7 +377,8 @@ nav ul li {
 
 </nav>
 <nav class="navbar-bottom">
-  <a href="javascript:void(0);" class="icon" onclick="showMobileNav()" id="drop">&#9776;</a>
+  <label for="drop">&#9776;</label>
+  <input type="checkbox" class="icon" onclick="showMobileNav(this)" id="drop"/>
   
   <ul class="menu">
     <%= navbar_quiz_links %>
@@ -414,10 +423,16 @@ nav ul li {
       $("#search_results_section").html("")
   });
 
-  function showMobileNav(){
-    $(".navbar-mobile").css("display", "block");
-    $(".navbar_mobile_bottom").css("display", "block");
-    $("#content").css("display", "none");
+  function showMobileNav(e){
+    if(e.checked){
+      $(".navbar-mobile").css("display", "block");
+      $(".navbar_mobile_bottom").css("display", "block");
+      $("#content").css("display", "none");
+    }else{
+      $(".navbar-mobile").css("display", "none");
+      $(".navbar_mobile_bottom").css("display", "none");
+      $("#content").css("display", "block");
+    }
   }
 
   $("#search_results_section").on("click", function(event){

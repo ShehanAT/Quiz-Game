@@ -25,7 +25,7 @@ RSpec.describe QuestionsHelper do
     
     it "back button should redirect to root_url" do 
         capybara_questions_index
-        Capybara.page.first("input[id='homepage_link']").click 
+        Capybara.page.first("a[class='btn waves-effect waves-light back_link']").click 
         sleep 0.1
         expect(Capybara.page.current_path).to eq("/")
     end 
@@ -74,7 +74,7 @@ RSpec.describe QuestionsHelper do
         expect(Capybara.page.first("input[id='answer2']").value).not_to eq("")
         expect(Capybara.page.first("input[id='answer3']").value).not_to eq("")
         expect(Capybara.page.first("input[id='answer4']").value).not_to eq("")
-        Capybara.page.first("a[id='back_link']").click
+        Capybara.page.first("a[class='back_link btn waves-light waves-effect']").click
         expect(Capybara.page.current_path).not_to eq("/questions/1/edit")
     end 
 

@@ -6,7 +6,7 @@ module QuizzesHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing1") 
-        Capybara.page.first("input[id='content_login_link']").click
+        Capybara.page.first("button[id='content_login_link']").click
         Capybara.page.first("a[id='new_quiz_link']").click 
         Capybara.fill_in("quiz_name", with: "testing1")
         Capybara.fill_in("quiz_category", with: "testing1")
@@ -22,7 +22,7 @@ module QuizzesHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing1") 
-        Capybara.page.first("input[id='content_login_link']").click
+        Capybara.page.first("button[id='content_login_link']").click
         Capybara.page.first("a[id='new_quiz_link']").click 
         Capybara.fill_in("quiz_name", with: "testing1")
         Capybara.fill_in("quiz_category", with: "testing1")
@@ -36,7 +36,7 @@ module QuizzesHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing1") 
-        Capybara.page.first("input[id='content_login_link']").click
+        Capybara.page.first("button[id='content_login_link']").click
         sleep 0.1
         Capybara.page.first("a[class='quiz_link']").click 
         sleep 0.1

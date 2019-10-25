@@ -97,7 +97,7 @@ RSpec.describe QuizzesHelper do
 
     it "new quiz section should redirect to quiz show action" do
         capybara_new_quiz_no_images 
-        Capybara.page.first("input[type='submit']").click
+        # Capybara.page.first("input[type='submit']").click
         sleep 1
         expect(Capybara.page.current_path).to eq("/quizzes/5")
     end
@@ -126,7 +126,7 @@ RSpec.describe QuizzesHelper do
     it "/quizzes/:id should redirect to quizzes_path" do 
         capybara_login 
         Capybara.page.first("a[class='quiz_link']").click 
-        Capybara.page.first("input[id='back_link']").click 
+        Capybara.page.first("a[class='btn waves-effect waves-light back_link']").click 
         expect(Capybara.page.current_path).to eq("/") 
     end 
 

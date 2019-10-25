@@ -20,7 +20,7 @@ RSpec.describe UserHelper do
     end 
 
     it "/users/:id should display user info and redirect to /users/:id/edit" do 
-        buttons = ["input[id='edit_user_link']", "input[id='back_link']"]
+        buttons = ["a[id='edit_user_link']", "a[class='btn waves-effect waves-light back_link']"]
         for i in 0...2
             capybara_login
             Capybara.page.first("a[id='user_profile_link'").click 
@@ -46,7 +46,7 @@ RSpec.describe UserHelper do
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
         sleep 0.5
-        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("a[id='edit_user_link']").click 
         Capybara.page.first("button[id='change_password_link']").click 
         Capybara.page.first("button[id='update_password_link']").click 
         expect(Capybara.page.first("div[id='password_errors']").text).not_to eq("")
@@ -55,15 +55,15 @@ RSpec.describe UserHelper do
     it "/users/:id/edit back link should work" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
-        Capybara.page.first("input[id='edit_user_link']").click 
-        Capybara.page.first("a[id='back_link']").click 
+        Capybara.page.first("a[id='edit_user_link']").click 
+        Capybara.page.first("a[class='back_link btn waves-light waves-effect']").click 
         expect(Capybara.page.current_path).to eq("/users/1")
     end 
 
     it "/users/:id/edit shoud display alert on valid password change" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
-        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("a[id='edit_user_link']").click 
         Capybara.page.first("button[id='change_password_link']").click 
         Capybara.fill_in("current_password", with: "testing1")
         Capybara.fill_in("new_password", with: "admin")
@@ -77,7 +77,7 @@ RSpec.describe UserHelper do
     it "/users/:id/edit should display alert on valid username change" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
-        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("a[id='edit_user_link']").click 
         Capybara.page.first("button[id='current_username']").click 
         Capybara.fill_in("new_username", with: "testing123")
         Capybara.page.first("button[id='update_username_link']").click
@@ -89,7 +89,7 @@ RSpec.describe UserHelper do
     it "/users/:id/edit should display alert on valid email change" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
-        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("a[id='edit_user_link']").click 
         Capybara.page.first("button[id='current_email']").click 
         Capybara.page.first("button[id='update_email_link']").click
         sleep 3
@@ -100,7 +100,7 @@ RSpec.describe UserHelper do
     it "/users/:id/edit should display alert on valid full name change" do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link']").click 
-        Capybara.page.first("input[id='edit_user_link']").click 
+        Capybara.page.first("a[id='edit_user_link']").click 
         Capybara.page.first("button[id='current_fullName']").click 
         Capybara.fill_in("new_fullName", with:"Shehan Atuk")
         Capybara.page.first("button[id='update_fullName_link']").click

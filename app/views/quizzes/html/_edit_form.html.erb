@@ -18,6 +18,6 @@
     <%= hidden_field_tag :quiz_id, @quiz.id %>
     <div class="btn_container">
         <%= form.submit "Update Quiz", :class => "btn btn-primary" %> 
-        <%= link_to "Back", quiz_path(@quiz.id), id:'back_link', :class => "btn btn-dark" %>
+        <%= link_to "Back", quiz_path(@quiz.id), :class => "btn waves-effect waves-light back_link" %>
     </div>
     <% end %>

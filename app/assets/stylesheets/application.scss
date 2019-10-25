@@ -134,5 +134,10 @@ input, button{
 }
 
 .btn_container{
-	display: flex;
+  display: block;
+  width: 60%;
+}
+
+.gameplay_back_link{
+  width: 10%;
 }

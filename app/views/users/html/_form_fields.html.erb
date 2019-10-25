@@ -5,15 +5,15 @@
         <div id="username_errors"></div>
         <div id="current_username_section">
             <label for="current_username"><i class="heading_text">Username:</i> <%= @user.username %></label>
-            <button type="button" id="current_username" class="username_field btn btn-primary" onclick="changeUsername()" >Change Username</button>
+            <button type="button" id="current_username" class="username_field btn waves-effect waves-light" onclick="changeUsername()" >Change Username<i class="material-icons left">mode_edit</i></button>
         </div>
         <div style="display: none;" id="change_username_section">
             <label for="new_username">New Username:</label>
             <input type="text" id="new_username" class="username_field" />
                 
             <input type="hidden" name="hidden_current_username" value="<%= @user.username %>" id="hidden_current_username" />
-            <button onclick="updateUsername()" type="button" id="update_username_link" class="btn btn-primary" >Update Username</button>
-            <button onclick="cancelUsername()" type="button"  id="cancel_username_link" class="btn btn-primary" >Cancel</button>
+            <button onclick="updateUsername()" type="button" id="update_username_link" class="btn waves-effect waves-light" >Update Username<i class="material-icons left">update</i></button>
+            <button onclick="cancelUsername()" type="button"  id="cancel_username_link" class="btn waves-effect waves-light" >Cancel<i class="material-icons left">cancel</i></button>
         </div>  
     </div>
     <br />
@@ -21,15 +21,15 @@
         <div id="email_errors"></div>
         <div id="current_email_section">
             <label for="current_email"><i class="heading_text">Email:</i> <%= @user.email %></label>
-            <button type="button" id="current_email" class="email_field btn btn-primary" onclick="changeEmail()" >Change Email</button>
+            <button type="button" id="current_email" class="email_field btn waves-effect waves-light" onclick="changeEmail()" >Change Email<i class="material-icons left">mode_edit</i></button>
         </div>
         <div style="display: none;" id="change_email_section">
             <label for="new_email">New Email:</label>
             <input type="text" id="new_email" class="email_field" />
                 
             <input type="hidden" name="hidden_current_email" value="<%= @user.email %>" id="hidden_current_email" />
-            <button onclick="updateEmail()" type="button" id="update_email_link" class="btn btn-primary" >Update Email</button>
-            <button onclick="cancelEmail()" type="button"  id="cancel_email_link" class="btn btn-primary" >Cancel</button>
+            <button onclick="updateEmail()" type="button" id="update_email_link" class="btn waves-effect waves-light" >Update Email<i class="material-icons left">update</i></button>
+            <button onclick="cancelEmail()" type="button"  id="cancel_email_link" class="btn waves-effect waves-light" >Cancel<i class="material-icons left">cancel</i></button>
         </div>  
     </div>
     <br />
@@ -37,15 +37,15 @@
         <div id="fullName_errors"></div>
         <div id="current_fullName_section">
             <label for="current_fullName"><i class="heading_text">Full Name:</i> <%= @user.fullName %></label>
-            <button type="button" id="current_fullName" class="fullName_field btn btn-primary" onclick="changeFullName()" class="btn btn-primary" >Change Full Name</button>
+            <button type="button" id="current_fullName" class="fullName_field btn waves-effect waves-light" onclick="changeFullName()" >Change Full Name<i class="material-icons left">mode_edit</i></button>
         </div>
         <div style="display: none;" id="change_fullName_section">
             <label for="new_fullName">New Full Name:</label>
             <input type="text" id="new_fullName" class="fullName_field" />
                 
             <input type="hidden" name="hidden_current_fullName" value="<%= @user.fullName %>" id="hidden_current_fullName" />
-            <button onclick="updateFullName()" type="button" id="update_fullName_link" class="btn btn-primary" >Update Full Name</button>
-            <button onclick="cancelFullName()" type="button"  id="cancel_fullName_link" class="btn btn-primary" >Cancel</button>
+            <button onclick="updateFullName()" type="button" id="update_fullName_link" class="btn waves-effect waves-light" >Update Full Name<i class="material-icons left">update</i></button>
+            <button onclick="cancelFullName()" type="button"  id="cancel_fullName_link" class="btn waves-effect waves-light" >Cancel<i class="material-icons left">cancel</i></button>
         </div>  
     </div>
     <br />
@@ -62,8 +62,8 @@
         <input type="password" id="new_password_confirm" class="password_field" />
         
         <input type="hidden" name="hidden_user_id" value="#{@user.id}" />
-        <button onclick="updatePassword()" type="button" id="update_password_link" class="btn btn-primary" >Update Password</button>
-        <button onclick="cancelPassword()" type="button"  id="cancel_password_link" class="btn btn-primary" >Cancel</button>
+        <button onclick="updatePassword()" type="button" id="update_password_link" class="btn waves-effect waves-light" >Update Password<i class="material-icons left">update</i></button>
+        <button onclick="cancelPassword()" type="button"  id="cancel_password_link" class="btn waves-effect waves-light" >Cancel<i class="material-icons left">cancel</i></button>
     </div>
     <br />
     <%= hidden_field_tag "#{@user.id}", @user.id, { :id => "hidden_user_id" } %>
@@ -73,7 +73,7 @@
     <%= hidden_field_tag "#{@user.bio}", @user.bio, { :id => "hidden_user_bio"} %>
 
     <div class="btn_container">
-    <button type="button" onclick="changePassword()" id="change_password_link" class="btn btn-primary" >Change Password</button>
-    <%= link_to "Back", user_path(@user.id), id:'back_link', :class => "btn btn-dark back-btn", method: :get %>
+    <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, user_path(@user.id), :class => "back_link btn waves-light waves-effect" %>
+    <button type="button" onclick="changePassword()" id="change_password_link" class="btn waves-effect waves-light" >Change Password<i class="material-icons left">security</i></button>
     </div>
     <% end %>

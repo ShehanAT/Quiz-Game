@@ -7,6 +7,6 @@
     <%= form.label :password, "Password: " %>
     <%= form.password_field :password, :id => "login_password" %>
     <br />
-    <%= form.submit( "Login", class: "btn btn-primary", :id => "content_login_link") %>
+    <button class="btn waves-effect waves-light" id="content_login_link" type="submit" >Login<i class='material-icons left'>vpn_key</i></button>
 <% end %>
-<%= button_to "Back", root_url, :id => "back_link", :class => "btn btn-dark", :type => "button", method: :get %>
+<%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>

@@ -5,7 +5,7 @@ module SessionsHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing") 
-        Capybara.page.first("input[id='content_login_link']").click
+        Capybara.page.first("button[id='content_login_link']").click
         sleep 0.5
         Capybara.page.driver.browser.switch_to.alert.accept
         sleep 0.5
@@ -16,7 +16,7 @@ module SessionsHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing1") 
-        Capybara.page.first("input[id='content_login_link']").click
+        Capybara.page.first("button[id='content_login_link']").click
         sleep 0.1
         Capybara.page.first("a[id='logout_link']").click 
         sleep 0.1
@@ -27,7 +27,7 @@ module SessionsHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing1") 
-        Capybara.page.first("input[id='content_login_link']").click
+        Capybara.page.first("button[id='content_login_link']").click
         sleep 0.5
     end
 
@@ -36,7 +36,7 @@ module SessionsHelper
         Capybara.visit("/sessions/new")
         Capybara.fill_in("login_username", with: "testing1")
         Capybara.fill_in("login_password", with: "testing1") 
-        Capybara.page.first("input[id='content_login_link']").click
+        Capybara.page.first("button[id='content_login_link']").click
         sleep 0.5
     end 
 end 

@@ -20,9 +20,9 @@
     <%= form.select :"contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>"), :class => "form-control" %>
     </div>
     <div class="btn_container">
+    <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
     <button class="btn waves-effect waves-light" type="submit" name="action" id="submit_new_quiz_link" >Submit
     <i class="material-icons right">send</i>
     </button>
-    <%= link_to "Back", root_url, :id => "back_link", :class => "btn btn-dark" %>
     </div>
 <% end %>

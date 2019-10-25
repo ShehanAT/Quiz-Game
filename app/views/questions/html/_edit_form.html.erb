@@ -32,6 +32,6 @@
     <div class="hidden" id="question_json" ><%= @question.to_json %></div>
     <div class="btn_container">
         <%= form.submit "Update Question", :id => "update_question_link", :class => "btn btn-primary" %>
-        <%= link_to "Back", question_path(@question.id), id:'back_link', :class => "btn btn-dark" %>
-    </div>
+        <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "back_link btn waves-light waves-effect" %>
+        </div>
     <% end %>

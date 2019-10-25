@@ -27,7 +27,6 @@ module QuizzesHelper
   
 
     def render_answer_links
-        # content_tag(:div, :id => "quiz_gameplay_section") do 
             @content = "<div id='quiz_gameplay_section'>"
             @content << "<h3 class='save_score_message' style='display:none;'>Your score: </h3>"
             @content << "<h3 id='current_question' style='display:none;'>current_question</h3>"
@@ -39,8 +38,6 @@ module QuizzesHelper
             @content << "<button id='answer4' style='display:none' class='answer_link btn'>answer4</button>"
             @content << "</div></div>"
             return @content.html_safe
-        # end 
-       
     end 
 
     def render_end_game_message
