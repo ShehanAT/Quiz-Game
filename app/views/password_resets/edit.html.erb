@@ -14,6 +14,7 @@
 <%= form.password_field(:confirm_password) %>
 
 <%= form.hidden_field(:password_reset_token) %>
-<%= form.submit "Update Password" %>
+<button class="btn waves-effect waves-light" type="submit" >Update Password<i class="material-icons left">update</i></button>
+<% if false %><%= form.submit "Update Password" %><% end %>
 
 <% end %>

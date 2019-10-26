@@ -23,14 +23,14 @@ RSpec.describe SessionHelper do
 
     it "should show error msg on empty email submit " do 
         capybara_password_reset 
-        Capybara.page.first("input[id='reset_password_submit']").click
+        Capybara.page.first("button[id='reset_password_submit']").click
         expect(Capybara.page.first("p[class='error']").text).to eq("Email Not Found! Please Enter A Valid Email")
     end 
 
     it "should redirect to root url on email submit" do 
         capybara_password_reset
         Capybara.fill_in("email", with: "shehanatuk@gmail.com")
-        Capybara.page.first("input[id='reset_password_submit']").click 
+        Capybara.page.first("button[id='reset_password_submit']").click 
         sleep 0.5
         expect(Capybara.page.current_path).to eq("/")
     end 
