@@ -12,10 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
 
 @import 'materialize';
-
+@import "social-share-button";
  
 
 /* Modal Styles */
@@ -157,3 +158,4 @@ input, button{
 .modal_btn_container > button{
   width: 100%;
 }
+

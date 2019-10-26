@@ -43,7 +43,7 @@ gem 'materialize-sass', '~> 1.0.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-
+gem 'social-share-button', '0.2.1'
 
 gem 'activerecord-session_store', '~> 1.1.3'
 

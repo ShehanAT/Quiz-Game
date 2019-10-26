@@ -21,3 +21,4 @@
 //= require bootstrap
 //= require materialize-sprockets
 //= require materialize
+//= require social-share-button

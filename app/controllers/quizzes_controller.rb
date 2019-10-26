@@ -44,12 +44,12 @@ class QuizzesController < ApplicationController
             @highScore = Score.eval_highest_score(session[:quiz_id], session[:user_id])
             respond_to do |format|
                 format.html { render "show" }
-                format.json { render json: {quizContent: @quizContent, quiz: @quiz, auth: true } }
+                format.json { render json: { quizContent: @quizContent, quiz: @quiz, auth: true } }
             end 
         else 
             respond_to do |format|
                 format.html { render "show" }
-                format.json { render json: {quizContent: @quizContent, quiz: @quiz, auth: false } }
+                format.json { render json: { quizContent: @quizContent, quiz: @quiz, auth: false } }
             end 
         end 
     end 

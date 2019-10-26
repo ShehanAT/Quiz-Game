@@ -41,12 +41,14 @@ module QuizzesHelper
     end 
 
     def render_end_game_message
-        content_tag(:div, :id => "quiz_end_game_section") do 
+        content_tag(:div, :id => "quiz_end_game_section", :style => "display: none;") do 
             @content = content_tag(:h3, "Quiz Finished!", :id => "end_quiz_message", :style => "display:none")
-            @content << content_tag(:h4, "Your score: ", :id => "end_score_message", :style => "display:none" )
-            @content << content_tag(:h4, " ", :id => "save_score_status", :style => "display:none" )
+            @content << content_tag(:h6, "Your score: ", :id => "end_score_message", :style => "display:none" )
+            @content << content_tag(:h6, " ", :id => "save_score_status", :style => "display:none" )
             @content << content_tag(:button, "Replay Quiz<i class='material-icons left'>replay</i>".html_safe, :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none", :class => "btn waves-effect waves-light" )
             @content << content_tag(:button, "Back To Homepage<i class='material-icons left'>home</i>".html_safe, :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none", :class => "btn waves-effect waves-light" )
+            @content << content_tag(:h6, "Share This Quiz With Others!")
+            @content << social_share_button_tag("Check out this quiz called #{@quiz.name} on QuizGame!")
         end 
     end 
 

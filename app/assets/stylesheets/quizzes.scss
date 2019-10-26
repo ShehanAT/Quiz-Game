@@ -2,10 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#quiz_end_game_section{
+	text-align: center;
+}
+
+#quiz_info_section{
+	h3 {
+		font-size: 20px;
+		i.heading_text {
+			font-size: 24px;
+			line-height: 0px;
+		}
+	}
+}
+
 .choice_btn_section{
 	display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
 #quiz_btn_container{
 	margin-top: 30px;
 }

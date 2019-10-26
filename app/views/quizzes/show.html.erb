@@ -35,7 +35,7 @@
         <%= link_to "Edit Quiz<i class='material-icons left'>edit</i>".html_safe, edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn waves-effect waves-light" %>
         <button class="btn btn-danger" id="delete_quiz_link" onclick="showQuizModal()" >Delete Quiz<i class="material-icons left">delete</i></button>
     <% end %>
-  
+    
     </div>
 </div>
 <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "gameplay_back_link btn waves-light waves-effect", :style => "display: none;" %>
