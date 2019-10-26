@@ -17,7 +17,7 @@
     
     <%= hidden_field_tag :quiz_id, @quiz.id %>
     <div class="btn_container">
-        <%= form.submit "Update Quiz", :class => "btn btn-primary" %> 
-        <%= link_to "Back", quiz_path(@quiz.id), :class => "btn waves-effect waves-light back_link" %>
+        <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "btn waves-effect waves-light back_link" %>
+        <button class="btn waves-effect waves-light">Update Quiz<i class='material-icons left'>update</i></button>
     </div>
     <% end %>

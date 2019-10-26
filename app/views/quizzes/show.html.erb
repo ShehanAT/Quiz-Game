@@ -25,16 +25,17 @@
 <% end %>
     <div class="btn_container" id="quiz_btn_container">
     <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
+    <% if !@takeQuiz %>
+        <button onclick="playQuiz()" class="btn waves-effect waves-light" id="take_quiz_link" disabled=true >Take Quiz<i class='material-icons left'>play_arrow</i></button>
+    <% else %>
+        <button onclick="playQuiz()" class="btn waves-effect waves-light" id="take_quiz_link" >Take Quiz<i class='material-icons left'>play_arrow</i></button>
+    <% end %>
     <% if session[:user_id] %>
         <%= link_to "Add Questions<i class='material-icons left'>add</i>".html_safe, new_question_path, :id => "add_questions_link", :class => "btn waves-effect waves-light" %>
         <%= link_to "Edit Quiz<i class='material-icons left'>edit</i>".html_safe, edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn waves-effect waves-light" %>
-        <button class="btn btn-danger" id="delete_quiz_link" onclick="showDeleteModal()" >Delete Quiz<i class="material-icons left">delete</i></button>
+        <button class="btn btn-danger" id="delete_quiz_link" onclick="showQuizModal()" >Delete Quiz<i class="material-icons left">delete</i></button>
     <% end %>
-    <% if !@takeQuiz %>
-        <%= link_to "Take Quiz<i class='material-icons left'>play_arrow</i>".html_safe, quiz_path(@quiz.id), :remote => true, :class => "btn waves-effect waves-light", :id => "take_quiz_link", :disabled => true %>
-    <% else %>
-        <%= link_to "Take Quiz<i class='material-icons left'>play_arrow</i>".html_safe, quiz_path(@quiz.id), :remote => true, :class => "btn waves-effect waves-light", :id => "take_quiz_link"  %>
-    <% end %>
+  
     </div>
 </div>
 <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "gameplay_back_link btn waves-light waves-effect", :style => "display: none;" %>
@@ -42,5 +43,6 @@
 <%= render_end_game_message %>
 <%= render partial: "quizzes/html/delete_quiz_modal" %>
 <script>
+    <%= render partial: "quizzes/js/show.js.erb" %>
     <%= render partial: "quizzes/js/delete_quiz.js.erb" %>
 </script>

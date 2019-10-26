@@ -1,7 +1,10 @@
-$(document).click(function (e) {
-    if ($(e.target).is('#userDeleteModal')) {
-        $("#userDeleteModal").fadeOut(500);
-    }
+$(document).ready(function(){
+    $("body").click(function (e) {
+        if (!$(e.target).closest('.modal,#delete_account_link,#delete_question_link').length) {
+            e.stopPropagation();
+            $('#userDeleteModal').fadeOut(500);
+        }
+    });
 });
 
 function showDeleteModal(){
@@ -9,7 +12,7 @@ function showDeleteModal(){
 }
 
 function closeDeleteModal(){
-    $("#userDeleteModal").hide();
+    $("#userDeleteModal").fadeOut(500);
 }
 
 function deleteUser(e){

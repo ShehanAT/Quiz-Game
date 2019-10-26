@@ -19,9 +19,14 @@
  
 
 /* Modal Styles */
+
+.modal{
+  width: 600px;
+  height: 500px;
+}
 .modal-content{
   display: block;
-  small{
+  p{
     font-size: 16px;
   }
   h1{
@@ -30,8 +35,8 @@
   button{
     width: 50%;
   }
-  width: 500px;
-  height: 250px;
+  width: 550px;
+  height: 320px;
 }
 /* Search Bar Styles */
 $primary: #0000FA;
@@ -140,4 +145,15 @@ input, button{
 
 .gameplay_back_link{
   width: 10%;
+}
+
+.modal_btn_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
+}
+
+.modal_btn_container > button{
+  width: 100%;
 }

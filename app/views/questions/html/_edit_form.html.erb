@@ -13,8 +13,12 @@
     <%= label_tag(:correct_answer, "Correct Answer: ") %>
     <div class="form-check form-check-inline">
     <% for i in 0...4 do %>
-            <%= form.check_box "Answer Choise##{i+1}", :id => "#{@answers[i]["id"]}", :name => "#{i+1}", :class => "form-check-input" %>
-            <%= label_tag(:"answer_#{i+1}", "Choice ##{i+1}", :class => "form-check-label") %>
+            <p>
+            <%= form.label :"#{@answers[i]["id"]}" do %>
+                <%= form.check_box "Answer Choise##{i+1}", :id => "#{@answers[i]["id"]}", :name => "#{i+1}", :class => "form-check-input" %>
+                <span>Choice #<%= i+1 %></span>
+            <% end %>
+            </p>
     <% end %>
     </div>
     <% if @quiz.contains_images === 1 %>
@@ -31,7 +35,7 @@
     <%= form.hidden_field :"answers", :value => "#{@answers.to_json}" %>
     <div class="hidden" id="question_json" ><%= @question.to_json %></div>
     <div class="btn_container">
-        <%= form.submit "Update Question", :id => "update_question_link", :class => "btn btn-primary" %>
-        <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "back_link btn waves-light waves-effect" %>
+        <button id="update_question_link" class="btn waves-effect waves-light" name="commit" value="Update Question" >Update Question<i class="material-icons left">update</i></button>
+        <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, question_path(@question.id), :class => "back_link btn waves-light waves-effect" %>
         </div>
     <% end %>

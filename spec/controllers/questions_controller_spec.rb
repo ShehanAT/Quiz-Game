@@ -47,7 +47,7 @@ RSpec.describe QuestionsHelper do
         sleep 0.5
         Capybara.page.first("a[class='question_name']").click 
         sleep 0.5
-        Capybara.page.first("input[value='Back']").click
+        Capybara.page.first("a[class='btn waves-effect waves-light back_link']").click
         sleep 0.5
         expect(Capybara.page.current_path).to eq("/questions")
     end
@@ -56,7 +56,7 @@ RSpec.describe QuestionsHelper do
         capybara_questions_index
         Capybara.page.first("a[class='question_name']").click 
         sleep 1.5
-        Capybara.page.first("input[id='edit_question_link']").click
+        Capybara.page.first("a[id='edit_question_link']").click
         expect(Capybara.page.current_path).not_to eq("/questions/1")
         sleep 1.5
     end
@@ -66,7 +66,7 @@ RSpec.describe QuestionsHelper do
         sleep 0.5
         Capybara.page.first("a[class='question_name']").click 
         sleep 1
-        Capybara.page.first("input[id='edit_question_link']").click 
+        Capybara.page.first("a[id='edit_question_link']").click 
         sleep 0.1 
         expect(Capybara.page.first("h3[id='edit_question_title']")).not_to eq("")
         expect(Capybara.page.first("input[id='question']").value).not_to eq("")
@@ -82,8 +82,8 @@ RSpec.describe QuestionsHelper do
         capybara_questions_index
         Capybara.page.first("a[class='question_name']").click 
         sleep 1.5
-        Capybara.page.first("input[id='edit_question_link']").click 
-        Capybara.page.first("input[id='update_question_link']").click 
+        Capybara.page.first("a[id='edit_question_link']").click 
+        Capybara.page.first("button[id='update_question_link']").click 
         sleep 1.5
         expect(Capybara.page.current_path).to eq("/questions/1")
     end 
@@ -92,7 +92,7 @@ RSpec.describe QuestionsHelper do
         capybara_questions_index
         Capybara.page.first("a[class='question_name']").click 
         sleep 1.5 
-        Capybara.page.first("input[id='edit_question_link']").click 
+        Capybara.page.first("a[id='edit_question_link']").click 
         expect(Capybara.page.first("input[type='file']")).to be_an_instance_of(Capybara::Node::Element) 
     end     
 

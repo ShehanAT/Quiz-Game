@@ -21,7 +21,7 @@ module QuestionsHelper
         Capybara.fill_in("answer2", with: "20000 miles")
         Capybara.fill_in("answer3", with: "30000 miles")
         Capybara.fill_in("answer4", with: "40000 miles")
-        Capybara.attach_file("Upload Question Image", Rails.root + "public/apple-touch-icon.png")
+        Capybara.attach_file("Upload Question Image", Rails.root + "public/img1.jpg")
     end
 
     def capybara_questions_index

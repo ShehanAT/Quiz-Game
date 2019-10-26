@@ -17,9 +17,9 @@
 <% end %>
 </div>
 <div class="btn_container">
-    <%= button_to "Edit This Question", edit_question_path(@question[0]["id"]), id: "edit_question_link", :class => "btn btn-primary", method: :get, :question_id => @question[0]["id"] %>
-    <button class="btn btn-danger" onclick="showModal()" id="delete_question_link" >Delete Question</button>
-    <%= button_to "Back", questions_path, :class => "btn btn-dark back", method: :get  %>
+    <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, questions_path, :class => "btn waves-effect waves-light back_link" %>
+    <%= link_to "Edit Question<i class='material-icons left'>mode_edit</i>".html_safe, edit_question_path(@question[0]["id"]), id: "edit_question_link", :class => "btn waves-effect waves-light", :question_id => @question[0]["id"] %>
+    <button class="btn waves-effect waves-light modal-trigger" onclick="showQuestionModal()" id="delete_question_link" >Delete Question<i class='material-icons left'>delete</i></button>
 </div>
 <%= render partial: "questions/html/delete_question_modal" %> 
 <script>
