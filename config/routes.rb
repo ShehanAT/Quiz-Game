@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resource :answers
   resources :password_resets
   resources :quiz_categories
-  # get "save_score", to: "quizzes#save_score"
+  get "static_pages/about"
   
 end

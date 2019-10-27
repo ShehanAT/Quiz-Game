@@ -73,19 +73,18 @@ RSpec.describe QuizzesHelper do
         expect(old_question).not_to eq(new_question)
     end 
 
-    # it "ajax request to quizzes#save_score should be successful" do 
-    #     capybara_login
-    #     Capybara.page.first("a[class='quiz_link'").click 
-    #     Capybara.page.first("a[id='take_quiz_link']").click 
-    #     for i in (0..3)
-    #         Capybara.page.find("#answer1").click 
-    #         sleep 5
-    #     end 
-    #     sleep 5
-        # expect(Capybara.page.first("h3[id='end_quiz_message']").text).to eq("Quiz Finished!")
-        # expect(Capybara.page.first("h4[id='save_score_status']").text).not_to eq("")
-        # expect(Capybara.page.first("button[id='replay_quiz_button']").text).not_to eq("")
-    # end
+    it "ajax request to quizzes#save_score should be successful" do 
+        capybara_login
+        Capybara.page.first("a[class='quiz_link'").click 
+        Capybara.page.first("button[id='take_quiz_link']").click 
+        for i in (0..3)
+            Capybara.page.find("#answer1").click 
+            sleep 5
+        end 
+        expect(Capybara.page.first("h3[id='end_quiz_message']").text).to eq("Quiz Finished!")
+        expect(Capybara.page.first("h6[id='save_score_status']").text).not_to eq("")
+        expect(Capybara.page.first("button[id='replay_quiz_button']").text).not_to eq("")
+    end
 
     it "/quizzes/new should display new quiz form" do 
         capybara_login 
@@ -97,7 +96,6 @@ RSpec.describe QuizzesHelper do
 
     it "new quiz section should redirect to quiz show action" do
         capybara_new_quiz_no_images 
-        # Capybara.page.first("input[type='submit']").click
         sleep 1
         expect(Capybara.page.current_path).to eq("/quizzes/5")
     end
@@ -177,7 +175,22 @@ RSpec.describe QuizzesHelper do
         capybara_login
         Capybara.fill_in("quiz_search_bar", with: "T")
         Capybara.page.first("a[class='search_quiz_link']").click 
-        # expect(Capybara.page.current_path).to eq("/quizzes/1")
+        expect(Capybara.page.current_path).to eq("/quizzes/1")
+    end
+    
+    it "end game share button should redirect to new page" do 
+        capybara_login
+        Capybara.page.first("a[class='quiz_link'").click 
+        Capybara.page.first("button[id='take_quiz_link']").click 
+        for i in (0..3)
+            Capybara.page.find("#answer1").click 
+            sleep 5
+        end
+
+        twitter_window = Capybara.window_opened_by do
+            Capybara.page.first("a[class='social-share-button-twitter']").click
+        end
+        expect(twitter_window).to be_an_instance_of(Capybara::Window)
     end 
 
 

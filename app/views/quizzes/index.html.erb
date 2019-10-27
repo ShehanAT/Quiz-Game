@@ -11,7 +11,8 @@
       <% end %>
         <ul class="action_panel">
         </ul>
-        <h3 class="main_heading_instructions"><strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong></h3>        <div class="quiz_links_container">
+        <h6 class="main_heading_instructions"><strong>Select A Quiz And Test Your Knowledge! To Add More Quizzes Please Login Or Register.</strong></h6>        
+        <div class="quiz_links_container">
         <% @quiz_categories.each do |quiz_category| %>
             <div class="quiz_link_section">
             <h5><%= quiz_category["LTRIM(RTRIM(quizzes.category))"].strip %></h5>
