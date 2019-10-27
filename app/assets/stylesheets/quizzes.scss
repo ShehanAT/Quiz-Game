@@ -7,15 +7,22 @@
 }
 
 #quiz_info_section{
-	h3 {
-		font-size: 20px;
-		i.heading_text {
-			font-size: 24px;
-			line-height: 0px;
-		}
-	}
+	text-align: center;
 }
 
+#quiz_info_list{
+	width: 50%;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+    li{
+        list-style-type: circle;   
+    }
+}
+
+#quiz_gameplay_section{
+	text-align: center;
+}
 .choice_btn_section{
 	display: grid;
     grid-template-columns: 1fr 1fr;
@@ -65,3 +72,24 @@ button[class*="btn"] {border: 0;}
   font-size: 22px;
 }
 
+#edit_quiz_title{
+	font-size: 18px;
+	text-align: center;
+}
+
+#quiz_edit_form label{
+	font-size: 18px;
+}
+
+#quiz_new_form{
+
+	label{
+		font-size: 18px;
+	}
+
+	h3{
+		font-size: 18px;
+		text-align: center;
+	}
+
+}

@@ -1,5 +1,5 @@
-<h3>Fill In These Details: </h3>
-<%= form_with(url:"/quizzes", model: @quiz, :class => "form-group") do |form| %>
+<%= form_with(url:"/quizzes", model: @quiz, :class => "form-group", :id => "quiz_new_form") do |form| %>
+    <h3><strong>Fill In These Details: </strong></h3>
     <div id="quiz_errors">
     </div>
     <br />

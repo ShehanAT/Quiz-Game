@@ -1,9 +1,11 @@
-<div id="user_info_section">
+<div class="user_info_section">
     <h1>Your Profile Information</h1>
-    <h3 id="username"><i class="heading_text">Username:</i> <%= @user.username %></h3>
-    <h3 id="email"><i class="heading_text">Email:</i> <%= @user.email %></h3>
-    <h3 id="fullName"><i class="heading_text">Full Name:</i> <%= @user.fullName %></h3>
-    <h3 id="bio"><i class="heading_text">Bio:</i> <%= @user.bio %></h3>
+    <ul id="user_info_list">
+    <li id="username" class="heading"><i class="heading_text">Username:</i> <%= @user.username %></li>
+    <li id="email" class="heading"><i class="heading_text">Email:</i> <%= @user.email %></li>
+    <li id="fullName" class="heading"><i class="heading_text">Full Name:</i> <%= @user.fullName %></li>
+    <li id="bio" class="heading"><i class="heading_text">Bio:</i> <%= @user.bio %></li>
+    </ul>
 </div>
 <div class="btn_container">
 <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>

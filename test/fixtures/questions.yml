@@ -42,3 +42,43 @@ eight:
   quiz_id: 2
   question: "What kind of person shall not be honored on a US postal stamp, according to the US postal service and the Citizen’s Stamp Advisory Commitee?"
 
+nine:
+  id: 9
+  quiz_id: 5
+  question: Sample?
+
+ten:
+  id: 10
+  quiz_id: 5
+  question: Sample?
+
+eleven:
+  id: 11
+  quiz_id: 5
+  question: Sample?
+
+twelve:
+  id: 12
+  quiz_id: 5
+  question: Sample?
+
+thirteen:
+  id: 13
+  quiz_id: 6
+  question: Sample?
+
+fourteen:
+  id: 14
+  quiz_id: 6
+  question: Sample?
+
+fifteen:
+  id: 15
+  quiz_id: 6
+  question: Sample?
+
+sixteen:
+  id: 16
+  quiz_id: 6
+  question: Sample?
+

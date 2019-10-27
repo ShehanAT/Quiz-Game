@@ -27,3 +27,17 @@ four:
   category: Sample4
   description: Trivial Game are a great way to learn various random facts with no real life application
   contains_images: 0
+
+five:
+  id: 5
+  name: Fifth Sample Quiz
+  category: Sample5
+  description: Trivial Game are a great way to learn various random facts with no real life application
+  contains_images: 0
+
+six:
+  id: 6
+  name: Sixth Sample Quiz
+  category: Sample6
+  description: Trivial Game are a great way to learn various random facts with no real life application
+  contains_images: 0

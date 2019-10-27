@@ -1,0 +1,19 @@
+.user_info_section{
+    text-align: center;
+}
+
+#user_info_list{
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+    li{
+        list-style-type: circle;   
+    }
+}
+#user_edit_form{
+    text-align: center;
+    label{
+        font-size: 18px;
+    }
+}

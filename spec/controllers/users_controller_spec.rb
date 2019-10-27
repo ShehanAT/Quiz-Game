@@ -36,10 +36,10 @@ RSpec.describe UserHelper do
     it "/users/:id should display user info " do 
         capybara_login
         Capybara.page.first("a[id='user_profile_link'").click 
-        expect(Capybara.page.first("h3[id='username']").text).to eq("Username: testing1")
-        expect(Capybara.page.first("h3[id='email']").text).to eq("Email: shehanatuk@gmail.com")
-        expect(Capybara.page.first("h3[id='fullName']").text).to eq("Full Name: Shehan Atukorala")
-        expect(Capybara.page.first("h3[id='bio']").text).to eq("Bio: Shehan Atukorala")
+        expect(Capybara.page.first("li[id='username']").text).to eq("Username: testing1")
+        expect(Capybara.page.first("li[id='email']").text).to eq("Email: shehanatuk@gmail.com")
+        expect(Capybara.page.first("li[id='fullName']").text).to eq("Full Name: Shehan Atukorala")
+        expect(Capybara.page.first("li[id='bio']").text).to eq("Bio: Shehan Atukorala")
     end 
 
     it "/users/:id/edit should display errors on invalid submit" do 

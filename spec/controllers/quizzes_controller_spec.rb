@@ -38,7 +38,7 @@ RSpec.describe QuizzesHelper do
         capybara_login
         Capybara.page.first("a[class='quiz_link']").click 
         sleep 1.5
-        expect(Capybara.page.first("h3").text).to eq("Title: First Sample Quiz")
+        expect(Capybara.page.first("li[class='heading']").text).to eq("Title: First Sample Quiz")
     end     
 
     it "/quiz/:id should display 4 answer buttons after button[id='take_quiz_link'] click " do 
@@ -97,7 +97,7 @@ RSpec.describe QuizzesHelper do
     it "new quiz section should redirect to quiz show action" do
         capybara_new_quiz_no_images 
         sleep 1
-        expect(Capybara.page.current_path).to eq("/quizzes/5")
+        expect(Capybara.page.current_path).to eq("/quizzes/7")
     end
 
     it "from: /, 'Register' link should take to: /new " do 
@@ -159,7 +159,7 @@ RSpec.describe QuizzesHelper do
         capybara_new_quiz_question_image 
         Capybara.page.first("button[value='Submit And Exit']").click 
         sleep 2
-        expect(Capybara.page.current_path).to eq("/quizzes/5")
+        expect(Capybara.page.current_path).to eq("/quizzes/7")
     end 
 
     it "quiz with images should render image on /quizzes/:id" do 
@@ -192,6 +192,8 @@ RSpec.describe QuizzesHelper do
         end
         expect(twitter_window).to be_an_instance_of(Capybara::Window)
     end 
+
+
 
 
 

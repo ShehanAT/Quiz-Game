@@ -62,6 +62,6 @@ RSpec.describe SessionHelper do
     it "quizzes show view should display high score for quiz" do 
         capybara_login 
         Capybara.page.first("a[class='quiz_link']").click 
-        expect(Capybara.page.first("h3[id='highscore_message']").text).not_to eq("")
+        expect(Capybara.page.first("li[id='highscore_message']").text).not_to eq("")
     end 
 end 

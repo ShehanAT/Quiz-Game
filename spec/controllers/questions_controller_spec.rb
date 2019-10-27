@@ -94,7 +94,16 @@ RSpec.describe QuestionsHelper do
         sleep 1.5 
         Capybara.page.first("a[id='edit_question_link']").click 
         expect(Capybara.page.first("input[type='file']")).to be_an_instance_of(Capybara::Node::Element) 
-    end     
+    end   
+    
+    it "index page pagination link should show next page on click" do 
+        capybara_login
+        Capybara.page.first("a[id='questions_link']").click 
+        question1 = Capybara.page.first("a[class='question_name'").text 
+        Capybara.page.first("a[rel='next']").click 
+        question2 = Capybara.page.first("a[class='question_name']").text
+        expect(question1).not_to eq(question2)
+    end 
 
  
 

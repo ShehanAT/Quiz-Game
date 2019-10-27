@@ -8,21 +8,22 @@
     </div>
 <% end %>
 
-
-<h3><i class="heading_text">Title:</i> <%= @quiz.name %></h3>
-<h3><i class="heading_text">Category:</i> <%= @quiz.category %></h3>
-<h3><i class="heading_text">Description:</i> <%= @quiz.description %></h3>
+<ul id="quiz_info_list">
+<li class="heading"><i class="heading_text">Title:</i> <%= @quiz.name %></li>
+<li class="heading"><i class="heading_text">Category:</i> <%= @quiz.category %></li>
+<li class="heading"><i class="heading_text">Description:</i> <%= @quiz.description %></li>
 <% if @quiz.contains_images === 1 %>
-    <h3><i class="heading_text">Quiz Type:</i> Image Quiz</h3>
+    <li class="heading"><i class="heading_text">Quiz Type:</i> Image Quiz</li>
 <% elsif @quiz.contains_images === 0 %>
-    <h3><i class="heading_text">Quiz Type:</i> Text Quiz</h3>
+    <li class="heading"><i class="heading_text">Quiz Type:</i> Text Quiz</li>
 <% end %>
 <% if session[:user_id] %>
-    <h3 id="highscore_message"><i class="heading_text">Your Best Score For This Quiz:</i> <strong><%= @highScore %></strong></h3>
+    <li id="highscore_message" class="heading"><i class="heading_text">Your Best Score For This Quiz:</i> <strong><%= @highScore %></strong></li>
 <% end %>
 <% if !@takeQuiz %>
-    <p class="form-text disable_take_quiz error heading_text" >* You Must Add Some Questions To Take This Quiz</p>
+    <li class="form-text disable_take_quiz error heading_text" >* You Must Add Some Questions To Take This Quiz</li>
 <% end %>
+</ul>
     <div class="btn_container" id="quiz_btn_container">
     <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
     <% if !@takeQuiz %>

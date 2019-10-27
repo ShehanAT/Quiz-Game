@@ -25,6 +25,7 @@
 .modal{
   width: 600px;
   height: 500px;
+  background-color: #B22222;
 }
 .modal-content{
   display: block;
@@ -150,8 +151,8 @@ input, button{
 }
 
 .btn_container{
+  text-align: center;
   display: block;
-  width: 60%;
 }
 
 .gameplay_back_link{
@@ -168,4 +169,16 @@ input, button{
 .modal_btn_container > button{
   width: 100%;
 }
+
+/* Typography styles */
+
+.heading{
+  font-size: 20px;
+
+  i{
+    font-size: 24px;
+    line-height: 0px;
+  }
+}
+
 
