@@ -47,7 +47,7 @@ module QuizzesHelper
             @content << content_tag(:h6, " ", :id => "save_score_status", :style => "display:none" )
             @content << content_tag(:button, "Replay Quiz<i class='material-icons left'>replay</i>".html_safe, :onclick => "replayQuiz()", :id => "replay_quiz_button", :style => "display:none", :class => "btn waves-effect waves-light" )
             @content << content_tag(:button, "Back To Homepage<i class='material-icons left'>home</i>".html_safe, :onclick => "goToHomePage()", :id => "home_page_button", :style => "display:none", :class => "btn waves-effect waves-light" )
-            @content << content_tag(:h6, "Share This Quiz With Others!")
+            @content << content_tag(:h6, "<strong>Share This Quiz With Others!</strong>".html_safe)
             @content << social_share_button_tag("Check out this quiz called #{@quiz.name} on QuizGame!")
         end 
     end 

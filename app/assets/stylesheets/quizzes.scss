@@ -22,6 +22,9 @@
 
 #quiz_gameplay_section{
 	text-align: center;
+	h3#current_question{
+		padding-bottom: 25px;
+	}
 }
 .choice_btn_section{
 	display: grid;
@@ -92,4 +95,12 @@ button[class*="btn"] {border: 0;}
 		text-align: center;
 	}
 
+}
+
+/* Quiz Category Styles */
+#quiz_category_section{
+	h3{
+		font-size: 18px;;
+	}
+	text-align: center;
 }

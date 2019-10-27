@@ -103,6 +103,10 @@ ul.search-history {
   background-color: #B22222;
 }
 
+.site_links_section li:hover{
+  opacity: 0.7;
+}
+
 /* Miscelleneous */
 select{
   display: block;
@@ -128,7 +132,7 @@ label {
 }
 
 #content{
-    padding: 10px;
+    padding: 10px 10px 75px 10px;
     margin-top: 70px;
 }
 
