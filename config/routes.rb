@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :password_resets
   resources :quiz_categories
   get "static_pages/about"
-  
+  get "static_pages/faq"
+  get "static_pages/disclaimer"
+  get "static_pages/contact"
+
 end

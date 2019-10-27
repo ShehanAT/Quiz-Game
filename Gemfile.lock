@@ -143,6 +143,8 @@ GEM
     ffi (1.11.1)
     figaro (1.1.1)
       thor (~> 0.14)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     gherkin (5.1.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -377,6 +379,7 @@ DEPENDENCIES
   database_cleaner
   factory_bot
   figaro
+  font-awesome-rails
   google-cloud-storage (~> 1.11)
   jbuilder (~> 2.7)
   jquery-rails (~> 4.3.5)

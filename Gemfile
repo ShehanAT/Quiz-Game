@@ -45,6 +45,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'social-share-button', '0.2.1'
 
+gem "font-awesome-rails"
+
 gem 'activerecord-session_store', '~> 1.1.3'
 
 group :development, :test do
