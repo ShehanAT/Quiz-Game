@@ -5,9 +5,6 @@ class QuizzesController < ApplicationController
             @user = User.find(session[:user_id])
         end
         @quizzes = Quiz.all   
-        # sqlite3 version
-        # quiz_categories_sql = "SELECT DISTINCT LTRIM(RTRIM(quizzes.category)) FROM quizzes;"
-        # postgresql version
         quiz_categories_sql = "SELECT DISTINCT TRIM(BOTH FROM(quizzes.category)) FROM quizzes;"
         @quiz_categories = ActiveRecord::Base.connection.execute(quiz_categories_sql)
     end 
