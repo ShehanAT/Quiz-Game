@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
   def index 
     get_questions_quizzes = "SELECT questions.id AS question_id, * FROM questions INNER JOIN quizzes ON questions.quiz_id=quizzes.id;"
     @results = ActiveRecord::Base.connection.execute(get_questions_quizzes)
-    @questions_per_page = Kaminari.paginate_array(@results).page(params[:page]).per(10)
+    @questions_per_page = Kaminari.paginate_array(@results, total_count: @results.count).page(params[:page])
   end
 
   def show 
