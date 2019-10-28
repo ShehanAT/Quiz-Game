@@ -226,6 +226,7 @@ GEM
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     os (1.0.1)
+    pg (1.1.4)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
@@ -398,6 +399,7 @@ DEPENDENCIES
   kaminari
   listen (>= 3.0.5, < 3.2)
   materialize-sass (~> 1.0.0)
+  pg
   poltergeist (~> 1.10)
   pry (~> 0.12.2)
   puma (~> 3.11)
