@@ -17,8 +17,6 @@
 //= require_tree .
 //= require jquery3
 //= require jquery.remotipart
-//= require popper
-//= require bootstrap
 //= require materialize-sprockets
 //= require materialize
 //= require social-share-button
