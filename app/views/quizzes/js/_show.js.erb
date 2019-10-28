@@ -36,6 +36,7 @@ function playQuiz(){
             var score = 0;
             function changeScene(e){
                 if(currentQuestion = randomArr.pop()){
+                    shuffleNode();
                     setupQuiz(data.quizContent, currentQuestion);
                 }else{
                     if(data.auth){
@@ -122,6 +123,7 @@ function playQuiz(){
             }    
     
             (function setFirstQuestion(){
+                shuffleNode();
                 $(".save_score_message").text("Your Score: " + score);
                 currentQuestion = randomArr.pop();
                 setCorrectAnswer();
@@ -141,6 +143,29 @@ function playQuiz(){
                 });
                 $(".gameplay_back_link").css("display", "block");
             }());
+         
+
+            function shuffleElements(buttons){
+                var cached = buttons.slice(0), temp, i = cached.length, rand;
+                while(--i){
+                    rand = Math.floor(i * Math.random());
+                    temp = cached[rand];
+                    cached[rand] = cached[i];
+                    cached[i] = temp;
+                }
+                return cached;
+            }
+
+            function shuffleNode(){
+                var buttonContainer = $(".choice_btn_section");
+                var nodes = buttonContainer.children(), i = 0;
+                nodes = Array.prototype.slice.call(nodes);
+                nodes = shuffle(nodes);
+                while(i < nodes.length){
+                    buttonContainer.append(nodes[i]);
+                    ++i;
+                }
+            };
         }
         });
 }
