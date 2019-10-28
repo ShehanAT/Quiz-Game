@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'bundler', '~> 2.0.0'
+gem 'bundler', '~> 2.0.2'
 
 gem 'poltergeist', '~> 1.10'
 
