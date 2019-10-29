@@ -374,6 +374,7 @@ DEPENDENCIES
   factory_bot
   figaro
   font-awesome-rails
+  google-api-client (~> 0.33.2)
   google-cloud-storage (~> 1.11)
   jbuilder (~> 2.7)
   jquery-rails (~> 4.3.5)
