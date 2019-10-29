@@ -5,8 +5,13 @@ class QuestionImage < ApplicationRecord
     def self.storage_bucket
         @storage_bucket ||= begin
           config = Rails.application.config.x.settings
-          storage = Google::Cloud::Storage.new project_id: ENV["GCP_PROJECT_ID"],
-                                               credentials: ENV["GCP_KEYFILE_PATH"]
+          credentials = Google::Auth::ServiceAccountCredentials.make_creds(
+            scope: 'https://www.googleapis.com/auth/devstorage.read_write'
+          )
+          storage = Google::Cloud::Storage.new( 
+              project_id: ENV["GCP_PROJECT_ID"],
+              credentials: credentials 
+            )
           storage.bucket ENV["GSC_BUCKET"]
         end
     end
