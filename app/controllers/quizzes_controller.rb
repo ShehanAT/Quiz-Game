@@ -17,13 +17,13 @@ class QuizzesController < ApplicationController
     end 
 
     def create
-        if params[:commit] === "check_quiz_name"
+        if params[:commit] === "check_quiz_valid"
             respond_to do |format|
-                format.json { render json: Quiz.check_name(params[:quiz_name]).to_json }
+                format.json { render json: Quiz.check_valid_new(params[:quiz_name], params[:quiz_category]).to_json }
             end 
         else 
             @quiz = Quiz.new(quiz_params)
-            QuizCategory.where(category: @quiz.category).first_or_create
+            QuizCategory.where(category: @quiz.category.split(",").map(&:strip)[0].gsub(/"/, "")).first_or_create
             if @quiz.save!
                 redirect_to quiz_path(@quiz.id) 
             else 
@@ -59,8 +59,14 @@ class QuizzesController < ApplicationController
     end 
     
     def update 
-        Quiz.updateQuiz(params)
-        redirect_to quiz_path(params[:id])
+        if params[:commit] === "check_quiz_valid"
+            respond_to do |format|
+                format.json { render json: Quiz.check_valid_update(params[:id], params[:quiz_name], params[:quiz_category]).to_json }
+            end  
+        else 
+            Quiz.updateQuiz(params)
+            redirect_to quiz_path(params[:id])
+        end     
     end     
 
     def destroy 

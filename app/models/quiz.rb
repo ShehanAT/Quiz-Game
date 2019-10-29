@@ -4,7 +4,6 @@ class Quiz < ApplicationRecord
     validates :name, presence: true
     validates :category, presence: true
 
-
     def self.addImageQuizContent(params, current_quiz_id)
         get_max_question_id = "SELECT MAX(id) AS max_id FROM questions;"
         get_max_question_sql = ActiveRecord::Base.connection.execute(get_max_question_id)
@@ -85,7 +84,7 @@ class Quiz < ApplicationRecord
 
         check_category_sql = "SELECT * FROM quizzes WHERE category='#{quiz_category}'"
         result = ActiveRecord::Base.connection.execute(check_category_sql)
-        if result.length() === 0
+        if result.num_tuples.zero? 
             category = QuizCategory.find_by_category(quiz_category)
             category.destroy
         end 
@@ -110,7 +109,7 @@ class Quiz < ApplicationRecord
 
         check_category_sql = "SELECT * FROM quizzes WHERE category='#{previous_category}'"
         result = ActiveRecord::Base.connection.execute(check_category_sql)
-        if result.length() === 0
+        if result.num_tuples.zero? 
             category = QuizCategory.find_by_category(previous_category)
             category.destroy
         end 
@@ -118,17 +117,56 @@ class Quiz < ApplicationRecord
         quiz.save!
     end 
 
-    def self.check_name(quiz_name)
-        quiz_sql = "SELECT * FROM quizzes WHERE name='#{quiz_name}'"
+    def self.check_valid_new(quiz_name, quiz_category)
+        if quiz_name[0] == " "
+            return { status: false, message: "Quiz Name Cannot Contain Leading Whitespace!" }
+        end 
+        if quiz_name[-1] == " "
+            return { status: false, message: "Quiz Name Cannot Contain Trailing Whitespace!" }
+        end 
+        if quiz_category
+            if quiz_category[0] == " "
+                return { status: false, message: "Quiz Category Cannot Contain Leading Whitespace!" }
+            end 
+            if quiz_category[-1] == " "
+                return { status: false, message: "Quiz Category Cannot Contain Trailing Whitespace!" }
+            end 
+        end 
+        quiz_sql = "SELECT * FROM quizzes WHERE name='#{quiz_name}' LIMIT 1"
         quiz = ActiveRecord::Base.connection.execute(quiz_sql)
-        if quiz.length() != 0  
-            return { status: false, message: "A Quiz With The Same Name Already Exists!"}
-        else 
+        if quiz.num_tuples.zero? 
             return { status: true, message: "Valid Quiz Name" }
+        else 
+            return { status: false, message: "A Quiz With The Same Name Already Exists!"}
         end 
     end 
 
-
+    def self.check_valid_update(quiz_id, quiz_name, quiz_category)
+        quiz = Quiz.find(quiz_id)
+        if quiz_name[0] == " "
+            return { status: false, message: "Quiz Name Cannot Contain Leading Whitespace!" }
+        end 
+        if quiz_name[-1] == " "
+            return { status: false, message: "Quiz Name Cannot Contain Trailing Whitespace!" }
+        end 
+        if quiz_category[0] == " "
+            return { status: false, message: "Quiz Category Cannot Contain Leading Whitespace!" }
+        end 
+        if quiz_category[-1] == " "
+            return { status: false, message: "Quiz Category Cannot Contain Trailing Whitespace!" }
+        end 
+        quiz_sql = "SELECT * FROM quizzes WHERE name='#{quiz_name}' LIMIT 1"
+        quiz_result = ActiveRecord::Base.connection.execute(quiz_sql)
+        if quiz_result.num_tuples.zero?
+            return { status: true }
+        else 
+            if quiz_result[0]["name"] == quiz["name"]
+                return { status: true }
+            else 
+                return { status: false, message: "A Quiz With The Same Name Already Exists!" }
+            end 
+        end 
+    end 
 end
     
 

@@ -5,11 +5,11 @@
     <br />
     <div class="form-group">
     <%= form.label(:name, "Quiz Name:") %>
-    <%= form.text_field :name, :class => "form-control", :placeholder => "Enter Quiz Name", :onkeyup => "checkQuizName()", :required => true %>
+    <%= form.text_field :name, :class => "form-control", :placeholder => "Enter Quiz Name", :onkeyup => "checkNewQuiz()", :required => true %>
     </div>
     <div class="form-group">
     <%= form.label(:category, "Quiz Category:") %>
-    <%= form.text_field :category, :class => "form-control", :placeholder => "Enter Quiz Category", :required => true %>
+    <%= form.text_field :category, :class => "form-control", :placeholder => "Enter Quiz Category", :onkeyup => "checkNewQuiz()", :required => true %>
     </div>
     <div class="form-group">
     <%= form.label(:description, "Quiz Description:") %>
