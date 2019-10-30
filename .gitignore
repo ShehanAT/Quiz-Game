@@ -10,3 +10,6 @@
 # rspec failure tracking
 .rspec_status
 node_modules
+
+# application.yml
+config/application.yml
