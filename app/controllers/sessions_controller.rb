@@ -29,6 +29,10 @@ class SessionsController < ApplicationController
         redirect_to root_url
     end 
 
+    def show 
+        destroy
+    end 
+
     def forgot_password_new
         respond_to do |format|
             format.html { render "sessions/html/forgot_password" }
