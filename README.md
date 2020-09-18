@@ -1,9 +1,7 @@
 # README
 
 # Live At: https://fountain-of-quizzes.herokuapp.com/
-Quiz Game application based on Kahoot. Add any quiz with supporting images and test your knowledge or take many of the built-in quizzes! 
-
-Built using Ruby On Rails, created and maintained by Shehan Atuk
+Quiz Game application based on Kahoot built using Test Driven Development. Add any quiz with supporting images and test your knowledge or take many of the built-in quizzes! 
 
 
 ### Project Logs:
