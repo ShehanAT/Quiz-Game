@@ -1,0 +1,33 @@
+var answers = JSON.parse($("#answers").val());
+var question = JSON.parse($("#question_json").text());
+var correctAnswer;
+var errors = [];
+$("input[type='checkbox']").on("click", function(e){
+    if($('div.form-check :checkbox:checked').length == 0){
+        $("#question_edit_errors").html("<p class='error'>Correct Answer Field Cannot Be Empty</p>");
+        $("#update_question_link").attr("disabled", true);
+    }else{
+        $("#question_edit_errors").html("");
+        $("#update_question_link").attr("disabled", false);
+
+    }
+    if($(this).prop("checked")){
+        correctAnswer = e.currentTarget.id;
+    }else{
+        correctAnswer = false;
+    }
+    $("input[type='checkbox']").not(this).prop("checked", false);
+});
+
+(function loadFormValues(){
+    $("#question").val(question["question"]);
+    for(var i = 0 ; i < 4 ; i++ ){
+        $(`#answer${i+1}`).val(answers[i]["answer"]);
+    }
+    for(var i = 0; i < 4; i++){
+        if(answers[i]["correct_answer"] == 1){
+            $(`#${answers[i]["id"]}`).prop("checked", true);
+            correctAnswer = $(`#${answers[i]["id"]}`).attr("id");
+        }
+    }   
+}());

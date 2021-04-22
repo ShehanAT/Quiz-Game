@@ -1,0 +1,28 @@
+<%= form_with(url:"/quizzes", model: @quiz, :class => "form-group", :id => "quiz_new_form") do |form| %>
+    <h3><strong>Fill In These Details: </strong></h3>
+    <div id="quiz_errors">
+    </div>
+    <br />
+    <div class="form-group">
+    <%= form.label(:name, "Quiz Name:") %>
+    <%= form.text_field :name, :class => "form-control", :placeholder => "Enter Quiz Name", :onkeyup => "checkNewQuiz()", :required => true %>
+    </div>
+    <div class="form-group">
+    <%= form.label(:category, "Quiz Category:") %>
+    <%= form.text_field :category, :class => "form-control", :placeholder => "Enter Quiz Category", :onkeyup => "checkNewQuiz()", :required => true %>
+    </div>
+    <div class="form-group">
+    <%= form.label(:description, "Quiz Description:") %>
+    <%= form.text_field :description, :class => "form-control", :placeholder => "Enter Quiz Description", :required => true %>
+    </div>
+    <div class="form-group">
+    <%= form.label(:contains_images, "Does This Quiz Uses Images In Its Questions?") %>
+    <%= form.select :"contains_images", raw("<option value='1'>Yes</option><option value='0'>No</option>"), :class => "form-control" %>
+    </div>
+    <div class="btn_container">
+    <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
+    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit_new_quiz_link" >Submit
+    <i class="material-icons right">send</i>
+    </button>
+    </div>
+<% end %>

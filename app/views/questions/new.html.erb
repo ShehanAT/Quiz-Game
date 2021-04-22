@@ -1,0 +1,34 @@
+<%= form_with(url: questions_path, :class => "form-group", :id => "question_new_form") do |form| %>
+    <h1>New Questions</h1>
+    <h3 class="center"><strong>Add New Questions To Quiz: <%= @quiz.name %></strong></h3>
+    <% if flash[:success] %>
+        <div class="alert alert-primary" role="alert">
+            <h3><%= flash[:success] %></h3>
+        </div>
+    <% end %>
+    <div class="form-group">
+        <%= form.label :question %>
+        <%= form.text_field :question, required: true, :class => "form-control", :placeholder => "Enter The New Question" %>
+    </div>
+    <% for i in 0...4 %>
+        <div class="form-group">
+            <%= form.label :"answer#{i+1}", "Answer Choice ##{i+1}" %>
+            <%= form.text_field :"answer#{i+1}", required: true, :class => "form-control", :placeholder => "Enter Answer Choice ##{i+1}" %>
+        </div>
+    <% end %>
+    <div class="form-group">
+        <%= form.label(:correct_answer, "Which Is The Correct Choice?") %>
+        <%= form.select :correct_answer, raw("<option value='1'>Choice #1</option><option value='2'>Choice #2</option><option value='3'>Choice #3</option><option value='4'>Choice #4</option>"), :class => "form-control" %>
+    </div>
+    <% if flash[:notice] %>
+        <div class="form-group">
+            <%= form.label :question_image, "Upload Question Image" %>
+            <%= form.file_field :question_image, required: true, :class => "form-control-file" %>
+        </div>
+    <% end %>
+    <div class="btn_container">
+        <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "btn waves-effect waves-light back_link" %>
+        <button class="btn waves-effect waves-light" value="Submit And Add Another Question" name="commit">Submit And Add Another Question<i class='material-icons left'>send</i></button>
+        <button class="btn waves-effect waves-light" value="Submit And Exit" name="commit" >Submit And Exit<i class='material-icons left'>exit_to_app</i></button>
+    </div>
+<% end %> 

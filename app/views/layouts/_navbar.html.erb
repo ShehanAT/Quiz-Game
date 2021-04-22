@@ -1,0 +1,487 @@
+
+<style>
+/* Top Navbar Styles  */
+li span.text{
+  width: 100%;
+}
+
+ul.search-history li{
+  margin-bottom: 0px;
+  border: 3px solid #B22222;
+}
+
+
+
+.top_nav_link:hover{
+  color: #000000;
+  text-decoration: none;
+  background-color: #FFFFFF;
+}
+
+#register_link{
+  position: absolute;
+  top: 10px;
+
+  font-size: 14px;
+  width: 120%;
+  right: 0px;
+}
+
+#navbar_login_link{
+  margin-bottom: 50px;
+  position: absolute;
+  right: 160px;
+  top: 0px;
+  width: 100%;
+}
+
+#navbar-password{
+  position: absolute;
+  right: 300px;
+  width: 175%;
+  top: 10px;
+  border: 2px solid #420D09;
+}
+
+#navbar-username{
+  position: absolute;
+  right: 520px;
+  width: 175%;
+  top: 10px;
+  border: 2px solid #420D09;
+}
+
+nav i.material-icons {
+  line-height: 35px;
+}
+
+#logout_link{
+  font-size: 14px;
+}
+
+
+
+
+/* Bottom Navbar Styles */
+
+.navbar-bottom label {
+  display: none;
+}
+
+
+.btn{
+  background-color: #000000;
+}
+.btn:hover{
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.menu{
+  position: absolute;
+}
+
+.menu li:hover{
+  background-color: #B22222;
+}
+
+navbar-bottom {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+/* Mobile Navbar Styles*/
+#mobile_menu_first{
+  margin-left: 10px;
+}
+
+.mobile-menu ul li{
+  margin-left: 0px;
+}
+
+.navbar-mobile .btn {
+    margin-left: 0px;
+}
+
+.mobile-menu{
+  margin: 0px;
+}
+
+.mobile-menu > li:not(:first-child){
+  margin: 10px;
+}
+
+
+
+
+
+
+
+.navbar-mobile{
+  display: none;
+  background-color: #E85A4F;
+}
+
+.navbar_mobile_bottom{
+  display: none;
+}
+
+#password_reset_link{
+  padding: 0px;
+  font-size: 12px;
+  position: relative;
+  width: 120px;
+  top: 28px;
+  right: 160px;
+
+}
+
+#password_reset_link:hover{
+  background-color: transparent;
+  opacity: 0.7;
+}
+
+.navbar-top{
+    padding: 0px;
+    height: 75px;
+}
+.nav_top_container{
+    min-width: 100%;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    background-color: #BC4639;
+}
+
+.pull-left{
+    display: inline;
+}
+
+.pull-left li{
+    background-color: #BC4639;
+}
+
+.pull-right{
+    display: inline;
+    float: right;
+}
+.pull-right a {
+    font-size: 20px;
+}
+.pull-right input[type='submit'] {
+    font-size: 20px;
+}
+
+.pull-right .btn-success{
+    margin-right: 0px;
+}
+
+.pull-right form {
+    display: inline;
+}
+
+.pull-right .btn-primary{
+    margin-left: 0px;
+}
+
+.navbar-top {
+    background: #BC4639;
+    color: #FFF;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  line-height: 70px;
+  font-family: 'roboto', sans-serif;
+}
+#container {
+  margin: 0 auto;
+  max-width: 890px;
+}
+p { text-align: center; }
+ .toggle, [id^=drop] {
+ display: none;
+}
+nav {
+  margin: 0;
+  padding: 0;
+  background-color: #E85A4F;
+}
+
+#logo {
+  display: block;
+  padding: 0 30px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  margin: 0px;
+  display: inline-block;
+  float: left;
+  background-color: #E85A4F;
+}
+
+nav a {
+  display: block;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+
+
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+
+nav ul li:hover > ul { display: inherit; }
+
+nav ul ul li {
+  width: 300px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+nav ul ul li a {
+    color: white;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
+}
+
+li > a:only-child:after { content: ''; }
+
+.dropdown-item {
+    color: #ffffff;
+}
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 900px) {
+
+.navbar-bottom label {
+  display: block;
+  margin-left: 10px;
+}
+#drop{
+  display: block;
+}
+#logo {
+  display: block;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  float: none;
+}
+
+nav { margin: 0; }
+
+
+.navbar-top,
+ .menu { display: none; }
+
+.toggle {
+  display: block;
+  background-color: #254441;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 22px;
+  font-weight:bold;
+  line-height: 60px;
+  text-decoration: none;
+  border: none;
+}
+
+.toggle:hover { background-color: #000000; }
+
+[id^=drop]:checked + ul { display: block; }
+
+nav ul li {
+  display: block;
+  width: 100%;
+}
+
+nav ul ul .toggle,
+ nav ul ul a { padding: 0 40px; }
+
+nav ul ul ul a { padding: 0 80px; }
+
+nav a:hover,
+ nav ul ul ul a { background-color: #000000; }
+
+nav ul li ul li .toggle,
+ nav ul ul a { background-color: #212121; }
+
+nav ul ul {
+  float: none;
+  position: static;
+  color: #ffffff;
+}
+
+nav ul ul li:hover > ul,
+nav ul li:hover > ul { display: none; }
+
+nav ul ul li {
+  display: block;
+  width: 100%;
+}
+
+nav ul ul ul li { 
+    position: static;
+}
+}
+
+@media all and (max-width : 330px) {
+
+nav ul li {
+  display: block;
+  width: 94%;
+}
+
+}
+</style>
+<nav class="navbar navbar-top">
+
+<div class="nav_top_container">
+    <!-- left nav top -->
+    <ul class="nav navbar-nav pull-left">
+        <li><a href="/" class="top_nav_link waves-effect waves-light btn" >Home<i class='material-icons left'>home</i></a></li>
+        <% if session[:user_id] %>
+            <li><%= link_to "Add New Quiz<i class='material-icons left'>add</i>".html_safe, new_quiz_url, :id => "new_quiz_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
+            <li><%= link_to "User Profile<i class='material-icons left'>person</i>".html_safe, user_path(session[:user_id]), id: "user_profile_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
+            <li><%= link_to "Questions<i class='material-icons left'>question_answer</i>".html_safe, questions_path, id: "questions_link", :class => "top_nav_link waves-effect waves-light btn" %></li>
+            <li><input type="text" id="quiz_search_bar" onkeyup="searchQuizzes(this)" placeholder="&#128269;Search For Quizzes..." class="form-control" /><div id="search_results_section"></div></li>
+        <% end %>
+    </ul>
+    <!-- right nav top -->
+    <ul class="nav navbar-nav pull-right">
+        <% if !session[:user_id] %>
+            <%= form_with(url: sessions_path) do |form| %>
+                <%= form.text_field :username, :placeholder => "Username", :id => "navbar-username" %>
+                <%= form.password_field :password, :placeholder => "Password", :id => "navbar-password" %>
+                <button class="btn waves-effect waves-light" id="navbar_login_link" type="submit">Login<i class='material-icons right'>vpn_key</i></button>
+            <% end %>
+            <a href="/users/new" class="waves-effect waves-light btn" id="register_link" >Register<i class='material-icons right'>group_add</i></a>
+            <%= link_to "Forgot Password?", new_password_reset_path, :id => "password_reset_link" %>
+        <% else %>
+            <%= link_to "Log Out<i class='material-icons right'>arrow_forward</i>".html_safe, sessions_path(1), method: :delete, id: "logout_link", :class => "waves-effect waves-light btn" %>
+        <% end %>
+    </ul>
+</div>
+
+</nav>
+<nav class="navbar-bottom">
+  <label for="drop">&#9776;</label>
+  <input type="checkbox" class="icon" onclick="showMobileNav(this)" id="drop"/>
+  
+  <ul class="menu">
+    <%= navbar_quiz_links %>
+  </ul>
+</nav>
+
+<div class="navbar-mobile">
+    <ul class="mobile-menu">
+      <li id='mobile_menu_first'><a href="/" class="waves-effect waves-light btn" >Home<i class='material-icons left'>home</i></a></li>
+      <% if session[:user_id] %>
+        <li><%= link_to "Add New Quiz<i class='material-icons left'>add</i>".html_safe, new_quiz_url, :class => "waves-effect waves-light btn" %></li>
+        <li><%= link_to "User Profile<i class='material-icons left'>person</i>".html_safe, user_path(session[:user_id]), :class => "waves-effect waves-light btn" %></li>
+        <li><%= link_to "Questions<i class='material-icons left'>question_answer</i>".html_safe, questions_path, :class => "waves-effect waves-light btn" %></li>
+        <li><input type="text" onkeyup="searchQuizzes(this)" placeholder="&#128269;Search For Quizzes..." class="form-control" /><div id="search_results_section"></div></li>
+        <li><%= link_to "Log Out<i class='material-icons right'>arrow_forward</i>".html_safe, sessions_path(1), method: :delete, :class => "waves-effect waves-light btn" %></li>
+      <% else %>
+        <li>
+        <%= form_with(url: sessions_path) do |form| %>
+          <%= form.text_field :username, :placeholder => "Username" %>
+          <%= form.password_field :password, :placeholder => "Password" %>
+          <button class="btn waves-effect waves-light" type="submit" >Login<i class='material-icons right'>vpn_key</i></button>
+        <% end %>
+        </li>
+        <li>
+          <a href="/users/new" class="waves-effect waves-light btn" >Register<i class='material-icons right'>group_add</i></a>
+        </li>
+        <li>
+          <%= link_to "Forgot Password?", new_password_reset_path %>
+        </li>
+        <li>
+          <input type="text" onkeyup="searchQuizzes(this)" placeholder="&#128269;Search For Quizzes..." class="form-control" /><div id="search_results_section"></div>
+        </li>
+      <% end %>
+      <li>
+          <label>Quizzes</label>
+      </li>
+      <%= navbar_quiz_links %>
+    </ul>
+</div>
+<script>
+  $(window).click(function() {
+      $("#search_results_section").html("")
+  });
+
+  function showMobileNav(e){
+    if(e.checked){
+      $(".navbar-mobile").css("display", "block");
+      $(".navbar_mobile_bottom").css("display", "block");
+      $("#content").css("display", "none");
+    }else{
+      $(".navbar-mobile").css("display", "none");
+      $(".navbar_mobile_bottom").css("display", "none");
+      $("#content").css("display", "block");
+    }
+  }
+
+  $("#search_results_section").on("click", function(event){
+      event.stopPropagation();
+  });
+
+  function searchQuizzes(e){
+    if(e.value != ""){
+      $.ajax({
+        url: "<%= search_quizzes_quiz_url(1) %>",
+        method: "GET",
+        dataType: "json",
+        data: {
+          quiz_name: e.value
+        },
+        success: function(data){
+          $("#search_results_section").html("");
+          var result = "<ul class='search-history'>";
+          for(var i = 0; i < data.result.length; i++){
+            id = parseInt(data.result[i].id);
+            result += `<li><span class='text'><a href='/quizzes/${id}' class='search_quiz_link'>${data.result[i].name}</a></span></li>`;
+          }
+       
+          result += "</ul>";
+          $("#search_results_section").html(result);
+        }
+      });
+    }else{
+      $("#search_results_section").html("");
+    }
+    
+  }
+</script>

@@ -1,0 +1,25 @@
+<%= form_with :url => quiz_path(@quiz.id), :quiz_id => @quiz.id, method: :put, :id => "quiz_edit_form" do |form| %>
+    <div id="quiz_errors">
+    </div>
+    <div class="form-group">
+    <%= form.label :quiz_name, "Quiz Name: "  %>
+    <%= form.text_field :quiz_name, :class => "form-control", :onkeyup => "checkUpdateQuiz()" %>
+    </div>
+    <div class="form-group">
+    <%= form.label :quiz_category, "Quiz Category: " %>
+    <%= form.text_field :quiz_category, :class => "form-control", :onkeyup => "checkUpdateQuiz()" %>
+    </div>
+    <div class="form-group">
+    <%= form.label :quiz_description, "Quiz Description: " %>
+    <%= form.text_field :quiz_description, :class => "form-control" %>
+    </div>
+    <%= hidden_field_tag "#{@quiz.question}", @quiz.name, { :id => "hidden_quiz_name"} %>
+    <%= hidden_field_tag "#{@quiz.category}", @quiz.category, { :id => "hidden_quiz_category"} %>
+    <%= hidden_field_tag "#{@quiz.description}", @quiz.description, { :id => "hidden_quiz_description"} %>
+    
+    <%= hidden_field_tag :quiz_id, @quiz.id %>
+    <div class="btn_container">
+        <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "btn waves-effect waves-light back_link" %>
+        <button class="btn waves-effect waves-light" id="submit_update_quiz_link">Update Quiz<i class='material-icons left'>update</i></button>
+    </div>
+    <% end %>

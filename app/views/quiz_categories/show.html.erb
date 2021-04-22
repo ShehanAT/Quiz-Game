@@ -1,0 +1,8 @@
+<div id="quiz_category_section">
+<h1>Quiz Categories</h1>
+<h3><strong>These Are All Quizzes For Category: <%= @category.category %></strong></h3>
+<% @quizzes.each do |quiz| %>
+    <%= link_to "#{quiz["name"]}", quiz_path(quiz["id"]), :class => "quiz_link" %>
+    <br />
+<% end %> 
+</div>

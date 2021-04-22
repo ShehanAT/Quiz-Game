@@ -1,0 +1,18 @@
+<div class="user_info_section">
+    <h1>Your Profile Information</h1>
+    <ul id="user_info_list">
+    <li id="username" class="heading"><i class="heading_text">Username:</i> <%= @user.username %></li>
+    <li id="email" class="heading"><i class="heading_text">Email:</i> <%= @user.email %></li>
+    <li id="fullName" class="heading"><i class="heading_text">Full Name:</i> <%= @user.fullName %></li>
+    <li id="bio" class="heading"><i class="heading_text">Bio:</i> <%= @user.bio %></li>
+    </ul>
+</div>
+<div class="btn_container">
+<%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
+<%= link_to "Edit Profile<i class='material-icons left'>edit</i>".html_safe, edit_user_path(@user.id), :id => "edit_user_link", :class => "btn waves-effect waves-light" %>
+<button id="delete_account_link" class="btn waves-effect waves-light" type="button" onclick="showDeleteModal()">Delete Account<i class='material-icons left'>delete</i></button>
+</div>
+<%= render "users/html/delete_user_modal" %>
+<script>
+    <%= render partial: "users/js/delete_user.js.erb" %>
+</script>

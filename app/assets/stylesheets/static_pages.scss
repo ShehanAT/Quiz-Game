@@ -1,0 +1,46 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ul.about_list{
+    width: 25%;
+    margin: auto;
+    li.about_list_item{
+        display: list-item;
+        list-style-type: disc;
+        text-align: left;
+    }
+
+}
+
+.twitter{
+    background-color: #55acee !important;
+}
+
+.facebook{
+    background-color: #3b5998 !important;
+}
+
+.github{
+    background-color: #444444 !important;
+}
+
+.linkedin{
+    background-color: #007bb6 !important;
+}
+
+.stack-overflow{
+    background-color: #ef8236 !important;
+}
+
+.codepen{
+    background-color: #000000 !important;
+}
+.social:hover{
+    opacity: 0.7;
+}
+
+.contact_btn{
+    text-align: right;
+}

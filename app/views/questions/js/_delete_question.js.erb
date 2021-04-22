@@ -1,0 +1,44 @@
+
+
+$(document).ready(function(){
+    $("body").click(function(e) {
+        if (!$(e.target).closest('.modal,#delete_question_link').length) {
+            e.stopPropagation();
+            $('#deleteQuestionModal').fadeOut(500);
+          }
+    });
+});
+
+function showQuestionModal(){
+    $("#deleteQuestionModal").show();
+}
+
+function closeQuestionModal(){
+    $("#deleteQuestionModal").fadeOut(500)
+}
+
+function deleteQuestion(e){
+    if(e.id === "questionDeleteNo"){
+        closeQuestionModal();
+    }
+    else if(e.id === "questionDeleteYes"){
+        $.ajax({
+            url: "<%= question_path(@question[0]['id']) %>",
+            method: "DELETE",
+            dataType: "json",
+            data: {
+                quiz_id: "<%= @quiz_id %>",
+                question_id: "<%= @question[0]['id'] %>",
+            },
+            success: function(data){
+                ajaxSuccess(data);
+            }
+        });   
+    }
+}
+
+function ajaxSuccess(data){
+    if(data.status){
+        window.location.href = data.redirect;
+    }
+}

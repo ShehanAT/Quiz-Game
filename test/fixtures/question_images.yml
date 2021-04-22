@@ -1,0 +1,19 @@
+one:
+  quiz_id: 1
+  question_id: 1
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Uniform_Resource_Locator.svg/220px-Uniform_Resource_Locator.svg.png"
+
+two:
+  quiz_id: 1
+  question_id: 2
+  image_url: "https://i.ytimg.com/vi/FIrgsfsvzlI/hqdefault.jpg"
+
+three:
+  quiz_id: 1
+  question_id: 3
+  image_url: "https://www.elegantthemes.com/blog/wp-content/uploads/2015/02/custom-trackable-short-url-feature.png"
+
+four:
+  quiz_id: 1
+  question_id: 4
+  image_url: "https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"

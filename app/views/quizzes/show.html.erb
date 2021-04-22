@@ -1,0 +1,49 @@
+
+
+<div id="quiz_info_section">
+<h1>Quiz Info</h1>
+<% if flash[:success] %>
+    <div class="alert alert-primary" role="alert">
+        <h3><%= flash[:success] %></h3>
+    </div>
+<% end %>
+
+<ul id="quiz_info_list">
+<li class="heading"><i class="heading_text">Title:</i> <%= @quiz.name %></li>
+<li class="heading"><i class="heading_text">Category:</i> <%= @quiz.category %></li>
+<li class="heading"><i class="heading_text">Description:</i> <%= @quiz.description %></li>
+<% if @quiz.contains_images === 1 %>
+    <li class="heading"><i class="heading_text">Quiz Type:</i> Image Quiz</li>
+<% elsif @quiz.contains_images === 0 %>
+    <li class="heading"><i class="heading_text">Quiz Type:</i> Text Quiz</li>
+<% end %>
+<% if session[:user_id] %>
+    <li id="highscore_message" class="heading"><i class="heading_text">Your Best Score For This Quiz:</i> <strong><%= @highScore %></strong></li>
+<% end %>
+<% if !@takeQuiz %>
+    <li class="form-text disable_take_quiz error heading_text" >* You Must Add Some Questions To Take This Quiz</li>
+<% end %>
+</ul>
+    <div class="btn_container" id="quiz_btn_container">
+    <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
+    <% if !@takeQuiz %>
+        <button onclick="playQuiz()" class="btn waves-effect waves-light" id="take_quiz_link" disabled=true >Take Quiz<i class='material-icons left'>play_arrow</i></button>
+    <% else %>
+        <button onclick="playQuiz()" class="btn waves-effect waves-light" id="take_quiz_link" >Take Quiz<i class='material-icons left'>play_arrow</i></button>
+    <% end %>
+    <% if session[:user_id] %>
+        <%= link_to "Add Questions<i class='material-icons left'>add</i>".html_safe, new_question_path, :id => "add_questions_link", :class => "btn waves-effect waves-light" %>
+        <%= link_to "Edit Quiz<i class='material-icons left'>edit</i>".html_safe, edit_quiz_path(@quiz.id), :id => "edit_quiz_link", :class => "btn waves-effect waves-light" %>
+        <button class="btn btn-danger" id="delete_quiz_link" onclick="showQuizModal()" >Delete Quiz<i class="material-icons left">delete</i></button>
+    <% end %>
+    
+    </div>
+</div>
+<%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, quiz_path(@quiz.id), :class => "gameplay_back_link btn waves-light waves-effect", :style => "display: none;" %>
+<%= render_answer_links %>
+<%= render_end_game_message %>
+<%= render partial: "quizzes/html/delete_quiz_modal" %>
+<script>
+    <%= render partial: "quizzes/js/show.js.erb" %>
+    <%= render partial: "quizzes/js/delete_quiz.js.erb" %>
+</script>

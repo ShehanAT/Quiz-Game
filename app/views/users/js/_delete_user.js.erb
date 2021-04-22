@@ -1,0 +1,45 @@
+$(document).ready(function(){
+    $("body").click(function (e) {
+        if (!$(e.target).closest('.modal,#delete_account_link,#delete_question_link').length) {
+            e.stopPropagation();
+            $('#userDeleteModal').fadeOut(500);
+        }
+    });
+});
+
+function showDeleteModal(){
+    $("#userDeleteModal").show();
+}
+
+function closeDeleteModal(){
+    $("#userDeleteModal").fadeOut(500);
+}
+
+function deleteUser(e){
+    switch(e.id){
+        case "userDeleteYes":
+            var userId = $("#hidden_user_id").val();
+            $.ajax({
+                url: "<%= user_path(@user.id) %>",
+                method: "DELETE",
+                data: {
+                    user_id: userId,
+                    authenticity_token: window._token
+                },
+                dataType: "json",
+                success: function(data){
+                    if(data.status){
+                        window.location.href = "/";
+                    }else{
+                        alert(data.message);
+                    }
+                }
+            });
+            break;
+        case "userDeleteNo":
+            closeDeleteModal();
+            break;
+        default:
+            break;
+    }
+}

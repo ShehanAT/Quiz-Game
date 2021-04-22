@@ -1,0 +1,22 @@
+
+function checkNewQuiz(){
+    $("#check_quiz_valid_error").remove();
+    $("#submit_new_quiz_link").attr("disabled", false);
+    $.ajax({
+        url: "<%= quizzes_path %>",
+        method: "post",
+        dataType: "json",
+        data: {
+            authenticity_token: window._token,
+            commit: "check_quiz_valid",
+            quiz_name: $("#quiz_name").val(),
+            quiz_category: $("#quiz_category").val()
+        },
+        success: function(data){
+            if(!data.status){
+                $("#quiz_errors").html(`<p class='error' id='check_quiz_valid_error'>${data.message}</p>`);
+                $("#submit_new_quiz_link").attr("disabled", true);
+            }
+        }
+    });
+}

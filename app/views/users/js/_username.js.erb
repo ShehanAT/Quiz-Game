@@ -1,0 +1,53 @@
+function checkUserName(value){
+    $("#username_errors").html("");
+    $.ajax({
+        url: "<%= user_path(@user.id) %>",
+        method: "put",
+        dataType: "json",
+        data: {
+            commit: "check_username",
+            username:value
+        },
+        success: function(data){
+            $("#username_errors").html(`${data.message}`);
+            if(!data.status) $("#update_username_link").prop('disabled', true);
+            else $("#update_username_link").prop('disabled', false);
+        }
+    });
+}
+
+function changeUsername(){
+    $("#new_username").on("keyup", function(event){
+    checkUserName(this.value);});
+    $("#new_username").val($("#hidden_current_username").val());
+    $("#change_username_section").css("display", "inline");
+    $("#current_username_section").css("display", "none");
+}
+
+
+function updateUsername(){
+    $.ajax({
+        url: "<%= user_path(@user.id) %>",
+        method: "put",
+        dataType: "json",
+        data: {
+            commit: "change_username",
+            username: $("#new_username").val()
+        },
+        success: function(data){
+            if(data.status){
+                alert(`${data.message}`);
+                location.reload();
+            }
+        }
+    });
+}
+
+function cancelUsername(){
+    $("#username_errors").html("");
+    $("#change_username_section").css("display", "none");
+    $("#current_username_section").css("display", "inline");
+}
+
+
+

@@ -1,0 +1,12 @@
+<h3>Login Form</h3>
+<%= form_with url: "/sessions" do |form| %>
+    <div id="session_errors"></div>
+    <%= form.label :username, "Username: " %>
+    <%= form.text_field :username, :id => "login_username" %>
+    <br />
+    <%= form.label :password, "Password: " %>
+    <%= form.password_field :password, :id => "login_password" %>
+    <br />
+    <button class="btn waves-effect waves-light" id="content_login_link" type="submit" >Login<i class='material-icons left'>vpn_key</i></button>
+<% end %>
+<%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>

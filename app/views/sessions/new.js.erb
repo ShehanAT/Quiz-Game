@@ -1,0 +1,10 @@
+
+$.ajax({
+    url: "/sessions/new",
+    method: "get",
+    dataType: "json",
+    data: {},
+    success: function(data){
+        alert(data.status);
+    }
+});

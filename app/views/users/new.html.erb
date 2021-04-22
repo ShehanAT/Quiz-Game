@@ -1,0 +1,28 @@
+<h3>Registration Form</h3>
+<%= form_with model: @user, :id => "user_new_form" do |form| %>
+    <div id="user_errors">
+    </div>
+    <br />
+    <%= form.label(:username, "Username:") %>
+    <%= form.text_field :username, :required => true %>
+    <br />
+    <%= form.label(:email, "Email:") %>
+    <%= form.text_field :email, :required => true %>
+    <br />
+    <%= form.label(:password, "Password:") %>
+    <%= form.password_field :password, :required => true %>
+    <br />
+    <%= form.label(:password_confirmation, "Confirm Password:") %>
+    <%= form.password_field :password_confirmation, :required => true %>
+    <br />
+    <%= form.label(:fullName, "Full Name:") %>
+    <%= form.text_field :fullName, :required => true %>
+    <br />
+    <%= form.label(:bio, "Bio:") %>
+    <%= form.text_field :bio, :required => true %>
+    <br />
+    <div class="btn_container">
+    <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
+    <button id="content_register_link" class="btn waves-effect waves-light" type="submit" >Submit<i class="material-icons left">send</i></button>
+    </div>
+<% end %>

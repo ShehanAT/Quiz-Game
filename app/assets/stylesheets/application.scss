@@ -1,0 +1,188 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require social-share-button
+ */
+
+@import 'materialize';
+@import "social-share-button";
+@import "font-awesome";
+ 
+
+/* Modal Styles */
+
+.modal{
+  width: 600px;
+  height: 500px;
+  background-color: #B22222;
+}
+.modal-content{
+  display: block;
+  p{
+    font-size: 16px;
+  }
+  h1{
+    font-size: 16px;
+  }
+  button{
+    width: 50%;
+  }
+  width: 550px;
+  height: 320px;
+}
+/* Search Bar Styles */
+$primary: #0000FA;
+$accent: #F5F6FD;
+
+#quiz_search_bar{
+    width: 300px;
+}
+
+ul.search-history {
+    z-index: 3;
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    width: 100%;
+    
+    li {
+      color: $primary;
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      transition: all .3s ease-in-out;
+
+      span.text {
+        position: relative;
+        z-index: 3;
+        
+        a {
+          text-decoration: none;
+        }
+      }
+      
+      a.link {
+        width: 100%;
+        height: 40px;
+        display: block;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+      }
+      &:hover { 
+        background-color: #ffffff;
+        text-decoration: none;
+      }
+      a:hover{
+        color: #000000;
+      }
+    }
+}
+
+/* Footer Styles */
+
+.page-footer .container{
+  background: transparent;
+}
+.page-footer {
+  background-color: #B22222;
+}
+
+.site_links_section li:hover{
+  opacity: 0.7;
+}
+
+/* Miscelleneous */
+select{
+  display: block;
+
+}
+.heading_text{
+    color: #808080;
+}
+
+label {
+    font-size: 1.75rem;
+}
+
+.quiz_category_link:hover{
+    color: #000000;
+    text-decoration: none;
+    background-color: #FFFFFF;
+}
+
+.back-btn{
+    display: block;
+    width: 5%;
+}
+
+#content{
+    padding: 10px 10px 75px 10px;
+    margin-top: 70px;
+}
+
+input, button{
+    z-index: 1;
+}
+
+.main_heading_instructions{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.quiz_links_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.center{
+    text-align: center;
+}
+
+.btn_container{
+  text-align: center;
+  display: block;
+}
+
+.gameplay_back_link{
+  width: 10%;
+}
+
+.modal_btn_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
+}
+
+.modal_btn_container > button{
+  width: 100%;
+}
+
+/* Typography styles */
+
+.heading{
+  font-size: 20px;
+
+  i{
+    font-size: 24px;
+    line-height: 0px;
+  }
+}
+
+

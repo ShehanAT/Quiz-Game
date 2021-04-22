@@ -1,0 +1,26 @@
+<%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, root_url, :class => "btn waves-effect waves-light back_link" %>
+<h1>Questions List</h1>
+
+<div class="autopagerize_page_element">
+<%= paginate @questions_per_page %>
+<table class="table table-sm highlight" id="question_index_table">
+    <thead>
+   
+        <td>Question Name</td>
+        <td>Corresponding Quiz</td> 
+        <td>Quiz Category</td>
+    </thead>
+    <tbody>
+    
+        <% @questions_per_page.each_with_index do |question, index| %>
+            <tr>
+                <td><%= link_to "#{question["question"]}", question_path(question["question_id"]), class:'question_name' %></td>
+                <td class='quiz_name'><a href="<%= quiz_path(question["id"]) %>"><%= question["name"] %></a></td>
+                <td class='quiz_category'><%= question["category"] %></td>
+            </tr>
+        <% end %> 
+    
+   
+    </tbody>
+</table>
+</div>

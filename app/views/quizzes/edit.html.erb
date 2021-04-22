@@ -1,0 +1,8 @@
+<h1>Edit Quiz</h1>
+<h3 id="edit_quiz_title"><strong>Editing Quiz: <%= @quiz.name %></strong></h3>
+<%= render "quizzes/html/edit_form" %>
+
+<script>
+    <%= render partial: "quizzes/js/edit_form.js.erb" %>
+    <%= render "quizzes/js/check_quiz_edit.js.erb" %>
+</script>

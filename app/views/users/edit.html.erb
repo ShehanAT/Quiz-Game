@@ -1,0 +1,12 @@
+<h1>Edit User</h1>
+<h3 id="edit_quiz_title"><strong>Editing User: <%= @user.username %></strong></h1>
+<%= render partial: "users/html/edit_form" %>
+<script>
+    <%= render partial: "/users/js/edit_form.js.erb" %>
+    <%= render partial: "/users/js/username.js.erb" %>
+    <%= render partial: "/users/js/password.js.erb" %>
+    <%= render partial: "/users/js/email.js.erb" %>
+    <%= render partial: "/users/js/fullName.js.erb" %>
+</script>
+
+

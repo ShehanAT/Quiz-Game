@@ -1,0 +1,84 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# for quiz 1 
+one:
+  id: 1
+  quiz_id: 1
+  question: "What’s the most underrated or overrated TV show?"
+  
+two:
+  id: 2
+  quiz_id: 1
+  question: "What’s something you really resent paying for?"
+
+three:
+  id: 3
+  quiz_id: 1
+  question: "The beaver is the national emblem of which country?"
+
+four:
+  id: 4
+  quiz_id: 1
+  question: "In which movie did Humphrey Bogart play Charlie Allnut?"
+
+# for quiz 2 
+five:
+  id: 5
+  quiz_id: 2
+  question: "Which singer’s real name is Stefani Joanne Angelina Germanotta?"
+  
+six:
+  id: 6
+  quiz_id: 2
+  question: "How many players are there in a baseball team?"
+
+seven:
+  id: 7
+  quiz_id: 2
+  question: "Which TV character said, “Live long and prosper”?"
+
+eight:
+  id: 8
+  quiz_id: 2
+  question: "What kind of person shall not be honored on a US postal stamp, according to the US postal service and the Citizen’s Stamp Advisory Commitee?"
+
+nine:
+  id: 9
+  quiz_id: 5
+  question: Sample?
+
+ten:
+  id: 10
+  quiz_id: 5
+  question: Sample?
+
+eleven:
+  id: 11
+  quiz_id: 5
+  question: Sample?
+
+twelve:
+  id: 12
+  quiz_id: 5
+  question: Sample?
+
+thirteen:
+  id: 13
+  quiz_id: 6
+  question: Sample?
+
+fourteen:
+  id: 14
+  quiz_id: 6
+  question: Sample?
+
+fifteen:
+  id: 15
+  quiz_id: 6
+  question: Sample?
+
+sixteen:
+  id: 16
+  quiz_id: 6
+  question: Sample?
+

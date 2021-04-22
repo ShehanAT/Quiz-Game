@@ -1,0 +1,49 @@
+function checkEmail(value){
+    $("#email_errors").html("");
+    $.ajax({
+        url: "<%= user_path(@user.id) %>",
+        method: "put",
+        dataType: "json",
+        data: {
+            commit: "check_email",
+            email:value
+        },
+        success: function(data){
+            $("#email_errors").html(`${data.message}`);
+            if(!data.status) $("#update_email_link").prop('disabled', true);
+            else $("#update_email_link").prop('disabled', false);
+        }
+    });
+}
+
+function changeEmail(){
+    $("#new_email").on("keyup", function(){
+        checkEmail(this.value);});
+    $("#new_email").val($("#hidden_current_email").val());
+    $("#change_email_section").css("display", "inline");
+    $("#current_email_section").css("display", "none");
+}
+
+function updateEmail(){
+    $.ajax({
+        url: "<%= user_path(@user.id) %>",
+        method: "put",
+        dataType: "json",
+        data: {
+            commit: "change_email",
+            email: $("#new_email").val()
+        },
+        success: function(data){
+            if(data.status){
+                alert(`${data.message}`);
+                location.reload();
+            }
+        }
+    });
+}
+
+function cancelEmail(){
+    $("#email_errors").html("");
+    $("#change_email_section").css("display", "none");
+    $("#current_email_section").css("display", "inline");
+}

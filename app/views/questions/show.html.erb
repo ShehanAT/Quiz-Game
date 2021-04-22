@@ -1,0 +1,31 @@
+<h1>Question Info</h1>
+<div class="question_info_section">
+<ul id="question_info_list">
+<li id="question_name" class="heading"><i class="heading_text">Question:</i> <%= @question[0]["question"] %></li>
+<li id="quiz_name" class="heading"><i class="heading_text">Belongs to Quiz Name:</i> <%= @question[0]["name"] %></li>
+<% @answers.each_with_index do |answer, index| %>
+    <%= content_tag(:li, "<i class='heading_text'>Answer Choice #{index + 1}:</i>  #{answer["answer"]}".html_safe, :id => "answer#{index+1}", :value => "answer#{index+1}", :class => "heading") %>
+<% end %>
+<% @answers.each_with_index do |answer, index| %>
+    <% if answer["correct_answer"] == 1 %>
+        <%= content_tag(:li, "<i class='heading_text'>Correct Answer:</i> #{answer["answer"]}".html_safe, :id => "correct_answer", :class => "heading") %>
+    <% end %>
+<% end %>
+<% if @question[0]["contains_images"] === 1 %>
+    <li class="heading"><i class="heading_text">Question Type:</i> Image Question</li>
+    <img src="<%= @question_image.image_url %>" alt="About Question" />
+    <li><caption>Figure 1: Image Used In Question</caption></li>
+<% elsif @question[0]["contains_images"] === 0 %>
+    <li class="heading"><i class="heading_text">Question Type:</i> Text Question</li>
+<% end %>
+</ul>
+</div>
+<div class="btn_container">
+    <%= link_to "Back<i class='material-icons left'>arrow_back</i>".html_safe, questions_path, :class => "btn waves-effect waves-light back_link" %>
+    <%= link_to "Edit Question<i class='material-icons left'>mode_edit</i>".html_safe, edit_question_path(@question[0]["id"]), id: "edit_question_link", :class => "btn waves-effect waves-light", :question_id => @question[0]["id"] %>
+    <button class="btn waves-effect waves-light modal-trigger" onclick="showQuestionModal()" id="delete_question_link" >Delete Question<i class='material-icons left'>delete</i></button>
+</div>
+<%= render partial: "questions/html/delete_question_modal" %> 
+<script>
+    <%= render "questions/js/delete_question.js.erb" %>
+</script>
