@@ -10,7 +10,7 @@ class QuestionImage < ApplicationRecord
           # )
           storage = Google::Cloud::Storage.new( 
               project_id: ENV["GCP_PROJECT_ID"],
-              credentials: ENV["GCP_KEYFILE_PATH"]
+              credentials: ENV["GCP_KEYFILE_PATH"] 
             )
           storage.bucket ENV["GSC_BUCKET"]
         end
