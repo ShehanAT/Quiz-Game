@@ -17,9 +17,9 @@ local:
 # Remember not to checkin your GCS keyfile to a repository
 google:
   service: GCS
-  project: quizgame-256018
-  credentials: <%= Rails.root.join("~/Public/quizgame-256018-ec6517d78772.json") %>
-  bucket: quizgame_images
+  project: quiz-game-app
+  credentials: <%= Rails.root.join("C:\Users\sheha\OneDrive\Documents\GitHub\quiz-game-app-88cfbcb1e902.json") %>
+  bucket: quiz-game-image-storage
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:

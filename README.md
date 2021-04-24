@@ -17,6 +17,7 @@ This web application can run on any modern browser such as Google Chrome, Firefo
 2. Use a terminal application to ``cd`` into unzipped project folder 
 3. Run command ```bundle install``` to install all dependencies 
 4. Start development server via ```bin/rails server```
+5. To access cloud image storage feature you must go to Google Cloud Platform and create a project(link: [https://console.cloud.google.com/projectcreate](https://console.cloud.google.com/projectcreate))
 
 ### Production site:
 * https://fountain-of-quizzes.herokuapp.com/
