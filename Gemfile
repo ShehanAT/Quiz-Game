@@ -1,15 +1,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.3'
 
-gem 'bundler', '~> 2.0.2'
+gem 'bundler', '~> 2.2.16'
 
 gem 'poltergeist', '~> 1.10'
 
 gem 'pry', '~> 0.12.2'
+
+gem 'actionpack', '~> 6.1.3.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.1.3.1'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -38,6 +41,8 @@ gem 'materialize-sass', '~> 1.0.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -45,9 +50,13 @@ gem 'social-share-button', '0.2.1'
 
 gem "font-awesome-rails"
 
+gem 'activemodel', '6.1.3.1'
+
 gem 'activerecord-session_store', '~> 1.1.3'
 
 gem 'kaminari'
+
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 group :production do 
   gem 'pg'
@@ -70,7 +79,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0.beta2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3', '~> 1.4'
+
+  gem 'sqlite3', '~> 1.4.2'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
