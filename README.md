@@ -16,6 +16,7 @@ This web application can run on any modern browser such as Google Chrome, Firefo
 1. Create env file 
 2. Create Google Cloud Platform project
 3. Get Gmail Account credential
+4. Run project locally 
 
 ##### Create env file:
 1. Go to ```{PROJECT_FOLDER}\config``` and create ```application.yml``` in it 
@@ -37,7 +38,7 @@ GMAIL_USERNAME: "YOUR_EMAIL_ADDRESS"
 GMAIL_PASSWORD: "EMAIL_PASSWORD"
 ``` 
 
-##### For running locally:
+##### For running project locally:
 1. Clone project locally and unzip project folder 
 2. Use a terminal application to ``cd`` into unzipped project folder 
 3. Run command ```bundle install``` to install all dependencies 
