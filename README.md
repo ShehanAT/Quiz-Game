@@ -1,5 +1,5 @@
 # Quiz Game Overview
-This is a quiz taking application very similar to the popular quizzing application Kahoot! Most notable features include ability to add any quiz with or without supporting images, authentication system, ability to save high score and ability to share quiz results on social platforms such as Twitter.It is built using Ruby on Rails and developed following the Test Driven Development technique.
+This is a quiz taking application very similar to the popular quizzing application Kahoot! Most notable features include ability to add any quiz with or without supporting images, authentication system, ability to save high score and ability to share quiz results on social platforms such as Twitter. It is built using Ruby on Rails and developed following the Test Driven Development technique.
 
 # Purpose:
 This project was built in order to gain experience developing web applications through the Test-Driven Development technique. Throughout the course of development, over 40 integration and unit tests using Capybara, Selenium and RSpec were written. Overall, this project has over 95% test coverage so as to minimize bugs and errors. 
