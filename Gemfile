@@ -52,7 +52,7 @@ gem "font-awesome-rails"
 
 gem 'activemodel', '6.1.3.1'
 
-gem 'activerecord-session_store', '~> 1.1.3'
+gem 'activerecord-session_store', '~> 2.0.0'
 
 gem 'kaminari'
 
