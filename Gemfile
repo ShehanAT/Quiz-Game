@@ -9,10 +9,10 @@ gem 'poltergeist', '~> 1.10'
 
 gem 'pry', '~> 0.12.2'
 
-gem 'actionpack', '~> 6.1.3.1'
+gem 'actionpack', '~> 7.0.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.3.1'
+gem 'rails', '~> 7.0.4.1'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
@@ -50,7 +50,7 @@ gem 'social-share-button', '0.2.1'
 
 gem "font-awesome-rails"
 
-gem 'activemodel', '6.1.3.1'
+gem 'activemodel', '7.0.4.1'
 
 gem 'activerecord-session_store', '~> 2.0.0'
 
